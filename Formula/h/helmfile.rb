@@ -8,11 +8,9 @@ class Helmfile < Formula
   head "https://github.com/helmfile/helmfile.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "ccf478f6e52f11af9fb5ac98c5251c6ffceb8bbd9c86e4c2241b122ae13a582f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0f317ccca9da0e34eb9a149c743762203183f89e9bc2270300474bcba96fdf8f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "de76787e9dda6b0b2d1aa5cdf3eab2ed5e96570ff12febade8540316ae949887"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1d0365ffaa4dc2cc66b1820fa7cba44bebfc63aa141b1ea804010f20bd2d38f2"
-    sha256 cellar: :any,                 x86_64_linux:      "98fad092a73f9b9c88b69c7d8e9c2ad1a2f2add88ef90c7a93359844ae44c875"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/helmfile-1.8.2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "8111443e078400fd38b52f8b088c35c200f88c083cf7b40fb4d3e506c966aebd"
   end
 
   depends_on "go" => :build

@@ -8,11 +8,9 @@ class Faac < Formula
   head "https://github.com/FreewareAdvancedAudio/faac.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "73cdcc4e8d2070975401d05242081e54c6b1f08e30e07c1a994177367af07342"
-    sha256 cellar: :any, arm64_tahoe:       "2e8407cca363bf76535a0cc71a2a705655eb6b8ebf5855a9e791b039b94eb0a8"
-    sha256 cellar: :any, arm64_sequoia:     "4cc581a53c9602b258a29b07723b453e884d85e0b82dc7f756563317f54d6305"
-    sha256 cellar: :any, arm64_linux:       "22d9ba59a47291063e0acd09bbd20fd4ddf4115708b6b9e2f8a94b985535916b"
-    sha256 cellar: :any, x86_64_linux:      "843f94b10755fef5317b0f31ac021632c4ce8f9e71bd6152e4cd70c27c7f6fb6"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/faac-2.2"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "6105c349ef6bd21153a7e6495cc3589bc7e089b2c7a4ccb75877d250d0ca8b42"
   end
 
   depends_on "meson" => :build

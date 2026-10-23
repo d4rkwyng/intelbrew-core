@@ -18,11 +18,9 @@ class Qtlottie < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "10e6085eb0014cd0b100dd00e34cd70295d2b56ce6a8cb6e242632183df8805f"
-    sha256 cellar: :any, arm64_tahoe:       "abf3075e4efd657f7bdd3eea1a0100d8026ba64fe28ba2a8dacb8dc24e6c93ba"
-    sha256 cellar: :any, arm64_sequoia:     "daad2907205829155b17f3292ba7c67f64b57575d7ffb48346b7eead1d523ba6"
-    sha256 cellar: :any, arm64_linux:       "76f0a75037cbf0e5d8d05686f603a5a081bae92a0105c9ff4b86ea9da79af1ed"
-    sha256 cellar: :any, x86_64_linux:      "50ddcd61d0e18ae013d0ef7204a2ea207f00e23b4471d2d4582eca91af011f8c"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/qtlottie-6.12.0_1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "0d185873db01ff35343b4df0b5b4e71cc2e6246dccdbd39c69d078edbe1fe9d5"
   end
 
   depends_on "cmake" => [:build, :test]

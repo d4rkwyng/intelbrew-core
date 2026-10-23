@@ -12,11 +12,9 @@ class PostgresqlAT14 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "807534e55e779d6b5eff854e03d84411a67e1fa1335abde6e2ce2e662369d94e"
-    sha256 arm64_tahoe:       "51717d32631721b3aef29c3cd7b1cc77d6d35be7e26e42f295d65286ff7255f9"
-    sha256 arm64_sequoia:     "d3e86e1a11ff072ca88bcd9d50e3ce553ab8fa73fa4ed09b7b9230815855b3b0"
-    sha256 arm64_linux:       "4641f92ab704d4e089a8cbc20512c44de0bae602f13167220e4421a17cde6fff"
-    sha256 x86_64_linux:      "78545b277fe40e3a8c02973a6e74aee3139e23face8dbfb08429326af52c5c76"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/postgresql@14-14.24_1"
+    rebuild 1
+    sha256 sonoma: "f455aa49d78087cfd5c1db71c5c58cd227fdf303970f7a540cc40ce133317f36"
   end
 
   # deprecating one year before the last release,

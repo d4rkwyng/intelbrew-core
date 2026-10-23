@@ -7,11 +7,9 @@ class Libde265 < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d4a7527bce91d5e261c297435689a9987776c7dcd8cbfe4ab2ee159550594756"
-    sha256 cellar: :any, arm64_tahoe:       "46ae0a2e5d873fb1fe88b2855a67668eb805712073acb5d532fd3081fc2cbfe0"
-    sha256 cellar: :any, arm64_sequoia:     "12810efc8cf343799cc9619ebe99f41248c5a5c07efcfa3c73d7c5488a976cbe"
-    sha256 cellar: :any, arm64_linux:       "8bc7152ed0d8cf619db552002fa0f8a86d9800265727356d33246a5f84585058"
-    sha256 cellar: :any, x86_64_linux:      "275b0272f1e00f83aaeaaf33493de34759c3408911ef8e0f60a6ba7e6698f376"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libde265-1.1.3"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "942d0c1af2a402d3c1f14812053e6f2085a632d114c8a5cf3aec276190a43465"
   end
 
   depends_on "cmake" => :build

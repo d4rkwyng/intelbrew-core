@@ -7,11 +7,9 @@ class Libxrender < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "98a4cdc34145658f8c4e5a27d78f985bab6c955485da21f5890f41bbd9ac56b8"
-    sha256 cellar: :any, arm64_tahoe:       "cc2f74e28c8a822020f025403796b560f937e46bfdae46b83f5d4860aaec7cc7"
-    sha256 cellar: :any, arm64_sequoia:     "d281b755455ee77f28bcf83c93501b525d7eb2c7a4b8eb8fdf640ee2c6e4b69b"
-    sha256 cellar: :any, arm64_linux:       "508a77d6a5bcdf42e895364deecfff474d4fb64a700de9a8d84027944c798b4c"
-    sha256 cellar: :any, x86_64_linux:      "248ebd6e734a951b0a3cf645b4a009abfa63c923c04fe3267a10f1c4765ef6e5"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libxrender-0.9.13"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "91f827dd36c96ad1f3ab383035ca491a115c48506434442101fc3fd5410866be"
   end
 
   depends_on "pkgconf" => :build

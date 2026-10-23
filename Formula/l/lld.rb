@@ -12,11 +12,9 @@ class Lld < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d3b61a45eae78730f87ca82ffc3b8a92237eb050b836795b065d81515ea48dd5"
-    sha256 cellar: :any, arm64_tahoe:       "75d7942c768ce1da4d68045bc1a7d2729aa27a1ebef52dbcb9705edd5eb751af"
-    sha256 cellar: :any, arm64_sequoia:     "2c34e34b63e20fa129894931d91f33b17f045816ac1cec08ce629776e105b5e5"
-    sha256 cellar: :any, arm64_linux:       "cf65feb0139dd4a6c0875806cf78f4c03342996a8e4b670e1464094a8cc8f88c"
-    sha256 cellar: :any, x86_64_linux:      "37a397b55da97b91faf37642677338a8e32870aa460182135ea66ff04da7163c"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/lld-23.1.3"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "aefc96db0a3c6afc19751c384c187383fb1c091d02f8f0aa515f98aa7f33dfa2"
   end
 
   depends_on "cmake" => :build

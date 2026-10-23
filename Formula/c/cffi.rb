@@ -8,11 +8,9 @@ class Cffi < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d7c98c069644a0a61555205409542723624b98fd473b0fdae3df49d9e7b78812"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d2ccf2a7ad2dbb4ec3aa9339f53e8463991ce0aea93aec9cebb8ad9c9489a7d0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "76737cff191bced920ad297428f4658c13a0217f8791d552fce896f6e6ed300f"
-    sha256                               arm64_linux:       "bae7d496b0188bbaa9d9bb011344615e43c08cfb81527b2530f4e51ff2e8a1b7"
-    sha256                               x86_64_linux:      "2e5107965cdd00ef524d9ddebfaefb3346ff0fdd944f879da6080bb414ac3246"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cffi-2.1.1_1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "58bece72f9671fa93904d0ebe7cb48c6e601c7a7bdf7cf2d07c7e39d2f67f96f"
   end
 
   depends_on "python@3.14" => [:build, :test]

@@ -7,12 +7,9 @@ class Tbb < Formula
   compatibility_version 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "6ae99a7c34b8c0a6cd72c3653dd512f8ad218a471075809b275098ad5f804de4"
-    sha256 cellar: :any, arm64_tahoe:       "5977af4c4c89fae7f009db5bd7d2135812f2c221292a807c647ab38a3bd304e0"
-    sha256 cellar: :any, arm64_sequoia:     "fd554cce2ad4eedac6dc6e3b02c7f5e8a747d11df848eb2ad4a7f45d07b8671a"
-    sha256 cellar: :any, arm64_linux:       "0fc12ed8515e5e018d90ff5e312c8060d41e89d0acc4760da7b0305b3e02120c"
-    sha256 cellar: :any, x86_64_linux:      "aa6c40cd2cdd30cc9943b294382a2bdb1cb241bcfca6521429f82a88da06b15e"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/tbb-2023.1.0"
+    rebuild 2
+    sha256 cellar: :any, sonoma: "586362f25ffb8e6e68547b2ca2940601b4f06bb7c592139cb41533f2282b391e"
   end
 
   depends_on "cmake" => :build

@@ -14,11 +14,9 @@ class Sdl3 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b852df14c75e5aa7250cb794a75a139009a10b4090773635f87c5550b04c6cc1"
-    sha256 cellar: :any, arm64_tahoe:       "0040e2deb33adb677f9ab1a0309e4a645a4bfdfb37e59bd6c3d4ed3ab4d0c814"
-    sha256 cellar: :any, arm64_sequoia:     "fa5228c04ab1c49370bd54162a2896d0e7c4033b1cf958bb2e02cc503c85d47c"
-    sha256 cellar: :any, arm64_linux:       "2d93e45eb2ccafdc456d5d9a60a7adf6d59ba5dba6bbc5ae7f6dc1879bcf7fe0"
-    sha256 cellar: :any, x86_64_linux:      "1a11f91522d9aca7b87fbc58f8627e9b87f9235551254f2d673da56e9e44bc9a"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/sdl3-3.4.18"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "d66c662eba6292d6042867112c6d448e1d1eae30cfb2773cdbb7afe5b2018273"
   end
 
   depends_on "cmake" => :build

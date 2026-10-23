@@ -7,11 +7,9 @@ class AwsCHttp < Formula
   compatibility_version 3
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "cbb0249c59129ff032416f2fdebb22c7d47b57f3d12a222924b7b2f33ddb5110"
-    sha256 cellar: :any, arm64_tahoe:       "e4d336f92e2029519c8ce45bb336dfcfe171aa3e051a1ef04ace339efd17f032"
-    sha256 cellar: :any, arm64_sequoia:     "185bc00f1e0a089119d9349eb2d8f439a4b68813d446b895199fc18aa9decc00"
-    sha256 cellar: :any, arm64_linux:       "b5854e9bad83b17c539a688fa208f864d990006e53595cb1e33b28de4c43aa8c"
-    sha256 cellar: :any, x86_64_linux:      "ba6c28eecdb8ee83c82f3eec42f2bc2e07b0d0d16b421da6092078c5a03c1578"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aws-c-http-1.1.1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "0ecec987dfa12a950ba84854973b667597ec80acefa60285df715a98e869ae93"
   end
 
   depends_on "cmake" => :build

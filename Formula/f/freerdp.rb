@@ -7,11 +7,9 @@ class Freerdp < Formula
   head "https://github.com/FreeRDP/FreeRDP.git", branch: "master"
 
   bottle do
-    sha256 arm64_golden_gate: "0aef4cfa585b774e24a7bc03a5db730be082c42daa35145d4a12c2bbb0dd3fc2"
-    sha256 arm64_tahoe:       "cfe9f2a888cd21533e4794d23e2e9998c9ab89c8e491b85bda2b465f91fe2f3b"
-    sha256 arm64_sequoia:     "fa2a36085a4ee4279d6a615b99a630382bf1b2dbaba288f55b0d02e59cfecfa3"
-    sha256 arm64_linux:       "24d129ada36fa8710a1ae25b42783be8806d930761898fc9ad4b27402e65313f"
-    sha256 x86_64_linux:      "d935cc0139f4c2835d186a47835f823f024395ba07bbd745f770043f68110366"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/freerdp-3.32.2"
+    rebuild 1
+    sha256 sonoma: "1b7f78405309eac993226f0dd0696f0aad0a7006dfe575f5d5ad9fbe089d6bf9"
   end
 
   depends_on "cmake" => :build

@@ -13,12 +13,9 @@ class NodeAT22 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "f372190c8b5af0a37babbade1e5730be523961b7513b9a0efdc65633a8223711"
-    sha256 cellar: :any, arm64_tahoe:       "728b0d030ea10fc6d2c6606e6851044326f55fe9e3402f3db2832ad8e53d581e"
-    sha256 cellar: :any, arm64_sequoia:     "4e37e9e3f45cd613a3617f5ed5029a92a3f5ed7906959bf6e86f1165e98d3e70"
-    sha256 cellar: :any, arm64_linux:       "3c2e6e718a6f0c3f53c66f0f50402eed23d5d46df4794895314a883675984e9b"
-    sha256 cellar: :any, x86_64_linux:      "c3e567704dcaed016b96e988bd7c83852cb5bd075d6ec573a1a14213c34f85a2"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/node@22-22.23.3_3"
+    rebuild 2
+    sha256 cellar: :any, sonoma: "0fa3d1e4987a9e5aae0192664d831a5f8e8c80cac4c05abc104364cacf745238"
   end
 
   keg_only :versioned_formula

@@ -21,11 +21,9 @@ class Tor < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "5de4b74220d7b580397d72b6073cdede10d309264ea1de6987508dace5ba484a"
-    sha256 arm64_tahoe:       "62e8888704102c7de35f1393214a4c3c5e773cd6c183110ac71b76fe3482bda5"
-    sha256 arm64_sequoia:     "53631721e4c090f076290c49c4b625b59fdf9db7726031b7926487051a432e90"
-    sha256 arm64_linux:       "2e100fac2e2eef88c3ae00284f10ec002061c37c25bfc83bfd0c237f8a2e04e7"
-    sha256 x86_64_linux:      "e5132992e18633cd5925438db8b1594d18e5331e0c1bd01eaa76a8fd5a09fc7a"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/tor-0.4.9.14_1"
+    rebuild 1
+    sha256 sonoma: "149afcaa7916b8b23b904f7c9065b4a530f61ec98ecbc909975fd767deed11f3"
   end
 
   depends_on "pkgconf" => :build

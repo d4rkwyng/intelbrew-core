@@ -15,11 +15,9 @@ class DockerCompose < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "70d879817d7ed5c4eeee7fa4ec757ec1adbc092068b099a738dfa27ab49a3857"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7bd222c5b72ae1e35b0f330083ce3541e1bc3b4256f87eb546f75a5293ea77c1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d0c45f7c6b7a1d21ac71732c6bb680a90dea7553184833a63f982af19366dc95"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "64e0ca10e635e5832677f707091bd03d69bd21a5b6762e22146b53e7acd50dce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f7e79e30510057735d6acd4d9707cf1ef2f2b0b493160d9a9241a6dc56929c21"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/docker-compose-5.6.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "1c718035546015ecd5c3ec55694e97e057d9192303f7e7aba6e0d022704d428a"
   end
 
   depends_on "go" => :build

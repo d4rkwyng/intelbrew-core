@@ -7,11 +7,9 @@ class Difftastic < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5578ee6094135d736ede1dd69a6017aad8ac8d63dc3ee0e0227e5a2fdd564a7c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c7f055b257d9555a8f43c79df32518dc4f23e68a6294a53418c0915bdebfe2e0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3a87d1b22ad38660211129051f6a3a33fa05528e26a1b4d80f9f7f5c7b41ad7f"
-    sha256 cellar: :any,                 arm64_linux:       "02cb64d0d56cf55db18d6ae838432b1bfa44552968682c1df8623b40d571a5ff"
-    sha256 cellar: :any,                 x86_64_linux:      "2af99f057a86b205a04c4c590ce481a3d22fa60aab4a1f388debc2bbf3c6cf7c"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/difftastic-0.71.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "bc309fbc692ebf709a25ccdfc3f3721d05f5cc94692e538a747f995abdac3547"
   end
 
   depends_on "rust" => :build

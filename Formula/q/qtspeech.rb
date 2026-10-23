@@ -18,11 +18,9 @@ class Qtspeech < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d2b90d48c9b2f0e5e000060c360d536088ea4220810efcc5105dc5a44f5a3d28"
-    sha256 cellar: :any, arm64_tahoe:       "9ddbb7fb6484edf036f581f4c4b1328b2216ae4cabe51073f9e58ada1d4693d2"
-    sha256 cellar: :any, arm64_sequoia:     "803df3b6612d164b97e482165bc614302b14b978b26ef79c5038ae9330088f16"
-    sha256 cellar: :any, arm64_linux:       "256b4ed578df4f93fe1f1885bd1b431bc8e45c011e658b8144dea50c60d8bb7e"
-    sha256 cellar: :any, x86_64_linux:      "2fb06bc281c97ea967160b21d3195bf2b24026f474c9ad5663acca6befd00ce3"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/qtspeech-6.12.0_1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "88f516fcd8e030a0a373319badd3d300f7ebb00de523f3727476eb8aed1e0862"
   end
 
   depends_on "cmake" => [:build, :test]

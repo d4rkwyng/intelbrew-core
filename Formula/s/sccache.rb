@@ -13,11 +13,9 @@ class Sccache < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7514e04791a2ecb52bde6e36dc0887114b832823c74a2467b7be76f7f5fa57e4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0ec8671683abb532a52c1d785a6c8bdcb96d8686bbb3de4406c5bd20450830a7"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d243d7a06840bceddbb132ccd112543602247b7983004043db760a4ad43a4f8f"
-    sha256 cellar: :any,                 arm64_linux:       "720b3cccdc0f75aa4bbc210c59c43bc2b112cf0d98f69ba84fecbd7dfc62f38c"
-    sha256 cellar: :any,                 x86_64_linux:      "f5ff4ed8fb405a2cd01f6aca6c98f6042c94c9b1e9eb418cd74e896dd948799a"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/sccache-0.18.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "fcc51cfa199f6e252290326a5def14fba03754239e19587597dd30cf6c2cb144"
   end
 
   depends_on "pkgconf" => :build

@@ -9,11 +9,9 @@ class Cryptography < Formula
   head "https://github.com/pyca/cryptography.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e418279b26e607bfb4512bc15c31e551e228b015becb407e548e9c6d868fb2bf"
-    sha256 cellar: :any, arm64_tahoe:       "d79b516ffa80d7a8d12da5b3ff55fc6c1b029ec6f424e8525c6d32836c27516d"
-    sha256 cellar: :any, arm64_sequoia:     "6ba0ff5affb3b1780347d85fe626a18954fd67ef9d3bc40ede1d0d1645d0e640"
-    sha256 cellar: :any, arm64_linux:       "bf8b722462f50b45ad778e496bf0df5f1e8ad402968727f50f723a00e15274f6"
-    sha256 cellar: :any, x86_64_linux:      "9cbb611577a88bfebc5751fdfad7f109b1e6bcf040b3a4d008c07d7c5ca3be0d"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cryptography-50.0.2_2"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "b45735fdc4dcbaf0feb449b3599ea81acfe1752949be7e5e095a68df11d21ff7"
   end
 
   depends_on "maturin" => :build

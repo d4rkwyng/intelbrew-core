@@ -7,11 +7,9 @@ class Libx11 < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_golden_gate: "f16e804d426ea8b43df43c0a6207a106a342b35275e5c061ec8f89ad032140a1"
-    sha256 arm64_tahoe:       "38fbafb4e0ff48cf924f110e1e11442df06091298dfce50b82866dcb7355cb1b"
-    sha256 arm64_sequoia:     "fdc6503c67fb5814bf7de665629b8dbda0807eda7b07d3c2668807768b4ae103"
-    sha256 arm64_linux:       "4fee0a56737a4d2f402edaa3e4b762c45766790c2903899a9a062f3e081b8d19"
-    sha256 x86_64_linux:      "f45a8c9534486b9537d4be52ac32b0742f72d7faf485b99e0f089f07803be224"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libx11-1.8.14"
+    rebuild 1
+    sha256 sonoma: "cccd366e21931440e3042f41cdcb69eb0de77166dd8d9250dc62bf2d48167e29"
   end
 
   depends_on "pkgconf" => :build

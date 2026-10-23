@@ -18,11 +18,9 @@ class Qtgraphs < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3b9b72dc57fc0389c797526bde9201ed9999dfbf134dcf6227511304a7d621a8"
-    sha256 cellar: :any, arm64_tahoe:       "3a6694fc51a6b9de788bb4a1cea1057115a29473c02e110b3f9d1aed0c271cdf"
-    sha256 cellar: :any, arm64_sequoia:     "b4b744cdced50cbf055ff3b00f6e46bc55821e27a5f2e70108c4b8f357d265f2"
-    sha256 cellar: :any, arm64_linux:       "2a9933d40958ec4f929f6e599d3c5fb351ab3cce63e78f72da3566a7ee1811db"
-    sha256 cellar: :any, x86_64_linux:      "b86c04fe471e4b10788208a0bb5b404f2abec8716a0325b4023f2b9c509f52ae"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/qtgraphs-6.12.0_1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "9d74716a0e294805799acde8d5035d43e7dec44deca941959939e0f932d34b90"
   end
 
   depends_on "cmake" => [:build, :test]

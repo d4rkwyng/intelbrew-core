@@ -7,12 +7,9 @@ class Subversion < Formula
   license "Apache-2.0"
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "e57dec28a5f11bcf11f8ba204a4067dd831097ce3087fae3d621756b670dd48a"
-    sha256 arm64_tahoe:       "33e911ec83ea6db1147065875c787523253c281340ab5c83536a4d105c9d6f3c"
-    sha256 arm64_sequoia:     "560f093e7676d74f8f503463c870706b28ec109cb8980ce6e818306aceb55aa2"
-    sha256 arm64_linux:       "dd6488e77bc63167748bef73f18ecb415118e13f6662d8ec73fa5da2bdef29f8"
-    sha256 x86_64_linux:      "bb1b3c72ad3a545d05f9b1674b4a822177675e2a32909254460ac5ff570a9f7e"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/subversion-1.15.0"
+    rebuild 2
+    sha256 sonoma: "f533bc440c7dcb334d49c6ea4a75bf6651c5d62ac8ce91155a6ac9720aa56c41"
   end
 
   head do

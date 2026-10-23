@@ -12,12 +12,9 @@ class LlvmAT22 < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256               arm64_golden_gate: "32e35983ae6beb784c946e102f65cd2d361769469643c526409b7d63030a53ee"
-    sha256               arm64_tahoe:       "c115c8e72a294c14a8d6df324ae6441a4b9aa854f5724d61f7f2bc012698fad7"
-    sha256               arm64_sequoia:     "ef30cfb83459becc660e3ed83c851fdc6c6c9cf7f57e04fb431d2ce732c2c128"
-    sha256 cellar: :any, arm64_linux:       "cb5f6c3116153c2855eb1142cf9d40c6c5370a393cb9b6cd47bc3a3aff1fb3ae"
-    sha256 cellar: :any, x86_64_linux:      "bb067a2202b8ef52070a4e6ac6f725d27f859fa3c0f445eb915cffbddd4dbb84"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/llvm@22-22.1.8"
+    rebuild 4
+    sha256 cellar: :any, sonoma: "95561fcfa9bdb5cc5844a1e5cf4108a6d5553ad606b2412d1c2d1bce57a670c2"
   end
 
   keg_only :versioned_formula

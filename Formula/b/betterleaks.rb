@@ -7,11 +7,9 @@ class Betterleaks < Formula
   head "https://github.com/betterleaks/betterleaks.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "fb03dba8d08785b64704076585c0eed7756e173dcd85a0e844292817d908bdd5"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "fb03dba8d08785b64704076585c0eed7756e173dcd85a0e844292817d908bdd5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fb03dba8d08785b64704076585c0eed7756e173dcd85a0e844292817d908bdd5"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "83f7406a02fb62c625fd66d459de6cb3e1de3d583b5112f64573d5085969c272"
-    sha256 cellar: :any,                 x86_64_linux:      "18e50926602c8e7ad5cdcebef124de4bad1f300a1ff92c6f1fac7c2cd0f6b9da"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/betterleaks-1.9.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "960684491f765f77d6cb35843286f23869987d0a40a936129eb40abfa678b828"
   end
 
   depends_on "go" => :build

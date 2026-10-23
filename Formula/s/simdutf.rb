@@ -13,11 +13,9 @@ class Simdutf < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2f2f09ccee21e6b73a3c2a6d37a4228a1a26fdd2904d63f3bf59bfbab5e2428b"
-    sha256 cellar: :any, arm64_tahoe:       "d5d3c3cc35bcca3961ff5ad2515c84fc3310e8d69bb047a9403d97b8b919ce2c"
-    sha256 cellar: :any, arm64_sequoia:     "f9e43522d4d1993441aa14a7ddf9aa303bd85f9f5993fcdfd84af681052a4ae3"
-    sha256 cellar: :any, arm64_linux:       "552cfd43ccbfe02710b8d8d303c8f2260aa3b84cf63e03422d5a3f444102cabe"
-    sha256 cellar: :any, x86_64_linux:      "cb8505d258329c509158f75f64bbb36bdccd75af12b894cd207ab06dbd49ca21"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/simdutf-9.3.2"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "6e5e69a3a037058e2dfe4330b3f0c81ca66b0d3801d819830254c3bc32f9bb46"
   end
 
   depends_on "aklomp-base64" => :build

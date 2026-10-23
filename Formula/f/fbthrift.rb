@@ -1,18 +1,15 @@
 class Fbthrift < Formula
   desc "Facebook's branch of Apache Thrift, including a new C++ server"
   homepage "https://github.com/facebook/fbthrift"
-  url "https://github.com/facebook/fbthrift/archive/refs/tags/v2026.10.12.00.tar.gz"
-  sha256 "dfe1452847799b9c4e4b5993d1ae7f0aa5f680b3b7671642e72a3a2f689105fe"
+  url "https://github.com/facebook/fbthrift/archive/refs/tags/v2026.10.19.00.tar.gz"
+  sha256 "51fe01005b3c82294310a398086425262707b410cd8d2b0238de38cd426dc105"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/facebook/fbthrift.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "877e2e62828420adc0addaeae2264bbd1cf4426628d6d42dc52195e5a7495a6e"
-    sha256 cellar: :any, arm64_tahoe:       "a9a36e208416e55f12e64de8b868e9b19f0cc5bee56489d9c01c766ad4030b49"
-    sha256 cellar: :any, arm64_sequoia:     "57efee7fae9e296aa2a848997acb15be61357ee1334dfb79e33f3162cf5fbae3"
-    sha256 cellar: :any, arm64_linux:       "eae11366095d279a927893effe9e9541e5822789449819d107608f5ddc4612a9"
-    sha256 cellar: :any, x86_64_linux:      "f021ec11534ff919aaf459dc02e85225c2b4735ac0bda16ea3b2363190f017f6"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/fbthrift-2026.10.19.00"
+    sha256 cellar: :any, sonoma: "8750904f48c88544e516336a16a00d58e0488e6dd98b9b5d1f9ffc65c6f8037f"
   end
 
   depends_on "bison" => :build # Needs Bison 3.1+
@@ -36,6 +33,8 @@ class Fbthrift < Formula
     depends_on "boost"
     depends_on "zlib-ng-compat"
   end
+
+  conflicts_with "thrift", because: "both install `thrift` binaries"
 
   def install
     # Work around build failure with Xcode 16

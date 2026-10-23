@@ -14,11 +14,9 @@ class Openldap < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "14db7870f2249738029a8ad3fccf76028b9bc6db7dacde756edfae6734ec020e"
-    sha256 arm64_tahoe:       "1c976928f9b9091e0588a9367cefdd8be14ba0ec42d29f9deb4f4a889699da97"
-    sha256 arm64_sequoia:     "03bcbc4d521f23a2941917039345cd72fc2a8b663b54e2bae28c006622f904f9"
-    sha256 arm64_linux:       "9c973378895f21d3b3560b4517c426a21a85aa15b01977ee5956d498e2b8d1a8"
-    sha256 x86_64_linux:      "79191466b270dd3b1cff215db9fc2f1859e044ee5d8a9e2d0a770cb82e870630"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/openldap-2.7.1_1"
+    rebuild 1
+    sha256 sonoma: "46a7a7660eaebd65511443e0199a42e8501e583f984238cdf5049bb2cfb0b9a6"
   end
 
   keg_only :provided_by_macos

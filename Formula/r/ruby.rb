@@ -30,11 +30,9 @@ class Ruby < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "42c252a757b8794b20229dc2f3d4b642bc5c7b293c1e454068047316daf99b70"
-    sha256 arm64_tahoe:       "c5f5264f6b1484a038cfdf0fc444348adc36f8588c11ecfe1dbbeba37b3d426a"
-    sha256 arm64_sequoia:     "b65a871b19ebcedb14e1ba06a3f365f09f3573a56fc2daf5aa413dbb79ef18f9"
-    sha256 arm64_linux:       "0adcca64574f55a9504aaf05f24dc923d67534f590b9ea4a774d9b14e29f345a"
-    sha256 x86_64_linux:      "712b24ac5b6a081e3d0ae59861b0dfdf2586562367bac34876a1b396fccfc8f5"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ruby-4.0.7_1"
+    rebuild 1
+    sha256 sonoma: "69e3e12c0b9ff215c7f76f2bf007f934f64c1627f97e0e32f55f02e617db8ce1"
   end
 
   head do

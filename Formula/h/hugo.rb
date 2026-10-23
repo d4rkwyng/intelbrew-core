@@ -12,11 +12,9 @@ class Hugo < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "28d739b37e6a0f8e164a26b8c4f97a11e486a878698e3a93f3710caf9eb29929"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "4a3e5ea5f9d2bcb3a53de8e653336071bdfce83a98f8249925f61ef906a97cbd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "045eb666297b94bdaeb10e1b230199fe2e02fa047b127cd569978e26df2fb321"
-    sha256 cellar: :any,                 arm64_linux:       "be39811fef5a418dd10df0b36bf75bb213673a5c8a6d0db18276fc0628248ddf"
-    sha256 cellar: :any,                 x86_64_linux:      "23ea9272eff90d0538d45eff0f780d0655583e6a7c18c7cd0b21bcd5b8ea6a1b"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/hugo-0.168.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "6bd55c4f5a3323405910af398d09691979f7cb11b2ddecd819c0aedaa8e14472"
   end
 
   depends_on "go" => :build

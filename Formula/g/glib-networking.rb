@@ -14,11 +14,9 @@ class GlibNetworking < Formula
   end
 
   bottle do
-    sha256               arm64_golden_gate: "da4332ddddfe5a14ca664b4b851622c6e74899e1c7ec2ceab51017b7628b037a"
-    sha256               arm64_tahoe:       "06c8af940e885e2b499184444d4fd98c7e343ba1dd80ae4c1bcc0e85963d3eb9"
-    sha256               arm64_sequoia:     "9d437295eb3e4af595b0f3722d2733e9659ee764db9fa275004a0b29282112ce"
-    sha256 cellar: :any, arm64_linux:       "716a983f9c64c1f5901754aa2962c53d284ae859ddd3e9ab3822324e59a9a479"
-    sha256 cellar: :any, x86_64_linux:      "4cb5837be1c35bf7b2f59414e67465425f96efa3019b78639fc06543bca4bd1c"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/glib-networking-2.90.0"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "c7d0d97e6c6e534f6651409e13b964c321abc23fdecdf1415f4d6abfa954d7da"
   end
 
   depends_on "meson" => :build

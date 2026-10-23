@@ -8,11 +8,9 @@ class ProtobufC < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "85448989d575d6446049b55ceb00e124fe10926a7e821260267751e46f40e6fa"
-    sha256 cellar: :any, arm64_tahoe:       "5e0c76470b2d4a38b1da787b4c4c4f8068777fe539ba246671c430caa2b4944b"
-    sha256 cellar: :any, arm64_sequoia:     "69edb8458f7665eebf89cbd4a17a5440da7916d395301b8daef1d0495fb1d6c3"
-    sha256               arm64_linux:       "31130879b840f0b5d44b5b11704c248198e752378ba49113c0148edecf0c4d2d"
-    sha256               x86_64_linux:      "209741c1388b065927085210e42586dffd273107b5d577b7373cefaf8d661dc4"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/protobuf-c-1.5.2_20"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "e37468e6329802f98e96f1f27629d5c7bf781555b030918ecf991610e7c1bdbf"
   end
 
   head do

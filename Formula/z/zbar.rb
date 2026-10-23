@@ -12,11 +12,9 @@ class Zbar < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "132f6bdf33f253a14d4d49e44105a53169559aaebdc10025c158eefcb78f713a"
-    sha256 arm64_tahoe:       "9e4d77a11224eb74d0f3d8cbce1d4ecebe060530a8d93f42b4e33675d18a12c1"
-    sha256 arm64_sequoia:     "a98b49716c7fa998cf58003f1cd31fd7d1a8345cf8bf8f9958fdce10e56cfcbe"
-    sha256 arm64_linux:       "562b4bcff0f99072f99fc88c0d49784c6fe49f2178d40c171ae563f0ba260bce"
-    sha256 x86_64_linux:      "34596c45dc26eb4cae6e6d50e6f8ebf8eb8e7292cc8619b0b6274a075495904b"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/zbar-0.23.95"
+    rebuild 1
+    sha256 sonoma: "4201059d665d16d7a0fa8c694f688add479b5e32b4fcbf8a9013678e2c4159b8"
   end
 
   depends_on "gettext" => :build

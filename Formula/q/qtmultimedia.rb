@@ -22,11 +22,9 @@ class Qtmultimedia < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4faf4cbe2cf29955823b1ea917ed787040c38a4c0c03bccb5f1a0b31dbe21ecb"
-    sha256 cellar: :any, arm64_tahoe:       "5442c1ba479b6b589d98c3429db5b03c6358fb136cd063e355edfc845cb9a76c"
-    sha256 cellar: :any, arm64_sequoia:     "cbe62faafd224dcf14272c815da062d05c8d881740b4cd08f9ec9e6266eef347"
-    sha256 cellar: :any, arm64_linux:       "8c1d8b0a8a386451f3aa4e36fe58f42dfe604771141f7d5736c6f4a05769e1ce"
-    sha256 cellar: :any, x86_64_linux:      "03734555e3a78307d9ede6b2e6479b37018c476c6c5ce7aeb4afe9a4be820935"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/qtmultimedia-6.12.0_1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "c91742e215dee47fff11e25dfedb1a628c766bf4f99751179ba734209493e0c6"
   end
 
   depends_on "cmake" => [:build, :test]

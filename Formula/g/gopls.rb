@@ -13,11 +13,9 @@ class Gopls < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7ed5cfdb5abc77788ba91e6018d9e301e3327100cc6d305c2f60106596082956"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7ed5cfdb5abc77788ba91e6018d9e301e3327100cc6d305c2f60106596082956"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7ed5cfdb5abc77788ba91e6018d9e301e3327100cc6d305c2f60106596082956"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7b545ef49ab6628823fbf04915e3e968d49e25a19265d0fd477024b42e945892"
-    sha256 cellar: :any,                 x86_64_linux:      "c44a6ed56a2d34391cd262b6b27596fbe20b1e59ec02d2e02f3f5c99afc6639a"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/gopls-0.24.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "2727f77c993f51c209cac07cf7cf16f99734d716841104430e8416a698fea8d4"
   end
 
   depends_on "go" => :build

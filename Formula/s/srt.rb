@@ -14,11 +14,9 @@ class Srt < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6d0783ae84caebbe1c8bd9204bf782b09c6a9cd1ecd579285b8ba2f39cf0d256"
-    sha256 cellar: :any, arm64_tahoe:       "def16cad7b4d1d7a2e498b9e46e59798612130e9170af096e60ee9e642737e24"
-    sha256 cellar: :any, arm64_sequoia:     "49961e6bb35fb555930142ccea104dacd22cc0d4de367741f6539ebe83a3624b"
-    sha256 cellar: :any, arm64_linux:       "2b49c5c88630415a538bc72d2a3c532970211cd6e194a838c523247b8b1705bd"
-    sha256 cellar: :any, x86_64_linux:      "5b4afd851b7cf690f24abcf4fe36237492351f35ae8a23d1660c73a91477e822"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/srt-1.5.7_1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "a98eb53f8b1966b6dac833857e291d8c0994c2450f780a021875aa0fd085fb0c"
   end
 
   depends_on "cmake" => :build

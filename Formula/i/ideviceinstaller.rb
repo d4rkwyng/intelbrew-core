@@ -8,11 +8,9 @@ class Ideviceinstaller < Formula
   head "https://github.com/libimobiledevice/ideviceinstaller.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "783a52cd63a8bd83da70629412867b42951c032ab636a3e30c1623c3d9c6d68c"
-    sha256 cellar: :any, arm64_tahoe:       "cba84b18352c707bb4534a221338c05b19a24998de67e3320c8d175c185ddbb4"
-    sha256 cellar: :any, arm64_sequoia:     "2f2b9109bfa4982df1cd3e130ba6db7ff539a9c943811b33145b3638effb78f2"
-    sha256 cellar: :any, arm64_linux:       "0595c695d0ba36875661388078864451a7c5afbd6acb680384b1442bc75b7bd0"
-    sha256 cellar: :any, x86_64_linux:      "8390ecac85f7899e901d45f2acd5bf23fb6660bc6f5d04db02d81af89f53c76d"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ideviceinstaller-1.2.0_1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "f711bf78cb6613b633ecbe29ac12a59c55a83ca57a1a6d470032ddfe3428d001"
   end
 
   depends_on "autoconf" => :build

@@ -14,11 +14,9 @@ class SpirvTools < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "be9c608d9d4062e661bf54c48df8eefcda66503655a68bcf251621eb4b4592d3"
-    sha256 cellar: :any, arm64_tahoe:       "f1b075c2a107e314872144082b0ae49c18c15d7002e818fb60fe62f2d1c72e5a"
-    sha256 cellar: :any, arm64_sequoia:     "bb9db0cc79ff0ac541fb4324840527101fb7f57dce9a8c43d92b9252ab12983a"
-    sha256 cellar: :any, arm64_linux:       "df8588d02e23b70111c93e2d015eee5fae1b2b0bcb811814871f5ed7532a9cb5"
-    sha256 cellar: :any, x86_64_linux:      "bd6916b758897be4fa710c214736c83fc46697ea425fdb118cf597b31c4e2a92"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/spirv-tools-1.4.363.0"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "f926c9d7a191d06a9750e105017dc65ca6616b018dc2138073aed9eb20aaa35f"
   end
 
   depends_on "cmake" => :build

@@ -7,11 +7,9 @@ class Libheif < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "7562bb568622d009107daafce5aa140f80f61692dddad7b79dac8951baba5af6"
-    sha256 cellar: :any, arm64_tahoe:       "10e52047c5f3d701368456964520a016fc30bc633e0d38d3ba8fc0431cc0f6ab"
-    sha256 cellar: :any, arm64_sequoia:     "4ac1617f3656072e0ece7eccfd5b863108156aa149fc18a536141297faa9b208"
-    sha256 cellar: :any, arm64_linux:       "3dc278cae7aa1b201edb0a960b11f1914c7d8ba12d5721aab45bc67ce2ebbdc4"
-    sha256 cellar: :any, x86_64_linux:      "3511f756dfb6a3f1b60dc563fb487ac38a9863b7dd087cf911096e86f799f98d"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libheif-1.23.6"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "a1946fd2a1f0e6e6dd0e4f18d1ec7d657021b527f6b77a0a6916c4fdff8278e8"
   end
 
   depends_on "cmake" => :build

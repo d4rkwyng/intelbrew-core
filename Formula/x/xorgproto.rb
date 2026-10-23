@@ -12,11 +12,9 @@ class Xorgproto < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8327b24ee8a0d4b3cd9dfb6d49eb20a80484c0f25535be6e726d1b908f444514"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8327b24ee8a0d4b3cd9dfb6d49eb20a80484c0f25535be6e726d1b908f444514"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8327b24ee8a0d4b3cd9dfb6d49eb20a80484c0f25535be6e726d1b908f444514"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "14bbb72aa9d9a989ea94f21ca6b31f3f40b1fe337438bf1e9b5b318eb3131899"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "14bbb72aa9d9a989ea94f21ca6b31f3f40b1fe337438bf1e9b5b318eb3131899"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/xorgproto-2026.1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "2a9f8fd9d0a9146d65e0582d76d644b4568596819857d90a76c0da30a39d96eb"
   end
 
   depends_on "pkgconf" => [:build, :test]

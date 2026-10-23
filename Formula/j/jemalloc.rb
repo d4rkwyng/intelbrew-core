@@ -6,11 +6,9 @@ class Jemalloc < Formula
   license "BSD-2-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ebc856c594fac98560d03ee45b1a74dafc7564cfd1cc54223c717b8976697096"
-    sha256 cellar: :any, arm64_tahoe:       "2d6b12cd49be74b19e4fbae76ee7d7cb8b9556bbc3ee8a16a001742ab866675b"
-    sha256 cellar: :any, arm64_sequoia:     "100f278db6678ee5e3487e6e56c679759739195010755498d2c25d5f9013b6f9"
-    sha256 cellar: :any, arm64_linux:       "c7783f196bc57093dfbd6c1eb0a9c146b5cef2ae2cfabcf7d2972f3a4060a51a"
-    sha256 cellar: :any, x86_64_linux:      "6c66c4b42238fe1015bd74f76efdc03e9f745590c03502a237028a0c7fc05981"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/jemalloc-5.4.0"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "a054fc990959042dd35ae134bf76e3baa12516a2b45b78d9ee91434d0da730db"
   end
 
   head do

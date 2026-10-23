@@ -7,11 +7,9 @@ class Duckdb < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c6fb6195dfa596481c4ebfa6c547791f83b0ffc5f0c9879340879fa1064d633a"
-    sha256 cellar: :any, arm64_tahoe:       "d4f0f070fbc0a92f0f6f9c830297b8ea77780801778cb1ad60baac827b882020"
-    sha256 cellar: :any, arm64_sequoia:     "a4cd9788544dd8ec72e7d15dd028ba932620bd201d9660a8cf94f09f62809c1e"
-    sha256 cellar: :any, arm64_linux:       "5822de81ddb3d04ce1744a1fa0cb13992abad1d3ad697def53304c3c2cea04df"
-    sha256 cellar: :any, x86_64_linux:      "6a8b842001b7aa25eb9b749a132f82e7631b7c92aa6b02ad2075be44cc48fe0a"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/duckdb-1.5.6"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "a1a78952799481df88697b1bf84fe37455225ad22245d0c6f008c76696cbd366"
   end
 
   depends_on "cmake" => [:build, :test]

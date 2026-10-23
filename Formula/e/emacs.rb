@@ -9,12 +9,9 @@ class Emacs < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_golden_gate: "5e69cc44d20e2ec48437bec2b875e9665c86513eab0aec88ad0ab797d2e2cec5"
-    sha256 arm64_tahoe:       "94788c3c3a722d705b8d9c1be997082937c7d0dec2b55c2d041e31ecbe0e2444"
-    sha256 arm64_sequoia:     "c09a5cb576342b2b84c661335361746cf80e1ce79f90660a11112a726606fb10"
-    sha256 arm64_sonoma:      "31cd32fba7dfd4f5053f5bbe2e376735910a474635a1fe41f400bbc5b7326d20"
-    sha256 arm64_linux:       "57224b6cfe249ba96771bfcb889f84b44e51f8dc68af3c1d26eb31bc4057fbe5"
-    sha256 x86_64_linux:      "b030ab6c8cc2faf4182fbfd8f5dcd154527494272003467dbc7cc8e358bd7429"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/emacs-31.1_1"
+    rebuild 1
+    sha256 sonoma: "7b3ff2db247359f567d5a60f1e34f249bce962ac9bc4dee40d5016f0919c9100"
   end
 
   head do

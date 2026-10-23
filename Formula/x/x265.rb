@@ -8,12 +8,9 @@ class X265 < Formula
   head "https://github.com/Multicorewareinc/x265.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "df60f322e2ea139e4f3075fcf93e09d02249f183084d1ffa2d8f0cc9427de882"
-    sha256 cellar: :any, arm64_tahoe:       "46dd2b3656ec8e99438a789b627e41a25e3a24407dc76a3a6b88cf159b447858"
-    sha256 cellar: :any, arm64_sequoia:     "18e89a5822e2f4f91f919c5bf2fbac31433a561c48174fc15e13b4911a1232ac"
-    sha256 cellar: :any, arm64_linux:       "f30cc9469b596d98729aec68017e7a671d5cc5244e72314583bc6a08eec4a7a6"
-    sha256 cellar: :any, x86_64_linux:      "d9ce6c22591a7e62792420fafc0d717daa6e15ecf90d5ee58d8c8440f3408c31"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/x265-4.3"
+    rebuild 2
+    sha256 cellar: :any, sonoma: "7270b063d3d1fac0621633a65ac4c0c6c59f0c3a106e14808494bf9bbe981db5"
   end
 
   depends_on "cmake" => :build

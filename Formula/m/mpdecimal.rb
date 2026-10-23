@@ -12,13 +12,9 @@ class Mpdecimal < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "e60d12927c7dc7681c91784f2b2cbf9f779bc0a70599d552403403f89ea4e570"
-    sha256 cellar: :any, arm64_tahoe:       "9fa6ced040c13747f9b010f406453c14041659dfb496a791b949c163b8a413f5"
-    sha256 cellar: :any, arm64_sequoia:     "9e2dc44e47e91465c3cefa8969baa6af53a1ec339eda8443b18a30786147203e"
-    sha256 cellar: :any, arm64_sonoma:      "594c572777fc4e03ca32d1d2772a4ee69791373fb1eab6b9e673564f131d13e4"
-    sha256 cellar: :any, arm64_linux:       "49590f6b1d059b895496e768d9e13004b6fad8e66f1c446dc79a41802c16e482"
-    sha256 cellar: :any, x86_64_linux:      "d92d8706831c7dfa2fdd0f1a0d8548137a7ef325ae5c5a7f98fb5090182d6974"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mpdecimal-4.0.1"
+    rebuild 2
+    sha256 cellar: :any, sonoma: "81b3ed298944d60db242ba6d203b6859868ed0220d672ae5b1993534fe9c244f"
   end
 
   deny_network_access!

@@ -13,12 +13,9 @@ class Librist < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "c752266fb4814a60518c578a17fb741d637b3553c29880464ccae428af599181"
-    sha256 cellar: :any, arm64_tahoe:       "d53fe875d0331485ee81cf492045ba8cf5551e596299104fc428666bdd328a8d"
-    sha256 cellar: :any, arm64_sequoia:     "eb3efefc1292c5e105f3fa8e585d229a5cd9b853f97603acbbe26445faafe342"
-    sha256 cellar: :any, arm64_linux:       "301e312087c08d893a3f6fe428932d134059d10d6d1b25c9060f2f982e892bb2"
-    sha256 cellar: :any, x86_64_linux:      "0307064edb0c463e4c4fad1649dfd2de9eaf6faf1863a91fe6e45abf5e290564"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/librist-0.2.20"
+    rebuild 2
+    sha256 cellar: :any, sonoma: "d30a3c205b02b8931c61903bc1b4e2936922ab57a5d81070e944ed610a16a4e0"
   end
 
   depends_on "meson" => :build

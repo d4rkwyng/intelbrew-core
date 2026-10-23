@@ -32,11 +32,9 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e88aa2947bc6b57b425d8def81a279cf0410b2ded2ef460d067b7464a7e1d440"
-    sha256 cellar: :any, arm64_tahoe:       "37a199b3dc245c275400f32fb80ee8638b5b7b04e849d65c21411756098a0d58"
-    sha256 cellar: :any, arm64_sequoia:     "dc7bcc9876473c5dfe42ee56f9c3022f52bc99dc2ed21d62e69cdb19ba4ca53a"
-    sha256               arm64_linux:       "0d53e5688769b0c2f58c9ec10c01f72ffb825d54ff7a3d546fcd763eb40058af"
-    sha256               x86_64_linux:      "28aac1ab06797ccf316949d7768470adb536205b193ae337ae6ce7ad1aecf6e7"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/grpc-1.84.0_2"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "6f5cd4eecffc8032d2dfcfc06c4687091a500bdb9241132aafbbfe4d6bfe4552"
   end
 
   depends_on "cmake" => :build

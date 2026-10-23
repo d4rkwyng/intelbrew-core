@@ -22,11 +22,9 @@ class Opam < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "65aef9939bb8a7d25547e9d5997c6c02026e6bcec2e85b39560a690a64ebd8c9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "82d27fc543dfa4ba9c8724432511b325198626d1f314e4915e2d129d24598116"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d0588e2f9616926a171ba59287de00181b3a65aed3e5d185e97fa50ba26c7444"
-    sha256 cellar: :any,                 arm64_linux:       "dba1c12e1d41519f1e5ca1254a577959b7b802803ebd2c2391c2e93416ca26dc"
-    sha256 cellar: :any,                 x86_64_linux:      "81d90ec454f53c9dee1efb34af235bb1cb81659e4c7cfdcbd4b96cace23e1fcc"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/opam-2.6.1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "1ca26565e01d1b6d20da37a1c696a3ba9cf37574acd2d9d2bd4fdb4ef5211cb9"
   end
 
   depends_on "ocaml" => [:build, :test]

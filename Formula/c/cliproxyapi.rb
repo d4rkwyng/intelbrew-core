@@ -13,11 +13,9 @@ class Cliproxyapi < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "89b9f9d459cfcad9bd2d3ab17a311ca5507d6853ad74cc35b17279fc094ffeee"
-    sha256 arm64_tahoe:       "8e98d60d72b32dce37782c7e7c5d0f175e11825825220467b4ab6cc5c954ca46"
-    sha256 arm64_sequoia:     "a77a75667cac8b615260ebf300d57bb0cb2202105778207b7a22eb246766e4b8"
-    sha256 arm64_linux:       "386a97b4fbda1cea8af7e51843c9db1fdbc6874d8117e8a7b68c93e860257eef"
-    sha256 x86_64_linux:      "8d7547b58b2c92bca8d6b323d16e64bebf5036e46269d20bf7643c75ab83c1ab"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cliproxyapi-8.0.35"
+    rebuild 1
+    sha256 sonoma: "a8a19610fb2a29fe87fd5542d58a9f288a5e72dc6fa77ec81e55034beb1914fa"
   end
 
   depends_on "go" => :build

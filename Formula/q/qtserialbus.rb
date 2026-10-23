@@ -19,11 +19,9 @@ class Qtserialbus < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a161b39fe46416abb48c66601ab66b9a93172edf4ac430edd95eaa891a33f5e4"
-    sha256 cellar: :any, arm64_tahoe:       "8dc903baa16bd557615bb375d0686477e856a16aede6b641d4a9dfe1e3d72159"
-    sha256 cellar: :any, arm64_sequoia:     "d3f01cf7fbe46daa51bed40905ef0267b91a2ef703411f122db3049c21f5649c"
-    sha256 cellar: :any, arm64_linux:       "6a0342f22c0138a9ab53b11cd21b610301fcd1cceb7ead52c7ad06c7d78fef24"
-    sha256 cellar: :any, x86_64_linux:      "ca92c9b4d9c385a509a0724234e2306f327c70b79a3942feaaadcec081cca1e0"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/qtserialbus-6.12.0_1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "86622ebc70588ab4630bc5054648b31c3b4a43e09fe9d12570c7c00caedb9670"
   end
 
   depends_on "cmake" => [:build, :test]

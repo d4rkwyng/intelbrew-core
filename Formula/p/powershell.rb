@@ -13,11 +13,9 @@ class Powershell < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "7bf6f2d1bc50befa073cdf5bcead2594f8eaadd48f17cf794668348bb90999d3"
-    sha256 cellar: :any, arm64_tahoe:       "1c882f24e7475d950c7d681786b7f5938f9e18e4358d7822350cb2fb57ff221b"
-    sha256 cellar: :any, arm64_sequoia:     "0fdecd6ef2ca21cbf9886764ad13c1c9365dc08998666e4b37a3cd14c5035e87"
-    sha256 cellar: :any, arm64_linux:       "6db9e432696725ebd8fe979f61d0f8e705a4a5d9d1b0c37fe1d73811ea87c71c"
-    sha256 cellar: :any, x86_64_linux:      "3da854f2e49262843e169e3d7868a126c5c416a74953f68668876dbf266ee26c"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/powershell-7.6.7_1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "a842cc30f3940a60b78e774f929326f6131f3c312a45dd8fc671b65667d9d4ba"
   end
 
   depends_on "dotnet"

@@ -7,12 +7,9 @@ class Mosh < Formula
   revision 43
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "2a6fda6cadc30f71c946cdd175d673bac2a3a66da8defd0f59eaf74738e4388c"
-    sha256 cellar: :any, arm64_tahoe:       "bb486005805a4fddce729231b85fad256120c0851313a085d44843f2a6a6d3ec"
-    sha256 cellar: :any, arm64_sequoia:     "b1c2a786c156c761f2073900233edc9ca87b1d246dd7323c882736aa559ff45d"
-    sha256 cellar: :any, arm64_linux:       "fdcf721b9b2f4c67f4fc78d8244f3974e40bd544fe8bd1d672a2b782c64292e9"
-    sha256 cellar: :any, x86_64_linux:      "1341fb3a61915fd3d68bf70cd182f243d74db62d7bd9d94dc4914a8ce686f242"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mosh-1.4.0_43"
+    rebuild 2
+    sha256 cellar: :any, sonoma: "32f02b7b8f0015e454973df2eb00bdf9ff14b8b527b0fd8c20e9de749526650b"
   end
 
   head do

@@ -15,12 +15,9 @@ class Libnghttp2 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "e7831d3faded0432e9d0f73d59cb5434169e20e62dac22c548ed16f6f07f3740"
-    sha256 cellar: :any, arm64_tahoe:       "4f04e4a69e2c30443054c6214bf632df69a0d7c17d7fe58578f061a9cbc7f265"
-    sha256 cellar: :any, arm64_sequoia:     "2d1fba5839f4ed59e57791f9e06b84eb2203b5db274933865a68b50e66452a79"
-    sha256 cellar: :any, arm64_linux:       "0346df51eb2aec924a193a50f1d29e5497ba7c34736915e4b1692b19db3be2a4"
-    sha256 cellar: :any, x86_64_linux:      "11b7293ba21c47b1710b9dca99441be62aade771c9c135ef201129b2b0d859ab"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libnghttp2-1.70.0"
+    rebuild 2
+    sha256 cellar: :any, sonoma: "6886cdfbe4e21532485996c825526cb07acb734858abe050e8df52db85a34cdf"
   end
 
   head do

@@ -10,11 +10,9 @@ class Pydantic < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "2c2f0cddc55f80ce650282db79c4e5f540abd6518fb7c7d97dfd826b2fa83ef1"
-    sha256 cellar: :any, arm64_tahoe:       "004c996ed485a2965d841af3fbc432ec89276b2b663bf4dcec8aeaa8a77d24d3"
-    sha256 cellar: :any, arm64_sequoia:     "c8ed4119dd8f86c41abbf466174c0a293c3e1be601d6e912f73e6c27f34c8d53"
-    sha256 cellar: :any, arm64_linux:       "36ea152e4ce2e99f38c0440d646a602bf3002ef226cdda4df1e0216dfd7f67b3"
-    sha256 cellar: :any, x86_64_linux:      "a469052795a8cd7506a6991da892b3d247c0088ea335fff60dced2c082140023"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pydantic-2.14.1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "291ee383e04f2612b1081bc746b70be97bb23807a1ca6839ea1ffd7f84ed2fa2"
   end
 
   depends_on "maturin" => :build

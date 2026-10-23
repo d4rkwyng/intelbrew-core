@@ -36,11 +36,9 @@ class PhpAT83 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "eba2635220354807bb16e484e28ea7b1e1907bb2ff49919bb3e91eba23525a13"
-    sha256 arm64_tahoe:       "061282e5157c35d91c343a7d4e9bea13a116a488057f6ac23ddf3ee2124b737f"
-    sha256 arm64_sequoia:     "8cf917b82d501c01b15473216b4797fe1ea54437456e8c8dbed8a87fbef5d924"
-    sha256 arm64_linux:       "d2fbe70707e2e1426b1ac99680bd5cac2e2b06e07efa1c940c8674f970c73f02"
-    sha256 x86_64_linux:      "300e3eccec9a07c07bfbc5ee0e62b929c5067fcdf7ab4bdd076914c9f493e255"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/php@8.3-8.3.35_1"
+    rebuild 1
+    sha256 sonoma: "56e44bbfe6ac2bf91fdcf8f548e4399f07fbd44e65f1038e1be6a7be05f83596"
   end
 
   keg_only :versioned_formula

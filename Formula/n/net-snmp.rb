@@ -14,11 +14,9 @@ class NetSnmp < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "359759cc4d5243c1b00718b3a243f2628830dca23386cf01a1f88c14ec2d2f69"
-    sha256 arm64_tahoe:       "ea1257eafed4f0743dbd5ee1858711b162e5b9e222af987f67343eb638cb4551"
-    sha256 arm64_sequoia:     "d3fe01e57a8647bde0f85fb29e6584dd2bb5468e732583317e69532990844918"
-    sha256 arm64_linux:       "3092a0a9ddcd531672934f6c546c5b239d042132b7aee0ca290d9194e42b5245"
-    sha256 x86_64_linux:      "ca797f3ee39ab466a424eb17e3ae1a0a3a4a670392537c849f5b0c3cf061884c"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/net-snmp-5.9.5.2_2"
+    rebuild 1
+    sha256 sonoma: "05d7cb0b81ef02e842ef74af253b5a9c56c0d9231baafb04b6d522f92db91294"
   end
 
   keg_only :provided_by_macos

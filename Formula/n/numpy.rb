@@ -8,11 +8,9 @@ class Numpy < Formula
   head "https://github.com/numpy/numpy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "6b69c291d9739d9c80aaa486b90e474a89a7330f1248a2e814936807f982afef"
-    sha256 cellar: :any, arm64_tahoe:       "c93773d40bd5924082c8ccd73ed4b77cd7964adfe206012d4048b2509c7736ce"
-    sha256 cellar: :any, arm64_sequoia:     "dfa9717c4a2cf5016bc8668ea2d8bfd2e7c1833b0eb3c1d78e7d4cc0f49e6a30"
-    sha256 cellar: :any, arm64_linux:       "13474cf162913699e38679f58815acda75609d035a6b42c680b5c83f320d9725"
-    sha256 cellar: :any, x86_64_linux:      "3b643638f3a350f028253b3769e39fcef2401e95d22b1679239cb1e16c613b06"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/numpy-2.5.4"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "7140790c4e7b4b165b2a77b13cc524e1e5feb1d48d85f9fac422a40eac0b0dfe"
   end
 
   depends_on "gcc" => :build # for gfortran

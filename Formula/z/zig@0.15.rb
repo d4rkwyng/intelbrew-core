@@ -11,12 +11,9 @@ class ZigAT015 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "5d6f38219bd78bf111b00a640d4d6aadb75a480da61fa8ceb947a9ae61ef1eaf"
-    sha256 cellar: :any, arm64_tahoe:       "7bb95027a7c58e87b0849908d70acc21c52d457eff743804171e0ea51568d349"
-    sha256 cellar: :any, arm64_sequoia:     "6642afc23c2a5205fd0c05955d624ece59896d0841c675ea826c1ff7b2ef36c2"
-    sha256 cellar: :any, arm64_linux:       "87a486ef22d5d089d96056632350c2fb6b486a1c00d7ac89e54ecd4090df9fcb"
-    sha256 cellar: :any, x86_64_linux:      "00f3684955c20dee27f676290be00f5b5ed3ced66da204b1c775b6b74e00a905"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/zig@0.15-0.15.2"
+    rebuild 2
+    sha256 cellar: :any, sonoma: "7297a60ec408e850b0b50273c22389dc931f376ddb238048fb851c76134a3995"
   end
 
   keg_only :versioned_formula

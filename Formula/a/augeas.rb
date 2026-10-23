@@ -12,11 +12,9 @@ class Augeas < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "0d180f1a93cd2464603c0a730f8fd51376b91c7b7dca6dadb1727192c451c9f4"
-    sha256 arm64_tahoe:       "61dd4691f30717bdd7c167ae9bc8a0cd891abd6d154d02703999d5c81d7d7024"
-    sha256 arm64_sequoia:     "65f7b5c7977745dcda2563cf3a1b9ef4b0caaf38029e07f7dcde94fb65e39e18"
-    sha256 arm64_linux:       "a57543ee977b53fe019057aca40d5cf70002f48d8ab6f0ada3fdf4afbeee2eba"
-    sha256 x86_64_linux:      "ed14d3c8408f27d6da184b662b33c5cdf3c95e82937f1a181f12fd96f8fc4b5b"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/augeas-1.15.0"
+    rebuild 1
+    sha256 sonoma: "6bf5fd579767be0861a9e200019a9fbb22ef3d1c28ced94f6eaaa853b9033f74"
   end
 
   head do

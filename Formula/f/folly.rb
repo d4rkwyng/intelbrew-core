@@ -1,18 +1,15 @@
 class Folly < Formula
   desc "Collection of reusable C++ library artifacts developed at Facebook"
   homepage "https://github.com/facebook/folly"
-  url "https://github.com/facebook/folly/archive/refs/tags/v2026.10.12.00.tar.gz"
-  sha256 "95108eb46030a249326343a468c543bc0d1e5599a4f37e31f241501877fc0c8c"
+  url "https://github.com/facebook/folly/archive/refs/tags/v2026.10.19.00.tar.gz"
+  sha256 "b9e52ab77d48b9cf2ba7a64771f14d64873fb800ad0e6ef04022cd2a1ee6b8c6"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/facebook/folly.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "68178d1f6d0efd228aea97014d3c3a2abf0ece8582decba379108f9950de41f6"
-    sha256 cellar: :any, arm64_tahoe:       "45aaaf4eb65c63240a8b10a440d94f8bd356feef075547945b3f104440088613"
-    sha256 cellar: :any, arm64_sequoia:     "be91f7693006bee3ac649e594aefdb5a9dfabc9cdd1bb3fba30b8d8cc3b43dd0"
-    sha256 cellar: :any, arm64_linux:       "4a07099e9c72c480237e656e045c989bd935a5379f4f6a1632d77277cd6f4010"
-    sha256 cellar: :any, x86_64_linux:      "a3f523536b4ba3165a835f563fb02e47079460a9ba2f2615a569e35a932ceb68"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/folly-2026.10.19.00"
+    sha256 cellar: :any, sonoma: "b8d09df17ae25c8cc17faa21cd0f83872276b8c0e689c12e2cc11ea36ee1e835"
   end
 
   depends_on "cmake" => :build

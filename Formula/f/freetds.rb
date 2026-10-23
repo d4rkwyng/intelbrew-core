@@ -13,11 +13,9 @@ class Freetds < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "cab9c7bb5b3612f23e92022fd4669c34848e4d2fe85b1e8fba38c777e3462eab"
-    sha256 arm64_tahoe:       "dcb36b94451805b1fb5f114766ae22ad7088748d42510df31688becbe5378214"
-    sha256 arm64_sequoia:     "a2f7136be85c9197685c90cc8f65a537a093613aaef4ae87e33707d3f0cc7c32"
-    sha256 arm64_linux:       "318f9e88bc4bcfc00c9985ace0976ff7305511c8d79ce1d339a27626c65e539f"
-    sha256 x86_64_linux:      "d350e66fad5101a51f27ac20e5c216b9a9714740070c1dd41d141fa58d3493b2"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/freetds-1.5.19_1"
+    rebuild 1
+    sha256 sonoma: "78da50b43cdedf6c40104f34020f8e09fdeb422f96aa7c37e97ffaff0b000cbe"
   end
 
   head do

@@ -17,11 +17,9 @@ class Unbound < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "4a9fc55920383275a3ed5621582c26820a25a22d0ba3ea3ffa79e6ee50daa246"
-    sha256 arm64_tahoe:       "1f915777d85461ab2aff1904f95f777dbe482dbede274bc93d9a4518b1cf9045"
-    sha256 arm64_sequoia:     "dc8d4efc2e5695816450f87260f4b5f3ad26ba96dd03346416fd74a67f5f1b5e"
-    sha256 arm64_linux:       "f8caa9f61576e3b456c4c87c2a88a60057e350b33530422f2651ebb3b636e07f"
-    sha256 x86_64_linux:      "8fbb7713d0be57c9de16cccdd86583839d55ff2461985eaa3859e8f765d6aeea"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/unbound-1.26.1_1"
+    rebuild 1
+    sha256 sonoma: "9f619878e3735e7095526a80737f017b7c9833c14a453fb72d7ba3ed2ae3a16f"
   end
 
   depends_on "libevent"

@@ -34,11 +34,9 @@ class Krb5 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "678c05de46229f5b35631196808a7f6e4a32f9a18bc9574ec447f6c8290dfff7"
-    sha256 arm64_tahoe:       "8fc14b442b666d56a994cfddb47cd86071b6408905be70f10f7fcf668fc9e1cf"
-    sha256 arm64_sequoia:     "8bc2adf379fd6e0d0dd3bbe663effe87f625f25b9aa5a1bac71aef4b450ccc23"
-    sha256 arm64_linux:       "ac8557d7c89e6ee7e4d736baf925469fefe3837b1aa804623b0638a227f5567d"
-    sha256 x86_64_linux:      "587ada42216850382fedbfa4707b7aed405fb6934d8ed0650567a7a488162d1c"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/krb5-1.22.2_2"
+    rebuild 1
+    sha256 sonoma: "3defacf9c046fba61b54a7d86824c088c715d7cc1132c9fc31e5509bd7666f4a"
   end
 
   keg_only :provided_by_macos

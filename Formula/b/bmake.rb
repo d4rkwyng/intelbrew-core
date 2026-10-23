@@ -11,11 +11,9 @@ class Bmake < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "47a0576cf8407e0ddf40c9f4b2451390098d5b1c95fc6c7530990d487b5382cc"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "93f2a6f6db6d6fa92fa29472294bcf2d8bb358eae85bce25a3c7d80fc3c14956"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "aeb5e436cc198a498e1f90442eefa854ac2c46db20fced7bb0e1c9198b2f838d"
-    sha256                               arm64_linux:       "0ff638f07d03a31fe4ad471a955407c33cc4de360d9693e089208d7afd780a71"
-    sha256                               x86_64_linux:      "091dbce9cdb453409cb546dd26ef91771e4b68dea28e5fed5246904b31be3d09"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/bmake-20260912"
+    rebuild 1
+    sha256 sonoma: "6739780008c1db2e91cb7ca3e536f3f1943a6c3b52174e24a640a427aa8e3498"
   end
 
   uses_from_macos "bc-gh" => :build

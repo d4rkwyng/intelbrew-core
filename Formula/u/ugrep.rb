@@ -6,11 +6,9 @@ class Ugrep < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 arm64_golden_gate: "afe39938ff337878063ba14bad8e0d0fdb3d2f3a42320aeea53b90a3551ba5f7"
-    sha256 arm64_tahoe:       "f7d7552d1777de106c893f49f6ec792d69bcc9a8eac6af9dbd78df2cd678faa1"
-    sha256 arm64_sequoia:     "0f329a1b4bdc06c6775bc09bfe32a040929d957f367ef02198eaa8b58e1b9b03"
-    sha256 arm64_linux:       "3229016a379629da5236b569ada6c3bbdf20b86f71b703447f9d9bf497b2497c"
-    sha256 x86_64_linux:      "ee0050a426e74e01c03fe6d98f19da14c4a46cacfb2c9e862781ee6c997a46ac"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ugrep-7.8.5"
+    rebuild 1
+    sha256 sonoma: "580b56acdd1e0a0bcd23045f916255bf4c656705f61b524c5918a4b1ae44c470"
   end
 
   depends_on "brotli"

@@ -21,11 +21,9 @@ class Qtquick3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f75c1a997db86d38fcec286f175b2c59c739781602dcb484a5e8a4c42be1cee1"
-    sha256 cellar: :any, arm64_tahoe:       "23571d65a5d98da6ec2cbf2c9fa11f8792d247575f2574e2d01e3c9ec7ea6c93"
-    sha256 cellar: :any, arm64_sequoia:     "8070dd0ddee483be14185e43548f23d0a93f349baafde40045bee4c077b5f12d"
-    sha256 cellar: :any, arm64_linux:       "1363f38795472013723e7379a074e4506b700840f84de65bdfb4868eac0efd94"
-    sha256 cellar: :any, x86_64_linux:      "12f6a5eeda171cc476a504aa8b3d1093d409da0e2ac4c62f6d0628da1f46c0ed"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/qtquick3d-6.12.0_1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "9e56060913575608684e837b950eb107b8bff8c50e09c591c919a831534ad1d6"
   end
 
   depends_on "cmake" => [:build, :test]

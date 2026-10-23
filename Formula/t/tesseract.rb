@@ -13,12 +13,9 @@ class Tesseract < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "0059a0945a6d5ac2ef57b084eb2bf87666df0040d22a2ba8cf0448a3fd6b06a9"
-    sha256 arm64_tahoe:       "5dc22e82f5c9fe0c466830671388866626a076032e7569bbe6ff6d27f1271599"
-    sha256 arm64_sequoia:     "200b865fec2696d87c27a6273aaf2f870fd0796586ad695ac7b138d9db667f17"
-    sha256 arm64_linux:       "9075db5e294c636408738b0e4e7d9b848ee74736a4bec61ce7eef9257d32815c"
-    sha256 x86_64_linux:      "0aab2fc2d381eb44264e2368359fe514aa27f1e1400bec4e8d0de8de4f9641f0"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/tesseract-5.5.3"
+    rebuild 2
+    sha256 cellar: :any, sonoma: "abcca7a74a30cbf762d698e60f284f3230b8604986ab2ede7c3602ab86798323"
   end
 
   depends_on "autoconf" => :build

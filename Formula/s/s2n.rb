@@ -12,11 +12,9 @@ class S2n < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "06dafe9143c2a1d3968a71f6d5c4cf6fd674624a3dd8b6a65ac3dbe2591c4f35"
-    sha256 cellar: :any, arm64_tahoe:       "aca2486a3a6cd04d5bc5c1d2eeb390ed5a4c30627bf6fed1e5eaf2c8b67d5288"
-    sha256 cellar: :any, arm64_sequoia:     "f048624684cbc99232bfd72d7d716e3a3f2dcb83d15585f69a679b7b3b19bd5e"
-    sha256 cellar: :any, arm64_linux:       "e27d5f7bff188b2a9f8472e92295b4fc892bdd2a23043568e88f0925ec84260f"
-    sha256 cellar: :any, x86_64_linux:      "e505b00696d2d5a39bd7531a62526434452dfdc322b765e485afc73ccc7d0ef3"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/s2n-1.7.12"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "223dc4111fe7d6eb08f87fcd3c9fc5269cd1d456f28bf16dd5b2eac07596878f"
   end
 
   depends_on "cmake" => :build

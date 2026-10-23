@@ -19,11 +19,9 @@ class Qtvirtualkeyboard < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d929bb281f37dfab1a21e8c2b1fb90787d96650a921fcb372ea1b065b03ad4c0"
-    sha256 cellar: :any, arm64_tahoe:       "d345516e638ef95db5464ae5f592ab4b2399d0ef31680363aca2f5dbedc40bea"
-    sha256 cellar: :any, arm64_sequoia:     "cf4655ae02da9601d1d93f27f1cb4223de699bc6dda994dfbb0829bb72a1b837"
-    sha256 cellar: :any, arm64_linux:       "f8e9841102a710daf95395980aaff668ad5c51b1318ada8247cc01c6cdb57b01"
-    sha256 cellar: :any, x86_64_linux:      "18fc455af551f520a2559b2f61a4156df62e6ec1c3a5dc0164bf8e403eb637c7"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/qtvirtualkeyboard-6.12.0_1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "d57fbede4d5a6d4e0c73ab6f452bbd1186296e44d390484c6df47eaa895e8f2e"
   end
 
   depends_on "cmake" => :build

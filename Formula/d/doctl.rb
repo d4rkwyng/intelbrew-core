@@ -7,11 +7,9 @@ class Doctl < Formula
   head "https://github.com/digitalocean/doctl.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b580bd8e13dfe8258d3b8ca5ec6b7545d883bc879e9d13fd9c65c697507e98fd"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b580bd8e13dfe8258d3b8ca5ec6b7545d883bc879e9d13fd9c65c697507e98fd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b580bd8e13dfe8258d3b8ca5ec6b7545d883bc879e9d13fd9c65c697507e98fd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1d0983b7ebda3bb7a2a110065203fc3c37a9c9931f87624619afc4a7e120dad8"
-    sha256 cellar: :any,                 x86_64_linux:      "b33a122a54cb53bad56bcfad18e761770ec4f395419120300601e48a9db04a6d"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/doctl-2.0.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "86dd03a0340d8a43af510fc86a4fc94df3ec85e0a285c579728d60a2106a8b30"
   end
 
   depends_on "go" => :build

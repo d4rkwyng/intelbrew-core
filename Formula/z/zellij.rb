@@ -7,12 +7,9 @@ class Zellij < Formula
   head "https://github.com/zellij-org/zellij.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a2460fa78b67be61e0a59c1152d8301621e28b140f9f169ee29adc383f4e9feb"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0f8760dd189c3112e6b38e3301d3c32b32f4589f5cadecf68cd58463d6890900"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ca21c7b0ab1657a884659ce46bb44c7c641e80a60a41ab2cb5ce4fbc684b31d6"
-    sha256 cellar: :any,                 arm64_linux:       "64ea269de18832883e167a191f41d44eef25a5e4e8560e32931ea1107a0bcaba"
-    sha256 cellar: :any,                 x86_64_linux:      "921f6cb97b73d9b3d5b68066601f96979755e930a4a6db20e536e6207c75d60c"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/zellij-0.45.1"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, sonoma: "22ed6de735401b8876329c770c3509e0fd7ed9cce48b15a9fcbaa72b305f7567"
   end
 
   depends_on "rust" => :build

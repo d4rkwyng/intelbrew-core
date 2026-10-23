@@ -8,11 +8,9 @@ class AwsCCal < Formula
   compatibility_version 2
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4fe05862beb90cc62de65c114d28303e16b49784291033388deed1f962080e16"
-    sha256 cellar: :any, arm64_tahoe:       "b07ed49e2e61f65a1cf416669387dc582c6dfa254c639841220bac9be9e2ae8a"
-    sha256 cellar: :any, arm64_sequoia:     "f9aabf2cda22318de8d70e0eed3239885f7e9d8bc335096226ea88dd12bfa9e8"
-    sha256 cellar: :any, arm64_linux:       "69bb772ab91ce811dbe8a182ec4dc64ff5e8cdddd4731146f0a9e8812b29c12e"
-    sha256 cellar: :any, x86_64_linux:      "2671dffb067fe8702ee66e276c3419aba648b20aa8630e19271840eef8eb3aec"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aws-c-cal-1.0.0_1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "a7de8aeade7db2a9e4f1ed7f911d1c0e287db5d8b20a009bd75d82a8136d72ff"
   end
 
   depends_on "cmake" => :build

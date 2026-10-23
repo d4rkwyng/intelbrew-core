@@ -19,11 +19,9 @@ class Qt3d < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "ea8a51b7c696adba02f1be4e5c4e84b44965416e29e5a619516153c562f54813"
-    sha256 cellar: :any, arm64_tahoe:       "0ab93fd0a6448735eeb72d8bbc6c1d1c9e962dbcc2c2b4206d0986e798a04bc7"
-    sha256 cellar: :any, arm64_sequoia:     "fe7c4a922801af5a658764e45f97a785bc1d8ec597efbe268db2f61d88909500"
-    sha256 cellar: :any, arm64_linux:       "26af039492dd460fdc35e1e8c8aff5d9fb3c03b48ec1427f2f76ce4900c2c275"
-    sha256 cellar: :any, x86_64_linux:      "c7d3d305868ab95e2686c6b090fd61d7814d577ed8c1c6c6dcaf2fd6e4b929d5"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/qt3d-6.12.0_1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "cdceabfe10d52426658cc9dd1b4b6c9df63d4cc3153049f9af8a13c51f5975d3"
   end
 
   depends_on "cmake" => [:build, :test]

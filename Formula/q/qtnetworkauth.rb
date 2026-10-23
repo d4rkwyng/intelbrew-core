@@ -18,11 +18,9 @@ class Qtnetworkauth < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "166eebdb9b1f587f252c1ecf5bba11715080f6c2c9993c917ba9b647a1cc6e58"
-    sha256 cellar: :any, arm64_tahoe:       "0c8b19cccbf8a6024b83727cca865636f29207e94bc55d692311033055f960c6"
-    sha256 cellar: :any, arm64_sequoia:     "9c28e80a98532ce825b55d3afbb6615e654a931f8eb4e93b9ad60cac710dce19"
-    sha256 cellar: :any, arm64_linux:       "72c465c1048274465fd1829f5f8e4fee5947b3cf5676a08e978f21fd8dfaf831"
-    sha256 cellar: :any, x86_64_linux:      "31bc22b0969775e6a8cdfbcd0d4264edde853ae1854ae123575b7360b6675780"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/qtnetworkauth-6.12.0_1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "6fd83134307ead4055eb44ad7fbc3955da21b6b10e15d750ed97c54c2506a90c"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -15,12 +15,9 @@ class Cppcheck < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "bd7b079af9a1f52309e30673db29183b705a271c190a7c2af802f98de5c7c9bb"
-    sha256 arm64_tahoe:       "ea278ea54a1a81510bd4b8a1beae0d7c29793a697ca3819de9e24ba9b3fc30b1"
-    sha256 arm64_sequoia:     "dcf0b01f72efeb7099ff7b7e9071a7826521bcf463e1a359cc45c83cfa9388b5"
-    sha256 arm64_linux:       "a7a1caa586381b4be2c10a83c5477874197f8b6d1a2ce6b363dc35747018e6eb"
-    sha256 x86_64_linux:      "8b942f03106a04e63b0d9653b9cd819fde6ddc16a3333fa3ab135ed60a6499fc"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cppcheck-2.22.0"
+    rebuild 2
+    sha256 sonoma: "2ad36620b8a472ece0ba0c0524ea0bb3ec89217111fd79a3b2f73596e24db88d"
   end
 
   depends_on "cmake" => :build

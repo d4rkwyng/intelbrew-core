@@ -11,11 +11,9 @@ class CmakeDocs < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "eea27ef1d3c92eab5399c157399fd64184ea3498ff1cff25501d50f0d852a36b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "eea27ef1d3c92eab5399c157399fd64184ea3498ff1cff25501d50f0d852a36b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "eea27ef1d3c92eab5399c157399fd64184ea3498ff1cff25501d50f0d852a36b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "dfe8784f27d019dc56b04adce100911c6b5807e327debb44ede0467eec2bc87b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "dfe8784f27d019dc56b04adce100911c6b5807e327debb44ede0467eec2bc87b"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cmake-docs-4.4.4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "041c8d5f7f6ed4b640ed05ccbc914316fa4af55dec0e7decc897facfa3da45d0"
   end
 
   depends_on "cmake" => :build

@@ -13,11 +13,9 @@ class AwsSdkCpp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "637c767c401228446a8cd5d3317e81245074646440b299bd01092a36cc045194"
-    sha256 cellar: :any, arm64_tahoe:       "a02864cf17a4536c8e79e650b64aff6ba192d592790c98b7130a787546ad1fb2"
-    sha256 cellar: :any, arm64_sequoia:     "e55caea49928c8f86976d10d217906eedbc1612f79879c1633bd515c38198e87"
-    sha256 cellar: :any, arm64_linux:       "4fefb459da09c4f2e35ef288e81fd88f66fadabed0b01257a774d9be4e848ad7"
-    sha256 cellar: :any, x86_64_linux:      "ed71d874cc862566532e56c250cd4fd178667377803f5c5f4970f062a5d537b8"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aws-sdk-cpp-1.11.900_2"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "c082eed4d9dbf1b5641fd729cc9b1707c7771509e5cffc7b166fcd29f1699089"
   end
 
   depends_on "cmake" => :build

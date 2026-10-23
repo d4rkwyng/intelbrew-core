@@ -12,12 +12,9 @@ class Gpgme < Formula
   end
 
   bottle do
-    sha256               arm64_golden_gate: "a4c932fc348a7662f4d740342b51a714ad6e62309247f2e5916238db9875339c"
-    sha256               arm64_tahoe:       "c9e850e7f6254e826ea76b15d02825fe712cebad5ed54505ffea7feab5da12c3"
-    sha256               arm64_sequoia:     "1b998805d11e6020682577dd8b817e7ff771bac1d6e289c142f8b079308475b4"
-    sha256               arm64_sonoma:      "668db25027a3ce2fe6d755086fc8ee60cf33649fa68cbc86bc40e00efd528722"
-    sha256 cellar: :any, arm64_linux:       "9a3d9fad56efbfb22e2e6cf337282b7951dfd97237953e3e6fb5e2263ec99151"
-    sha256 cellar: :any, x86_64_linux:      "50b32ff4b366cb33d66508f530a1609e38bd0cbc66cf7cdbe2398d79658d6c18"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/gpgme-2.2.0"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "4049e5594a943d1323291ab864e8ef96471e3efe3af5b798066f25927cf5f402"
   end
 
   depends_on "gnupg"

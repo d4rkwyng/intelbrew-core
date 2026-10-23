@@ -14,11 +14,9 @@ class Pyenv < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d1148c7cc0808d0227e831de52dc0cc6b67ea663754486304e73f41e65184095"
-    sha256 cellar: :any, arm64_tahoe:       "3c4947ace401ebdd79c22c71fe56903a578c270327792b9d7cb378f4bc2962e0"
-    sha256 cellar: :any, arm64_sequoia:     "f0bcbae1a3ea3a2264f5cf08db0b08432c89ccd857c0622433f5bbc4636b215b"
-    sha256 cellar: :any, arm64_linux:       "7e4db771dd6995efec44c697418530fc2ed01e8df242106cd3d9156ff7cfbe99"
-    sha256 cellar: :any, x86_64_linux:      "d085708a1d4a0a899488fd343c6a32130d6f564fdb102a22a602ec06a381cf2d"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pyenv-2.8.10"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "5350e940320e926f6c5b68ef901bed4fd2fdfb31fb8721dcb84942b42935e0ac"
   end
 
   depends_on "autoconf"

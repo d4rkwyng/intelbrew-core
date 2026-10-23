@@ -7,11 +7,9 @@ class Libvmaf < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "962e5b553f735b609bc632da6da1dfa0774b4e84aeef8dce638b748a9aff2966"
-    sha256 cellar: :any, arm64_tahoe:       "703f56cd94ba6bb86ee1463bec792d8ad6f9841f67152fa6e93040b966bbf82f"
-    sha256 cellar: :any, arm64_sequoia:     "d3cf35724639ceb6d9d92ee25a7fa4953f7ff952dc4be90aa83eb006910248b4"
-    sha256 cellar: :any, arm64_linux:       "759d38fe01e34a9c0eef7c001a8431ddd87d139f7bdf4a9e34706c714214d8ea"
-    sha256 cellar: :any, x86_64_linux:      "f7c74f138725548feae2bc8478202bf23d6cf063da33f03e09f28043270b423b"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libvmaf-3.2.1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "76429f1e1751815badf100b7e063c7bbd348a95371bb5f5e14257ff13dea76d2"
   end
 
   depends_on "meson" => :build

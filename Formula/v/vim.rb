@@ -26,11 +26,9 @@ class Vim < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "9d0b8e809c003d03b25df2b5026bcf5413515748a02b8352418006b6a73dfba2"
-    sha256 arm64_tahoe:       "dfe81d0b41e90c9357dac0434c7003c64d7df9074bacb126b3fe2c999168d1e2"
-    sha256 arm64_sequoia:     "f247033dba10134e8e083e67e5269e7cda3f059c4a64542a78cc44b1e4072d99"
-    sha256 arm64_linux:       "c4c2d5cc180ccf749e89b7fc11bc04b4d019352bb0395b615238525654f60085"
-    sha256 x86_64_linux:      "9756bf2cf026f4f15fe3deba48ab5a07f83436c3b59ea12bcf51070d63d54e6a"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/vim-9.2.1200"
+    rebuild 1
+    sha256 sonoma: "93c7156e32f7ea64e1eab90447ebeb63d64a489a9bddc0e49003d7cd3897061d"
   end
 
   depends_on "gettext" => :build

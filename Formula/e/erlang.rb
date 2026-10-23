@@ -14,11 +14,9 @@ class Erlang < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "f807b638f16f07123342a19cf905248246300bf65f1ed047d396a9dd82851eb5"
-    sha256 cellar: :any, arm64_tahoe:       "2244796c84b6ebfddcb57c6646001b3e3ccbba8c8f352ad39c5b4b1d2d096408"
-    sha256 cellar: :any, arm64_sequoia:     "732171b86c7c850291711a2520750e519b59cd73a76436a5083b5164d78d4ef0"
-    sha256 cellar: :any, arm64_linux:       "67e4a61cb9cf1208ec20065cae87607d25055618b1328a858b522835fb7071b7"
-    sha256 cellar: :any, x86_64_linux:      "64a50a2392cb85141431560cf24dc8252b6a82eeb8d007d0aea7dc97dd098b75"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/erlang-29.1.2"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "4a2d35fc1ace7999a2e58f668efeb7cc1b2303002b6ffd59febe5c94d34365f6"
   end
 
   head do

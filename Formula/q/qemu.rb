@@ -13,11 +13,9 @@ class Qemu < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "a399faaf2f8fb45d3b1f35704041a9104f7f717e9fda1b12d4deac9e919d0d33"
-    sha256 arm64_tahoe:       "3651058eea3d9dce6a8c8745b763d55b5571da0de31a60eb501464f10af00195"
-    sha256 arm64_sequoia:     "ab7fc45b5fddc1a61b9cfd7a538753136f44051f1d4ffc32ea0f9037c04bb8df"
-    sha256 arm64_linux:       "5384f71ff89562d961f49c410d4ff413a6a66c901379c198725531dd4cde61c7"
-    sha256 x86_64_linux:      "830594116e8b47427c1c40576a48360b2b6541e65b5e079697fbc82303f776d6"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/qemu-11.1.2"
+    rebuild 1
+    sha256 sonoma: "c9afa154f1e20a5c61fb0f1b3e982e8eaa018e2956a5f70b94376eb80e4980d9"
   end
 
   depends_on "bison" => :build # >= 3.0

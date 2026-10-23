@@ -12,11 +12,9 @@ class Lazygit < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "db6a66ed7de3bcd899afeace9009710c73b6140247b9db397199b8aec67d6392"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "db6a66ed7de3bcd899afeace9009710c73b6140247b9db397199b8aec67d6392"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "db6a66ed7de3bcd899afeace9009710c73b6140247b9db397199b8aec67d6392"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "95609ee32af62e7e6a930f64cf27abc25b8361bd55986b0fb58d8d99ff2d3c13"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8710c6883bd73c4186591fe928cb4887f110d7df7ce76871ef1d332487cff705"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/lazygit-0.66.2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "e63bebabe28f2473a4640cb1ca63b1c4c217dd2439f6399ba90fe61fd48ca6ea"
   end
 
   depends_on "go" => :build

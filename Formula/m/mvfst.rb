@@ -1,18 +1,15 @@
 class Mvfst < Formula
   desc "QUIC transport protocol implementation"
   homepage "https://github.com/facebook/mvfst"
-  url "https://github.com/facebook/mvfst/archive/refs/tags/v2026.10.12.00.tar.gz"
-  sha256 "1efe557b12c8551756f0b89ee8d5f79e1d657e93404ac18e190b6bbbc1ab7cd2"
+  url "https://github.com/facebook/mvfst/archive/refs/tags/v2026.10.19.00.tar.gz"
+  sha256 "e3862b6680bd49d013b701d62d1f30b7dc83a3b8c9b7712613ef2208e0c399e2"
   license "MIT"
   compatibility_version 1
   head "https://github.com/facebook/mvfst.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "3bffe8b6d0136ad84c8302ec800b495353009003c9653afb7f223734acd5cc6e"
-    sha256 cellar: :any, arm64_tahoe:       "b5a2be438daa051a7812f653a2146943ec31c01203bf2d6f73fdbc8022df110f"
-    sha256 cellar: :any, arm64_sequoia:     "656865bf07768aeb3878ccd9c196b7740e95061b1e8d9cd818bcb0370f58fe9b"
-    sha256 cellar: :any, arm64_linux:       "179629ea51fc36334828990303a6fd32a6eeb75e8995401becb9841e929dcfdf"
-    sha256 cellar: :any, x86_64_linux:      "95ac18a7c33ee9f6d56d3ddd1e0d76fdbb33422576e60fda065014fbd73c20a2"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mvfst-2026.10.19.00"
+    sha256 cellar: :any, sonoma: "5ad7097066ce2bb61d6bc5bcf178ea4346ce133f0b9cfff6dfda8c1c40ef2e69"
   end
 
   depends_on "cmake" => [:build, :test]

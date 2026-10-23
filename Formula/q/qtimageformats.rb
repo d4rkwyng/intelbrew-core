@@ -17,11 +17,9 @@ class Qtimageformats < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c3bb1fbcb22b84c98229a39ba7e3db6d98bdb21a084a93a31c1d225ef49ffe3c"
-    sha256 cellar: :any, arm64_tahoe:       "bd485b9e112bbc4fde980efc51dac679db1c773ece989b3a881eb0d1c1b1360b"
-    sha256 cellar: :any, arm64_sequoia:     "6aa5b957ba3d1e64b4954774cd66178d620236244bc24727232c6f5fd61c66c0"
-    sha256 cellar: :any, arm64_linux:       "94883e48923a8aa726f3089788528457264d7732d3010bba9aa345ab2b33e3c2"
-    sha256 cellar: :any, x86_64_linux:      "7aecd067380bece0fecd3afcf062f571c63e05777b12c2971079fe6a1814a1d9"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/qtimageformats-6.12.0"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "14341d576e719ba22f2cdfa1a1b923239425b24f9cafff539ae0f4f719b6972a"
   end
 
   depends_on "cmake" => [:build, :test]

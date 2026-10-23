@@ -15,11 +15,9 @@ class Expat < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4a50b358e04b16445f2a98d4b59c0719979312ada31789bfabe72eeed58d75e1"
-    sha256 cellar: :any, arm64_tahoe:       "f27ca89ccc08943551e4e942652e5f30181905396dc002ac9adcda62a3b58596"
-    sha256 cellar: :any, arm64_sequoia:     "d73e74304e6f0d5b4c2e70a8703ac9d7381106428390a6239693e937b6ec203f"
-    sha256 cellar: :any, arm64_linux:       "493f93f144d62cd704af57ab25201756252e80af66309fe4b249c0a180926590"
-    sha256 cellar: :any, x86_64_linux:      "b8f1785877c07e5f126c85b9610660f56bb5919fdfc668bbd5869d238c435571"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/expat-2.9.0"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "d6bf0631923a15565859a11cf9a9e54f7c7aced11f6da4b7b5805cbe9833c464"
   end
 
   head do

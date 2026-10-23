@@ -38,11 +38,9 @@ class Php < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "32dfc97a1535aea910bc1cac203f81d0cd36ca6d4f1e4c05242a2472aaa7c5e9"
-    sha256 arm64_tahoe:       "fac8865a80dd44e9a6c8eb6708b04cd9bd6e99037b20d5150cdacaf97f409c92"
-    sha256 arm64_sequoia:     "6fabbcdfc1894863c11ed08a77cfa2f8cb459c1956080d0592f36fb61cf91b42"
-    sha256 arm64_linux:       "cb5fd6d08af3c02f2ebd77198173df109cecbb215b9c8be5c55aa53a2a432be2"
-    sha256 x86_64_linux:      "e3fd675279c47068eafb7b7c663b3575c7a71697a3d3c053b8b4f3e44420b5da"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/php-8.5.11_1"
+    rebuild 1
+    sha256 sonoma: "e6ef5a5e17922caa4da3e1550e5df982484f6ea33226022599d9bec6c89f81c4"
   end
 
   head do

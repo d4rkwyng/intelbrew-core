@@ -8,11 +8,9 @@ class GolangciLint < Formula
   head "https://github.com/golangci/golangci-lint.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2ec69931c249c758e5c5dc01e240d161ae3a69bffab90fd32be9640b14bde8ad"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "307c70daa7188049fa69662b254540e08f52f0b63eb7f63a33612598d7ab5b86"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4730cfe51fcf4973575a38c81f344a3df206f5bfeff4a46958d5af7850a9d02d"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "daffb2bfac39f4e691c0bfbbfb74b3558573dfe5e3ec7dddbd76a7ca510d7e63"
-    sha256 cellar: :any,                 x86_64_linux:      "eae202dc3e2e457e622982637d01ec5dc9ab457ccab27862b903dacfb32059f3"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/golangci-lint-2.15.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "b53fddcf087a5946a8699b3c4569454487c2c0b4eee11d606fafa21266587789"
   end
 
   depends_on "go"

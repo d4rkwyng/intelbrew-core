@@ -13,12 +13,9 @@ class LlvmAT20 < Formula
   end
 
   bottle do
-    rebuild 3
-    sha256 cellar: :any, arm64_golden_gate: "e6e9ba39ea98d6455d5cff8d53df12b34a4a99e163ff60d4efabcfc5643f0458"
-    sha256 cellar: :any, arm64_tahoe:       "6447d4899f0cc1ee05cfec845a7097948b137ef99faa9d572e72bc137d933fa0"
-    sha256 cellar: :any, arm64_sequoia:     "48e3194b08189b6f0c629c2209f7c29a478ee11abc17024bb8b235d6bfacbc65"
-    sha256 cellar: :any, arm64_linux:       "546e1822b7ce6c240c4307b5bd71afce566a8519a58b490e5499cb3279b2fdd8"
-    sha256 cellar: :any, x86_64_linux:      "f7dc3f7c70fb9dbae6a1912e5f8675382b1e45a489592bc69ec5e18bdbb2758c"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/llvm@20-20.1.8"
+    rebuild 4
+    sha256 cellar: :any, sonoma: "7a056ad0995f00c7df2651cec3184c8a03c8253db053553f389f839d2b6d676d"
   end
 
   keg_only :versioned_formula

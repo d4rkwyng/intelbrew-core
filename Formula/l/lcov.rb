@@ -7,11 +7,9 @@ class Lcov < Formula
   head "https://github.com/linux-test-project/lcov.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "5b4d31d0b102db3d36832c1c97304ee2b38bf3ce0c2a444084403faa1e3c2b5d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0273a9b6e2d9a07f1051916bf3815d06bb6a2a5b665a2bc4c882aa8eb094db68"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "3a76c9453e453f1ef5f998c8858337fc7cc1307d8e09ccd8dea2a46958a9c848"
-    sha256 cellar: :any,                 arm64_linux:       "dbf53669b6622217982a3e4c4a3400fa298f76eeb5f57512485f274b6004d469"
-    sha256 cellar: :any,                 x86_64_linux:      "1fca26be18586438421135b815e35493b9b69811cf5dc3fdde33b67ed7252e20"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/lcov-2.6"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "1b39c779a6a12a8a71a9c42ffb399f5f603f472ee55dc250eef3dd383b084495"
   end
 
   depends_on "sphinx-doc" => :build

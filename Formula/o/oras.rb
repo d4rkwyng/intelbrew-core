@@ -12,11 +12,9 @@ class Oras < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "548bea3cdcb8de418c69ec8f32337a92261378831f9c717c24545505949de092"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "548bea3cdcb8de418c69ec8f32337a92261378831f9c717c24545505949de092"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "548bea3cdcb8de418c69ec8f32337a92261378831f9c717c24545505949de092"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "e3b743d9fce778a112f151c38a7911d0a5cb34e3c37c339181795242e3e31a59"
-    sha256 cellar: :any,                 x86_64_linux:      "bcf511ea6e230bb726da54cfca7f011d2b69b2aabfc8e6fa88e33f95418fdef9"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/oras-1.3.5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "262d407df67ec39e077f7f06c5b70045e08b20f578d812eb3f2e66959e437fc8"
   end
 
   depends_on "go" => :build

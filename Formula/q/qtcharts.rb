@@ -18,11 +18,9 @@ class Qtcharts < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "92bb58b8ef3c32e06f1eaf45d253c604f79e3d4e227d55c5d85b46f90bfaf6d9"
-    sha256 cellar: :any, arm64_tahoe:       "a57e6a43e6239130009db7aee3063a3562ae7744e96bf7a4e4a965b4d1c70964"
-    sha256 cellar: :any, arm64_sequoia:     "fe7f0666280a1f19ff274eedde82163cc136bec2e446682ec44bab8475c6030f"
-    sha256 cellar: :any, arm64_linux:       "0070ce4ae89782c4a2297f4a140a121dfd032f6e93dc35080542475d2db73893"
-    sha256 cellar: :any, x86_64_linux:      "e200fc51e6127566f465e8d60cb0694735b85c9e624e42c7328975fb823a36f4"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/qtcharts-6.12.0_1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "d9ac9fe3676f1c1bcfa602724fc9be419803930de11a0408aa828b4b1e51731e"
   end
 
   depends_on "cmake" => [:build, :test]

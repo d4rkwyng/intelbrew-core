@@ -19,11 +19,9 @@ class Qtremoteobjects < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "91fb3dd8cae44195eb225e367c13358509cd966f466a0619aea0e27b3821ce8a"
-    sha256 cellar: :any, arm64_tahoe:       "84f2d9cdb4c9475f1ec7761f435eb398c8691a373457176fbb1e8820875afa06"
-    sha256 cellar: :any, arm64_sequoia:     "86d5a3ef38ea893c7c08bc8752ff8734bb68d7dcb551d8d0cbcfc5f9b52916dc"
-    sha256 cellar: :any, arm64_linux:       "553ec13f2bf71bf5f5488303357da4dad3832e3002a800865e2115d8a9cf6952"
-    sha256 cellar: :any, x86_64_linux:      "090880f27cd7a22b25a0973450a7255918d55ebbcbb73119227016b5f881ec74"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/qtremoteobjects-6.12.0_1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "3388c89df5480394d2f65abeb8b9e7a1f4f5b927bc2c3840dbb413e16c5c4a12"
   end
 
   depends_on "cmake" => [:build, :test]

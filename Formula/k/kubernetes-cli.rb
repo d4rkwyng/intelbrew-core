@@ -13,12 +13,9 @@ class KubernetesCli < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "6f29919ed3e6eac28acbef2dfc818ab8b4e5bf0779ed393510ea3e0e96ff870a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8b0f055c752bf016c3c184ad540ebe19de13aa194c6ac7bd9c0f5eede97320b4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0300e994f298be4e7b88c698684f88c38f41bd93f04161aeb9692ab4b48bf1fc"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "a63a5406c21b17f43a8166bdf1ef8a5e2e2522260a65efeb021d0a7e129c07a8"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f9f7668844dbcc5ef1591ad248d9d1ab001d1fe1880593d2e912a22e6c732822"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/kubernetes-cli-1.37.1"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, sonoma: "73a0835a2300c429aa95cd3d2e61f6d85f2f81879492276538c53d815372d253"
   end
 
   # TODO: unpin go@1.26 when Go 1.27's ML-DSA ClientHello no longer gets reset by TLS middleboxes

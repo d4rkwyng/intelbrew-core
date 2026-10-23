@@ -13,11 +13,9 @@ class Dwarfutils < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "ae1e174d0c3e6b044ab2dad4fe7bb89585d6f725dd641c7d82bff80e20018d6f"
-    sha256 arm64_tahoe:       "e8615a85ebe4b24f3a14dc93c8d8b7b52520d812f05466e186c9cb4d4db7b8a6"
-    sha256 arm64_sequoia:     "a91d9cadb172a23300b9e1fb1db1eec35fc3886991f6f1dda0ac8812cfcc5f38"
-    sha256 arm64_linux:       "fed704faa7887461be1f593a77efb23422543187f8d1c799088293d3db7d01fb"
-    sha256 x86_64_linux:      "b22dc3476addbfc3d5dfbd7d8002de65d4cd9e525b6a26a2bab1c2c9839dacc1"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/dwarfutils-2.3.3"
+    rebuild 1
+    sha256 sonoma: "8510d3b080e7bd0ff6d7862a16e830257eadab71f2081920098eabadd793380d"
   end
 
   head do

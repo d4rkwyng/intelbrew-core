@@ -13,11 +13,9 @@ class VulkanHeaders < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e29460a3bc874e18e407211f3e550cf60177c6f7614c04d3081beb94d8ad4ab2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e29460a3bc874e18e407211f3e550cf60177c6f7614c04d3081beb94d8ad4ab2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e29460a3bc874e18e407211f3e550cf60177c6f7614c04d3081beb94d8ad4ab2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "fd0b8a24787166873dc36d747982d3164299c181340ef2e14d8968f7ca05636e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "fd0b8a24787166873dc36d747982d3164299c181340ef2e14d8968f7ca05636e"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/vulkan-headers-1.4.363.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "9d25a4c500c54a06481841df71537dd3919919572a65c37b6775d2996a5c7333"
   end
 
   depends_on "cmake" => :build

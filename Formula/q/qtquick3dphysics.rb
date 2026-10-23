@@ -19,11 +19,9 @@ class Qtquick3dphysics < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "832491a2ac014c14a2c4698002f92d4ab7f6ee802253fbca6ef5745e6c66d3e6"
-    sha256 cellar: :any, arm64_tahoe:       "9854eac2835edfa18987f713ddf0fe2b84d339b4561480b5a7f3fc712929f9d9"
-    sha256 cellar: :any, arm64_sequoia:     "1ce3eb673a6124ef352d5988050484a37c01ffc8ffbd3a2fa3832415c4ac9be2"
-    sha256 cellar: :any, arm64_linux:       "7d2eb79526cd3b61d283f0b008247d254981a4afd2d4d53c46bd464a25bf59e3"
-    sha256 cellar: :any, x86_64_linux:      "74967a22f58a5f897af08e83305e50ce34d869e1a7c5584e84ea8823f9a4d841"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/qtquick3dphysics-6.12.0_1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "9b9c4006caffc3f263602bad5145373c1d7e740dd967a062fddac90b096c5a30"
   end
 
   depends_on "cmake" => :build

@@ -18,11 +18,9 @@ class Qtquicktimeline < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "8e1c25ac92af0b667d7a65f85ede01a78ebb71026bb56efd161c6cd23d435f38"
-    sha256 cellar: :any, arm64_tahoe:       "df48d1792b7b60237609af44156cdf90c835a419643f341a5b103280a8bbbcc3"
-    sha256 cellar: :any, arm64_sequoia:     "c8287d3680eb2a02d3cb5245e4961b64de4924c5ba849e4a3c6ca9600e83ce4b"
-    sha256 cellar: :any, arm64_linux:       "81a9f5570175c47db4daa2b83bb761994e0d1c1a296a2954d38bd47be60046ad"
-    sha256 cellar: :any, x86_64_linux:      "fe3893f4aade36ed82423f8af512eb6de663bc7dc949221006ea13108cc6e903"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/qtquicktimeline-6.12.0_1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "1c8502a848aeba4801a8b54dffa11977b3e24c41dc6f21e328d46a98a2a01d12"
   end
 
   depends_on "cmake" => :build

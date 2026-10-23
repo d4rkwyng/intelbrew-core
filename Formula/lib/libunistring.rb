@@ -9,11 +9,9 @@ class Libunistring < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "fec6be46cabaefd1dc5d5ecd029c50aeaef6c93d9c7de4425968047811575e81"
-    sha256 cellar: :any, arm64_tahoe:       "b803434415743b204ffc6bc5415ebfceeaf3dbcb86c0c4ea8a6fc63d2a04f441"
-    sha256 cellar: :any, arm64_sequoia:     "5001abe192babcfaf0f97ad322e2e59958d0d991de3da9f2e941b24924b8a2b8"
-    sha256 cellar: :any, arm64_linux:       "142d02125d023a6908f2f407ab5b89f5fd5a9382d363d5f0b627b81d5a19f8f5"
-    sha256 cellar: :any, x86_64_linux:      "8064362db7a4b0a036feb1e0eb4513b1604da1b14fde4b7f3866d067d24808ca"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libunistring-1.5"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "c23e808498232723bffc32c124753815429062bc31ff38e1e38fc273a73b0a15"
   end
 
   deny_network_access!

@@ -17,11 +17,9 @@ class Qtquickeffectmaker < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "efda551e457394bd03122720f0ad95101411a8f1e75e522d131a698014ebe236"
-    sha256 cellar: :any, arm64_tahoe:       "2aded4d52980af19190eafb38bec8db4b1f618793d058ca4a9ebcb8456be70c8"
-    sha256 cellar: :any, arm64_sequoia:     "cd1cdcef88545df623c99e2e90a333306779211c4208c179dcc7f336f43a531b"
-    sha256 cellar: :any, arm64_linux:       "4075af633bf00cb6a03409209db979b1609ce45bb2f472911f36246ee444c00f"
-    sha256 cellar: :any, x86_64_linux:      "bc7e99c0f5a24bb2caa81dd80b8efa3721aedfb87bd27a84520627d261aede0e"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/qtquickeffectmaker-6.12.0"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "08d00b59a4720b3ebc23002303a6fb4e32350547b594fb808aebc6541bb50d42"
   end
 
   depends_on "cmake" => :build

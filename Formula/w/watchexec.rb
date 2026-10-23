@@ -12,11 +12,9 @@ class Watchexec < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "06253ec98bf073e87ed273c9d8d38b206ce0e320a7f4b9547829f7b8240be04a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "bd364a09d34d2f5de531027df09516add5c78efcd0a4da7238a7f236d697bab9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "75c3f6eadff6ce962697e1119564a6afdbc75a9eb408dac255c87be2cc1b8436"
-    sha256 cellar: :any,                 arm64_linux:       "95acf3788869fcdb7392971f22c297b06892a87239e9de75fe335390bcfa7630"
-    sha256 cellar: :any,                 x86_64_linux:      "9b5a10ec79f90db758e276c68fce081fa0c93690cd943c61c44bf9437db7cc00"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/watchexec-2.8.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "9103d0fe2818abb0f7f560ce92d489c3a7ebf43c81915cca558df3fc9be566c6"
   end
 
   depends_on "rust" => :build

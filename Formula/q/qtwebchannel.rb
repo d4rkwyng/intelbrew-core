@@ -18,11 +18,9 @@ class Qtwebchannel < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e7af1c2aaf09f7fc1b52e55b444a5aed7b8b4b1fd79e50c4c97e57a5d7fef7f0"
-    sha256 cellar: :any, arm64_tahoe:       "f75b51565c3eac0e9e0df5bc2a2d1102e81f621a3515390cef1ebf9523eccdac"
-    sha256 cellar: :any, arm64_sequoia:     "233df8c01d68225e0c2c7944a0a2440b9de83c85f7cb784a9d99b0c3ba75bb76"
-    sha256 cellar: :any, arm64_linux:       "11bf12246de376eb09ef55b81131adac19a01637a2b42ec918407f9bf390397d"
-    sha256 cellar: :any, x86_64_linux:      "082b90005a3645271585d2be1aeeb56c5c9760d6c2d4e69c11d0333b57604752"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/qtwebchannel-6.12.0_1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "8d6a6014a8556964abc8f15bf105ffd700ec303d9d2d8c7a607e8512fb7e31bc"
   end
 
   depends_on "cmake" => [:build, :test]

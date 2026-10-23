@@ -15,11 +15,9 @@ class Openvino < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9209c10a5f0b6a15a6b1d06cdad7a24c5021fcd3636b889fb2050fd63a623525"
-    sha256 cellar: :any, arm64_tahoe:       "98daf1613ed8c342294903f4f37042360c3ae3f1ec5cdbb7934c582b3031fbb4"
-    sha256 cellar: :any, arm64_sequoia:     "746feb262a779aff182d34b3586bc4a30e775bc3a383bdbe282d94bca91454b5"
-    sha256               arm64_linux:       "b1bc0da7956e469b58879f1b10b3636c56d7e8825661b9789389095e0244fc68"
-    sha256               x86_64_linux:      "2042ec60ab0a83f3bb5b59598ac323bbacf714a958266c2670c113ad40382406"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/openvino-2026.4.1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "db7988ce2bc26a709fe302e49068b1a8258e6049b2a8a013172633fcb0ee6f3f"
   end
 
   depends_on "cmake" => [:build, :test]

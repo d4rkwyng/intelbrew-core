@@ -8,11 +8,9 @@ class Harfbuzz < Formula
   head "https://github.com/harfbuzz/harfbuzz.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "13527c930cf5dfff2b984ca67fd914346079834bdd06473d9f4be6b37b71987b"
-    sha256 cellar: :any, arm64_tahoe:       "a7dc136cbae7f770873fdcfd938743d3b8095559d35d986ca251ca6c1e10ff59"
-    sha256 cellar: :any, arm64_sequoia:     "cc62ba7fd7ee2b04d81bd5e032cb49af70613039fefe09063c7c47c055da4607"
-    sha256 cellar: :any, arm64_linux:       "7f192d46efdb70559cf9e51465ccfa2f6e6e7778681216743f9264bd33df5414"
-    sha256 cellar: :any, x86_64_linux:      "683512035ebf2fd2e5343bec56a3678828d45492598c9ebbd128f46ebe5d924b"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/harfbuzz-14.6.0"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "715bd888ccc69e75704a1da33884e07c65cf6a039811125c7c0ce408983e5cae"
   end
 
   depends_on "gobject-introspection" => :build

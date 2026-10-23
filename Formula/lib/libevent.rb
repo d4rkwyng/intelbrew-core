@@ -13,11 +13,9 @@ class Libevent < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "45b525d77c2ecc4cf0172587e929a2bc872b1e01aabcd3679b0f60f4d76ceef7"
-    sha256 cellar: :any, arm64_tahoe:       "a718c5bf998957d5c75e242ad4a0e42d86730d3321facbea282cc37cca74ff45"
-    sha256 cellar: :any, arm64_sequoia:     "55344e687f9be992ae9dca23aad5bf6f3bbaa9e63031915cd2738da11787500b"
-    sha256 cellar: :any, arm64_linux:       "592c7c42f355287124631461d7e51c034603526a0a6710987da73031c4604be9"
-    sha256 cellar: :any, x86_64_linux:      "de71a3d6a6caa93383dc132e91dcc86c7c5a8c3e406b1485e28a8be257835818"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libevent-2.1.13_1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "e1fc4fcb159399128d5f0bbe29e9353560b9daf7be436676013a696adc9cd225"
   end
 
   depends_on "pkgconf" => :build

@@ -41,11 +41,9 @@ class Qtbase < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "cb6651ad22e6b506eb324d5f6b4d46ef85575ebb16c8ccb8721c99e1c37d6709"
-    sha256 cellar: :any, arm64_tahoe:       "116817e685a0f632be562632f199c621e9b1f85f5077ded56728a5f257873ae1"
-    sha256 cellar: :any, arm64_sequoia:     "9e8b2784e064475ee943a3a2dbbdbcdb99c4ae248a820f0acfcca17e8c9caa35"
-    sha256 cellar: :any, arm64_linux:       "a8bfddd97e4ec22fabbcf25428c921c0ebc6a9cb4dd71c1d22a4899f845ccb2b"
-    sha256 cellar: :any, x86_64_linux:      "0a8e461e254509d87594d7d81393510d2aeeb1dd004c0f23e6b75ef2b746e7f5"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/qtbase-6.12.0_1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "519cb0294e5a234fb689ad44a16b62b5a2e2a6478a47ef6b49ed389d7bde735a"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -158,9 +156,12 @@ class Qtbase < Formula
                 'set(QT_CONFIGURE_LIBLOCATION_TO_PREFIX_PATH "${from_lib_location_to_prefix}")',
                 "set(QT_CONFIGURE_LIBLOCATION_TO_PREFIX_PATH \"#{HOMEBREW_PREFIX.relative_path_from(lib)}\")"
 
+      # Avoid opportunistic linkage to `at-spi2-core`. The AT-SPI bridge is
+      # Linux-only and fails to build on macOS if `at-spi2-core` is installed.
       %w[
         -DFEATURE_relocatable=ON
         -DQT_NO_APPLE_SDK_AND_XCODE_CHECK=ON
+        -DFEATURE_accessibility_atspi_bridge=OFF
       ]
     else
       # FIXME: Unable to use workaround for relocatable installs as paths are resolved relative

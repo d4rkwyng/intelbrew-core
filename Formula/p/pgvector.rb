@@ -6,11 +6,9 @@ class Pgvector < Formula
   license "PostgreSQL"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f9363a3a6e4344d4c2780308b0938556ae18c937e398798117627912fd90d651"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "326bc17440a773b75b054d83d7905b46b370b1a1b6543fff077186b5a632253b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "01dc0c82b633a46b651ca07ef6f46e2ebee35d73bc690163ac58b0514fc3e0d1"
-    sha256 cellar: :any,                 arm64_linux:       "069cd51a35f872f1baa4e4cc14e11f37732f92e0c7bad8e95b75358f6316d333"
-    sha256 cellar: :any,                 x86_64_linux:      "c19b2990a748acfd11ece70fff7024b52baa1a27e72de3958467a3d97810b044"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pgvector-0.8.7"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "023ed2dc5bd5c92ae559ec193d0059cbc722a689b425a95a678b1e400895f05e"
   end
 
   depends_on "postgresql@17" => [:build, :test]

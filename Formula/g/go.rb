@@ -1,11 +1,11 @@
 class Go < Formula
   desc "Open source programming language to build simple/reliable/efficient software"
   homepage "https://go.dev/"
-  url "https://go.dev/dl/go1.27.2.src.tar.gz"
-  mirror "https://fossies.org/linux/misc/go1.27.2.src.tar.gz"
-  sha256 "03495da2ba64894d40f5c4992e49454fa78b50690604ff92b6afff5081b76e62"
+  url "https://go.dev/dl/go1.27.3.src.tar.gz"
+  mirror "https://fossies.org/linux/misc/go1.27.3.src.tar.gz"
+  sha256 "6e7749035cf360f06b2575d162ea79df9fda8ef671889e5c375f8e50777f26bb"
   license "BSD-3-Clause"
-  compatibility_version 12
+  compatibility_version 13
   head "https://go.googlesource.com/go.git", branch: "master"
 
   livecheck do
@@ -22,11 +22,8 @@ class Go < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b9db31a0d9486338e059fbfbd5ce6c7cabff043019c70fd7052d134a542bd5d8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b9db31a0d9486338e059fbfbd5ce6c7cabff043019c70fd7052d134a542bd5d8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b9db31a0d9486338e059fbfbd5ce6c7cabff043019c70fd7052d134a542bd5d8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "3d73e28e27c6fa3e2d1a17ece98256dd39eeb1c49bce459fe63be4f19f231ddd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "9220bbbde40dd1255401e4a010e0914fee43f72f74a426f47a2cdaea2331ca6e"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/go-1.27.3"
+    sha256 cellar: :any_skip_relocation, sonoma: "16af540b48b70bebff23f14e8cdb845d9d6dd2957dfa39555945a939d38d6819"
   end
 
   on_macos do

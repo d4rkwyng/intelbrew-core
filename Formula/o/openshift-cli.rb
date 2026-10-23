@@ -13,11 +13,9 @@ class OpenshiftCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "de13f07a0ccea0593960bf9dd7959bd6fb7c12f3519ebe891ff18f9cbc0d5ef7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ebabbe7e63ffbadb782bbc477ba233eed4ccc6746cf0af85b70342ec00c305c6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5be18403217744ca86cf7f96546f782363a7c85b69c590a1d761910ff5a11da4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c466c397aa63af2ee1abf017e31db9b9963b3f82e7edaf03bfcf83d0dcd8026a"
-    sha256 cellar: :any,                 x86_64_linux:      "947a9ff3dcf3932877749f2c146828a7b310858db260b5f4c06109b2f6db0d82"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/openshift-cli-4.22.18"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "4db43dbeb0f5342930c8aa8331010efe7c58cf8f378e678b1039ed5a725709e1"
   end
 
   depends_on "go" => :build

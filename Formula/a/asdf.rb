@@ -12,11 +12,9 @@ class Asdf < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "11395793631019858ca30d90a18dc1a91d2d73312d01365488d03f8c3a641fbd"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "11395793631019858ca30d90a18dc1a91d2d73312d01365488d03f8c3a641fbd"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "11395793631019858ca30d90a18dc1a91d2d73312d01365488d03f8c3a641fbd"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "eb4859574064a3e8ba599b447ee8d96853b02c62f4692ffbf1a7398f6db5642d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "73c846eac2f880bd73f8675780a30ffd43ef151febc5a50333a3cd66760bfd9f"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/asdf-0.20.2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "13e085cbf4645d3413ba1a3765a7fdb2dde235627669c817b3c339e389b631dc"
   end
 
   depends_on "go" => :build

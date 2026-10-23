@@ -8,11 +8,9 @@ class Automake < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "23c091faee8dac047b0670d8c10da030bf104610fc064b904407de1a1ff8f437"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "23c091faee8dac047b0670d8c10da030bf104610fc064b904407de1a1ff8f437"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "23c091faee8dac047b0670d8c10da030bf104610fc064b904407de1a1ff8f437"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "a2b499128c61273de05a0d19251baca23de0c29abd15a74c8f495de2aeec3b40"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a2b499128c61273de05a0d19251baca23de0c29abd15a74c8f495de2aeec3b40"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/automake-1.19"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "89c8c89fc4a646b79e4e5c54fd608a65d9d43ee9814675fc4affa9dbcb7c0930"
   end
 
   depends_on "autoconf"

@@ -12,11 +12,9 @@ class AwsCMqtt < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b60cd33f86d7b104ac234dd5a168bf9ecfd741b609b05bd5d623812338b580e4"
-    sha256 cellar: :any, arm64_tahoe:       "a3ffaadfa50c2158db9a3884499a89e7f3723e03885cfb853c03dcdc00463eea"
-    sha256 cellar: :any, arm64_sequoia:     "3b7378d9111beba866d90f2bb12647ff554112b267b68e3e066c310698dde012"
-    sha256 cellar: :any, arm64_linux:       "85d2e81b3bdddc5cd25768dbf18ffd7d66c1cea5c5e3241ec09fe2a3b5c0f3d5"
-    sha256 cellar: :any, x86_64_linux:      "578e8d1254b86a3bd8abd1e6d8548ea73e7f12bb938059e001a17a74c98e4003"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aws-c-mqtt-1.1.2"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "532b604b364394162653c1480c9c86d4493f4741c8cac313afbfeca90a665057"
   end
 
   depends_on "cmake" => :build

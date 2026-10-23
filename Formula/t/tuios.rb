@@ -7,11 +7,9 @@ class Tuios < Formula
   head "https://github.com/Gaurav-Gosain/tuios.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "91b278a1f7f3574751118534365ecd630b8e0950d86cf121c9bb55e82df104f4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "04f8e3baf1debdca2eb7919587f9619fcd94dfe9e5349dffb10296298f905a00"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "034f22190c9780c700fc8eb5a89e503b6fceec51e6136fd2ee4cd12ce6590b92"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "bce3085c93ee397d2e49643dcbb21c7f4e103d0fb24175fc711d2cf7c4b53c47"
-    sha256 cellar: :any,                 x86_64_linux:      "24096eb3afedb99ccbb1f5a81a7d2ac27cb33201101ba890031fa8a4a1f51dbd"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/tuios-0.10.1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "f892036b21db7a94fd7f21e93dc3c2f801bc9ae67de8e078362371bcda8a4b15"
   end
 
   depends_on "go" => :build

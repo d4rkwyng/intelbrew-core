@@ -15,11 +15,9 @@ class MysqlAT80 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "a00c3dd0f00160709a73b0f11e8ebba58ae2d10c0b62454d81bbd657b3403f82"
-    sha256 arm64_tahoe:       "735e124b63a562fe1ddec901dc20cf88eb22422be0528ce7a446aebcb49838c9"
-    sha256 arm64_sequoia:     "fe3fc887e0a3bd68cfc618bfc08394826e4b94e3aae8d4ea04f74374c4f67697"
-    sha256 arm64_linux:       "e9db4176e00ec4cb2f1cf0bc0b9ae10d9ce277a5d23796b4e12177a0b31c86fb"
-    sha256 x86_64_linux:      "27fc240dec23da0b2c62eeda01e329f6f792641f0899c4e7a6e9fbceeb3be222"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mysql@8.0-8.0.46_6"
+    rebuild 1
+    sha256 sonoma: "216f8f60b40bd8a85f0d21556fb058b1f4ce8fa554778bbfec862909adbb4d7e"
   end
 
   keg_only :versioned_formula

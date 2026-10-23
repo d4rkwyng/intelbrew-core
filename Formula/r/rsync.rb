@@ -7,12 +7,9 @@ class Rsync < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "ed7eaefb29afddb3caa23fa9fb196ce22970a80ed122f8f8e8a748c470751969"
-    sha256 cellar: :any, arm64_tahoe:       "d69be3a3d34872a903df96ab8767de96a407819f3d9b80b8d8a75dc738796033"
-    sha256 cellar: :any, arm64_sequoia:     "3398c5c1587212bf7a9d88efaa4728fca79586b8110c6c2fb52ebf2622446879"
-    sha256 cellar: :any, arm64_linux:       "785b41d1bb830876bd483268a7103b2199361c72de9ea6afd0a118e9232432cb"
-    sha256 cellar: :any, x86_64_linux:      "a4b03666566e0693e4cd2016ba8a0104c0ab5c71c8237aeb20d973e1bf6e4b96"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/rsync-3.5.1"
+    rebuild 2
+    sha256 cellar: :any, sonoma: "1429b22d36dd0cf989e66cabcccc41f9e45c9eb80e2277846275d308b794e23e"
   end
 
   depends_on "libidn2"

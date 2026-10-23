@@ -8,11 +8,9 @@ class Ggml < Formula
   head "https://github.com/ggml-org/ggml.git", branch: "master"
 
   bottle do
-    sha256 arm64_golden_gate: "2139faff16fe43f5cc829a76b7eb395f9ebe01b374750f4c1d16cf48459606eb"
-    sha256 arm64_tahoe:       "a1ebd36cf2a5e07aa0194751d3cc041e360dab8cd82d29ec701d5cacedc3fe09"
-    sha256 arm64_sequoia:     "c654a80c06b0b01fd96794d61f3fce58a05fc2208386c441330d03b55d97c6c5"
-    sha256 arm64_linux:       "d9ed405d1d459e80c80d7436b746da264b0632a201541a2d2f1ec6ef5a2903e2"
-    sha256 x86_64_linux:      "f74ec60a7128e56e6c0fba5fa7f580a4c76e3f63410bb62e051702c46dd064f5"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ggml-0.27.0"
+    rebuild 1
+    sha256 sonoma: "1b5056741a6a4c6f380bd4947f570f436eac7d92e2fd0eacb7852cd104bb56c4"
   end
 
   depends_on "cmake" => [:build, :test]

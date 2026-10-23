@@ -9,11 +9,9 @@ class ApacheArrow < Formula
   head "https://github.com/apache/arrow.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5447592cf89f27f532aa03fb93e3fd8718860f164506da771ae4dcd736550e06"
-    sha256 cellar: :any, arm64_tahoe:       "f903ec02fb7e966362bd50ae4a12328f87017daab14be42439bfb73faa539e16"
-    sha256 cellar: :any, arm64_sequoia:     "98c52a5959062ada5cd5085083ba7462373148efabddbca08998288d77e58955"
-    sha256               arm64_linux:       "6831fc586e71827f402fc5b8cb0bd17e7db721e320e772fcd58f8cfbec7e3d3c"
-    sha256               x86_64_linux:      "f4c71288fd0b83f09c8a01e87f2b2adf63dd5dd3e1ecd1bfab63ee7375430ba7"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/apache-arrow-26.0.0"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "a440469ebd495ac8930562ebdf43d0768952edf227c38b7affeae5ff5c7a1160"
   end
 
   depends_on "boost" => :build

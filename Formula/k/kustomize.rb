@@ -12,11 +12,9 @@ class Kustomize < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e96fd546500f78195434828a7736984fe29ec4078693567d0902ccc504b391ae"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ee947456549691e4612d646628c1f8210462b0c5abc9059c507703cdb4c644f6"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "12046a80d3bb5e552e033d1467910f7262b1b7178fd78f63d4e6ca1e9016ebfa"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "bef7ce77cb76a6a5e0dc9ef50e4c270cfce3cfd7b1329d5618f9634136be5412"
-    sha256 cellar: :any,                 x86_64_linux:      "ace2f619f01d53eefdfc2cbfdecb96d155e5bc67748162639bd15344a6a28815"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/kustomize-5.8.3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "3d06e8a19c1b3858d757a357ef6aab99cf926ba17394169b34daa93c4e5fb0aa"
   end
 
   depends_on "go" => :build
