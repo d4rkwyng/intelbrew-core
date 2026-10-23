@@ -15,9 +15,11 @@ class Pytorch < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pytorch-2.14.1_1"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "628d0d23c64719e8dff10ddb198750cb3971daef86823cd8eaff1243064e5016"
+    sha256 cellar: :any, arm64_golden_gate: "b69626b30488114e314c7ca4d91a4e2f27e847c34bd00596c07f13c1ca4af1ec"
+    sha256 cellar: :any, arm64_tahoe:       "f5e9473c9219b74a40f212e7655573d661ca05daf601023e38a5a5990f85236f"
+    sha256 cellar: :any, arm64_sequoia:     "28dd667557401c4cf353b4ba0ef4474e623f1828647240c9e9a2d859a8442a83"
+    sha256 cellar: :any, arm64_linux:       "34c994eb3e97bb32db644679e068d2b591eeb50cc5aae8cce8bd872d6ce970e6"
+    sha256 cellar: :any, x86_64_linux:      "68cf9b44e1b1e292de18e9f4a5e21b008fcabe38a288d419b37dada5f9e24528"
   end
 
   depends_on "cmake" => :build
