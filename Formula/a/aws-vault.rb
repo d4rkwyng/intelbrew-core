@@ -12,11 +12,9 @@ class AwsVault < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0544192ee3addd848a621b04b99c5eae184192eee9388592e6feb6c631871b68"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1d44f52b3cafd21f591fb15a38dbf416c762c4a70fe797229d62b82e1ac0bc21"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e2f725298126cfc859c422c34ebe31acb3e58d7552627c0ab30f80e7cf2f5f90"
-    sha256 cellar: :any,                 arm64_linux:       "d6ce5cc773c6edbe066fce8a0bde791488779b44129993cef2795cd506ba7048"
-    sha256 cellar: :any,                 x86_64_linux:      "535edd16b08ed1f48fb730a76eeddec40b78fcf9e28af440436f70a51b0b159a"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aws-vault-7.17.2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "2dedc1b71aa2e927574b5f454079f6806a832ba268cc54ccb71c8c21ed2c1e51"
   end
 
   depends_on "go" => :build

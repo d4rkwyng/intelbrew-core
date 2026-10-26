@@ -7,12 +7,9 @@ class Cloc < Formula
   head "https://github.com/AlDanial/cloc.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2b39c03318fcfc378df432b5b75f7e4946a6a632ad467345b38e0bae5c634117"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2b39c03318fcfc378df432b5b75f7e4946a6a632ad467345b38e0bae5c634117"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2b39c03318fcfc378df432b5b75f7e4946a6a632ad467345b38e0bae5c634117"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "217007a0d200def59f551c6197b4b38b416a62306837c52fd7463e1a69f36b08"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "8636273618011360e6fd65d6d0dbf8d9960f014c8b5bdf5133c645aace45ce8d"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cloc-2.10"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, sonoma: "a0d4c85e7c17a2ca192b9399940c6136fb3fc8ecfee89ff2552070cd97984f3d"
   end
 
   uses_from_macos "perl"

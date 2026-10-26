@@ -7,11 +7,9 @@ class Bazelisk < Formula
   head "https://github.com/bazelbuild/bazelisk.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a0fba61b4954deca58c164d41be2a2a2cad6da50e64882932530aff9a9f23628"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a0fba61b4954deca58c164d41be2a2a2cad6da50e64882932530aff9a9f23628"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a0fba61b4954deca58c164d41be2a2a2cad6da50e64882932530aff9a9f23628"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7221dca9a409b90ce9a45754dd8e31beaf9b31a943b5c2248669622781144e8d"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "715cf2105fb955496d3560ae85ce1fa92d5447a9e7566db928244d5327bf09c9"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/bazelisk-1.30.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "f23c78ae62e4adcfc371b970aee9e06b82ecc79d1f8868deb147bf4872fbe8c6"
   end
 
   depends_on "go" => :build

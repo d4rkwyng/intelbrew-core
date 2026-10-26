@@ -24,7 +24,7 @@ class Openvino < Formula
   depends_on "flatbuffers" => :build
   depends_on "pkgconf" => [:build, :test]
   depends_on "pybind11" => :build
-  depends_on "python@3.14" => [:build, :test]
+  depends_on "python@3.15" => [:build, :test]
   depends_on "abseil"
   depends_on "nlohmann-json"
   depends_on "numpy"

@@ -12,11 +12,9 @@ class Gomplate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "469f7426de4c5b5f4de93a728fd79a33ceaec11f22381504563b917088d5d3d9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "0766cfce61b28c5ccfc5c907a566b352373e6a6131475eb01e571bb35c57bc2d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "ef039884459381444e30618ed32c9f3113aa4a2d3e03d5102c100ae42eb3ea28"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "796eb8ef0fdc3d4f14c29d90e4f823d430ff2cbff0134641478d4957989d7bf1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "f105f054060cd1d8a9e5be2935adb7a60c9a32c57557548c1702f0e7df684a74"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/gomplate-5.3.1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "8f127199bdd4d15aa9d0610900b0f0675b2d98f1f49da78f3e72534d2851b0e5"
   end
 
   depends_on "go" => :build

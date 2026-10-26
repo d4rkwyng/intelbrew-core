@@ -1,16 +1,14 @@
 class Lispkit < Formula
   desc "Scheme framework for extension and scripting languages on macOS and iOS"
   homepage "https://lisppad.app"
-  url "https://github.com/objecthub/swift-lispkit/archive/refs/tags/2.6.2.tar.gz"
-  sha256 "d3565e3324a922d263e57a1ce5cafbc0c18c7788c4bbdffbb3a2ca403dc76f86"
+  url "https://github.com/objecthub/swift-lispkit/archive/refs/tags/2.6.4.tar.gz"
+  sha256 "89e19cb34aa29aacea67a33a3187abf854fd2a5d0d0c608e59f50ba2073e2f5e"
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e8a2ebfb168a9af948955a7d39f6bc3824fb225f0401c699c38758f540207e63"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9da874f7996de48dc953b8c469ebd1673833a46144b07ba204f6658e7b98f14e"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f6212d81b74a4f41d3411c9efc408b048ee599604b2994f564d16ddd45a01944"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "42831c30cd850e3991e0af6858c0aa04345d7e4eed7bf437b81eb36650b77863"
-    sha256 cellar: :any_skip_relocation, sonoma:            "63fe455719a326aec886d5eb256448adece2dcd00b96bb72d55d2b02001eabbb"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "8cfd449fcfdb274a8633f4b1808c0cd9d0708f320f30c71138cb6c70b1849ada"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ef5bd9698b8c13705b15195ae97a7bb98379b0b4d5200d502849cea29a875a2d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d0e9190160fe1df00ae9be606f56673c70e5719c935516b4db5a718c0f1256a6"
   end
 
   depends_on xcode: ["14.0", :build]

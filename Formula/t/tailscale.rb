@@ -13,11 +13,9 @@ class Tailscale < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d1c69a256cc4848d70fdde762347b3ae9f90a8612b285aec5d8df976a8a098cd"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "5ee3c2bbc1d8bda8ff6102d6a4a1a2c06a60c4a335244f407c41e509f461f52f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "16895ce7ffc8cde0c48ea8ea53b30ce278a97ecd63132277be2447a9ad5cb124"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "7bc7b442106e7c3dbbd29331c548e790c36f958a7e9cf7215a28fffc621e6da9"
-    sha256 cellar: :any,                 x86_64_linux:      "14973c9513cd24f839cf6c4da688fe748fa39a8af262a683b13705aa153ee823"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/tailscale-1.104.2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "77bad0ea602d4760e0fa6d359332ddb2e51e292ee46c84593cc59d7d1aa5109a"
   end
 
   depends_on "go" => :build

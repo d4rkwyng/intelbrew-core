@@ -2,8 +2,8 @@ class DotnetAT8 < Formula
   desc ".NET Core"
   homepage "https://dotnet.microsoft.com/"
   # Source-build tag announced at https://github.com/dotnet/source-build/discussions
-  url "https://github.com/dotnet/dotnet/archive/refs/tags/v8.0.132.tar.gz"
-  sha256 "e488a0713415c47ca93b6c8a185cabfa4fa58facb83e0f7c306e3bf5e86ab021"
+  url "https://github.com/dotnet/dotnet/archive/refs/tags/v8.0.133.tar.gz"
+  sha256 "51c8727dbc2b3ad0181cc317fb7aaa8e533ec4b936b25dd3fea25b1d893edfe4"
   license "MIT"
   compatibility_version 1
 
@@ -13,11 +13,11 @@ class DotnetAT8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "460827928cc5dc3dcf6947b5fdcf929278d48428883aa625f65b2f27d804ac7b"
-    sha256 cellar: :any, arm64_tahoe:       "5119edbd3ff185892d140b4bb61665187fcf3f7e40cdd3cf34bf0311d61cbce1"
-    sha256 cellar: :any, arm64_sequoia:     "35de497a5719c674565776e360c87b1b9e5ccfd755fd535e6a615c25e5aa6890"
-    sha256 cellar: :any, arm64_linux:       "78aa22779b2c03961bf653adf6b23e9ea79e6847af84848074eea87b0f8893e1"
-    sha256 cellar: :any, x86_64_linux:      "e602b24799924b77ebae0c8e48040ea9dba40509f25285429e87ec10f418c52b"
+    sha256 cellar: :any, arm64_golden_gate: "109647785468907f1c21a862fb416c40e6a4353b7cb781f644d06174b9bcdc93"
+    sha256 cellar: :any, arm64_tahoe:       "b2a8b042f99b9a9285f84fab34e957423d950d642c45da2d9d354ae08be9e84b"
+    sha256 cellar: :any, arm64_sequoia:     "c7e618d0a19c34b6033b88157d3f59f80c8a1185bbf8eb7275a5a664b0b3b4da"
+    sha256 cellar: :any, arm64_linux:       "26d8c6c2aa761d9cc909744110c56e17f28389c5c6aa0b0c6434deb002359b01"
+    sha256 cellar: :any, x86_64_linux:      "fd2cfaff0caeba8f9dcc6bb489d5026275228bc4d8d3dc2eb984d79cb2bcf199"
   end
 
   keg_only :versioned_formula
@@ -28,7 +28,7 @@ class DotnetAT8 < Formula
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "openssl@3"
 
   uses_from_macos "python" => :build
@@ -54,8 +54,8 @@ class DotnetAT8 < Formula
   end
 
   resource "release.json" do
-    url "https://github.com/dotnet/dotnet/releases/download/v8.0.132/release.json"
-    sha256 "8c94ced5e6788003f762cd59f0e635ac935cf298374b449d89ba10bb93280380"
+    url "https://github.com/dotnet/dotnet/releases/download/v8.0.133/release.json"
+    sha256 "cff8ef65ccf3e421ea48a29b1afb73a4c15e524e1e619d247763597462e076cb"
 
     livecheck do
       formula :parent

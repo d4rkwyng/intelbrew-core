@@ -13,11 +13,9 @@ class Goreleaser < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "09a994b738355d7161b59a2f442ab9b4356692a732af076a3996fb39dc7cb80e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a7312cea74e68a16654368d872e6a1d306dca4ff4f076f3ff949aa25018ce66d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "26544309516d3e763b67af461ebae335de82d90d2ad57d2cc54fca087ce26fdb"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "60a0a4b2973e5b40cfa153c9ec4ed70bc1a9873f13fc6964b9623f1cd06829d0"
-    sha256 cellar: :any,                 x86_64_linux:      "655e40651902fff3ae41c5373261e30cde881f9861fa59d2648c2888804ecd09"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/goreleaser-2.19.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "7b33012e7accbfd4630560924ff768fb0a0768cd2e8514efabc4bbf2c0bc69ef"
   end
 
   depends_on "go" => :build

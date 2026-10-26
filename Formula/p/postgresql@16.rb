@@ -25,7 +25,7 @@ class PostgresqlAT16 < Formula
 
   depends_on "gettext" => :build
   depends_on "pkgconf" => :build
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
 
   # GSSAPI provided by Kerberos.framework crashes when forked.
   # See https://github.com/Homebrew/homebrew-core/issues/47494.

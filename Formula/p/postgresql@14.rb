@@ -13,8 +13,8 @@ class PostgresqlAT14 < Formula
 
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/postgresql@14-14.24_1"
-    rebuild 1
-    sha256 sonoma: "f455aa49d78087cfd5c1db71c5c58cd227fdf303970f7a540cc40ce133317f36"
+    rebuild 2
+    sha256 sonoma: "354c97b0046f24c01c58427335e88420d7d2f9481152e4669a00808c0df39fbf"
   end
 
   # deprecating one year before the last release,
@@ -23,7 +23,7 @@ class PostgresqlAT14 < Formula
   disable! date: "2026-11-12", because: :unsupported
 
   depends_on "pkgconf" => :build
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
 
   # GSSAPI provided by Kerberos.framework crashes when forked.
   # See https://github.com/Homebrew/homebrew-core/issues/47494.

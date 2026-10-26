@@ -29,7 +29,7 @@ class MysqlAT80 < Formula
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "abseil"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "libevent"
   depends_on "libfido2"
   depends_on "lz4"

@@ -1,23 +1,12 @@
 class Grpc < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
+  url "https://github.com/grpc/grpc.git",
+      tag:      "v1.85.0",
+      revision: "a83eb274517ef49e95d5529dac071f4b74abae0d"
   license "Apache-2.0"
-  compatibility_version 6
+  compatibility_version 7
   head "https://github.com/grpc/grpc.git", branch: "master"
-
-  stable do
-    url "https://github.com/grpc/grpc.git",
-        tag:      "v1.84.1",
-        revision: "b0c0c4f8823ba69e7e43aaaf183c30a43e549924"
-
-    # Backport support for OpenSSL 4
-    patch do
-      url "https://github.com/grpc/grpc/commit/fb056ab0bb3ed003febe82f069ff41514288a4f3.patch?full_index=1"
-      sha256 "87b230d855ec21fe0a58d6a1d1c726c1a78ccd2cbda6269998f5177f12f10bb4"
-      type :backport
-      resolves "https://github.com/grpc/grpc/pull/41932"
-    end
-  end
 
   # There can be a notable gap between when a version is tagged and a
   # corresponding release is created, so we check releases instead of the Git
@@ -31,11 +20,8 @@ class Grpc < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c5bfb97fc3acfae28f6440c17ccda52f61ecf1ec0baa926117c84a445b09daee"
-    sha256 cellar: :any, arm64_tahoe:       "d371e2af0f0b50d1e9cf8084588bb1d51992e0c175fea8326bfb4705d1714e57"
-    sha256 cellar: :any, arm64_sequoia:     "db1c710f5311c5d4aac35b0960eb83e87fee9f32d278232a5250e74bc291727e"
-    sha256               arm64_linux:       "eaf0369a0aa092eeef4ef1f73df6f0dfee0a7f99f93f980d8a575ef11dc180de"
-    sha256               x86_64_linux:      "59cf58764671937ead9ac309bf6f0d6fbc78c58e98bdbde15926159ef98db5d8"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/grpc-1.85.0"
+    sha256 cellar: :any, sonoma: "1156a02c6e2bd65d8942f3144c6cc6c2b2a91327d1a3349b2244a15e9b7e19ff"
   end
 
   depends_on "cmake" => :build
@@ -49,6 +35,8 @@ class Grpc < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  def openssl = deps.map(&:name).find { |d| d.match?(/^openssl(@\d+(\.\d+)*)?$/) }
 
   def install
     args = %W[
@@ -78,7 +66,7 @@ class Grpc < Formula
       }
     CPP
 
-    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("openssl@4")/"pkgconfig"
+    ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib(openssl)/"pkgconfig"
     ENV.prepend_path "PKG_CONFIG_PATH", formula_opt_lib("zlib-ng-compat")/"pkgconfig" if OS.linux?
     flags = shell_output("pkgconf --cflags --libs libcares protobuf re2 grpc++").chomp.split
     system ENV.cc, "test.cpp", "-L#{formula_opt_lib("abseil")}", *flags, "-o", "test"

@@ -4,7 +4,7 @@ class Libpq < Formula
   url "https://ftp.postgresql.org/pub/source/v18.6/postgresql-18.6.tar.bz2"
   sha256 "555610c24d53e4316da5b7d3fc25c279d96856d5e0e23ee308c328c5fa881d9f"
   license "PostgreSQL"
-  revision 1
+  revision 2
   compatibility_version 1
 
   livecheck do
@@ -13,9 +13,8 @@ class Libpq < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libpq-18.6_1"
-    rebuild 1
-    sha256 sonoma: "3850c72e3060f33908417544b8e8a447eefc1731d651877438cf869eb6c8cae9"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libpq-18.6_2"
+    sha256 sonoma: "9b930e115eaf7bdce3d8040527d354000c9d1d4095d64951985fa7ea5b5114a8"
   end
 
   keg_only "it conflicts with PostgreSQL"
@@ -23,7 +22,7 @@ class Libpq < Formula
   depends_on "docbook" => :build
   depends_on "docbook-xsl" => :build
   depends_on "pkgconf" => :build
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   # GSSAPI provided by Kerberos.framework crashes when forked.
   # See https://github.com/Homebrew/homebrew-core/issues/47494.
   depends_on "krb5"

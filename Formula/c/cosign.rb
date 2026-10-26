@@ -8,11 +8,9 @@ class Cosign < Formula
   head "https://github.com/sigstore/cosign.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2099621c47c489b056c108c4bb8812e948b1a1f3f3d357c1d71726b95cec5bad"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2099621c47c489b056c108c4bb8812e948b1a1f3f3d357c1d71726b95cec5bad"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "2099621c47c489b056c108c4bb8812e948b1a1f3f3d357c1d71726b95cec5bad"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "05adf880a73f558f966887f686c576e17ac0f7e32e9ab16ff983e9c4867103cb"
-    sha256 cellar: :any,                 x86_64_linux:      "244270e61f1e9b55adeed61adeb85201272af0b040ebbd76ebbbd063050e756f"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cosign-3.1.4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "4711531fa405b56028687c63c654a277bf1399b3c687aed0f0390ba9778bfc84"
   end
 
   depends_on "go" => :build

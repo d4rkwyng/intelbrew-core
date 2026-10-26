@@ -7,11 +7,9 @@ class AwsCrtCpp < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "d5d52545623fada261f7140427bf6e09f32af4afd652243199aab9fef6bb3280"
-    sha256 cellar: :any, arm64_tahoe:       "f59d307d3406fee8ce43263960c4db0798c23c3c62dfdb9d9115ee6392f04da2"
-    sha256 cellar: :any, arm64_sequoia:     "cff010af39e4933fc3c1ea5e05b3cc3afccfdc391312a4720dca2cdb1b43f966"
-    sha256 cellar: :any, arm64_linux:       "71a01625b9799dc5f5ac6275b03d0d25a54bc1fc5dae8aa47d2363fda0027668"
-    sha256 cellar: :any, x86_64_linux:      "f6717e96b9b5a8ac2a892f3eec60ea250c7be432a0817c18fa6273e1bba7676f"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aws-crt-cpp-0.44.2"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "9fc6863cfb1b6a341e7535043556449c2b496c15d77c1655761e790088616005"
   end
 
   depends_on "cmake" => :build

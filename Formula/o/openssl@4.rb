@@ -1,9 +1,9 @@
 class OpensslAT4 < Formula
   desc "Cryptography and SSL/TLS Toolkit"
   homepage "https://openssl-library.org"
-  url "https://github.com/openssl/openssl/releases/download/openssl-4.0.3/openssl-4.0.3.tar.gz"
-  mirror "http://fresh-center.net/linux/misc/openssl-4.0.3.tar.gz"
-  sha256 "325b5c806167c13b40b1ffeadfe0248197c00eccc4cf123ec1e28d2d2fd216d9"
+  url "https://github.com/openssl/openssl/releases/download/openssl-4.1.0/openssl-4.1.0.tar.gz"
+  mirror "http://fresh-center.net/linux/misc/openssl-4.1.0.tar.gz"
+  sha256 "50c17baf54cb008f6ce42d50deb4b28050a1aad711636cabd4b241c7e90cc2fd"
   license "Apache-2.0"
 
   livecheck do
@@ -12,9 +12,8 @@ class OpensslAT4 < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/openssl@4-4.0.3"
-    rebuild 1
-    sha256 sonoma: "515b922bce1248a7378b23bddd51e5c77e3bb6b69cd342e5f77a49f41e96d362"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/openssl@4-4.1.0"
+    sha256 sonoma: "137067229a341b9104aa2337449dc006122808cccb4e2c4abfd6d386615204d4"
   end
 
   depends_on "ca-certificates" => :no_linkage

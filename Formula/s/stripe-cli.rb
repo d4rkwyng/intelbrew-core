@@ -6,11 +6,9 @@ class StripeCli < Formula
   license "Apache-2.0"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "d9bac28094d1184e3fff06550355e2668ee5b4decf06c1a2689b7709a3c0a101"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d9bac28094d1184e3fff06550355e2668ee5b4decf06c1a2689b7709a3c0a101"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "d9bac28094d1184e3fff06550355e2668ee5b4decf06c1a2689b7709a3c0a101"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "ea4dcbb78eab468df99b64eba56b317e40aed776afd4f99f4edfae98b0697438"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "dabb214b82ead7bb1db301b0a9da72d22ffabffdbed1794f47ec643737da2657"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/stripe-cli-1.55.1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "8f4c7d871a13239511fe73d3bf5f52619c6049aca339c50a59652f385fe68c76"
   end
 
   depends_on "go" => :build

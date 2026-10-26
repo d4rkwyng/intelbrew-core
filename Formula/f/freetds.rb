@@ -1,10 +1,9 @@
 class Freetds < Formula
   desc "Libraries to talk to Microsoft SQL Server and Sybase databases"
   homepage "https://www.freetds.org/"
-  url "https://www.freetds.org/files/stable/freetds-1.5.19.tar.bz2"
-  sha256 "0dc2df2fea9934e3a99e00d417f3d192e9897572f6aff3905bd48f2507d16dff"
+  url "https://www.freetds.org/files/stable/freetds-1.5.20.tar.bz2"
+  sha256 "399a8680f77164ff06bec57aeefdff4bb160406e509cd7cc304743d27eafbb23"
   license "GPL-2.0-or-later"
-  revision 1
   compatibility_version 1
 
   livecheck do
@@ -13,9 +12,8 @@ class Freetds < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/freetds-1.5.19_1"
-    rebuild 1
-    sha256 sonoma: "78da50b43cdedf6c40104f34020f8e09fdeb422f96aa7c37e97ffaff0b000cbe"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/freetds-1.5.20"
+    sha256 sonoma: "391e6a7be05b49b4e4bafab447d22f390f7b1ad1160a5b27f664de7a7e514b54"
   end
 
   head do

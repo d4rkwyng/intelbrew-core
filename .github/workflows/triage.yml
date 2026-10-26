@@ -193,7 +193,7 @@ jobs:
               path: Formula/.+@.+
               except:
                 - Formula/b/bash-completion@2.rb
-                - Formula/i/icu4c@78.rb
+                - Formula/i/icu4c@79.rb
                 - Formula/lib/libxml++@5.rb
                 - Formula/o/openssl@4.rb
                 - Formula/p/postgresql@18.rb

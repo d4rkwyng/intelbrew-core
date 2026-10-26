@@ -7,11 +7,9 @@ class Stern < Formula
   head "https://github.com/stern/stern.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2fe74cbba15cc2c937963f741bb5a1d128d5a7575e4481d0ef9df0a88aa5eba4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d06b2477251a8f9d547f36205b615585c1eefa08a9a373800c3ad7ec325b0dae"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "36829a090fbd50a32d63a47e73a438358c3040d8ed050c25352cc78cff7bf90f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b12aaf51669d1cd3f33b645fcab6687e88028b8fca069c005460e01584819859"
-    sha256 cellar: :any,                 x86_64_linux:      "1a5e0c15ff08bc9d6a30849b2a9b125380c479b9452efd269be29ffa410fd782"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/stern-1.35.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "a0a65c50ee0b17819e2a57896016b6c8aa7f15f3d2404293e98c0016810c08ed"
   end
 
   depends_on "go" => :build
