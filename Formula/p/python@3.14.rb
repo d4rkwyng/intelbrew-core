@@ -12,11 +12,9 @@ class PythonAT314 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "8a4a8cb5daccdbd74863492b9a811a18ecc99254234a4a96167dba81edac6a8f"
-    sha256 arm64_tahoe:       "013959a783453ac8f90c1f15b00ed1cd4de8a9ec4fec77f7315dd623d2112e8d"
-    sha256 arm64_sequoia:     "3dcd45b223dd802e61f7504e1d4cfabd811d9c786529ae999cdce7d87e9aa3a8"
-    sha256 arm64_linux:       "2fcd98d4d57e77032984771e0865a6abdad5d8913529a9be8e18b5c3c89a4cd3"
-    sha256 x86_64_linux:      "641d0f0512a23bb516b02368c66d2f5287e4dd66f499488c1bbdc138bcf5d0b2"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/python@3.14-3.14.10"
+    rebuild 1
+    sha256 sonoma: "a47fbc72d8a56772aa741ad274e32e92d4575613077f6e25c81e581254a879b6"
   end
 
   # https://devguide.python.org/versions/#versions
