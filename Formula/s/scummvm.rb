@@ -12,11 +12,9 @@ class Scummvm < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "1097c490df7279bbf4bdf14d013612be4a19b05f23af5a7e49e82789f1748439"
-    sha256 arm64_tahoe:       "5bf8ac7de6bebc8fbeabd8c50c7bf82e07b41b5eb3b73e48d6f2faf1c2da7141"
-    sha256 arm64_sequoia:     "8452599029f68673c7c99ec55a343cc93e5586b6eb803a206cd9a06711c043ed"
-    sha256 arm64_linux:       "1b333d4afa8a1b15983957261befbb0aa7a0dc19536130dfc40dd62117724bcd"
-    sha256 x86_64_linux:      "04f6102670243e1436ef9167023253f89ae8962a467ca0b76c68dbe120c5e101"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/scummvm-2026.4.0"
+    rebuild 1
+    sha256 sonoma: "a0dfd2af1692b2733c9ddff27aa17f15db5cb3d36a488a17c27feb86041132fd"
   end
 
   depends_on "pkgconf" => :build

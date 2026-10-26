@@ -8,11 +8,9 @@ class FluidSynth < Formula
   head "https://github.com/FluidSynth/fluidsynth.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "094ebbed50819c923aa5844bdf6d54f8d64515bd8230468e48655baa5657ea3c"
-    sha256 cellar: :any, arm64_tahoe:       "81b93ae40985f83b1e7842f7e1df4e4cc9fd7ab2d3552dc87950a22a61e22dd2"
-    sha256 cellar: :any, arm64_sequoia:     "c7ffeb01347c39ce93345130890348220c3e97b54413dc30f8c525cf98e63acc"
-    sha256 cellar: :any, arm64_linux:       "21dffdc0d49a9ba292aa8ba7364c87468bf8ac88061741344012336ae10c2cf6"
-    sha256 cellar: :any, x86_64_linux:      "8eb3a652b6ebc7d13951db7256246d9ff5b9005a3b9c3d9c9dfa112437a3b765"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/fluid-synth-2.6.1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "050e69fcb06634c8e726d29adcec61dcccfca2cb177528d421e402dbbbea9b07"
   end
 
   depends_on "cmake" => :build

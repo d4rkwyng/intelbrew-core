@@ -1,10 +1,9 @@
 class RubyAT33 < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.12.tar.gz"
-  sha256 "b06d63beae271933033e27f0a389bc582a009e7845357d44365c39de525a051b"
+  url "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.13.tar.gz"
+  sha256 "4cae72e971bd1cdb20ca87d299111182417c5276c162de8ead0ab0531426cd61"
   license "Ruby"
-  revision 1
 
   livecheck do
     url "https://www.ruby-lang.org/en/downloads/"
@@ -12,9 +11,11 @@ class RubyAT33 < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ruby@3.3-3.3.12_1"
-    rebuild 1
-    sha256 sonoma: "a8b98d03e58130d8659e3c5381d225ae5cd50344230afe644aebd56a4c820fd0"
+    sha256 arm64_golden_gate: "2fb8dcd7e74a3df2cc3015de44948d4a2f5d16814f1243ec120c3e86e905d4e4"
+    sha256 arm64_tahoe:       "01802ceee30dd61aa336ce5c14252598a82357c35c30704087fa66d2d5812a46"
+    sha256 arm64_sequoia:     "21988c8cb841d7013a20edc34f67660eae1ad002ed97da0872a89fbb26a9c63f"
+    sha256 arm64_linux:       "b48401588f513a271b02b81e426f5b884b98ace1185387aa513ab96714b2dfbb"
+    sha256 x86_64_linux:      "ea2e4f37b328353aaec446b9d17d9ca2fec8b825a6c2836ed80abb20bf2682ac"
   end
 
   keg_only :versioned_formula
@@ -37,8 +38,8 @@ class RubyAT33 < Formula
   # The exception is Rubygem security fixes, which mandate updating this
   # formula & the versioned equivalents and bumping the revisions.
   resource "rubygems" do
-    url "https://rubygems.org/rubygems/rubygems-4.0.16.tgz"
-    sha256 "ea9c669526af82874f8f33f69bea1b6ddd99283756e598227a9a890035a5a06a"
+    url "https://rubygems.org/rubygems/rubygems-4.0.23.tgz"
+    sha256 "843f89b1c9c35c28f7ccaf4580cde1e7b00dbd1907b46bcfdcdbc6afa7345e56"
 
     livecheck do
       url "https://rubygems.org/pages/download"

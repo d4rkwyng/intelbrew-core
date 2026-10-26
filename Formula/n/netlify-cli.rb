@@ -1,16 +1,16 @@
 class NetlifyCli < Formula
   desc "Netlify command-line tool"
   homepage "https://www.netlify.com/docs/cli"
-  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-27.13.0.tgz"
-  sha256 "6fc26f55d74366969bfdcbb8ec59a2473765d74ae0946fd6dbafadd6d3f58406"
+  url "https://registry.npmjs.org/netlify-cli/-/netlify-cli-27.14.2.tgz"
+  sha256 "fd1cbca242801a5be9c73e06da6de87e05c3d46c7a28dd03772e7a0d9c586396"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b6f1f2f1c4873e3e96c8a3bedd650d95ca3ae5075ae3e7253993ef72ca4b5115"
-    sha256 cellar: :any, arm64_tahoe:       "2a0697e03dce3b3e284704954664894571e22a000166aa0fef58cf79fb998ba1"
-    sha256 cellar: :any, arm64_sequoia:     "c2147be48712d20b555ef123df0ba4b0e5551e479541ccc3adceb5644b63e443"
-    sha256 cellar: :any, arm64_linux:       "c83efd36bdd8525dc8e16c2a93fdafc738b1471d875a6893f25479af537d7c29"
-    sha256 cellar: :any, x86_64_linux:      "62c9db52224cbe17980388754cca026cc9d4740e3c0caca7f6fc960a663fbd65"
+    sha256 cellar: :any, arm64_golden_gate: "0df6b062d57adb9214dd0b1528a798cfc993d2f7c97e8a69868f81d47e81fb35"
+    sha256 cellar: :any, arm64_tahoe:       "d03fa13a184e5cc25c70ca6001f47fb97bb32b2363f7c00c2b66be2afa0812d3"
+    sha256 cellar: :any, arm64_sequoia:     "e6ac5f47c9caec58517cc824c7732c16cd1c509fcc62d0dd6efe0836409a57ae"
+    sha256 cellar: :any, arm64_linux:       "db58c7568a71a43b9672694ad9d6ea28523ad567f7dc091381e869b4a3b96dbc"
+    sha256 cellar: :any, x86_64_linux:      "9d0791ed5061e16b160e7dea730e7a59a04bfb54b51b00caae7a9460aea5732a"
   end
 
   depends_on "pkgconf" => :build
@@ -48,6 +48,12 @@ class NetlifyCli < Formula
     node_modules = libexec/"lib/node_modules/netlify-cli/node_modules"
     rm_r(node_modules.glob("@img/sharp-*"))
     rm_r(node_modules.glob("@parcel/watcher-{darwin,linux}*"))
+
+    # sharp 0.35+ no longer builds from source on install, so build it against brewed `vips` explicitly
+    cd node_modules/"sharp" do
+      system "npm", "run", "build"
+      rm_r("src/build/Release/obj.target")
+    end
 
     clipboardy_fallbacks_dir = node_modules/"clipboardy/fallbacks"
     rm_r(clipboardy_fallbacks_dir, force: true) # remove pre-built binaries

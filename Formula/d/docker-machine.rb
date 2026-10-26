@@ -1,9 +1,9 @@
 class DockerMachine < Formula
   desc "Create Docker hosts locally and on cloud providers"
   homepage "https://docs.gitlab.com/runner/executors/docker_machine.html"
-  url "https://gitlab.com/gitlab-org/ci-cd/docker-machine/-/archive/v0.16.2-gitlab.63/docker-machine-v0.16.2-gitlab.63.tar.bz2"
-  version "0.16.2-gitlab.63"
-  sha256 "0144733564f8a45ab0a044710f89f7a4ac053d938dc07aef34fb0b69ae458c88"
+  url "https://gitlab.com/gitlab-org/ci-cd/docker-machine/-/archive/v0.16.2-gitlab.64/docker-machine-v0.16.2-gitlab.64.tar.bz2"
+  version "0.16.2-gitlab.64"
+  sha256 "7c9f9cf281d37f04d6bfd8512ee6ca032003bf1fcfb525e3d2172ab4f9dd8596"
   license "Apache-2.0"
   compatibility_version 1
   head "https://gitlab.com/gitlab-org/ci-cd/docker-machine.git", branch: "main"
@@ -14,9 +14,11 @@ class DockerMachine < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/docker-machine-0.16.2-gitlab.63"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "290e9e24ae44c74d5d6f3e5c428b73b76461bb47a4989dca1a11ddbcf7e2a2e7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "07a874f293151c87e1a1428e3d5e1ea8c368985035688a1023438e10d6cbbbf3"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "07a874f293151c87e1a1428e3d5e1ea8c368985035688a1023438e10d6cbbbf3"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "07a874f293151c87e1a1428e3d5e1ea8c368985035688a1023438e10d6cbbbf3"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "f657f98da5fa0ca06ab33ac9575e2877e1445821076e8756e3e0f5d5035f9f02"
+    sha256 cellar: :any,                 x86_64_linux:      "364aaf71336589c3856a6d0db2683cbb58bb858b06898c6c6d49051357adb87e"
   end
 
   # After Docker ended support for original docker-machine[^1], we have used

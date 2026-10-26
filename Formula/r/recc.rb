@@ -1,17 +1,17 @@
 class Recc < Formula
   desc "Remote Execution Caching Compiler"
   homepage "https://buildgrid.gitlab.io/recc"
-  url "https://gitlab.com/BuildGrid/buildbox/buildbox/-/archive/1.4.28/buildbox-1.4.28.tar.gz"
-  sha256 "ead444ae10887cbb7ee9e650a5c606955370e38dcefdc25ffee79db9146ae203"
+  url "https://gitlab.com/BuildGrid/buildbox/buildbox/-/archive/1.4.30/buildbox-1.4.30.tar.gz"
+  sha256 "8299a4da772c6b1187271836a5601a33e4b17c249a109e211fe7077b486274ed"
   license "Apache-2.0"
   head "https://gitlab.com/BuildGrid/buildbox/buildbox.git", branch: "master"
 
   bottle do
-    sha256 arm64_golden_gate: "2d29fbfa3518f7bbd2e5708a2c2beb17392a01403ae9933969e8398cbca27619"
-    sha256 arm64_tahoe:       "2ea047e0b18d758e35e734bf9b4354deab220b12aab6af822353ae7b3ad87e0f"
-    sha256 arm64_sequoia:     "6ea65e39a181b661d451ef086f45823d5e494d9f4971535ea0db36b8ffb01459"
-    sha256 arm64_linux:       "48c571427eaabd5223feca091487b3c6636a5fcee0cc7b7cb2dbdbd200f2fcad"
-    sha256 x86_64_linux:      "2d156be5ade35f5463b23fbecb88ec3c695bec5e0026a273dcb59605bf8c5071"
+    sha256 arm64_golden_gate: "af17316a8d7a315894535200b593ebe4b0b7d08a745fe286a9472c9aa5ba5907"
+    sha256 arm64_tahoe:       "3530c9edff95635fde1d6a7b8f3392749868cbaa2bd3091e66e19dd3d1b98134"
+    sha256 arm64_sequoia:     "5b291d1fb4c71cfef02628ca6579da909c8afb5e14980efafab9f2c16991037c"
+    sha256 arm64_linux:       "038afc1c397bb7bcbbe8e503c7eefe4a4d28c6a7e4e808e9a7fe27d4ac1655f1"
+    sha256 x86_64_linux:      "32201110cb56b754528dd46e0e91ab7509cbd8ca4eb6d21051c64a292eba636a"
   end
 
   depends_on "cmake" => :build

@@ -4,6 +4,7 @@ class PythonAT315 < Formula
   url "https://www.python.org/ftp/python/3.15.0/Python-3.15.0.tgz"
   sha256 "438596cac081036d3c1d532ab7e7335eeb35567bc961749a0d5797176db0db68"
   license "Python-2.0"
+  revision 1
 
   livecheck do
     url "https://www.python.org/downloads/source/"
@@ -12,11 +13,11 @@ class PythonAT315 < Formula
 
   bottle do
     rebuild 1
-    sha256 arm64_golden_gate: "ed8efc9123bc50bddbd0b0c57b5c4d1454511a1f9b5948cc3980e06284702b4f"
-    sha256 arm64_tahoe:       "6a1b2ad4571091179ce825066d183a7d16f1665b1a143a7803dd8398717d92cd"
-    sha256 arm64_sequoia:     "504b9ffb9a1db9c6f7a51de5497a0512e0cb967e202eddb9bc9ce98d2aae85a4"
-    sha256 arm64_linux:       "fb447d1e1dbcd50cfa19dcedef5aeead8c72900db95812428830ead0df70d8d8"
-    sha256 x86_64_linux:      "55d5fd47939581549c571436b57bae1775f4fd29cf7ea0a78d1c02b5ecc5b822"
+    sha256 arm64_golden_gate: "06582e3e02f6edac9def83fb892865916a9591e995e1b4986ad9c70edb0f5b68"
+    sha256 arm64_tahoe:       "bb47727bd27838ec92ca33730df0211bf077fed2c8828c87e4ce8c1490e4bbb1"
+    sha256 arm64_sequoia:     "454e9a50033e82a0492a0fe0b5b553b28bf6cd97bff7be22464b99858a84b03f"
+    sha256 arm64_linux:       "55d944471dc669972baab2fc2af277598f01a9bd383c6c69ef7a3f6e6be5c39b"
+    sha256 x86_64_linux:      "82fa6269af6bb0726471dfabcd7421834e77cbc0ee0984dc5eabdcbaebd1c239"
   end
 
   # https://devguide.python.org/versions/#versions
@@ -65,8 +66,8 @@ class PythonAT315 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/ae/15/4500e320e6b101ec3b719ae85b697d9940b6cda672bc555bd6016fc60c6f/pip-26.2.1.tar.gz"
-    sha256 "f6ad667e89a1fe78046c8f13232b247200f5258d7828f3f7883d660878e0813f"
+    url "https://files.pythonhosted.org/packages/fa/e8/0842d757e483e895e670f655084cfe8b8c72580c6769a76b30b2789a0608/pip-26.2.2.tar.gz"
+    sha256 "3a8e5c800492787f33a4114ef54444546c340df428974ebba17e0fd47e11af2f"
   end
 
   # Modify default sysconfig to match the brew install layout.
@@ -150,6 +151,20 @@ class PythonAT315 < Formula
       args << "--enable-framework=#{frameworks}"
       args << "--with-dtrace"
       args << "--with-dbmliborder=ndbm"
+      # Intelbrew: the tail-call interpreter needs clang preserve_none + musttail
+      # (Python/ceval_macros.h); Apple clang 16 has no preserve_none. Same check.
+      tail_call_probe = buildpath/"intelbrew-tail-call-probe.c"
+      tail_call_probe.write <<~C
+        #if !__has_attribute(preserve_none) || !__has_attribute(musttail)
+        #error no efficient tail calls
+        #endif
+      C
+      args << if quiet_system ENV.cc, "-fsyntax-only", tail_call_probe
+        "--with-tail-call-interp"
+      else
+        "--without-tail-call-interp"
+      end
+      tail_call_probe.unlink
 
       # Avoid linking to libgcc https://mail.python.org/pipermail/python-dev/2012-February/116205.html
       args << "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"

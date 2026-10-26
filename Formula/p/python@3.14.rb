@@ -1,10 +1,9 @@
 class PythonAT314 < Formula
   desc "Interpreted, interactive, object-oriented programming language"
   homepage "https://www.python.org/"
-  url "https://www.python.org/ftp/python/3.14.8/Python-3.14.8.tgz"
-  sha256 "a65b20a728f169f4e66ae143f40b1bd3d33c38d770251663f627c9767b79b210"
+  url "https://www.python.org/ftp/python/3.14.9/Python-3.14.9.tgz"
+  sha256 "8b47e85ee67e93945e93620a051a8f44bfc1e9735ed67075d166f4a74b7a060b"
   license "Python-2.0"
-  revision 2
   compatibility_version 1
 
   livecheck do
@@ -13,12 +12,8 @@ class PythonAT314 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "789869eac42ee37cc4311059d65f88cb673fa62d170693da4ab44d00c014f4f2"
-    sha256 arm64_tahoe:       "a6e9f54e583c2ca8668a4c63141ef599dd6db5cf927f3cb210820321e97c86cd"
-    sha256 arm64_sequoia:     "3849a3188921562ed6d698a84e9a0f5d9c0c7b921f40e1fcb0c21d4ce531b99f"
-    sha256 arm64_linux:       "9d53b15def0d3bc96d0d0cc5b7c84286fc69d5bc38955a22924224c580865334"
-    sha256 x86_64_linux:      "8e2ea9ce754771c5be07ad023887a1511708a136370770895204ab715e4cd3a6"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/python@3.14-3.14.9"
+    sha256 sonoma: "a8f8811b7df50b262b9211f0569fe73ed72d162bc60cbe980597a131bbe617bc"
   end
 
   # https://devguide.python.org/versions/#versions
@@ -60,8 +55,8 @@ class PythonAT314 < Formula
   end
 
   resource "pip" do
-    url "https://files.pythonhosted.org/packages/ae/15/4500e320e6b101ec3b719ae85b697d9940b6cda672bc555bd6016fc60c6f/pip-26.2.1.tar.gz"
-    sha256 "f6ad667e89a1fe78046c8f13232b247200f5258d7828f3f7883d660878e0813f"
+    url "https://files.pythonhosted.org/packages/fa/e8/0842d757e483e895e670f655084cfe8b8c72580c6769a76b30b2789a0608/pip-26.2.2.tar.gz"
+    sha256 "3a8e5c800492787f33a4114ef54444546c340df428974ebba17e0fd47e11af2f"
   end
 
   resource "wheel" do
@@ -184,6 +179,20 @@ class PythonAT314 < Formula
       args << "--enable-framework=#{frameworks}"
       args << "--with-dtrace"
       args << "--with-dbmliborder=ndbm"
+      # Intelbrew: the tail-call interpreter needs clang preserve_none + musttail
+      # (Python/ceval_macros.h); Apple clang 16 has no preserve_none. Same check.
+      tail_call_probe = buildpath/"intelbrew-tail-call-probe.c"
+      tail_call_probe.write <<~C
+        #if !__has_attribute(preserve_none) || !__has_attribute(musttail)
+        #error no efficient tail calls
+        #endif
+      C
+      args << if quiet_system ENV.cc, "-fsyntax-only", tail_call_probe
+        "--with-tail-call-interp"
+      else
+        "--without-tail-call-interp"
+      end
+      tail_call_probe.unlink
 
       # Avoid linking to libgcc https://mail.python.org/pipermail/python-dev/2012-February/116205.html
       args << "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"

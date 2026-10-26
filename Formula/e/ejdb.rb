@@ -2,17 +2,17 @@ class Ejdb < Formula
   desc "Embeddable JSON Database engine C11 library"
   homepage "https://ejdb.org"
   url "https://github.com/Softmotions/ejdb.git",
-      tag:      "v2.92",
-      revision: "a57c40eeb9a834359fb76b880a5eb350d44129bf"
+      tag:      "v2.95",
+      revision: "3ed77af15559da8d3fe29ff3ff0c188ce6faf421"
   license "MIT"
   head "https://github.com/Softmotions/ejdb.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "b1f67422d8aea16e47d938568ed8f27b2df2af3eb0a6c32c4b954c9881f677db"
-    sha256 cellar: :any, arm64_tahoe:       "02d86f8264045ca0ef2a4c88b916f2c75ee302ad33683ce3a7e6779223548456"
-    sha256 cellar: :any, arm64_sequoia:     "f7185a5da23f5f0d5c250740639518964a4096e8ab4385552a3adafcea29a1d6"
-    sha256 cellar: :any, arm64_linux:       "ccfb01427cc7cd186ae40b30782a06593c3a663b1a43816eade4827f4dce4047"
-    sha256 cellar: :any, x86_64_linux:      "71ec322bd0654408acee22c0bce22ff13febc3c91fb02170c977ad04e02151da"
+    sha256 cellar: :any, arm64_golden_gate: "a63013a9253e215e08e5a4f7b608939f8cb8f75aefd09e8022a6bdaede715278"
+    sha256 cellar: :any, arm64_tahoe:       "1e0034881768947319526fcdc5be14f64e3a8ac402b49c77377aeb2c73894e7c"
+    sha256 cellar: :any, arm64_sequoia:     "73b659b327e6c72007c5afe095799a240e3605ec767954dcd0487549e84c6837"
+    sha256 cellar: :any, arm64_linux:       "91a2b3114deb091fa0ac3194d4144c21905d7c511c86cdc8f37893838ebb2c0c"
+    sha256 cellar: :any, x86_64_linux:      "9fdd1ec972d6536db30d3b659153a08e65d732af7b4ae9916c4d82f0f15633de"
   end
 
   depends_on "pkgconf" => :build
@@ -26,20 +26,24 @@ class Ejdb < Formula
   end
 
   resource "iwnet" do
-    url "https://github.com/Softmotions/iwnet/archive/refs/tags/v1.3.1.tar.gz"
-    sha256 "2f6bee87943dd383f4d86f18f907fe078bbb09fdb1cb828c9abe297d18435478"
+    url "https://github.com/Softmotions/iwnet/archive/refs/tags/v1.4.1.tar.gz"
+    sha256 "43428ea216ac1bb461833e082924e0302b21cfc172de377395d0bdbda6d1be8a"
 
-    # Fix macOS builds, upstream PR ref, https://github.com/Softmotions/iwnet/pull/11
-    patch do
-      url "https://github.com/Softmotions/iwnet/commit/f11675b71373f561d9c0690e2f4cc4044f666a15.patch?full_index=1"
-      sha256 "446667fcc1cded631c39071786499680a54c7d38a70e4537802da4006cacff3f"
-      type :unofficial
+    livecheck do
+      url "https://raw.githubusercontent.com/Softmotions/ejdb/refs/tags/v#{LATEST_VERSION}/Autark"
+      regex(%r{/iwnet/archive/refs/tags/v?(\d+(?:\.\d+)+)\.zip}i)
     end
   end
 
+  # iowow is pinned by iwnet rather than ejdb, so follow iwnet's default branch
   resource "iowow" do
-    url "https://github.com/Softmotions/iowow/archive/refs/tags/v1.5.2.tar.gz"
-    sha256 "24b91edcc69a48a752b2a1892a0b935e980afb8a04eb659c699e77d29253ab61"
+    url "https://github.com/Softmotions/iowow/archive/refs/tags/v1.7.1.tar.gz"
+    sha256 "5d3d608099138c37f88bfe3b94c5b8e851584ff7767d695b140e47bfa24f95c7"
+
+    livecheck do
+      url "https://raw.githubusercontent.com/Softmotions/iwnet/refs/heads/master/iowow.autark"
+      regex(%r{/iowow/archive/refs/tags/v?(\d+(?:\.\d+)+)\.zip}i)
+    end
   end
 
   deny_network_access! :test
@@ -50,14 +54,18 @@ class Ejdb < Formula
     end
 
     # Keep dependency libraries in Homebrew's lib directory on Linux too.
-    inreplace ["Autark", "iwnet/iowow.autark"], "--prefix", "--libdir=lib --prefix"
+    inreplace ["iwnet.autark", "iwnet/iowow.autark"], "--prefix", "--libdir=lib --prefix"
 
-    # Use the staged resource instead of downloading the development branch.
+    # Use the staged resource instead of downloading it.
     inreplace "iwnet/iowow.autark",
-              "https://github.com/Softmotions/iowow/archive/refs/heads/master.zip",
+              %r{https://github\.com/Softmotions/iowow/archive/\S+\.zip},
               "dir://#{buildpath}/iowow"
 
-    system "./build.sh", "--prefix=#{prefix}", "--libdir=lib", "--jobs=#{ENV.make_jobs}",
+    # Bundled peg's `make install` can copy its man page before creating the directory
+    jobs = ENV.make_jobs
+    ENV.deparallelize
+
+    system "./build.sh", "--prefix=#{prefix}", "--libdir=lib", "--jobs=#{jobs}",
                          "-DIWNET_URL=dir://#{buildpath}/iwnet", "-DEJDB_BUILD_SHARED_LIBS=1"
   end
 

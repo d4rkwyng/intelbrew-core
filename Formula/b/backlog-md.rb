@@ -1,16 +1,16 @@
 class BacklogMd < Formula
   desc "Markdown‑native Task Manager & Kanban visualizer for any Git repository"
   homepage "https://github.com/MrLesk/Backlog.md"
-  url "https://github.com/MrLesk/Backlog.md/archive/refs/tags/v1.55.0.tar.gz"
-  sha256 "9f325ac263114ac43f73081cbd874e2e7d43855a3c41cd2e44e8434ab0379012"
+  url "https://github.com/MrLesk/Backlog.md/archive/refs/tags/v1.55.3.tar.gz"
+  sha256 "d61d27116a36e01ce368d014a2717c792cb592d4aee6081e265cd8d543ce3b2d"
   license "MIT"
 
   bottle do
-    sha256 arm64_golden_gate: "4ab9828b9662492676892099d47843788fd837cd02df9939f6a92010370d7c57"
-    sha256 arm64_tahoe:       "148eaef50c15632f98b949ebb3443f2e8a000fc90ce47412612b01328409cc64"
-    sha256 arm64_sequoia:     "eab5c36ea01bc325eea0facdd4d01ea0ad88dbaecb596cf17c2e5fa6a907d040"
-    sha256 arm64_linux:       "ab39b586e6d31d843e1a80113c1292785a97cb0d320ed6b2dde2a093a7baa3c0"
-    sha256 x86_64_linux:      "b345a4e822da2c2aadda8e25f9e7ad6575d8edb2c716428143a95e6fc879acf1"
+    sha256 arm64_golden_gate: "379e61ef6d1685ee3a156288e722cfa5d0b5ed5227f17b3309a1ddd3c16f66b3"
+    sha256 arm64_tahoe:       "efcc0099a4d569689721a15e5039fad6a2fd15a652f0fd389bc78c09ea1b6e69"
+    sha256 arm64_sequoia:     "cbe9e53ceecd634b6bed34b93fb730b21c9f1e35f85b2379101d1fc1e5fad533"
+    sha256 arm64_linux:       "6268dbc946862a3bf6c38691c6047e4580bd73f86f265511f7976f02335e18ba"
+    sha256 x86_64_linux:      "528dd644d0831c20029b8013988a2b7678b5305892db666eba645d18121fa575"
   end
 
   depends_on "bun" => :build
@@ -20,6 +20,12 @@ class BacklogMd < Formula
     depends_on "icu4c@78"
   end
 
+  deny_network_access!
+
+  def fetch
+    system "bun", "install", "--frozen-lockfile", "--ignore-scripts"
+  end
+
   def install
     if OS.linux?
       bun_icu = Formula["bun"].deps.find { |dep| dep.name.match?(/^icu4c/) }.to_formula
@@ -27,8 +33,6 @@ class BacklogMd < Formula
 
       odie "Update icu4c dependency!" if bun_icu.name != icu.name
     end
-
-    system "bun", "install", "--frozen-lockfile", "--ignore-scripts"
 
     # Upstream injects the version at release time; the tagged `package.json` lags.
     ENV["BACKLOG_BUILD_VERSION"] = version.to_s

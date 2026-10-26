@@ -1,10 +1,9 @@
 class NodeAT22 < Formula
   desc "Open-source, cross-platform JavaScript runtime environment"
   homepage "https://nodejs.org/"
-  url "https://nodejs.org/dist/v22.23.3/node-v22.23.3.tar.xz"
-  sha256 "bd97093e1a1e9243338950c174a693a64d4e0926a9c6ce259962bc58d5e96909"
+  url "https://nodejs.org/dist/v22.23.4/node-v22.23.4.tar.xz"
+  sha256 "7b9adc82d612d0a2a863d96c46de2292552e250cee51956ebbe0146c42aacae9"
   license "MIT"
-  revision 3
   compatibility_version 1
 
   livecheck do
@@ -13,9 +12,11 @@ class NodeAT22 < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/node@22-22.23.3_3"
-    rebuild 2
-    sha256 cellar: :any, sonoma: "0fa3d1e4987a9e5aae0192664d831a5f8e8c80cac4c05abc104364cacf745238"
+    sha256 cellar: :any, arm64_golden_gate: "348b7437d9c66330c9915690731cae07cf40f2f089678827d67a37dbf6929375"
+    sha256 cellar: :any, arm64_tahoe:       "43a65dcdb5b91f2be96a72c8725c72cc57dd74ad535ba93577d0bc3e92c4de21"
+    sha256 cellar: :any, arm64_sequoia:     "8f5e218f1803bd4246cc5f19af7b04502b670d3bff70fad8211962fd399abdb2"
+    sha256 cellar: :any, arm64_linux:       "b69537e62f8586104d777d17558241a9db377e03f1e6d41e46dc5396aedafe5b"
+    sha256 cellar: :any, x86_64_linux:      "f9883e9c76041507ac314fd967e73fe51f17f843f2ccaca046a80d8eaaa2c53a"
   end
 
   keg_only :versioned_formula

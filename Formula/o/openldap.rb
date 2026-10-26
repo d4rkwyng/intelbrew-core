@@ -1,11 +1,10 @@
 class Openldap < Formula
   desc "Open source suite of directory software"
   homepage "https://www.openldap.org/software/"
-  url "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.7.1.tgz"
-  mirror "http://mirror.koddos.net/OpenLDAP/openldap-release/openldap-2.7.1.tgz"
-  sha256 "253db80f301258ea69cda1184766d57395b836aaabf41157eb0316eb0fac1341"
+  url "https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.7.2.tgz"
+  mirror "http://mirror.koddos.net/OpenLDAP/openldap-release/openldap-2.7.2.tgz"
+  sha256 "aad731aa22118ff327b9b4ddfc4b6f18ef9476586205da88a532e90940b523d2"
   license "OLDAP-2.8"
-  revision 1
   compatibility_version 1
 
   livecheck do
@@ -14,9 +13,11 @@ class Openldap < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/openldap-2.7.1_1"
-    rebuild 1
-    sha256 sonoma: "46a7a7660eaebd65511443e0199a42e8501e583f984238cdf5049bb2cfb0b9a6"
+    sha256 arm64_golden_gate: "74486af11b5ce4964408eb37f00616df44df4d1e97551f678a304f2dda064c80"
+    sha256 arm64_tahoe:       "48879a4af02d1a84121f5a6cedd19e4be10610bdadb1906e15bf690553f0cda7"
+    sha256 arm64_sequoia:     "f0fcf9aaced28ea804f4caa12aef13966f22b74d51963f98bc757b29dce1cfdd"
+    sha256 arm64_linux:       "8f35971652270ae3e08756c7f3dbd87ef426c78567aa54dee073d39eff96f606"
+    sha256 x86_64_linux:      "2767f84e88cbba4fcdcef58e23c4cd54e69ac7ba5ad5925ac8d1edc52eea2fb5"
   end
 
   keg_only :provided_by_macos

@@ -2,10 +2,9 @@ class Powershell < Formula
   desc "Command-line shell and scripting language"
   homepage "https://github.com/PowerShell/PowerShell"
   url "https://github.com/PowerShell/PowerShell.git",
-      tag:      "v7.6.7",
-      revision: "c10ef6d557c0d6fe661836f78dbd6fc355261326"
+      tag:      "v7.6.8",
+      revision: "6e29e4530c5631b6d3d2afacb49c6f1267fb0b42"
   license "MIT"
-  revision 1
 
   livecheck do
     url :stable
@@ -13,9 +12,11 @@ class Powershell < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/powershell-7.6.7_1"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "a842cc30f3940a60b78e774f929326f6131f3c312a45dd8fc671b65667d9d4ba"
+    sha256 cellar: :any, arm64_golden_gate: "2eef0d701ec2389fdc297bb6848b8b7a63d9971f1de32116d6fb284d2bc69c44"
+    sha256 cellar: :any, arm64_tahoe:       "649fee6373e84e39a7d6868b917c32dc7df3f74bb7eab0147535e1d86a0b539d"
+    sha256 cellar: :any, arm64_sequoia:     "1ad7baf0800e47dc987bec06a4277fa9cb3b378dc2a1ef2bd2d587d7d942b5b5"
+    sha256 cellar: :any, arm64_linux:       "1e7d75041a1fda4a5e7bfd55bba5576ca7992c2fde5664392de32d5903c2885b"
+    sha256 cellar: :any, x86_64_linux:      "fdd99b970660fe40883b8ef4d4f424ad60cc2e8e9cbf4f57d1b52718729f6694"
   end
 
   depends_on "dotnet"

@@ -2,9 +2,9 @@ class PhpAT83 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.3.35.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.3.35.tar.xz"
-  sha256 "ff4630fbbbd94359134b7d3c223db59329905bdc4f5a9ef93d257b48e358619a"
+  url "https://www.php.net/distributions/php-8.3.36.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.3.36.tar.xz"
+  sha256 "dd54693aa334c5c4d72e9aee96b082c2473750a18a6c1d105789c93a3b1692fd"
   license all_of: [
     "PHP-3.01",
 
@@ -28,7 +28,6 @@ class PhpAT83 < Formula
     "TCL",                   # 7
     "Zlib",                  # 8
   ]
-  revision 1
 
   livecheck do
     url "https://www.php.net/downloads?source=Y"
@@ -36,9 +35,11 @@ class PhpAT83 < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/php@8.3-8.3.35_1"
-    rebuild 1
-    sha256 sonoma: "56e44bbfe6ac2bf91fdcf8f548e4399f07fbd44e65f1038e1be6a7be05f83596"
+    sha256 arm64_golden_gate: "615bb8ce9e9e6f8671153b021510f6b8250d55f285c8c8479eb75ec176e235e1"
+    sha256 arm64_tahoe:       "e383216d567f46c09a1616704cc858d02184c48fa814eb332f8e76e97fc2fd99"
+    sha256 arm64_sequoia:     "8051a4db1336756a10891b7c168affdef89aa5cf89ca6401de25e554a0a55e30"
+    sha256 arm64_linux:       "760af98c05b22226d39b60953d2c39487a00bf11d886dc8eaa6faf81f2e27ec6"
+    sha256 x86_64_linux:      "640fc495f19eb9eecbcafdb19e43967806aabdd760160febac2ff20be54c2ce6"
   end
 
   keg_only :versioned_formula
