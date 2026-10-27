@@ -27,11 +27,9 @@ class Bun < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "d981e4819b919a82ba31c4bd99886618147611891196bfddba1b7b1ea5e86c07"
-    sha256 arm64_tahoe:       "040e2cad4ffa635a17f79f513a8a9648e484db77da281bec277fc93f2165e9ca"
-    sha256 arm64_sequoia:     "c6c0f34c89aae77baa9f67bff67b7f52dd1bacee8c50e2065611cffe04f9504e"
-    sha256 arm64_linux:       "5233d6f3912d69bb260625d38a11bfc0f583fe627651db5108ef11bd347facc9"
-    sha256 x86_64_linux:      "2cdbd6f703b13288d7c78e865b26c0defc0d9a0daf4592cf3f8ea7bbac8088fd"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/bun-1.4.4_1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "cd82bed310c81f62dbaf493838ae16195e63d2f23f49726dc30f3bb036d50f27"
   end
 
   depends_on "cmake" => :build

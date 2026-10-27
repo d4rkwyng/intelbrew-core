@@ -9,11 +9,9 @@ class SnowflakeCli < Formula
   head "https://github.com/snowflakedb/snowflake-cli.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "a5aebe5d4f631e4af36aaa441946d3f0098118be5eed8fa501218e58e53b3bed"
-    sha256 cellar: :any, arm64_tahoe:       "a17dd1d4d092444bc8f46baccdc7d5692a4a217488a29b431eb0b1bddb9fbc6f"
-    sha256 cellar: :any, arm64_sequoia:     "e294b8f651af9e8c3472171c49e3e5393f50cec613a30a3313bd950f1239b9d6"
-    sha256 cellar: :any, arm64_linux:       "19a5951a92afced048d98d02626504cf7ea56881470d4807ba881c357c23c03c"
-    sha256 cellar: :any, x86_64_linux:      "d61ded49fb96ba8d6cbc8ba2898ff621db7ae6c56db1246c23aeee149c054549"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/snowflake-cli-3.31.0"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "418a78933f3dccd49097d3ab0c901c5e8c5eb8d97699d36ea1c7ae4966ae2fc6"
   end
 
   depends_on "protobuf" => :build

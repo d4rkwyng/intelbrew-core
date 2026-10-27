@@ -16,8 +16,8 @@ class Openvino < Formula
 
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/openvino-2026.4.1"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "db7988ce2bc26a709fe302e49068b1a8258e6049b2a8a013172633fcb0ee6f3f"
+    rebuild 2
+    sha256 cellar: :any, sonoma: "d46b355d3a71955838471db4b66eeedbef6c5b3a54854e5927fb4e0c97a3d277"
   end
 
   depends_on "cmake" => [:build, :test]

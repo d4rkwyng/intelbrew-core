@@ -12,11 +12,9 @@ class Nmap < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "ccc2756db90d4a7fe768b473ce4e006109002ab5c91aba60034c9969e0be0d8c"
-    sha256 arm64_tahoe:       "affe98fb2db9b7712ca41b6485a4403aad4af549c626032b6c1ea6ed57a75c7a"
-    sha256 arm64_sequoia:     "e3fbe5d32fee8255873112ea0b334370e69dd06d2cdc67ae4595e61aa015066f"
-    sha256 arm64_linux:       "c2aed414bec25d82ed498b9f66cae486a8e586cd75ab4dd5af50a3dfe22d6830"
-    sha256 x86_64_linux:      "3fe32360824e60cd1f0ed7da590edeaf1ffe629a3a14e2dffab1f32794992f28"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/nmap-7.992"
+    rebuild 1
+    sha256 sonoma: "8c7d25cb749fd9eca2e61ef881e1f52ad7d865ba3281cbee85da3cfa5cfc859b"
   end
 
   head do

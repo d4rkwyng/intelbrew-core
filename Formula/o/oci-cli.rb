@@ -9,11 +9,9 @@ class OciCli < Formula
   head "https://github.com/oracle/oci-cli.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "9f562362d5f86b7662e4d22a5c39e9bfa139237892300773eb83e1c04d6c4e86"
-    sha256 cellar: :any, arm64_tahoe:       "6306fb035e9030982f8c94290e7cad8b9d95924cab13de15fbc96c0b60b86244"
-    sha256 cellar: :any, arm64_sequoia:     "527c7b0e3ccc4778ed890c596f9de3bbe40797075d5f4e72d675533a45951a12"
-    sha256 cellar: :any, arm64_linux:       "164477285e4e30e4095c33f800b3d00c258ec80eaea6fbeb23d13c036946245f"
-    sha256 cellar: :any, x86_64_linux:      "ddb20b421cc768b529e6b40985229c56054e51f210866919f6c0324b81b42fef"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/oci-cli-3.95.1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "e059dad65b1bdace5cd03b43392ddb156c90ded912053552172297199341d7ba"
   end
 
   depends_on "certifi" => :no_linkage

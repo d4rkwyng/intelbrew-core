@@ -15,11 +15,9 @@ class CargoBinstall < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c181ebe8f239353c4aa9de17353a5678a5e8bf96023ed260ec6f3c577bab0c4a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ae2c04c42fdbd379acca3afde0913bdbf477926b1bb98e093e5f0891aa2ba7e5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "5df306c1d70056522be18932a906406ff879cddb2edac814947e409cda6a776f"
-    sha256 cellar: :any,                 arm64_linux:       "5917c7d2e48f9c375bf0e4a9a119ec3a279694f8f509211090bd212a4815cfca"
-    sha256 cellar: :any,                 x86_64_linux:      "c35604eaa0cc1bb972d79293db3f79680acb9742619994eb0fc3fec42ef14fd9"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cargo-binstall-1.26.1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "2f14de14f50de6a182b33582985e14575228d356d5da299d13af31130da8618d"
   end
 
   depends_on "rust" => :build

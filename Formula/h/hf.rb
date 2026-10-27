@@ -9,11 +9,9 @@ class Hf < Formula
   head "https://github.com/huggingface/huggingface_hub.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "7c1e4dbace6cfcbd0f09f9f3b7169360b9d133e70099b35c3402ccaacc591ead"
-    sha256 cellar: :any, arm64_tahoe:       "46019f32065e7ac8df7a74adca188bdddd90a1ceeaace46c5c160d7cc9c01fc5"
-    sha256 cellar: :any, arm64_sequoia:     "9be5af2f82e5da9b0d960b1d34c1fe0c969f811bc1b6fdcfdb161c621bfd83bf"
-    sha256 cellar: :any, arm64_linux:       "cf9284477efac1e60d69d3a0e637e36069f6fa31df9f51e7cf6261ad831ac484"
-    sha256 cellar: :any, x86_64_linux:      "0e7c0a9bd11aa61c10133e118170235efc752a0dedd079323f89e02f0549b711"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/hf-2.3.0"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "9da9a919ea499db4cb2fd6f2fa4eae94cacaeaea65d18e1506ff4bdd6f6bc6e7"
   end
 
   depends_on "pkgconf" => :build

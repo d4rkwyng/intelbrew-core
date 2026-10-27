@@ -13,8 +13,8 @@ class PostgresqlAT15 < Formula
 
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/postgresql@15-15.19_1"
-    rebuild 1
-    sha256 sonoma: "e49328f951150793eeffe67ef8a4dbffba301d37823ef0f7b59a54117453a776"
+    rebuild 2
+    sha256 sonoma: "d196a834e6b637bf072e22e90e7890b6b5da2234ae47295449a087ef4fd4dd77"
   end
 
   keg_only :versioned_formula

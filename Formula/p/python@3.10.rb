@@ -8,11 +8,9 @@ class PythonAT310 < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_golden_gate: "3e0cc28d77d7099b06b9b92cafaa18aad1dbdc71f941b28e26f3b5200edae535"
-    sha256 arm64_tahoe:       "937976ef51396eb7259ea45a3df2439df3a5bdc81f6f1c95072411f3c5875c21"
-    sha256 arm64_sequoia:     "e16f7daed7561cfba57dcfc7537f97b28c55d655bbf17bb0a1f2a134c53494a3"
-    sha256 arm64_linux:       "ea417eab3c836c1d6a06c0208aeabec7426aca434f374e203393bb27a3dae8dd"
-    sha256 x86_64_linux:      "84a79862cddeb137aaae260f851668dd5b40153c836316879391407c1467bd22"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/python@3.10-3.10.22_1"
+    rebuild 1
+    sha256 sonoma: "e75c2779140d67ae9a4be5972ad2c1bd3160092ed27089c959b269974e6ba42b"
   end
 
   # setuptools remembers the build flags python is built with and uses them to

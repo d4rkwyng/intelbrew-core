@@ -9,12 +9,9 @@ class Gdb < Formula
   head "https://sourceware.org/git/binutils-gdb.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "91247f76ee73fbc366d3044eb8535481ec1bfb9cda70a2a44fa5c4e9ed0b7673"
-    sha256 arm64_tahoe:       "9f783087782b9503fe7f9cceab6dbf7d157fff4bc5655f60d58960986904b647"
-    sha256 arm64_sequoia:     "a95e812778d999050c682e0ee353c18e0ab8d33d32834fa31c13ea661f622d24"
-    sha256 arm64_linux:       "3eb3f9425ed5084dd39521f62fdd1009ac9e105a121959c6c7d5a5f07e0a590a"
-    sha256 x86_64_linux:      "e790c95283f479fa22c597833c8bb6044f46758a0ea242effb30bc9d4c0b36b4"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/gdb-18.1"
+    rebuild 2
+    sha256 sonoma: "95800ff32540ff0c790dbd0c3d403bbc95de61de5764e0d0d1f7cb8ca11d95c2"
   end
 
   depends_on "pkgconf" => :build

@@ -10,11 +10,9 @@ class PythonTkAT314 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "c74bc9b010d0c1d2f289748e3240c4e4d51e16fc21a211748abdabc95651f044"
-    sha256 cellar: :any, arm64_tahoe:       "49566822b55b9e97807a03ac9dc822721ecb75b580305e41bdd3186f0450d579"
-    sha256 cellar: :any, arm64_sequoia:     "e935259b4037dff9e4210661431a131dd7ace1e130d11f9fdaaccb8b5d070a97"
-    sha256               arm64_linux:       "40f407cf9897886dfaf17689982724b9f7411e5bf290e5d85cb2164743c468b6"
-    sha256               x86_64_linux:      "6178c4db46935e9f3d9b4578f55e93f7987b527d1fa18046dd252964a3f3be6d"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/python-tk@3.14-3.14.10"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "16d4d68d28448ea010b69247ea4f97dddeca62628909b5134325d17676980806"
   end
 
   # https://devguide.python.org/versions/#versions

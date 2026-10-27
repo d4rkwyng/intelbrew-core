@@ -15,12 +15,9 @@ class Ldns < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "bd5f2fd751a447da77cb8528bda0019d8230d0045dd094bafac0b40579280ff9"
-    sha256 cellar: :any, arm64_tahoe:       "b091aad44eaf206d452c168760e542ab1a288241670dd06b4e8854b98db3d22a"
-    sha256 cellar: :any, arm64_sequoia:     "ea5496fc061586e2b9f4547ed614d2f18ba10b771524fcff4ea3080c63447288"
-    sha256 cellar: :any, arm64_linux:       "bea6ef6fb5b2e072190a57984806f124112feb22e18a41fd6ba914cac2919cff"
-    sha256 cellar: :any, x86_64_linux:      "e11ba0a197b2396e6e92ea269044210a2d7a279afc03cf6522ad65f3dc3bcc31"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ldns-1.9.2_1"
+    rebuild 2
+    sha256 cellar: :any, sonoma: "2e3f6381d3ac649580385311276f49c44b17586f3791a98b321cecb16b350948"
   end
 
   depends_on "swig" => :build

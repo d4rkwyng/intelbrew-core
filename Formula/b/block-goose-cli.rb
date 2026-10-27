@@ -12,11 +12,9 @@ class BlockGooseCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7e6011381ccb921522ca2f6605f20c3a859f7fc2f993b91f8c731edf595c0854"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "280c5a55f1517a3e63be364668f815f21e2d61f8db4be9e87b039f9b985d3b72"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e8817a6621eb0238c676010cce552635b065d7690e630840d0676c1f5f18d452"
-    sha256 cellar: :any,                 arm64_linux:       "b9230ec92981b91a3e1d5b532201312817939a468ad9dd051429afd9ac7fec29"
-    sha256 cellar: :any,                 x86_64_linux:      "257cf560eaf8cbe2cff68612548754d83939fe6ac2ac9b72f7ea9c7ac6964d88"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/block-goose-cli-1.56.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "e218c4e6ada6993e000af39db72730a0bc3067e1b96ea00ac91d85dae22405eb"
   end
 
   depends_on "cmake" => :build

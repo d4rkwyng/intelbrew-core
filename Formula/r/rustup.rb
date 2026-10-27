@@ -14,11 +14,9 @@ class Rustup < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "27bbc67ff56c010b5ae02abd09456d513e6ccb4b54d0818915c1d49e32075cbe"
-    sha256 cellar: :any, arm64_tahoe:       "4a777627c17a11cd1f907e2bbe68095baa247ca27d29745f5d03dd99c3a5b4a3"
-    sha256 cellar: :any, arm64_sequoia:     "4a14a4be824bc9a7f39869350c1cb1f91468ee35586f8dd70fc7dae3020484e7"
-    sha256 cellar: :any, arm64_linux:       "f2cb1c2104d13d32dba4cb2803d46a711b167e3c6606132ccdae9623387bcd40"
-    sha256 cellar: :any, x86_64_linux:      "03b2c1db2e4fac2f1cc365de392a3ddc56603a8abdb7c9aefed572aa4ef60878"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/rustup-1.29.2"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "c82724556c46742b6295147176190b6748570949ad522d0107b17ecce257d75b"
   end
 
   keg_only "it conflicts with rust"

@@ -9,11 +9,9 @@ class Black < Formula
   head "https://github.com/psf/black.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b389df385ac8a95cf64da540360440cbb0fe7c5343bfaf8a866dcaf1f4d125ff"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "95cf0e42ea32e15238d7de7ab14774da6db374984f7f1f806628ce32035d23cb"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "049cac47655fbde1c946e9f1ef097b5aead749e0354b67f35b3f4e8d8e37df77"
-    sha256 cellar: :any,                 arm64_linux:       "e492acbb1d2eaedfa28e0b8221d768cb3a6b0141e7a29698e06e7d11f0a39db5"
-    sha256 cellar: :any,                 x86_64_linux:      "ffeabc52ecc743ae19689861e4e0935e5b63a2c769a98deeebf8c6ccc58fd65f"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/black-26.10.1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "0c54972b8a727e21bd04faa150835d49ef41a6c5d3dbdfd04ce44db18cb9f02e"
   end
 
   depends_on "rust" => :build # pytokens -> mypy -> ast-serialize

@@ -10,11 +10,9 @@ class PythonTkAT312 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "1ae2665d755fdabe486520abf29166abc4dc396fd2e97178afca8e506ee5e212"
-    sha256 cellar: :any, arm64_tahoe:       "4ac87c4866deaf415263f9f0174d2ce3f5bb3e620df1e3c5f1ed6f01dcf3778c"
-    sha256 cellar: :any, arm64_sequoia:     "ab60e6a0dfa41f7d56656bc0cfc929959a00d75d84f253c9c8fab008bfbc9276"
-    sha256               arm64_linux:       "8b5bc05c824cea71e90aeac173cb86658a51506edab967ec56e9f5707c43eb10"
-    sha256               x86_64_linux:      "616d47082dcb781f3486e2099213ddb62f4d3f55f58bc12f9aa98a2faf8f92e8"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/python-tk@3.12-3.12.16"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "2a5e46e2cead14b5e5edf74abb04933e8e898f9cd6a4c6c7f4781ae30cfee5e6"
   end
 
   # https://devguide.python.org/versions/#versions

@@ -1,8 +1,8 @@
 class RattlerBuild < Formula
   desc "Universal conda package builder"
   homepage "https://rattler.build"
-  url "https://github.com/prefix-dev/rattler-build/archive/refs/tags/v0.78.0.tar.gz"
-  sha256 "41909f3b98fd380fd7452c48669718c45ca030d9f9cef53db87ff54410ba1093"
+  url "https://github.com/prefix-dev/rattler-build/archive/refs/tags/v0.79.0.tar.gz"
+  sha256 "978687cdf852910790cf46cb020a0cd04ecfa9badfdfecc5c1cef0186aa63d7b"
   license "BSD-3-Clause"
   head "https://github.com/prefix-dev/rattler-build.git", branch: "main"
 
@@ -15,11 +15,11 @@ class RattlerBuild < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "242ec3b54b79a9f2726489cf7adc8fd145b2d8ea34e9a4c9c2db427d3f4d1fb6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a5c009e973f8a5e87ede5c8f2989449db9205e6fa27823a45fa0f6569be4c837"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "282fad64f2715e597f5b17a5de55e45c42b6a709fdd471cb2d518ef58aa28dc0"
-    sha256 cellar: :any,                 arm64_linux:       "bb6d6811e858dabfe4005a974c8e9beb92dc5c28e1be17f1e58b26baf90398a8"
-    sha256 cellar: :any,                 x86_64_linux:      "06b9b579fc58c473bb3bf70f31a87c5ad56f16dc9a5d0e8294c77a23f67af65a"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "07be76b5a618100cfb08affc60328b053ed1b5382cbb0e4e1ebcf97491243942"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "d559c775c7bf8989813876d28f679cd8e69bdad33ddaed084ca1ae9866dae776"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "805123ef978a5bcff2e42b29439e256f92841292fb5053f51a2bf72b91867ce6"
+    sha256 cellar: :any,                 arm64_linux:       "29f34b8020f84027e4623f00e5ae00cf3250d96840a339b0ace591ff6ee0d821"
+    sha256 cellar: :any,                 x86_64_linux:      "57034e66dc96c81580c430f8a09371eeb66398ab928e8f1f149a46bfff271a91"
   end
 
   depends_on "pkgconf" => :build

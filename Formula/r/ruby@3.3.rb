@@ -11,11 +11,9 @@ class RubyAT33 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "2fb8dcd7e74a3df2cc3015de44948d4a2f5d16814f1243ec120c3e86e905d4e4"
-    sha256 arm64_tahoe:       "01802ceee30dd61aa336ce5c14252598a82357c35c30704087fa66d2d5812a46"
-    sha256 arm64_sequoia:     "21988c8cb841d7013a20edc34f67660eae1ad002ed97da0872a89fbb26a9c63f"
-    sha256 arm64_linux:       "b48401588f513a271b02b81e426f5b884b98ace1185387aa513ab96714b2dfbb"
-    sha256 x86_64_linux:      "ea2e4f37b328353aaec446b9d17d9ca2fec8b825a6c2836ed80abb20bf2682ac"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ruby@3.3-3.3.13"
+    rebuild 1
+    sha256 sonoma: "7a3fa6d04b58d4dfce5079177f15df07a4ef1de49a95cbaec0418636a81022b8"
   end
 
   keg_only :versioned_formula

@@ -9,11 +9,9 @@ class PythonYq < Formula
   head "https://github.com/kislyuk/yq.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4780fc41aadaa1c5dd4da39884e55cc310a5bd32f308421a0f0ca5e074a37b7e"
-    sha256 cellar: :any, arm64_tahoe:       "3756af0595a98639e30508e07c8ce6032fee1312bba81d7161272748e5037095"
-    sha256 cellar: :any, arm64_sequoia:     "016af85998d6ba273239f7d3a45fcbc875c817d9501fb513c3e9d5467d98fbf7"
-    sha256 cellar: :any, arm64_linux:       "9918f3a1888289c7df776afeab9184b48a24755de32ef294c8cbfbd56e1002e0"
-    sha256 cellar: :any, x86_64_linux:      "a2d1a5f75e3c7aa91609b066e397b439ff88807e7858c0a6d53eaac7fe9c0c32"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/python-yq-4.4.5"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "c9bad7823de7584e45dacabf9a7cd45dfdc418834d1cc1f5c1c325c01615ba96"
   end
 
   depends_on "libyaml"

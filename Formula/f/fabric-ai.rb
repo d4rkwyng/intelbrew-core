@@ -7,11 +7,9 @@ class FabricAi < Formula
   head "https://github.com/danielmiessler/fabric.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7c139892a067a526c8bffa7318cf592edea103bcb6c1241f97f88b807307dcc2"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7c139892a067a526c8bffa7318cf592edea103bcb6c1241f97f88b807307dcc2"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7c139892a067a526c8bffa7318cf592edea103bcb6c1241f97f88b807307dcc2"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "07690b35b8c9491c8dd4cd7a360fbb36fee0c4ff0e85077d78a6afb8be6c6d8b"
-    sha256 cellar: :any,                 x86_64_linux:      "af4f71880da896ce8bd2fdb6fdb0637316783d81d13cb7c694e8df24a0dbd8c2"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/fabric-ai-1.4.556"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "37e8b098606165951fecce3965adc7074e212b5cfb55789c7e69d13928e47595"
   end
 
   depends_on "go" => :build

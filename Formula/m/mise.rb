@@ -12,11 +12,9 @@ class Mise < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e72e19397433c32be6efc47157f57f0a3070bd2bffec39e1b79013d0cd50a35a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "789af4acc87e75485ffffd12a498397ae6a2cfaa6f539a936359c35c2be6b5e4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "be6d3fa3fe85354c2cec278f560aba372c7bc2205eb3edabce750535c15cf001"
-    sha256 cellar: :any,                 arm64_linux:       "c926ba1fd096d35b9add3dd4b449ec96985f6cfde13b5aa29c84aa3c4b2c38b7"
-    sha256 cellar: :any,                 x86_64_linux:      "465f37d53d5f610f1799684e09a43636bdc1576b9540aa3fac2ac233b1a26244"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mise-2026.10.19"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "3816d2f63836ca9ddd501b28df7677713bd6f33895d81720d10e46c7e1ed7735"
   end
 
   depends_on "cmake" => :build

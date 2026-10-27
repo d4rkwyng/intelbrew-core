@@ -9,12 +9,9 @@ class Yamllint < Formula
   head "https://github.com/adrienverge/yamllint.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "ede13336416c7c79617fa6aad7136a8fe3c8888b6c878917a34d5efe9d1e6160"
-    sha256 cellar: :any, arm64_tahoe:       "32b829bff17400cbfb651af60e2280241dbd4371122f264b3796fa7215a0ba00"
-    sha256 cellar: :any, arm64_sequoia:     "f75d86b93af557ec7d779000e25dee33e4c61478adaa587f2be617ca7d520bc4"
-    sha256 cellar: :any, arm64_linux:       "6ec37a0e9b7fe300fb4f4c28aca2a75b2bd547ee293b7842762d8a28357123a4"
-    sha256 cellar: :any, x86_64_linux:      "d50c0ff0022793c35ad5bcb96f2d1c64db57ca0cc901679151623b941d414f8e"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/yamllint-1.38.0"
+    rebuild 2
+    sha256 cellar: :any, sonoma: "94c2857ba5276b8181c8b4dccd62b59082333b12d927b3ec855216d2bd56ba31"
   end
 
   depends_on "libyaml"

@@ -9,12 +9,9 @@ class TrashCli < Formula
   head "https://github.com/andreafrancia/trash-cli.git", branch: "master"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "04268e97c1da1b84dfe9f6206a45a94921253c0e3fab08e97b5961ad6d0afd0c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2a6144dacb34d2ac1bfc3f5180aac37d575f8eb7f75200730e8970fdb00c08d5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0032cc531121a61087393bd3d65fe48e501dd39fc1b2be7497a8387cbfd28d7e"
-    sha256 cellar: :any,                 arm64_linux:       "64bccc25d669b27066a67daa38498bcc4c1fe4eb0680de68b4d8278fba8919dc"
-    sha256 cellar: :any,                 x86_64_linux:      "75ef0b13712264de3d36d8c969250d6a5753f126725bb358ec68a5c20d96b4d1"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/trash-cli-0.26.9.29"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, sonoma: "599016c28c26e0fbfc1c4a5b865ea23488cab1385a6304d6a14f61ab5f46c9aa"
   end
 
   keg_only :shadowed_by_macos

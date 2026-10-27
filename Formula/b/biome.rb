@@ -12,11 +12,9 @@ class Biome < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9a8d14974f9a2aaac7aa2d152451f476ea2ea6de39c3b3dc9105ec81360a9ea6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "64658488f36d9442d28ec7cbdd2093827d49098a2e70ace04475d0c7eb935565"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "716b57b1a950a0d3ca592a95f4ad038c20395196fefefdae2dac52cdb9af9af2"
-    sha256 cellar: :any,                 arm64_linux:       "872b7e9fff5d50204c2e4231f413604e2b9cd1a6d126db1bfb9d2a8e9fa435e7"
-    sha256 cellar: :any,                 x86_64_linux:      "e150cfcf45346410ee2900a4bba8fa790ae10efe334ac4b0a60a265604859c36"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/biome-2.6.3"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "dea2d0796d0671dc43b496f714772a36cd8a3489a53f8361c9134b5d6097e5e4"
   end
 
   depends_on "rust" => :build

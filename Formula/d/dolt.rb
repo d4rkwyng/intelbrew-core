@@ -1,10 +1,9 @@
 class Dolt < Formula
   desc "Git for Data"
   homepage "https://www.dolthub.com"
-  url "https://github.com/dolthub/dolt/archive/refs/tags/v2.6.0.tar.gz"
-  sha256 "ad4eba0b1b39d0696f3866ab20385efaa18e3701e67123aa3d1d0f7e2ac7700c"
+  url "https://github.com/dolthub/dolt/archive/refs/tags/v2.6.1.tar.gz"
+  sha256 "2e1a37855c9803415164b4b9d815082e3f87073e99d2275b9d8864521b1537bf"
   license "Apache-2.0"
-  revision 1
   version_scheme 1
   head "https://github.com/dolthub/dolt.git", branch: "main"
 
@@ -14,8 +13,8 @@ class Dolt < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/dolt-2.6.0_1"
-    sha256 cellar: :any, sonoma: "316bef7d5b90c916a359ce784ce9127e7b80509a15545e04335b2bf12de72864"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/dolt-2.6.1"
+    sha256 cellar: :any, sonoma: "3874d555934ead4c36ca7e2ead543fa7b24de226906122012fe445a8a79c20a5"
   end
 
   depends_on "go" => :build

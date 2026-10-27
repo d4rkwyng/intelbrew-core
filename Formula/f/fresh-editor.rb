@@ -6,11 +6,9 @@ class FreshEditor < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "18704fdf8bcf135bf8a2020cb0f95aa9878a58c0be67ff9ae0c1291110c54fcf"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f5dea205cb8c77d4dcbf363c9e97d18cbf84e07385181564d208dfbc14e8b67d"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "8d780fdc84bfba2018287ad4d78d8634dc9a9d6e9fdb78bd0f6bab953c6e057d"
-    sha256 cellar: :any,                 arm64_linux:       "2a83e8cc00d536a636ccffb670013a9be17c1ba09ca1e472f23fcaf142fa082f"
-    sha256 cellar: :any,                 x86_64_linux:      "298f8ac4318b93935f10976b4fcdc36c057d0aed5e971559e564e3885075f098"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/fresh-editor-0.5.4"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "09f34a309c20cea4fe2f8de5c47892c3f3817c7c8ae0b7158f7beaf65e288a00"
   end
 
   depends_on "rust" => :build

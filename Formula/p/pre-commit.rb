@@ -10,11 +10,9 @@ class PreCommit < Formula
   head "https://github.com/pre-commit/pre-commit.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "67c99a5603bb473b5803d43e78c58ca618311f1a16a41d34d1662e9547a8b846"
-    sha256 cellar: :any, arm64_tahoe:       "b23f6c0a81af6944d672f8263a361da002b3a72b96f3718049d92bf4888a0a0a"
-    sha256 cellar: :any, arm64_sequoia:     "937e49297cfbe445437090291b5f917a8e86aa6004855c6a69161d90704d4102"
-    sha256 cellar: :any, arm64_linux:       "7dce83cea30762d18b66c70798fabbc2c58fc0669d6b6329ad9309bae96e7de9"
-    sha256 cellar: :any, x86_64_linux:      "34a55f418c50e1f2d0732af2e64c2c95b7bf5b598ba880bf5f99fef791a7e1dd"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pre-commit-4.7.0_2"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "fb45c352941b9982d660ca28ef9f1a6fae2bc42f4a84a427669281dc3f424b17"
   end
 
   depends_on "libyaml"

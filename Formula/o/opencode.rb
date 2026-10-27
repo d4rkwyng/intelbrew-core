@@ -12,12 +12,9 @@ class Opencode < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "fe028bd6ed6f2b4865c8d1974bf77a8fe3dc77a0213ce950b9d8a6cda0605af0"
-    sha256 arm64_tahoe:       "52fd8af89e77e55da18b10dabb9e3cc6be26a1d96db0cd55e227ee734e0cedba"
-    sha256 arm64_sequoia:     "61b63601216b068eb8dd66a38132fe5cba6d8bc3d6806e5bfe9b394f18bdffbb"
-    sha256 arm64_linux:       "7870ed2af167898340e23c81d9535f8226266d1f6b99d3d47d0e533373d0fd3e"
-    sha256 x86_64_linux:      "c18fcf6d73c112798b0f792aae2c3a29b821963d89b56bc98fd4555b9f13a19a"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/opencode-2.1.4"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, sonoma: "b1bc59f9676c9d52a07b11b15d86634fa5d8fbb3cf541c57fe55be07a0f8daa9"
   end
 
   depends_on "bun" => :build

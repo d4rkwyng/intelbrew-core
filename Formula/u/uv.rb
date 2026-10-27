@@ -8,11 +8,9 @@ class Uv < Formula
   head "https://github.com/astral-sh/uv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a2f3568827d6bf7769d7428c099721a1eb1e777355e41cb391a555178b1c2dec"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "a9d5091cc5d0bb8e19f5fbc37db7167b09fcc76cee60c7af3989b73fb719fd4b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "84fcf84e570dd5ca8367e140293bb92424b4f3cde0bf5618a13d88e71e4dc39f"
-    sha256 cellar: :any,                 arm64_linux:       "97d1c789fc9882b5c97e733c02804f415a730ad49d9deccd7a3019efe09b127c"
-    sha256 cellar: :any,                 x86_64_linux:      "efe51b15ecc8a68c62207e0d05cf60dfe08a8dc889f1292c1e586b286394e474"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/uv-0.13.5"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "dda2f2e7af435e7513bd9fb15f1ab02bace991949aabea094786b613e97bcb43"
   end
 
   depends_on "pkgconf" => :build

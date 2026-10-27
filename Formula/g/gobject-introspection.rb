@@ -11,11 +11,9 @@ class GobjectIntrospection < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_golden_gate: "63be135be0568cc8afe5e9ccf1a2a6e4ea80e2697be161f3969bf90be2644327"
-    sha256 arm64_tahoe:       "110ea2facc0e93d90a1d28b21e532bd7d0a716b24c41be62f8f2e3543505dddc"
-    sha256 arm64_sequoia:     "75f33d27b15bd5b9f92c66068a6c8dbe7cb9fc9b9fd62006708b2d86cd2536cc"
-    sha256 arm64_linux:       "e450f8b697ac85b6cd375789277684496457eb8933749ccb6e56d4395db772e1"
-    sha256 x86_64_linux:      "a1a9fa721e8ffabd07325e8d824fbad72bec7e282623323c8d3f8fefe734e760"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/gobject-introspection-1.86.0_6"
+    rebuild 1
+    sha256 sonoma: "0240f39be76339e2ec998ecfefa1f49cc59fddec7a3d6fd5bb27f82cce117661"
   end
 
   depends_on "bison" => :build

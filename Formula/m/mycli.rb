@@ -8,11 +8,9 @@ class Mycli < Formula
   license "BSD-3-Clause"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "535d95128414962958407895c3ef4f985fa32a106d3b0dd68c470affed64c969"
-    sha256 cellar: :any, arm64_tahoe:       "2dfb71b5229ccf27d3989e3d312af6bb13a580d3083a30df498e5f8f1bcc7159"
-    sha256 cellar: :any, arm64_sequoia:     "98229e542894ff44d1d2dce5177293fea8097b693bee4410f84140ca8c716760"
-    sha256 cellar: :any, arm64_linux:       "acc744bfb6903f9f55772bfe61a6933a63770a9f653e7c15e60d814d62ade0e4"
-    sha256 cellar: :any, x86_64_linux:      "6680a670571fa4f1f643ac021e0d0e828aa6ac8a25654ce1e675a12ad5c704af"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mycli-2.30.1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "84966861114012992c63d05a180b6595d0daed97bb7cd5c13e6204c8253515bb"
   end
 
   depends_on "rust" => :build # for jiter, polars, vl-convert

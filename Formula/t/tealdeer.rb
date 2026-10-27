@@ -7,11 +7,9 @@ class Tealdeer < Formula
   head "https://github.com/tealdeer-rs/tealdeer.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0484a48458699481e077219fe8853741375707358bbc48f03db3c7847cfa0294"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "aa27939498be34ee09fcfb9e82faf022df9bdf5cd8a27ccb79e8ed484ba60895"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "58947a0d7b708b657b51b59319e95b05350eb7ea43697ca1e8ae6ff09d3eeb87"
-    sha256 cellar: :any,                 arm64_linux:       "53d756ef58fdc2997046a183c76dd4ea188899ea36ffbce9b381ad101295b864"
-    sha256 cellar: :any,                 x86_64_linux:      "1ad9546e9ec87d7353b4c499e14d69caf50f6a998eefb1ab84da985f4e8b9c7f"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/tealdeer-1.9.1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "90ae05a39d8769a21aca3cd047192ae11fc711114e67c6dde609f6bdec94f2dc"
   end
 
   depends_on "rust" => :build
