@@ -1,8 +1,8 @@
 class CmakeDocs < Formula
   desc "Documentation for CMake"
   homepage "https://www.cmake.org/"
-  url "https://github.com/Kitware/CMake/releases/download/v4.4.4/cmake-4.4.4.tar.gz"
-  sha256 "bd24c30d80a7744ae84b845ff080cc8453b06c622ef01066564108e9cefc44cf"
+  url "https://github.com/Kitware/CMake/releases/download/v4.4.5/cmake-4.4.5.tar.gz"
+  sha256 "a0c54c88abb8078dd8eccadb717fc6bb194bf18e7d44c86309910288886e04e2"
   license "BSD-3-Clause"
   head "https://gitlab.kitware.com/cmake/cmake.git", branch: "master"
 
@@ -11,9 +11,8 @@ class CmakeDocs < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cmake-docs-4.4.4"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "041c8d5f7f6ed4b640ed05ccbc914316fa4af55dec0e7decc897facfa3da45d0"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cmake-docs-4.4.5"
+    sha256 cellar: :any_skip_relocation, sonoma: "782c8fb04e621f1797ae8abb58a06c268ecc8f0fd9e7cd947b9801682a307c20"
   end
 
   depends_on "cmake" => :build

@@ -2,9 +2,9 @@ class PhpAT82 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.2.34.tar.xz"
-  mirror "https://ftp.osuosl.org/pub/php/php-8.2.34.tar.xz"
-  sha256 "5351330c54de240f54f7527c26ef292e239749e6fe11db0330acb5317e02bb39"
+  url "https://www.php.net/distributions/php-8.2.35.tar.xz"
+  mirror "https://ftp.osuosl.org/pub/php/php-8.2.35.tar.xz"
+  sha256 "5737b98601fe5ab1b8c5db0c82ed3158acb9283ed3081ffe2faffb9ac81455e6"
   license all_of: [
     "PHP-3.01",
 
@@ -36,9 +36,8 @@ class PhpAT82 < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/php@8.2-8.2.34_1"
-    rebuild 1
-    sha256 sonoma: "57ebb5edd79cbbdda28576ebb07a67b052055f696ef05a6c20f60b4835b513bc"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/php@8.2-8.2.35_1"
+    sha256 sonoma: "53664ab09256241c8682b7c45617d171f25f8eaf241cfed2850755ee69f7cd61"
   end
 
   keg_only :versioned_formula
@@ -59,7 +58,7 @@ class PhpAT82 < Formula
   depends_on "freetds"
   depends_on "gd"
   depends_on "gmp"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "krb5"
   depends_on "libpq"
   depends_on "libsodium"
@@ -90,7 +89,8 @@ class PhpAT82 < Formula
     depends_on "zlib-ng-compat"
   end
 
-  allow_network_access! :test
+  # Allow network access during `:postinstall` and `:test` phases
+  deny_network_access! :build
 
   def install
     # buildconf required due to system library linking bug patch

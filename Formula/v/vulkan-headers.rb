@@ -13,9 +13,8 @@ class VulkanHeaders < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/vulkan-headers-1.4.363.0"
     rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "9d25a4c500c54a06481841df71537dd3919919572a65c37b6775d2996a5c7333"
+    sha256 cellar: :any_skip_relocation, all: "64cb4ed61848cac6cbe070562d383f6d50a402524dee42f2a19ec0546736fe10"
   end
 
   depends_on "cmake" => :build
@@ -25,6 +24,9 @@ class VulkanHeaders < Formula
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--install", "build"
+
+    # Build an `:all` bottle
+    inreplace include/"vulkan/vulkan.hpp", "/opt/homebrew", HOMEBREW_PREFIX
   end
 
   test do

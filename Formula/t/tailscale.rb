@@ -2,8 +2,8 @@ class Tailscale < Formula
   desc "Easiest, most secure way to use WireGuard and 2FA"
   homepage "https://tailscale.com"
   url "https://github.com/tailscale/tailscale.git",
-      tag:      "v1.104.2",
-      revision: "e26db7a5797683ec99ad1516c40b628c7f2dfd71"
+      tag:      "v1.104.4",
+      revision: "27047635f237d1f3e0b08c0f487674757f30d2f7"
   license "BSD-3-Clause"
 
   livecheck do
@@ -13,9 +13,8 @@ class Tailscale < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/tailscale-1.104.2"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "77bad0ea602d4760e0fa6d359332ddb2e51e292ee46c84593cc59d7d1aa5109a"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/tailscale-1.104.4"
+    sha256 cellar: :any_skip_relocation, sonoma: "b8b91786f2a14a2fa9a8d6c86a983602c8f5423ec13c2618a13b367dae6d403d"
   end
 
   depends_on "go" => :build

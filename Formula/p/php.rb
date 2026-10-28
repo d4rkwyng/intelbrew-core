@@ -2,9 +2,9 @@ class Php < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.5.11.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.5.11.tar.xz"
-  sha256 "d9be75c08e8c316f4c8f4194d8fbe1750a15f6a6d9d4e3fe72082abeeb800360"
+  url "https://www.php.net/distributions/php-8.5.12.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.5.12.tar.xz"
+  sha256 "08bc2eba2a588654ade1357174aa646b761556c862dda0678345ee29ed481209"
   license all_of: [
     "PHP-3.01",
 
@@ -38,9 +38,8 @@ class Php < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/php-8.5.11_1"
-    rebuild 1
-    sha256 sonoma: "e6ef5a5e17922caa4da3e1550e5df982484f6ea33226022599d9bec6c89f81c4"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/php-8.5.12_1"
+    sha256 sonoma: "2f2ad76f1bb912aea971d57ba0ac5882fff437cdd6518ba73d5c110e11bf8a5f"
   end
 
   head do
@@ -60,7 +59,7 @@ class Php < Formula
   depends_on "freetds"
   depends_on "gd"
   depends_on "gmp"
-  depends_on "icu4c@78"
+  depends_on "icu4c@79"
   depends_on "libpq"
   depends_on "libsodium"
   depends_on "libzip"
@@ -88,7 +87,8 @@ class Php < Formula
     depends_on "zlib-ng-compat"
   end
 
-  allow_network_access! :test
+  # Allow network access during `:postinstall` and `:test` phases
+  deny_network_access! :build
 
   def install
     system "./buildconf", "--force" if build.head?

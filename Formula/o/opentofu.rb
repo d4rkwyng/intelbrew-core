@@ -7,11 +7,9 @@ class Opentofu < Formula
   head "https://github.com/opentofu/opentofu.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0eaea68d29476e6596ebee4dff0c58c4cdc4614568b3ed7ad54147fc7842325d"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2d57f970a5b7cdbf6a0b20e522f899379072ec91c2bcce388b116dec24fbeb87"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "0e94fbaa3c0f75b2a8dc1b9a36c83cad522e0014eb347d3d5cf21660abf17ced"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "1320f9e5029df96b206ef0e38fc3fdec6762e639e96c56fa5d8c1f0afd8c0cae"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "fe875126e511de1d1c8f333b978e05736656fcacf2cd4702f47d1a3eea9f648d"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/opentofu-1.13.2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "e97dd6de3ab87d2e7e848f71e2144b7d2bb8f04b784a4fe80b3cfbb1ecf5177a"
   end
 
   depends_on "go" => :build
