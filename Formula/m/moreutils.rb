@@ -16,8 +16,8 @@ class Moreutils < Formula
 
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/moreutils-0.70"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, sonoma: "756195e27cf29a6ae940a8a268ed1c89e30be16fe2e7b9334fdb82e2f68314f6"
+    rebuild 3
+    sha256 cellar: :any_skip_relocation, sonoma: "d34b296348f226a19174751e64c0bd0416f4f0f895a5471026d32ac7f4da6b8d"
   end
 
   depends_on "docbook-xsl" => :build

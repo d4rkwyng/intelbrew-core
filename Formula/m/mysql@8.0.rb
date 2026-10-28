@@ -16,8 +16,8 @@ class MysqlAT80 < Formula
 
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mysql@8.0-8.0.46_6"
-    rebuild 1
-    sha256 sonoma: "216f8f60b40bd8a85f0d21556fb058b1f4ce8fa554778bbfec862909adbb4d7e"
+    rebuild 2
+    sha256 sonoma: "fdf02e27e38eb1f74f4e6f8f306384788b11a30e6330752d177121fb367f4208"
   end
 
   keg_only :versioned_formula

@@ -7,11 +7,9 @@ class Fx < Formula
   head "https://github.com/antonmedv/fx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7396f31aaca62426621e1028295db2f2169b37f5ac6c7d8ba5d8b4857ad4660a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7396f31aaca62426621e1028295db2f2169b37f5ac6c7d8ba5d8b4857ad4660a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "7396f31aaca62426621e1028295db2f2169b37f5ac6c7d8ba5d8b4857ad4660a"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "d5d0c818c21dc49a0a32c1a3388817da0047274f1e8c34445714baf90b80b8fd"
-    sha256 cellar: :any,                 x86_64_linux:      "e35c035c6d8db37f32b33356911a2858907721fffb3ea844f727aa37cfe6fb11"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/fx-40.0.1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "72a3de8babca6420102610f7fe7f9580b24e2b0e5f501b460a6a79b99056d8fc"
   end
 
   depends_on "go" => :build

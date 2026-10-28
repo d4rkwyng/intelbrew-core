@@ -13,12 +13,9 @@ class Graphviz < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "95e16aa7a3a16775ed16a50a8d4a5347b8c6edd5604e6006206bfa2b23da2365"
-    sha256 arm64_tahoe:       "9fba08a285c160f3c1c5db363b06bd5ffe6b1175c74b6be8d36383d1f1b0ab13"
-    sha256 arm64_sequoia:     "2f2c0a364687e48071a527f352024faaad7aacf20e928a1657bc15fd006b9964"
-    sha256 arm64_linux:       "14b6558a629a614c57cd4657a04f4d569cc91e91cb4762d207c82d253766f117"
-    sha256 x86_64_linux:      "b577048dcf51da574b0d6feaf37ec54ffdffb8c2d69fa96b47767f98316d5448"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/graphviz-16.1.0"
+    rebuild 2
+    sha256 sonoma: "759ac07094a01901c94789ff9b48e62eb69e7ff698dc84c44d50ef9acdb794da"
   end
 
   head do

@@ -15,11 +15,9 @@ class Wireshark < Formula
   end
 
   bottle do
-    sha256               arm64_golden_gate: "adef566fd3cd74f439f4c86bae60ace6e64d84efc8732cb51bb57a66a864bd74"
-    sha256               arm64_tahoe:       "eff4794d618863fddc2d36a8c6d9538fd5db45496c79093de53f85844e7c2ee8"
-    sha256               arm64_sequoia:     "72705c8ec4b9af0dc70fe3a11ebd858be56db5e855926c1e87b52eff51fb8256"
-    sha256               arm64_linux:       "d36a19212d059245ec34be06c176ddef61655a13353f7de438e63494522509a8"
-    sha256 cellar: :any, x86_64_linux:      "42a55354c5a79600f4b353b7cc8fc4a842108b295dc35f78098a09734979ea56"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/wireshark-4.6.9"
+    rebuild 2
+    sha256 sonoma: "6f98747f8be2a7f7b0ce4cf05b6b93f1384daaad588e6199187afe9183255811"
   end
 
   depends_on "cmake" => :build

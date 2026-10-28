@@ -15,11 +15,9 @@ class Mosquitto < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e892d6b4cd525279332b4a8d69ea1b2536ae8afd7cb4804712a00990bc731eec"
-    sha256 cellar: :any, arm64_tahoe:       "1db18231340891829a844c975058895c639fec4a802e19e426f0e67c2523bcc1"
-    sha256 cellar: :any, arm64_sequoia:     "8ec24e7e1b19c450c5b5f5acb46f9fdc38d31b5181d0c7488ec7cd5c7b85178c"
-    sha256 cellar: :any, arm64_linux:       "75a1eb96e1f06b5822db6159dab6606267efc709536f871041e203a3edfa3b12"
-    sha256 cellar: :any, x86_64_linux:      "fa29633769462f1248d130160092cc3ede76c1beb8f2775413ef0015198a12a5"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mosquitto-2.1.2_2"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "66e97189dae363534c917fb388dd7ffc84987009994a36ed4c2592963abdc0d3"
   end
 
   depends_on "cmake" => :build

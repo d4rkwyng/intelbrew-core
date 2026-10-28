@@ -12,12 +12,9 @@ class NodeAT24 < Formula
   end
 
   bottle do
-    rebuild 1
-    sha256 arm64_golden_gate: "01e6c1a262e3766fc9d23bab5808c69dbf99242dfb8da57fbc620bea97422e17"
-    sha256 arm64_tahoe:       "ff2fea0ccc8861843817a8ce71aca6143ac6e8e4ee3699db041a21bd388d7a41"
-    sha256 arm64_sequoia:     "be87643df531ff6128e5a0f6aaf51a4a164406729ebed8a7cc56c8cb9cf0210f"
-    sha256 arm64_linux:       "7da4a2336ed4a16bcf6be2601ae58a8c1719f1b377579ff9f6803ddf1b83fb57"
-    sha256 x86_64_linux:      "70d4c20e43d3f56366802d58a83dbb39b16113c38e082a28e98bd250ff2795f9"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/node@24-24.22.1"
+    rebuild 2
+    sha256 sonoma: "7f3f7a9d9b28984ba63f61da597408200df0a193cd2ec7f8f0d3fdc58d16f6aa"
   end
 
   keg_only :versioned_formula
@@ -78,6 +75,8 @@ class NodeAT24 < Formula
     ENV["PYTHON"] = python3
     # simdjson 5 `key_selector` uses `throw` in consteval, which clang <= 20 rejects with -fno-exceptions
     ENV.append "CXXFLAGS", "-DSIMDJSON_CONCEPT_DISABLED"
+    # Intelbrew: llvm's libc++ has no transitive <atomic> here; upstream V8 added this include.
+    inreplace "deps/v8/src/wasm/pgo.h", "#include <vector>\n", "#include <atomic>\n#include <vector>\n"
 
     # Ensure Homebrew deps are used
     %w[brotli icu-small nghttp2 ngtcp2 simdjson sqlite uvwasi zstd].each do |dep|

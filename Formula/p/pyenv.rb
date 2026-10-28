@@ -1,8 +1,8 @@
 class Pyenv < Formula
   desc "Python version management"
   homepage "https://github.com/pyenv/pyenv"
-  url "https://github.com/pyenv/pyenv/archive/refs/tags/v2.8.13.tar.gz"
-  sha256 "5de81e5b3591befeee259fe9ada311e0f5180fbbcd91136e407ea0cf362f9e6f"
+  url "https://github.com/pyenv/pyenv/archive/refs/tags/v2.8.14.tar.gz"
+  sha256 "0db903040bd06f4adc333bff60aefbdfc4af522f8e2b13f9cce3fbf721b3e468"
   license "MIT"
   version_scheme 1
   compatibility_version 1
@@ -14,9 +14,8 @@ class Pyenv < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pyenv-2.8.13"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "7bc03d04c27904f18afbe51d3edc245b9b35399709b2690419204e8c358e836f"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pyenv-2.8.14"
+    sha256 cellar: :any, sonoma: "cd04c4b5692d8fa4a658dd8f208343c8e5b1b50f91840d4a3a0f15592f53a102"
   end
 
   depends_on "autoconf"

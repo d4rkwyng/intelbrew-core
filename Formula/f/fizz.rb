@@ -1,15 +1,15 @@
 class Fizz < Formula
   desc "C++14 implementation of the TLS-1.3 standard"
   homepage "https://github.com/facebookincubator/fizz"
-  url "https://github.com/facebookincubator/fizz/archive/refs/tags/v2026.10.19.00.tar.gz"
-  sha256 "88fcc4d518b41b727399423c680f17bdb1b26e7f8fcb256ac7319a698e40b94b"
+  url "https://github.com/facebookincubator/fizz/archive/refs/tags/v2026.10.26.00.tar.gz"
+  sha256 "3f481c7157e91ff3dbede77290db539355f297db73f74593c81bf7c602229ebe"
   license "BSD-3-Clause"
   compatibility_version 1
   head "https://github.com/facebookincubator/fizz.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/fizz-2026.10.19.00"
-    sha256 cellar: :any, sonoma: "bc381d144ded1724946e76d6d890223273d223d5a3ecf30152cef44926b4aad7"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/fizz-2026.10.26.00"
+    sha256 cellar: :any, sonoma: "a158adc9fea8f84a6e65a485af0fd49d6b80a966a11bf5b6221ea450ea2cf926"
   end
 
   depends_on "cmake" => [:build, :test]

@@ -6,14 +6,13 @@ class Ansible < Formula
   url "https://files.pythonhosted.org/packages/dd/bf/9e39662e848e3162641ee33332787b7c156be63d20c84869ca69e83e503a/ansible-14.5.0.tar.gz"
   sha256 "daeafe730cb2cf82ebe1a1a30960dcdfc0d624c497eb96d57d81713ec19ef19f"
   license "GPL-3.0-or-later"
-  revision 1
+  revision 2
   compatibility_version 7
   head "https://github.com/ansible/ansible.git", branch: "devel"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ansible-14.5.0_1"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "36c327ab77be44ebe1e910bcb198cc58d575db840331c1e833a28c031b96e8a7"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ansible-14.5.0_2"
+    sha256 cellar: :any, sonoma: "037ec34051140c126d17778e41ddf34cfeb2af6f03b976cfc8ee2ec9a057e3e0"
   end
 
   # `pkgconf` and `rust` are for bcrypt
@@ -24,7 +23,7 @@ class Ansible < Formula
   depends_on "libsodium" # for pynacl
   depends_on "libssh"
   depends_on "libyaml"
-  depends_on "python@3.14"
+  depends_on "python@3.15"
   depends_on "tree" # for ansible-role-init
 
   uses_from_macos "krb5"
@@ -67,6 +66,14 @@ class Ansible < Formula
   resource "ansible-core" do
     url "https://files.pythonhosted.org/packages/0b/27/d02c3f75e9f1468b5efbe49667574f68331b17e8a9f2bb99e1d18be70052/ansible_core-2.21.5.tar.gz"
     sha256 "65bb3148c58ebb843cd5074004c805f404f152114d98476dd823324616c9c6cb"
+
+    # Python 3.15 startup fix, upstream PR ref, https://github.com/ansible/ansible/pull/86976
+    patch do
+      url "https://github.com/ansible/ansible/commit/ee5c59156c61bc1f452a61846138e0d40427aeab.patch?full_index=1"
+      sha256 "d3d25e65af572af49e2c75d4096eba6ca3b97ce2b75f06977e2b6d189e2451c8"
+      type :backport
+      resolves "https://github.com/ansible/ansible/issues/87677"
+    end
   end
 
   resource "ansible-pylibssh" do
@@ -630,7 +637,14 @@ class Ansible < Formula
 
   def install
     venv = virtualenv_install_with_resources without: "ansible-core"
-    venv.pip_install_and_link resource("ansible-core")
+    resource("ansible-core").stage do
+      # Allow ansible-test to run with Python 3.15
+      # Upstream PR refs: https://github.com/ansible/ansible/pull/86821
+      #                   https://github.com/ansible/ansible/pull/87368
+      inreplace "test/lib/ansible_test/_util/target/common/constants.py", "'3.14',\n", "'3.14',\n    '3.15',\n"
+      inreplace "test/lib/ansible_test/_internal/coverage_util.py", "(3, 9), (3, 14)", "(3, 9), (3, 15)"
+      venv.pip_install_and_link Pathname.pwd
+    end
   end
 
   test do

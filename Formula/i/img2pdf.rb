@@ -9,12 +9,9 @@ class Img2pdf < Formula
   revision 1
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "4a421c302d106b5ce96c46bfaaa6745f9f1d871b970f30a827ce5d2fedbca3e4"
-    sha256 cellar: :any, arm64_tahoe:       "d0e78d91b191baf86f8d13f956baea5ffd647b9ee6b7b493d7bf8fe3adc45497"
-    sha256 cellar: :any, arm64_sequoia:     "14f04c5d20be7f1056201609ce6c7b9de596569b3085d08062735bfbcc74a78b"
-    sha256 cellar: :any, arm64_linux:       "8fe980098f4d9ee4b6401cdb32ad925710db324ea760501ce3d1b030f914869d"
-    sha256 cellar: :any, x86_64_linux:      "550b86d43403f8d6ba3f806f48031fb29d8d71747a9bb11d401ea45510bfabbd"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/img2pdf-0.6.3_1"
+    rebuild 2
+    sha256 cellar: :any, sonoma: "7cc7a01e14a2b32478c11d96c41ddb5e834eb8249488c2fe24ef39b276397efb"
   end
 
   depends_on "pillow" => :no_linkage

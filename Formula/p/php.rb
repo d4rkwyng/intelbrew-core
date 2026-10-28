@@ -2,9 +2,9 @@ class Php < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.5.12.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.5.12.tar.xz"
-  sha256 "08bc2eba2a588654ade1357174aa646b761556c862dda0678345ee29ed481209"
+  url "https://www.php.net/distributions/php-8.5.11.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.5.11.tar.xz"
+  sha256 "d9be75c08e8c316f4c8f4194d8fbe1750a15f6a6d9d4e3fe72082abeeb800360"
   license all_of: [
     "PHP-3.01",
 
@@ -38,11 +38,9 @@ class Php < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "a006f7d2db97ee5dc04d78aa89c0af4eb2ea9ec6cd7d80e41eb60fc39f24b8a5"
-    sha256 arm64_tahoe:       "4f694b2ea3c64b0fe85b253c0066f92b238540c9e984b0aebf2204ad19b36c89"
-    sha256 arm64_sequoia:     "a0f7e41f86b1f166cdd618799e66c2c5d00ae1e4cda1637ec368c347a0fe80e5"
-    sha256 arm64_linux:       "0cdb1f88d3d8626eda805b0b13a38b0c3184d62781b537e09ee8b0a38e734e05"
-    sha256 x86_64_linux:      "6da48164a7e9730b746b66d1882cc0155e4421747ff65990f33933e5ee639040"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/php-8.5.11_1"
+    rebuild 1
+    sha256 sonoma: "e6ef5a5e17922caa4da3e1550e5df982484f6ea33226022599d9bec6c89f81c4"
   end
 
   head do
@@ -62,7 +60,7 @@ class Php < Formula
   depends_on "freetds"
   depends_on "gd"
   depends_on "gmp"
-  depends_on "icu4c@79"
+  depends_on "icu4c@78"
   depends_on "libpq"
   depends_on "libsodium"
   depends_on "libzip"
@@ -90,8 +88,7 @@ class Php < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # Allow network access during `:postinstall` and `:test` phases
-  deny_network_access! :build
+  allow_network_access! :test
 
   def install
     system "./buildconf", "--force" if build.head?

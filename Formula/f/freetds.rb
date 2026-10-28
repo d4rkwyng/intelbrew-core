@@ -35,6 +35,8 @@ class Freetds < Formula
     depends_on "readline"
   end
 
+  deny_network_access!
+
   def install
     args = %W[
       --prefix=#{prefix}

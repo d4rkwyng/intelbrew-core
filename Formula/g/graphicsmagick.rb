@@ -12,11 +12,9 @@ class Graphicsmagick < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "603631faac70b0436a50d9e0b4beaf2caaff0a076724ba8abfac6d402d5490a3"
-    sha256 arm64_tahoe:       "54a88ff8f550153952bd144f590d2779277d849195cb1f884532d517fe513a77"
-    sha256 arm64_sequoia:     "5e6a397e7137431080b946e1d99a13fa5cc5eaa493647561e2d23344f40a321c"
-    sha256 arm64_linux:       "582fb97aed5b9f7284121e56d4dbe820084c90ee8a4fd7cf773ed80cc985d459"
-    sha256 x86_64_linux:      "4a33922ef358494da3b932d9adbe7ec187e3d56484e1b002be2953b26517e416"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/graphicsmagick-1.3.49"
+    rebuild 2
+    sha256 sonoma: "a79b3bb30d495f9e1ad1d9b01a83739184d8d635a9245da2882b178f6a2d0f9f"
   end
 
   depends_on "pkgconf" => :build

@@ -12,11 +12,9 @@ class Libslirp < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "5d5aabafb634462c74182021e310213fc3e7ae40b287f2eb0d4667111d73cb38"
-    sha256 cellar: :any, arm64_tahoe:       "fb032abd6812b5607ceea8dd676cfb07562370b8a5561e0d157fa950f25fd59c"
-    sha256 cellar: :any, arm64_sequoia:     "1568e321fd2f24157b558a91cc7691a1e8f6f8042a4bf4ba199d7aafecef5341"
-    sha256 cellar: :any, arm64_linux:       "5bb3af0d883eed2fac21d6e626c67eefda2521fbad4a46f1be1fee1134254d31"
-    sha256 cellar: :any, x86_64_linux:      "9ab723e55252141f1d2d3b366f9e64a07648162c6d9bb9253faa05348d706b7d"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libslirp-4.9.6"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "cda97ebe2cff1e17d47e1b2b152bf2f8da14427e91118443ca7ad128cb98a092"
   end
 
   depends_on "meson" => :build
@@ -25,6 +23,8 @@ class Libslirp < Formula
   depends_on "glib"
 
   def install
+    # Intelbrew: a declaration right after a case label is C23; Apple clang 16 rejects it under gnu99.
+    inreplace "src/tcp_subr.c", "    case EMU_REALAUDIO:\n", "    case EMU_REALAUDIO:;\n"
     system "meson", "setup", "build", "-Ddefault_library=both", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"

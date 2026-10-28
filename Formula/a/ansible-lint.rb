@@ -8,12 +8,9 @@ class AnsibleLint < Formula
   license all_of: ["MIT", "GPL-3.0-or-later"]
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "02be0fda16aa7f3990a0bc5488979b1aae7c843041f2e1192c89e301bb32b30d"
-    sha256 cellar: :any, arm64_tahoe:       "82004779e06068434eb201e4a983bd3163683fb5ccee505fc58f1787b830d61e"
-    sha256 cellar: :any, arm64_sequoia:     "c0be2431cf10a7521feb31d4f0724dd1479adffe565ca9b59cf3af1c1d7b8468"
-    sha256 cellar: :any, arm64_linux:       "c42024db2dd5109e7c87c409c8e7c7e2e68b919016dcc3d34eef2766e40d5115"
-    sha256 cellar: :any, x86_64_linux:      "d43d358f546fee136d98c4381c858f9169421784f63fbe4b5c2123d2fb32d02d"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ansible-lint-26.10.1"
+    rebuild 2
+    sha256 cellar: :any, sonoma: "4df2145296724e66eb725fe96cee8c52e0d38887d687c183ff1a5656b84dc334"
   end
 
   depends_on "pkgconf" => :build

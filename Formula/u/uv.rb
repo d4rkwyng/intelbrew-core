@@ -1,16 +1,15 @@
 class Uv < Formula
   desc "Extremely fast Python package installer and resolver, written in Rust"
   homepage "https://docs.astral.sh/uv/"
-  url "https://github.com/astral-sh/uv/archive/refs/tags/0.13.5.tar.gz"
-  sha256 "fbe5c69803f813d36661aaa18c0716317710b0069c9427ba8ef174c6de7c8b4b"
+  url "https://github.com/astral-sh/uv/archive/refs/tags/0.13.6.tar.gz"
+  sha256 "c2e01687fbbcb109277698ec97baca46e1547656ad580abf6d993f9c459af1c7"
   license any_of: ["Apache-2.0", "MIT"]
   compatibility_version 1
   head "https://github.com/astral-sh/uv.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/uv-0.13.5"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "dda2f2e7af435e7513bd9fb15f1ab02bace991949aabea094786b613e97bcb43"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/uv-0.13.6"
+    sha256 cellar: :any_skip_relocation, sonoma: "fcdb7620443318c6697c193034de3ff6bb4f3b3177b149359001965a45bf45ef"
   end
 
   depends_on "pkgconf" => :build

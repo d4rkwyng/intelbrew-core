@@ -1,8 +1,8 @@
 class Nmap < Formula
   desc "Port scanning utility for large networks"
   homepage "https://nmap.org/"
-  url "https://nmap.org/dist/nmap-7.992.tar.bz2"
-  sha256 "0c12660eddbf7eabeff6996cb0c044a4eadf2bb0c6fbcb340d6cf72b1caee402"
+  url "https://nmap.org/dist/nmap-7.993.tar.bz2"
+  sha256 "270e55f04915bfcecb5db8feb959d4c5ba86a48c094520a4f1c07571e1c79c59"
   license :cannot_represent
   compatibility_version 1
 
@@ -12,9 +12,8 @@ class Nmap < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/nmap-7.992"
-    rebuild 1
-    sha256 sonoma: "8c7d25cb749fd9eca2e61ef881e1f52ad7d865ba3281cbee85da3cfa5cfc859b"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/nmap-7.993"
+    sha256 sonoma: "423ebd3d2139f9b1f90742a9857e2c4124f0daf3eefbad906d77cc23a4afabcf"
   end
 
   head do

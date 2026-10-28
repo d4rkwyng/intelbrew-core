@@ -13,11 +13,9 @@ class Yq < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "69b698c900cb0458e22e9b2261f67fb665b448b131f788f7611f1773431ad95b"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "69b698c900cb0458e22e9b2261f67fb665b448b131f788f7611f1773431ad95b"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "69b698c900cb0458e22e9b2261f67fb665b448b131f788f7611f1773431ad95b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "271d4524ae546930ae4540094f5e1a8807e33f0e531018c542f97594b78489cd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "edf7c42fc120d260de08df774b9372461c2b4bdeef9f062b9a00b3b94e49e268"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/yq-4.54.1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "c9c6b58977b41f0a60e3647d2eb6522990d2dddc248790482b91ee107b49757d"
   end
 
   depends_on "go" => :build

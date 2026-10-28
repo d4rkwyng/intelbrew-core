@@ -2,9 +2,9 @@ class PhpAT84 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.4.27.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.4.27.tar.xz"
-  sha256 "dcf93923b0e38e0d5252b25b796520b5a47761a08b3488b6d0b5d1115764d3f0"
+  url "https://www.php.net/distributions/php-8.4.26.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.4.26.tar.xz"
+  sha256 "32a2de53862ad44ed4a5005244ce4f1b50c271e74dced215449a4443b40569f1"
   license all_of: [
     "PHP-3.01",
 
@@ -38,11 +38,9 @@ class PhpAT84 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "f0e067de6bff2014e8c75876c12384aa2d2807c15376d17ae3dcc5e28f058277"
-    sha256 arm64_tahoe:       "974c761c6b687d6ccc1c531d4ba8774969d5cb5d8cc70d9e6bbf821265740b03"
-    sha256 arm64_sequoia:     "a9942d531d629865f4fc51007712266790b475d69fd55f5e587737330af4d21f"
-    sha256 arm64_linux:       "cf23655b17f44a517d9d099a1c3c6825084587fae3c1856ef2a9636bc61f4fb1"
-    sha256 x86_64_linux:      "8fac36e7e4466c0b25033f2a1da49fbdd1d7e9b2f6e5a318e0438df10a124f40"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/php@8.4-8.4.26_1"
+    rebuild 1
+    sha256 sonoma: "f348f26446e52501b3d113406181c27c7602148ccf6d26b423abae405b49af69"
   end
 
   keg_only :versioned_formula
@@ -62,7 +60,7 @@ class PhpAT84 < Formula
   depends_on "freetds"
   depends_on "gd"
   depends_on "gmp"
-  depends_on "icu4c@79"
+  depends_on "icu4c@78"
   depends_on "libpq"
   depends_on "libsodium"
   depends_on "libzip"
@@ -90,8 +88,7 @@ class PhpAT84 < Formula
     depends_on "zlib-ng-compat"
   end
 
-  # Allow network access during `:postinstall` and `:test` phases
-  deny_network_access! :build
+  allow_network_access! :test
 
   def install
     inreplace "configure" do |s|

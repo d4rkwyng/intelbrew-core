@@ -8,11 +8,9 @@ class Pygobject3 < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "cca83b04f8a52af9170b2760a68fb79451e91575fa282cbcc411f1a76b062be5"
-    sha256 cellar: :any, arm64_tahoe:       "5cbf0e81e7a640d252750b4ec68d88576b4db40d68b43f670cdf55ea083a5991"
-    sha256 cellar: :any, arm64_sequoia:     "439f8bf0ac8846dcd7732f01329f6ec579065c83a7c8ac4e121b64593acff586"
-    sha256 cellar: :any, arm64_linux:       "beb4512e787416ca0951d53b60926690dafc5405db8b73a91de7f9e35140130c"
-    sha256 cellar: :any, x86_64_linux:      "6e3682a80ea3584c1bfde8c9f5c8d45cdef7f14b9916866b96b2e3b3b542e155"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pygobject3-3.58.1_1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "38bf3e6bd66f568cc4e6d93357e1abb24413618cec9cb13b6573cfe8fdf7fb82"
   end
 
   depends_on "meson" => :build

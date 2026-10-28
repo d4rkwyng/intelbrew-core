@@ -9,8 +9,8 @@ class Pandoc < Formula
 
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pandoc-3.12.1"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "da15b21672dcb0c66e573cb9950d333c16275ceb32f2536e045df87a2cc50e74"
+    rebuild 2
+    sha256 cellar: :any, sonoma: "00f7bc70a07a9f51b1142ee2abeaf8d0f2e4cf5ce2c43266e02b108e1bae0c2e"
   end
 
   depends_on "cabal-install" => :build
