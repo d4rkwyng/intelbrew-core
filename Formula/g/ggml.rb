@@ -1,16 +1,15 @@
 class Ggml < Formula
   desc "Tensor library for machine learning"
   homepage "https://github.com/ggml-org/ggml"
-  url "https://github.com/ggml-org/ggml/archive/refs/tags/v0.27.0.tar.gz"
-  sha256 "a4bec5021627a204984f8abd34781eb3bf5dee586b6337246c952d2103d7ef45"
+  url "https://github.com/ggml-org/ggml/archive/refs/tags/v0.28.0.tar.gz"
+  sha256 "296a3533da2c6eaaac610008722572eb002a0f3b1aceb45b86a34f31ff4766c9"
   license "MIT"
   compatibility_version 1
   head "https://github.com/ggml-org/ggml.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ggml-0.27.0"
-    rebuild 1
-    sha256 sonoma: "1b5056741a6a4c6f380bd4947f570f436eac7d92e2fd0eacb7852cd104bb56c4"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ggml-0.28.0"
+    sha256 sonoma: "6ca91622d3c75875241e0140dca4bd9204179b540645f6de606254fec231a1f5"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -39,8 +38,8 @@ class Ggml < Formula
 
   # Lengthy test so not worth installing. Shorter examples/tests haven't been ported to new DL backend
   resource "test-backend-ops.cpp", :test do
-    url "https://raw.githubusercontent.com/ggml-org/ggml/refs/tags/v0.27.0/tests/test-backend-ops.cpp"
-    sha256 "bc0d8a7a4ba1d9a9b67a56b099513f06f9d1b9f58a84efe3a5404b0d603dee1a"
+    url "https://raw.githubusercontent.com/ggml-org/ggml/refs/tags/v0.28.0/tests/test-backend-ops.cpp"
+    sha256 "cc939ea00c5208ca825ca1f20d3dbbe79fbec69537baf3ac75ed78e05f73584e"
 
     livecheck do
       formula :parent

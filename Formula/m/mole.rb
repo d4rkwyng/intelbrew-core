@@ -15,9 +15,9 @@ class Mole < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1a92f84ab9847fc81c2240120d0ca5b7a5de21f3e1b912bf7d98f6d5f5d40a69"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c5fbf870167b39f1bc692e6f91e8b8fb6aa42a5323219df9126f9b8c1ae1c5b5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e3acec18570dc48e4e5dfabb14a4fb30372caa27f0478dbd130aa6c54379e52e"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mole-1.65.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "9dcedd179630f42944a4cd2972d2e68ab08f6b816ee006fbbacb488ce5106c12"
   end
 
   depends_on "go" => :build

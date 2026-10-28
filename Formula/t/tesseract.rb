@@ -1,10 +1,9 @@
 class Tesseract < Formula
   desc "OCR (Optical Character Recognition) engine"
   homepage "https://tesseract-ocr.github.io/"
-  url "https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.5.3.tar.gz"
-  sha256 "9218e62793116d42a9f6d14cd9348518b27f382096eea3d0f2d1a24616bb5884"
+  url "https://github.com/tesseract-ocr/tesseract/archive/refs/tags/5.5.4.tar.gz"
+  sha256 "a8dbf8b8c8ee427ff6ad1d99116502feaf59440af1adb893caf60a6576826cf4"
   license "Apache-2.0"
-  revision 1
   compatibility_version 1
   head "https://github.com/tesseract-ocr/tesseract.git", branch: "main"
 
@@ -14,9 +13,8 @@ class Tesseract < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/tesseract-5.5.3_1"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "4e0c4242a2b9c7f3296d45c5e830f4ad2f2226b9bfb4b9d54b37623aaba854e5"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/tesseract-5.5.4"
+    sha256 cellar: :any, sonoma: "0d732e3627d487f2ecbf11883ca4eff58e6f9acaa957adb7f0fb04506d9c0e2b"
   end
 
   depends_on "autoconf" => :build

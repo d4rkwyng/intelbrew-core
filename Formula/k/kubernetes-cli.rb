@@ -2,8 +2,8 @@ class KubernetesCli < Formula
   desc "Kubernetes command-line interface"
   homepage "https://kubernetes.io/docs/reference/kubectl/"
   url "https://github.com/kubernetes/kubernetes.git",
-      tag:      "v1.37.1",
-      revision: "f78e722310e50bcaca9276be22276d9e91d91308"
+      tag:      "v1.37.2",
+      revision: "c50e5395f1ae2d4a2c05f28fdcc38c0916cc1a32"
   license "Apache-2.0"
   head "https://github.com/kubernetes/kubernetes.git", branch: "master"
 
@@ -13,9 +13,8 @@ class KubernetesCli < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/kubernetes-cli-1.37.1"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, sonoma: "73a0835a2300c429aa95cd3d2e61f6d85f2f81879492276538c53d815372d253"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/kubernetes-cli-1.37.2"
+    sha256 cellar: :any_skip_relocation, sonoma: "00777730be628a8fa9ece58ec9d23b7dae537616c4f5486cbf968764375386a4"
   end
 
   # TODO: unpin go@1.26 when Go 1.27's ML-DSA ClientHello no longer gets reset by TLS middleboxes

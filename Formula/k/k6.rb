@@ -12,11 +12,9 @@ class K6 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "0cd11b4fc89c72d6e711a2f8beca9140f720de2970d23d35f12e8a5362ff2bd6"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "7228c2394a74d6174596016cdbe20c3125a1c58c4f83a18a62b5600cd2b6d820"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "26904d0e9e6260c94dfbd82c468e114276ef69c89b28e522f57cb88ab7570de4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "685e64adc23770f166f7dd8da4420f4a0e3c210b7007ae845f228c912043c2b3"
-    sha256 cellar: :any,                 x86_64_linux:      "042e8311f61d0a4a57dd71cc65470db5c987e4b6b49e899e9ce9369d703b394f"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/k6-2.3.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "d6d013972c034afdb0dd36af48e2ab4d2bb0dd4e55f2a96413a7bc3de40e29d6"
   end
 
   depends_on "go" => :build
