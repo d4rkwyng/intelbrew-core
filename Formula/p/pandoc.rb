@@ -1,16 +1,15 @@
 class Pandoc < Formula
   desc "Swiss-army knife of markup format conversion"
   homepage "https://pandoc.org/"
-  url "https://github.com/jgm/pandoc/archive/refs/tags/3.12.1.tar.gz"
-  sha256 "cf9b3725b90e471aa70c99ac3b351adcb6e40cd904d36fcbb0f70d712e135686"
+  url "https://github.com/jgm/pandoc/archive/refs/tags/3.13.tar.gz"
+  sha256 "fbf6044766b0c9be5ccbf18ffe657124449e8563a177d85662ecb6f031f9c308"
   license "GPL-2.0-or-later"
-  compatibility_version 9
+  compatibility_version 10
   head "https://github.com/jgm/pandoc.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pandoc-3.12.1"
-    rebuild 2
-    sha256 cellar: :any, sonoma: "00f7bc70a07a9f51b1142ee2abeaf8d0f2e4cf5ce2c43266e02b108e1bae0c2e"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pandoc-3.13"
+    sha256 cellar: :any, sonoma: "e41f269b784363876884de9c303061decf002523e88994af425749ba2ac3b0bd"
   end
 
   depends_on "cabal-install" => :build

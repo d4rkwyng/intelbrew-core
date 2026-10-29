@@ -1,20 +1,15 @@
 class Aspell < Formula
   desc "Spell checker with better logic than ispell"
   homepage "http://aspell.net/"
-  url "https://ftpmirror.gnu.org/aspell/aspell-0.60.8.2.tar.gz"
-  mirror "https://ftp.gnu.org/gnu/aspell/aspell-0.60.8.2.tar.gz"
-  sha256 "57fe4863eae6048f72245a8575b44b718fb85ca14b9f8c0afc41b254dfd76919"
+  url "https://ftpmirror.gnu.org/aspell/aspell-0.60.8.3.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/aspell/aspell-0.60.8.3.tar.gz"
+  sha256 "0534eae11132405120d11e46bf595bd5dd189bc124ba77a5dd6aae861b48a162"
   license "LGPL-2.1-only"
   compatibility_version 1
 
   bottle do
-    sha256 arm64_golden_gate: "da86af9ecbf74819b43e3ab8078fb5c8405f1f07a2dcee5f43b2520dbf7694d2"
-    sha256 arm64_tahoe:       "1039dbbb1d5abd5d4f78a211fdcaa5657456a153b2282bda45ebffe6c0ab1b70"
-    sha256 arm64_sequoia:     "f071da3a05bb8d84d2df84df586f0e1a940934e630010f77673339ef69ee867d"
-    sha256 arm64_sonoma:      "59b57e67fc77ef33808fe1f09068374e26bedf89d6ac1401c6c3d4ebf944b617"
-    sha256 sonoma:            "d67764dd08b363fcb93aaf020abb592a42f7c21756f657d041107e5f2c103ad5"
-    sha256 arm64_linux:       "d1fa3353d7b6b6bd701d26c1bf3aeaf08c5651d1627d8752b5c875c16d4722d6"
-    sha256 x86_64_linux:      "e45cb5f81053dc9584b97659e14aa7c5e4698aa807fa9739b97008a1a62d8792"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aspell-0.60.8.3"
+    sha256 sonoma: "801f7ef50000046ac3784ab3a7d22cb7c8c2ce13c422908d35d3a51898516b87"
   end
 
   uses_from_macos "ncurses"
@@ -122,9 +117,9 @@ class Aspell < Formula
   end
 
   resource "en" do
-    url "https://ftpmirror.gnu.org/aspell/dict/en/aspell6-en-2020.12.07-0.tar.bz2"
-    mirror "https://ftp.gnu.org/gnu/aspell/dict/en/aspell6-en-2020.12.07-0.tar.bz2"
-    sha256 "4c8f734a28a088b88bb6481fcf972d0b2c3dc8da944f7673283ce487eac49fb3"
+    url "https://ftpmirror.gnu.org/aspell/dict/en/aspell6-en-2026.02.25-0.tar.bz2"
+    mirror "https://ftp.gnu.org/gnu/aspell/dict/en/aspell6-en-2026.02.25-0.tar.bz2"
+    sha256 "77a5cb437c45d1115f3b593802c20651d8c93803ed1073278dc1a1240016f10d"
   end
 
   resource "eo" do

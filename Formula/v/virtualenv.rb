@@ -3,14 +3,14 @@ class Virtualenv < Formula
 
   desc "Tool for creating isolated virtual python environments"
   homepage "https://virtualenv.pypa.io/"
-  url "https://files.pythonhosted.org/packages/ee/00/c27937345311d2aaf6197203231a59010073d7abffae3971503ac0e65477/virtualenv-21.15.0.tar.gz"
-  sha256 "41a0cfec413c886a991bf7657d02f8996e69e192485aa127b410f29f1e35cfd3"
+  url "https://files.pythonhosted.org/packages/b2/24/20282bc8e69ff8dee680dc2b95e9dc81fa7e7894b14c1a8d06330e97fef7/virtualenv-21.15.1.tar.gz"
+  sha256 "e79c90b8f601701599c25905e02839924fede2c798d52325670d24fbdaab74ee"
   license "MIT"
   head "https://github.com/pypa/virtualenv.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/virtualenv-21.15.0"
-    sha256 cellar: :any_skip_relocation, sonoma: "c4e43d88f7330c0dcc8e631b0664d94278a52f3dc657c979ee51dc1a743a3fbb"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/virtualenv-21.15.1"
+    sha256 cellar: :any_skip_relocation, sonoma: "0519226e6f086baa2007b9780c85a5511ff34b57e0612c3079cb308387ebd956"
   end
 
   depends_on "python@3.15"
@@ -36,8 +36,8 @@ class Virtualenv < Formula
   end
 
   resource "python-discovery" do
-    url "https://files.pythonhosted.org/packages/b7/ba/2bdce36c8f1b081db630c61b433fcc7efa5094ba621147923232bdaa7332/python_discovery-1.6.5.tar.gz"
-    sha256 "f9420b2107a429ec9912bd10039135fc9bb8f15e99a00e614533977529f56bb3"
+    url "https://files.pythonhosted.org/packages/8e/3e/0c8cbdb52feeac4a8667ccff3c58fd2568d6d2969db2717ff00a9fdae73a/python_discovery-1.6.6.tar.gz"
+    sha256 "d687024fec55c489e7a465c7f5644300a4d9dbf7727a556a85660536ee922933"
   end
 
   allow_network_access! :build

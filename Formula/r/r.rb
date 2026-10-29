@@ -1,10 +1,9 @@
 class R < Formula
   desc "Software environment for statistical computing"
   homepage "https://www.r-project.org/"
-  url "https://cran.r-project.org/src/base/R-4/R-4.6.1.tar.gz"
-  sha256 "4da6e61d2c0aac5f14a2e7e432cb5fcc269efe83da4293050ba7f03dff4e2cf4"
+  url "https://cran.r-project.org/src/base/R-4/R-4.6.2.tar.gz"
+  sha256 "c297040f6392b1dac6e5c0eb398422cfdaedf540ae2205edb9ad0d10cb10ee00"
   license "GPL-2.0-or-later"
-  revision 2
   compatibility_version 2
 
   livecheck do
@@ -13,9 +12,11 @@ class R < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/r-4.6.1_2"
-    rebuild 1
-    sha256 sonoma: "85837bf79157083781a607ef0ed584e1c021034247cdec8f614af73b007725a6"
+    sha256 arm64_golden_gate: "cf990e2739ad2d52c02563a3016b70423489733c35eddd6432c333393c947b2e"
+    sha256 arm64_tahoe:       "cf6f4ae138301d670a64a1d73e663cb6efeab416c2590878d0c74f7a4be0368b"
+    sha256 arm64_sequoia:     "693465d972470df591d0badb722aa2d647519dc38000973a1bec8ce20cfa3ab9"
+    sha256 arm64_linux:       "b8c4dc4642336ac31c6ae35847f2ff20c71e6cc4e88d808144f26c965d2a3f25"
+    sha256 x86_64_linux:      "aac2321bae195fb93c24e4395f3d79b99940948d82a3e6363359b06a8ce6e714"
   end
 
   depends_on "pkgconf" => :build
