@@ -12,11 +12,9 @@ class R < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "cf990e2739ad2d52c02563a3016b70423489733c35eddd6432c333393c947b2e"
-    sha256 arm64_tahoe:       "cf6f4ae138301d670a64a1d73e663cb6efeab416c2590878d0c74f7a4be0368b"
-    sha256 arm64_sequoia:     "693465d972470df591d0badb722aa2d647519dc38000973a1bec8ce20cfa3ab9"
-    sha256 arm64_linux:       "b8c4dc4642336ac31c6ae35847f2ff20c71e6cc4e88d808144f26c965d2a3f25"
-    sha256 x86_64_linux:      "aac2321bae195fb93c24e4395f3d79b99940948d82a3e6363359b06a8ce6e714"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/r-4.6.2"
+    rebuild 1
+    sha256 sonoma: "6a5d7812c76a1b1a283ab68ac653fa2a0f5ad0f38b32eb72aec106693fa8a606"
   end
 
   depends_on "pkgconf" => :build

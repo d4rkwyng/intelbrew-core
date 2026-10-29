@@ -1,8 +1,8 @@
 class Mise < Formula
   desc "Polyglot runtime manager (asdf rust clone)"
   homepage "https://mise.jdx.dev/"
-  url "https://github.com/jdx/mise/archive/refs/tags/v2026.10.22.tar.gz"
-  sha256 "714f462702f58692a89546f0afb615e32e1141b8c9bd5ed2a958955a4feda170"
+  url "https://github.com/jdx/mise/archive/refs/tags/v2026.10.23.tar.gz"
+  sha256 "990f14fd3fd0f6a94a12c9f083dcfa8e7f3265391b7525598c933343ea949d5c"
   license "MIT"
   head "https://github.com/jdx/mise.git", branch: "main"
 
@@ -12,8 +12,8 @@ class Mise < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mise-2026.10.22"
-    sha256 cellar: :any_skip_relocation, sonoma: "1f7cd5e95665fd6ef2fd90de574ace52b77f9779749b3476c93127f1079cb381"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mise-2026.10.23"
+    sha256 cellar: :any_skip_relocation, sonoma: "5ba0f50e0341409b97bc45bc103cab426f7fb031c98e8a1cd1ae74066b9a204a"
   end
 
   depends_on "cmake" => :build

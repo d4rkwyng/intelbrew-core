@@ -2,10 +2,9 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.40.11",
-      revision: "675150d6ad2747df1e218ef59de9194bc4a7e538"
+      tag:      "v0.40.12",
+      revision: "f067033f9126993b6172bdfffa71a74ad693fda4"
   license "MIT"
-  revision 1
   head "https://github.com/ollama/ollama.git", branch: "main"
 
   # Upstream creates releases that use a stable tag (e.g., `v1.2.3`) but are
@@ -17,8 +16,8 @@ class Ollama < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ollama-0.40.11_1"
-    sha256 cellar: :any, sonoma: "b1f0bb802ea9690341a8fd7ca07043cdebc06db659efa59251cb867bc372e577"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ollama-0.40.12"
+    sha256 cellar: :any, sonoma: "04f2fd242ae86cc027690b190c4489fcb5723ab4ca1814ce5ebf66e42d75fdf3"
   end
 
   depends_on "ccache" => :build
@@ -28,14 +27,20 @@ class Ollama < Formula
   on_macos do
     on_arm do
       depends_on "mlx-c" => :no_linkage
+
+      # Build with the mlx-c 0.8.0 bindings for tagged MLX 0.32.4. Upstream targets a later MLX commit:
+      # https://github.com/ollama/ollama/commit/66ab8482e08035a3238dff04a5739c4371c61bfe
+      # `mlx_fast_scaled_dot_product_attention` has no `window_size` in mlx-c 0.8.0, so apply the window as a mask:
+      # https://github.com/ollama/ollama/blob/v0.40.12/mlx/compat/mlx-c/0001-mlx-c-sdpa-window-size.patch
+      patch :DATA
     end
   end
 
   # Pinned dependency required by llama-server
   resource "llama.cpp" do
     url "https://github.com/ggml-org/llama.cpp.git",
-        tag:      "b11845",
-        revision: "9ff0d7e90f0faaa7c16017e6dcf9cf91c50a100e"
+        tag:      "b11901",
+        revision: "5320c87ff0d994845b44ce7976f10055ec697447"
 
     livecheck do
       url "https://raw.githubusercontent.com/ollama/ollama/refs/tags/v#{LATEST_VERSION}/LLAMA_CPP_VERSION"
@@ -189,3 +194,47 @@ class Ollama < Formula
     end
   end
 end
+
+__END__
+diff --git a/mlx/fast.go b/mlx/fast.go
+index f9927ca..20012fa 100644
+--- a/mlx/fast.go
++++ b/mlx/fast.go
+@@ -21,6 +21,13 @@ func FastScaledDotProductAttention(q, k, v *Array, scale float32, windowSize int
+ // windowSize restricts each query to the most recent windowSize keys
+ // (sliding window attention); pass FastSDPANoWindow for full context.
+ func FastScaledDotProductAttentionWithSinks(q, k, v *Array, scale float32, windowSize int, mode string, mask, sinks *Array) *Array {
++	if windowSize > 0 {
++		if mode != "causal" {
++			panic("mlx: sliding-window SDPA requires causal mode")
++		}
++		mode, mask = "array", causalWindowMask(q, k, windowSize)
++	}
++
+ 	cMode := C.CString(mode)
+ 	defer C.free(unsafe.Pointer(cMode))
+ 
+@@ -40,10 +47,22 @@ func FastScaledDotProductAttentionWithSinks(q, k, v *Array, scale float32, windo
+ 	}
+ 
+ 	out := New("FAST_SDPA")
+-	mlxCheck(C.mlx_fast_scaled_dot_product_attention(&out.ctx, q.ctx, k.ctx, v.ctx, C.float(scale), C.int(windowSize), cMode, maskCtx, sinksCtx, C.bool(false), DefaultStream().ctx))
++	mlxCheck(C.mlx_fast_scaled_dot_product_attention(&out.ctx, q.ctx, k.ctx, v.ctx, C.float(scale), cMode, maskCtx, sinksCtx, C.bool(false), DefaultStream().ctx))
+ 	return out
+ }
+ 
++// causalWindowMask mirrors MLX's causal sliding-window SDPA: with queries
++// aligned to the end of the keys, key j is visible to query i when
++// 0 <= i-j < window.
++func causalWindowMask(q, k *Array, window int) *Array {
++	qL, kL := q.Dim(2), k.Dim(2)
++	dist := Sub(
++		Arange(float64(kL-qL), float64(kL), 1, DTypeInt32).ExpandDims(1),
++		Arange(0, float64(kL), 1, DTypeInt32).ExpandDims(0),
++	)
++	return Where(dist.Less(FromValue(0)), FromValue(false), dist.Less(FromValue(window)))
++}
++
+ type LayerNorm struct {
+ 	Weight *Array `weight:"weight"`
+ 	Bias   *Array `weight:"bias"`

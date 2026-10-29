@@ -11,11 +11,9 @@ class Composer < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e3bbd7b601c5365bf206020a9ccc1278a69951af1a533069d9a377e865e4e56f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e3bbd7b601c5365bf206020a9ccc1278a69951af1a533069d9a377e865e4e56f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e3bbd7b601c5365bf206020a9ccc1278a69951af1a533069d9a377e865e4e56f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "800721357f46ec6c5bb2d613b49cdd60f058531ecc0610cdce82b3db84784bc2"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "800721357f46ec6c5bb2d613b49cdd60f058531ecc0610cdce82b3db84784bc2"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/composer-2.11.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "479d0744235df184917062820f47fca4131d38d5343673181129033cd1dd8ad0"
   end
 
   depends_on "php"
