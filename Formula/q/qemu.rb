@@ -1,8 +1,8 @@
 class Qemu < Formula
   desc "Generic machine emulator and virtualizer"
   homepage "https://www.qemu.org/"
-  url "https://download.qemu.org/qemu-11.1.2.tar.xz"
-  sha256 "731b5681e4bb18be313231579b8efd0296c5b015fa36dc533874b639ba838016"
+  url "https://download.qemu.org/qemu-11.1.3.tar.xz"
+  sha256 "5a8289c7940dc77d3873c81a6c29ba3afe1446fc9d36e77fa1658cdbecb84b22"
   license "GPL-2.0-only"
   compatibility_version 1
   head "https://gitlab.com/qemu-project/qemu.git", branch: "master"
@@ -13,9 +13,8 @@ class Qemu < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/qemu-11.1.2"
-    rebuild 1
-    sha256 sonoma: "c9afa154f1e20a5c61fb0f1b3e982e8eaa018e2956a5f70b94376eb80e4980d9"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/qemu-11.1.3"
+    sha256 sonoma: "9221d45597f66c271c16e4b6b5bb190d115b3e3b6f06cbf10ab359502649787c"
   end
 
   depends_on "bison" => :build # >= 3.0

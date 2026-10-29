@@ -3,16 +3,16 @@ class Schemathesis < Formula
 
   desc "Testing tool for web applications with specs"
   homepage "https://schemathesis.readthedocs.io/"
-  url "https://files.pythonhosted.org/packages/5a/4a/5e38d60748a58dc37e2dc5e00ab2f8734c0d83d7ab533c0cee5ead5f23ac/schemathesis-4.32.6.tar.gz"
-  sha256 "584151776444a942d849d06f741d6466d87e81c73658178dbec4f07d7cf97cdd"
+  url "https://files.pythonhosted.org/packages/e7/65/5851126cc23b4ab02282a805659bfd606103d91fee7a5df1a13d9600aa20/schemathesis-4.32.7.tar.gz"
+  sha256 "d9b85738621f860e03cb69c66529bfebe6e20474b13c2e57d946aa4ed23c729f"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "054382a33ed95ce826b964a338cdef1df12e3f4c417728ec582aac35e161aa10"
-    sha256 cellar: :any, arm64_tahoe:       "7d04b4d2630136ce548bdd38ace615ea878aa88764cf07752fe586b9393d7d4f"
-    sha256 cellar: :any, arm64_sequoia:     "36cfa0b62d97e10bafc8ea53ed1feb0b483d23445ba3345b1ed85a49ae1e6185"
-    sha256 cellar: :any, arm64_linux:       "3686c16ab10a4ddea7359c77417a29a4b9c449a15dc6c8afb61b2576941b67d1"
-    sha256 cellar: :any, x86_64_linux:      "f0917a2064133e5f3af6961d1e4deea8251e98dc82ec217527f8cf9d66f7b7c5"
+    sha256 cellar: :any, arm64_golden_gate: "e19727032d78d5b71f94b6cb61a0726da6800dc0cbf6193ff7f1cda64a35fe0e"
+    sha256 cellar: :any, arm64_tahoe:       "61895e3c532545cbf836728cb1df7b03db52987adbfd5eb23291729cffd49a76"
+    sha256 cellar: :any, arm64_sequoia:     "cf570f8c71da303984350a3555917a6699da1ae44fc879bff806052f565aae35"
+    sha256 cellar: :any, arm64_linux:       "560e031129dc053aea98164e5dd9fb98b0f4de3f3b9f3a75afaffd6969a9a387"
+    sha256 cellar: :any, x86_64_linux:      "9147ef541f4c17fce0a45c80ef0e2b7550e4f7d7245526e52ec0cf06399e2a98"
   end
 
   depends_on "rust" => :build # for jsonschema-rs
@@ -111,8 +111,8 @@ class Schemathesis < Formula
   end
 
   resource "pytest" do
-    url "https://files.pythonhosted.org/packages/e4/47/b9efed96c114afcfa3c9d3fe98a76a1d14c74a9e266d397cf6eb64be5e01/pytest-9.1.1.tar.gz"
-    sha256 "1088fbde8f2b49d95a549a195707afa7a76a3ce9bcadc26b6d71f0ffda5fe313"
+    url "https://files.pythonhosted.org/packages/79/42/bb4641652e58dedeac2ec51abc1f8cae4fee4ec63899a0999016229a0f2a/pytest-9.2.0.tar.gz"
+    sha256 "97c4f3b1f3c7414aa36465e09b8220f1d03627993bd51b1282e193753c80557b"
   end
 
   resource "pyyaml" do
