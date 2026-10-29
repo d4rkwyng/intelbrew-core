@@ -1,15 +1,14 @@
 class Upx < Formula
   desc "Compress/expand executable files"
   homepage "https://upx.github.io/"
-  url "https://github.com/upx/upx/releases/download/v5.2.1/upx-5.2.1-src.tar.xz"
-  sha256 "a7d457be4ef942e46844ee8f301206b111394cbcbde3599747a6904c54ff116b"
+  url "https://github.com/upx/upx/releases/download/v5.3.0/upx-5.3.0-src.tar.xz"
+  sha256 "6229b5564dd91dd423a5280a7c15b70fc05449d2605bb853ce076743057fcf55"
   license "GPL-2.0-or-later"
   head "https://github.com/upx/upx.git", branch: "devel"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/upx-5.2.1"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "e5d8e64541381f628fcdb037fed741a15202cc629c58e3bccece0b3a49f5c1fa"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/upx-5.3.0"
+    sha256 cellar: :any_skip_relocation, sonoma: "d18766efe76eb849842605f0a6984a5f79478265039cb4c22293b457625d732d"
   end
 
   depends_on "cmake" => :build

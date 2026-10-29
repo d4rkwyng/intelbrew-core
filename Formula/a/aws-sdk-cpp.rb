@@ -4,7 +4,7 @@ class AwsSdkCpp < Formula
   url "https://github.com/aws/aws-sdk-cpp/archive/refs/tags/1.11.915.tar.gz"
   sha256 "14aae4edf6c1b389c2e43ed077889e767dd768495846a3f506c240a1e478f460"
   license "Apache-2.0"
-  revision 1
+  revision 2
   compatibility_version 3
   head "https://github.com/aws/aws-sdk-cpp.git", branch: "main"
 
@@ -13,8 +13,8 @@ class AwsSdkCpp < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aws-sdk-cpp-1.11.915_1"
-    sha256 cellar: :any, sonoma: "d5543798f7672be3088813dff147725bf1db8ae1d7055e909ef5436966949f3b"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aws-sdk-cpp-1.11.915_2"
+    sha256 cellar: :any, sonoma: "b065881eccb1035b1188637305fca1329367f146cd6277afbcb2080edd129416"
   end
 
   depends_on "cmake" => :build

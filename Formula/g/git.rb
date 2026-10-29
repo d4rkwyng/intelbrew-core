@@ -10,7 +10,7 @@ class Git < Formula
     "BSD-3-Clause",      # xdiff/xhistogram.c; reftable/
     "MIT",               # khash.h; sha1dc/
   ]
-  revision 1
+  revision 2
   compatibility_version 1
   head "https://github.com/git/git.git", branch: "master"
 
@@ -20,16 +20,16 @@ class Git < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/git-2.56.0_1"
-    rebuild 1
-    sha256 sonoma: "eb290ac535913f2b107cafc4bd8a42b01f1660a216ac816827eebafbc35ca507"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/git-2.56.0_2"
+    sha256 sonoma: "6c6d2358e580bcce5e17b8afa7a7a896f4edeb067079bd005fe0faea9e285fbe"
   end
 
   depends_on "gettext" => :build
   depends_on "pkgconf" => :build
+  # TODO: Replace with `uses_from_macos` once Apple fixes their CA bundle.
+  depends_on "curl"
   depends_on "pcre2"
 
-  uses_from_macos "curl"
   uses_from_macos "expat"
 
   # Don't try to add a libiconv dependency without reading this PR first:
