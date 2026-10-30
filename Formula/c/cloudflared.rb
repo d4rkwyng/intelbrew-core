@@ -1,14 +1,14 @@
 class Cloudflared < Formula
   desc "Cloudflare Tunnel client (formerly Argo Tunnel)"
   homepage "https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/"
-  url "https://github.com/cloudflare/cloudflared/archive/refs/tags/2026.10.5.tar.gz"
-  sha256 "cca0918e869d6e303ab9d0a31bc1d96ae7dbbbfe6ff2bde9208159ea91f793d6"
+  url "https://github.com/cloudflare/cloudflared/archive/refs/tags/2026.10.6.tar.gz"
+  sha256 "eb4d6b02b017cd3e49676934f14fe3025cebb07f9f272cd60dd790a2d812b90b"
   license "Apache-2.0"
   head "https://github.com/cloudflare/cloudflared.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cloudflared-2026.10.5"
-    sha256 cellar: :any_skip_relocation, sonoma: "e190d80e476817d58f34772d2033c8bd2808b77a4017f533f146c395994b532e"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cloudflared-2026.10.6"
+    sha256 cellar: :any_skip_relocation, sonoma: "786dd1f901d10e3e5a3b694f374323f82bbd6128de53ff50a7e80bf276901a53"
   end
 
   depends_on "go" => :build

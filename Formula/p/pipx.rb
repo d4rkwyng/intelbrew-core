@@ -3,13 +3,13 @@ class Pipx < Formula
 
   desc "Execute binaries from Python packages in isolated environments"
   homepage "https://pipx.pypa.io"
-  url "https://files.pythonhosted.org/packages/d9/48/135b5ce453bdee14f5a7a20a432ec7bb51a079c0f3a85b011a68b9f25ebe/pipx-1.18.7.tar.gz"
-  sha256 "cdeac1c999977b1847bbbff6b39c14a7d27cf2284dddc911d4410bcaec4ccec4"
+  url "https://files.pythonhosted.org/packages/dd/1f/53949c32f018ec278c3a6d1be746af85fa58bd47e92d20cac829ce97974c/pipx-1.18.8.tar.gz"
+  sha256 "a5bab2bc237402862ab1bb64c055327fa9ba52a485145f9451573b8d3b179f65"
   license "MIT"
   head "https://github.com/pypa/pipx.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "b37872b6aec0cbbf5f5ffcb34f5b927c981bbfca7a7076962b9422b6ba53c4ea"
+    sha256 cellar: :any_skip_relocation, all: "3eda3198943f1e0a76f2e8ed8c6a67075c7fea52327f6453f03ab535dd59d282"
   end
 
   depends_on "python@3.15"
@@ -35,8 +35,8 @@ class Pipx < Formula
   end
 
   resource "platformdirs" do
-    url "https://files.pythonhosted.org/packages/35/e9/bf409046a91b6a9ca652e9b0ac3c39481674f6774e23e58b52315516099a/platformdirs-4.13.7.tar.gz"
-    sha256 "f7f351c027d6632c30471124e1fdb6ac0fef9ccc5cbac1b34cb333431b1fc3e1"
+    url "https://files.pythonhosted.org/packages/40/28/1c058a9143d2304b3078f8dadcbb9dc27f7d3581b5d05157c84869c4cc0d/platformdirs-4.14.0.tar.gz"
+    sha256 "83f009c1e8c5fc36869b5171755b291887bd2cade7965233cdfabd23d754720b"
   end
 
   resource "userpath" do

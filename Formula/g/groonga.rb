@@ -4,6 +4,7 @@ class Groonga < Formula
   url "https://github.com/groonga/groonga/releases/download/v16.1.5/groonga-16.1.5.tar.gz"
   sha256 "f7ae843e80aec4a8b83743b570c0f82ffe44939405db0843f06ecd6190801476"
   license "LGPL-2.1-or-later"
+  revision 1
   compatibility_version 1
   head "https://github.com/groonga/groonga.git", branch: "main"
 
@@ -13,8 +14,8 @@ class Groonga < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/groonga-16.1.5"
-    sha256 sonoma: "bdf7a45736a201d9e35db46fb02c45a92fdd4c19f17f0e7cc34f4a2b0398ab02"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/groonga-16.1.5_1"
+    sha256 sonoma: "e7bc4860af53749f4e24f4b7727b177bf2ea376dd3f4c10fbd546bd00ce16aa6"
   end
 
   depends_on "cmake" => :build

@@ -1,16 +1,15 @@
 class Luv < Formula
   desc "Bare libuv bindings for lua"
   homepage "https://github.com/luvit/luv"
-  url "https://github.com/luvit/luv/archive/refs/tags/1.53.0-0.tar.gz"
-  sha256 "bd393b5918f320c79a2c6405e3abebe01c024557c32b9fb9006bee20ce71e19e"
+  url "https://github.com/luvit/luv/archive/refs/tags/1.53.0-1.tar.gz"
+  sha256 "e7d7c872637560e9e9ac0cdcaad1b06c4058152fb0eb9d039f38612b183d01a7"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/luvit/luv.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/luv-1.53.0-0"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "f9a08adf7b777dab0d3217f01e2d1a73fddc90a05915d9d29fec8f26d5b0bee2"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/luv-1.53.0-1"
+    sha256 cellar: :any, sonoma: "1ce4480a338c7d6419688ef31276730e15c70a69eadfb7421f91c30c0eb309ca"
   end
 
   depends_on "cmake" => :build
