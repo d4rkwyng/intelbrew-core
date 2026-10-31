@@ -12,6 +12,7 @@ class QuickLintJs < Formula
     sha256 cellar: :any, arm64_tahoe:       "63a00530e13563440dc6fc6b0b0805d969efb5e1947abd1da7c3c2eefbf1f5ef"
     sha256 cellar: :any, arm64_sequoia:     "1c67806e60862b2a8995acd24e7de6d0d57eb3d195d2c8b9b4580ad6c38d849b"
     sha256 cellar: :any, arm64_linux:       "879cfef7baad0a2cd901a43dd37fa17aee5223a191478deb47cc8917a6c03915"
+    sha256 cellar: :any, x86_64_linux:      "4bdcc76ac104b49544c68faec836246ec34464fa0bca17233b00ff8589d96231"
   end
 
   deprecate! date: "2026-10-29", because: :repo_archived

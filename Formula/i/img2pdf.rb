@@ -7,6 +7,7 @@ class Img2pdf < Formula
   sha256 "219518020f5bd242bdc46493941ea3f756f664c2e86f2454721e74353f58cd95"
   license "LGPL-3.0-or-later"
   revision 1
+  compatibility_version 1
 
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/img2pdf-0.6.3_1"

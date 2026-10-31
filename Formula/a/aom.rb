@@ -2,15 +2,15 @@ class Aom < Formula
   desc "Codec library for encoding and decoding AV1 video streams"
   homepage "https://aomedia.googlesource.com/aom"
   url "https://aomedia.googlesource.com/aom.git",
-      tag:      "v3.15.2",
-      revision: "af3dc9aadc793c1b00edc003e3fc19a44fdeb574"
+      tag:      "v3.15.3",
+      revision: "b141d9c45db236335351c8a4b2a14b3ade27c937"
   license "BSD-2-Clause"
+  compatibility_version 1
   head "https://aomedia.googlesource.com/aom.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aom-3.15.2"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "dc84e907f3ca9b7edaaaa5b79176f7fb07a05eb8f7672618467d28bde810ccb1"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aom-3.15.3"
+    sha256 cellar: :any, sonoma: "b294366d17ea60a0c1e776b4eab53b7de8a14f99b973a921c5dfa04a9c809075"
   end
 
   depends_on "cmake" => :build

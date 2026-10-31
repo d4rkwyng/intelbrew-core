@@ -6,6 +6,7 @@ class Duckdb < Formula
       revision: "d54cbbe3df17e8e5ce68312f483b4155836112aa"
   license "MIT"
   revision 1
+  compatibility_version 1
 
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/duckdb-2.0.0_1"

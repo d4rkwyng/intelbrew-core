@@ -1,9 +1,10 @@
 class Composer < Formula
   desc "Dependency Manager for PHP"
   homepage "https://getcomposer.org/"
-  url "https://getcomposer.org/download/2.11.0/composer.phar"
-  sha256 "9674f12a2a181100d889ebfd0b4510805b3e94cea57869b14b383753d602599b"
+  url "https://getcomposer.org/download/2.11.1/composer.phar"
+  sha256 "6f1b891e1d4927d62740276c540fb490e47689e19e102c49e8da849794882f8c"
   license "MIT"
+  compatibility_version 1
 
   livecheck do
     url "https://getcomposer.org/download/"
@@ -11,9 +12,8 @@ class Composer < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/composer-2.11.0"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "479d0744235df184917062820f47fca4131d38d5343673181129033cd1dd8ad0"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/composer-2.11.1"
+    sha256 cellar: :any_skip_relocation, sonoma: "48c2425acefb4cc7348258f65a8dcf7d024e1670a9179149e8110b53fd34edf6"
   end
 
   depends_on "php"
