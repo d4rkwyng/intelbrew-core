@@ -4,6 +4,7 @@ class NodeAT24 < Formula
   url "https://nodejs.org/dist/v24.22.2/node-v24.22.2.tar.xz"
   sha256 "8fe2ec1723bb9f8d0b683907c82708debbeda64af21cb2aa214c4241eed0a061"
   license "MIT"
+  revision 2
   compatibility_version 1
 
   livecheck do
@@ -12,8 +13,8 @@ class NodeAT24 < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/node@24-24.22.2"
-    sha256 sonoma: "d576d7b3bf528505dbcafa48ee30c7e39a8210e7e6c954d72080f5b01a74758e"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/node@24-24.22.2_2"
+    sha256 sonoma: "7981fd37a69a0342efa1dd493a1b20570298c8f7bcfee3069748abe59746bade"
   end
 
   keg_only :versioned_formula

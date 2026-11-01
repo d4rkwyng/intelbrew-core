@@ -10,14 +10,14 @@ class Luajit < Formula
   # Get the latest commit with:
   #   `git ls-remote --heads https://github.com/LuaJIT/LuaJIT.git v2.1`
   # This is a rolling release model so take care not to ignore CI failures that may be regressions.
-  url "https://github.com/LuaJIT/LuaJIT/archive/a4c064539ea931274d407e1249b4bb575424a0f4.tar.gz"
+  url "https://github.com/LuaJIT/LuaJIT/archive/ea9eb7edb5eac4a9d175d74523db34fac0fa5180.tar.gz"
   # Use the version scheme `2.1.timestamp` where `timestamp` is the Unix timestamp of the
   # latest commit at the time of updating.
   # `brew livecheck luajit` will generate the correct version for you automatically.
-  version "2.1.1792588164"
-  sha256 "15625df3ebfbd1f76371005bffae39b84c65e718e57acc9a9c57863c7c101541"
+  version "2.1.1793383622"
+  sha256 "338a5640be00b89fd0a2a027a7433fcbbb4d006be840d216d84151386b5bcdf7"
   license "MIT"
-  compatibility_version 35
+  compatibility_version 36
   head "https://github.com/LuaJIT/LuaJIT.git", branch: "v2.1"
 
   livecheck do
@@ -31,9 +31,8 @@ class Luajit < Formula
   no_autobump! because: :incompatible_version_format
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/luajit-2.1.1792588164"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "1d796b7d5faadd224ba644162a8ff7f588a457bd38090814a82f97618a031325"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/luajit-2.1.1793383622"
+    sha256 cellar: :any, sonoma: "dec31e786af361e1846972842fea07e9fc64e1b4abc95b896c8660a14f6c0294"
   end
 
   deny_network_access!

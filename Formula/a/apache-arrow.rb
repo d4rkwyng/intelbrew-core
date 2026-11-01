@@ -5,13 +5,13 @@ class ApacheArrow < Formula
   mirror "https://archive.apache.org/dist/arrow/arrow-26.0.0/apache-arrow-26.0.0.tar.gz"
   sha256 "b153ef472dd89ef4cb84867ca238f2a3a9347d8f4a78913d16ca2201606f0425"
   license "Apache-2.0"
-  revision 2
+  revision 3
   compatibility_version 4
   head "https://github.com/apache/arrow.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/apache-arrow-26.0.0_2"
-    sha256 cellar: :any, sonoma: "eeb5fe9cf7fcbf4ae0752e7ea6e4f4d49708a0f2d447b703227e85aa524744b4"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/apache-arrow-26.0.0_3"
+    sha256 cellar: :any, sonoma: "5e22f7e1b19cb0b32f309fa09156740961faabf058eccfa8e4d86d917e32f4ba"
   end
 
   depends_on "boost" => :build

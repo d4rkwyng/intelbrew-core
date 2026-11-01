@@ -147,20 +147,8 @@ class PythonAT315 < Formula
       args << "--enable-framework=#{frameworks}"
       args << "--with-dtrace"
       args << "--with-dbmliborder=ndbm"
-      # Intelbrew: the tail-call interpreter needs clang preserve_none + musttail
-      # (Python/ceval_macros.h); Apple clang 16 has no preserve_none. Same check.
-      tail_call_probe = buildpath/"intelbrew-tail-call-probe.c"
-      tail_call_probe.write <<~C
-        #if !__has_attribute(preserve_none) || !__has_attribute(musttail)
-        #error no efficient tail calls
-        #endif
-      C
-      args << if quiet_system ENV.cc, "-fsyntax-only", tail_call_probe
-        "--with-tail-call-interp"
-      else
-        "--without-tail-call-interp"
-      end
-      tail_call_probe.unlink
+      # Tail calling needs LLVM 19, which Apple Clang is based on since 17.
+      args << "--with-tail-call-interp" if DevelopmentTools.clang_build_version >= 1700
 
       # Avoid linking to libgcc https://mail.python.org/pipermail/python-dev/2012-February/116205.html
       args << "MACOSX_DEPLOYMENT_TARGET=#{MacOS.version}"

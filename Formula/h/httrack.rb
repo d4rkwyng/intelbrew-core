@@ -6,11 +6,9 @@ class Httrack < Formula
   license "GPL-3.0-or-later" => { with: "openvpn-openssl-exception" }
 
   bottle do
-    sha256 arm64_golden_gate: "4316907b3240798feb96c0ccac246806d4c502ade968c066ed2b9cc44ecec386"
-    sha256 arm64_tahoe:       "734be379b4d142c51786562ff8378033c673e5d59f6cefd8d407f7feaa162d4d"
-    sha256 arm64_sequoia:     "4a0d677e57916c1017c1145b976154f0c2e7dafe6c885e3904413a696cf8e5f6"
-    sha256 arm64_linux:       "e38289df30e88de0e038c264c1c6871b50767a3938233756bf22d8098480cc2b"
-    sha256 x86_64_linux:      "b961010bc9552db428f695e8a5521bc828bc93ab4260868758ae66a4537e2186"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/httrack-3.51.0"
+    rebuild 1
+    sha256 sonoma: "d33ba6de817f621e4585eec5b5975e695fd93971a48bd32521563e87fac627bc"
   end
 
   depends_on "openssl@4"

@@ -1,8 +1,8 @@
 class Libarchive < Formula
   desc "Multi-format archive and compression library"
   homepage "https://www.libarchive.org"
-  url "https://www.libarchive.org/downloads/libarchive-3.8.10.tar.xz"
-  sha256 "56cad765459d5ee25a3b761f90c47d99379d28297fbfb72d908880d6b875fb96"
+  url "https://www.libarchive.org/downloads/libarchive-3.8.11.tar.xz"
+  sha256 "a3dc0872b1b39da34dc18ef1b944f0f11ffd37425d70ae04be679279f1cf43d2"
   license "BSD-2-Clause"
   compatibility_version 1
 
@@ -12,9 +12,8 @@ class Libarchive < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libarchive-3.8.10"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "5efa1db4dc5cde7b54af2582abf5bba00a54fadae52a9e7f8eee3dcebb732be1"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libarchive-3.8.11"
+    sha256 cellar: :any, sonoma: "8b43deed1a8e07234657605284e43bec2adcbd9e2b78ad4054eeda6aac0947b1"
   end
 
   keg_only :provided_by_macos

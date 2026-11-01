@@ -1,8 +1,8 @@
 class Mole < Formula
   desc "Deep clean and optimize your Mac"
   homepage "https://mole.fit"
-  url "https://github.com/tw93/Mole/archive/refs/tags/V1.66.0.tar.gz"
-  sha256 "9172c880d0e0bc4d6415a8b8b12755e7ec101e3405aef41e919f4cc764d1e75c"
+  url "https://github.com/tw93/Mole/archive/refs/tags/V1.67.0.tar.gz"
+  sha256 "f263992189c33e54dba12081e3455b1f25078e4e9806e5d6a1df67f7fa552645"
   license "GPL-3.0-or-later"
   head "https://github.com/tw93/Mole.git", branch: "main"
 
@@ -15,8 +15,8 @@ class Mole < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mole-1.66.0"
-    sha256 cellar: :any_skip_relocation, sonoma: "72e44b6c255719e35e464c6764fd40681e9b6c0b5266ad6467cd3c260db23e76"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mole-1.67.0"
+    sha256 cellar: :any_skip_relocation, sonoma: "7b58bed7ede3965f84894b11d809a96088426b4867032c0f6f0ef94255011f32"
   end
 
   depends_on "go" => :build

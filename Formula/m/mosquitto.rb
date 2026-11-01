@@ -7,7 +7,7 @@ class Mosquitto < Formula
   # EDL-1.0 is pretty the same as BSD-3-Clause,
   # see discussions in https://github.com/spdx/license-list-XML/issues/1149
   license any_of: ["EPL-1.0", "BSD-3-Clause"]
-  revision 2
+  revision 3
 
   livecheck do
     url "https://mosquitto.org/download/"
@@ -15,9 +15,8 @@ class Mosquitto < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mosquitto-2.1.2_2"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "66e97189dae363534c917fb388dd7ffc84987009994a36ed4c2592963abdc0d3"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mosquitto-2.1.2_3"
+    sha256 cellar: :any, sonoma: "0485847a3cbfea2ed22eea62e07407cb0e25520de8f2233f5aa29c198359eb68"
   end
 
   depends_on "cmake" => :build

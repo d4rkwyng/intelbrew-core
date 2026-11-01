@@ -1,8 +1,8 @@
 class CargoBinstall < Formula
   desc "Binary installation for rust projects"
   homepage "https://github.com/cargo-bins/cargo-binstall"
-  url "https://github.com/cargo-bins/cargo-binstall/archive/refs/tags/v1.26.1.tar.gz"
-  sha256 "b8fdebfbb8bdeda91062d69607227e56847258907dc38038c7e6bce874b00c46"
+  url "https://github.com/cargo-bins/cargo-binstall/archive/refs/tags/v1.26.2.tar.gz"
+  sha256 "dd9881a0fdc4ef499bbe67f11513a70910f9e5c36055df8e5fe16ad0896ba36b"
   license "GPL-3.0-only"
   head "https://github.com/cargo-bins/cargo-binstall.git", branch: "main"
 
@@ -15,9 +15,8 @@ class CargoBinstall < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cargo-binstall-1.26.1"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "2f14de14f50de6a182b33582985e14575228d356d5da299d13af31130da8618d"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cargo-binstall-1.26.2"
+    sha256 cellar: :any_skip_relocation, sonoma: "13a5f73a11e1c50c557b8190c460980203c8be68c5de8d5b5c263930ad5907f1"
   end
 
   depends_on "rust" => :build

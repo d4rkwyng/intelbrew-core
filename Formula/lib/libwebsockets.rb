@@ -1,11 +1,10 @@
 class Libwebsockets < Formula
   desc "C websockets server library"
   homepage "https://github.com/warmcat/libwebsockets"
-  url "https://github.com/warmcat/libwebsockets/archive/refs/tags/v5.0.0.tar.gz"
-  sha256 "f853c6582101cfcee3a5a9e28ae92ab19d9735c5f31f0bb2e9794b5106123962"
+  url "https://github.com/warmcat/libwebsockets/archive/refs/tags/v5.1.0.tar.gz"
+  sha256 "9acbba00aaa9e6178ae09c6f920d95449b527c1417e81d2cdd4103bc6d64d13f"
   license "MIT"
-  revision 2
-  compatibility_version 6
+  compatibility_version 7
   head "https://github.com/warmcat/libwebsockets.git", branch: "main"
 
   livecheck do
@@ -14,9 +13,8 @@ class Libwebsockets < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libwebsockets-5.0.0_2"
-    rebuild 1
-    sha256 sonoma: "9726b3accc12bce75672d83a369e2517572d91d65a5aa4f83b7f05be8e06de38"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libwebsockets-5.1.0"
+    sha256 sonoma: "a03a695a858c98abd606674dcac9d63bcb0e5cfc3db58c97c1bb6e33fb112399"
   end
 
   depends_on "cmake" => :build

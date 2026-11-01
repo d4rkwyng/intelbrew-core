@@ -1,20 +1,28 @@
 class Grpcurl < Formula
   desc "Like cURL, but for gRPC"
   homepage "https://www.fullstory.com/resources/content/fullstory-engineering-blog/"
-  url "https://github.com/fullstorydev/grpcurl/archive/refs/tags/v1.9.4.tar.gz"
-  sha256 "bea899ba2f483a951bf40aa05d41e069dd2f7bfe52d2a229717abfdb5620cb7c"
   license "MIT"
   head "https://github.com/fullstorydev/grpcurl.git", branch: "master"
 
-  bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/grpcurl-1.9.4"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "0aba85a6448e6be6d564f2851d4e1295c9188b6196673a158340fd86661440f6"
+  stable do
+    url "https://github.com/fullstorydev/grpcurl/archive/refs/tags/v1.9.4.tar.gz"
+    sha256 "bea899ba2f483a951bf40aa05d41e069dd2f7bfe52d2a229717abfdb5620cb7c"
+
+    # Fix Go 1.27 JSONv2 compatibility
+    patch do
+      url "https://github.com/fullstorydev/grpcurl/commit/cfa6ff68868284de47db88318a835c00b36d8777.patch?full_index=1"
+      sha256 "e4efd7be56266b2665e88e92c4805691b6c540cc1973c786f0e1a922c777d678"
+      type :backport
+    end
   end
 
-  # TODO: unpin go@1.26 when grpcurl supports go 1.27
-  # ref: https://github.com/fullstorydev/grpcurl/issues/568
-  depends_on "go@1.26" => :build
+  bottle do
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/grpcurl-1.9.4"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, sonoma: "917f526f803652a6508094a0517c45b8a16142b739a7c5148d0c22a425b565e5"
+  end
+
+  depends_on "go" => :build
 
   deny_network_access!
 

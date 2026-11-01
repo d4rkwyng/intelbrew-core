@@ -11,11 +11,9 @@ class TransmissionCli < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "fd2aa4c65db4aa0a9639b3b63122f3887867a005fc456df64eb67e946fde8f7b"
-    sha256 arm64_tahoe:       "07044357b54b21e5060e979174680b39cdda9249107dcff7d969de811c9c6a5e"
-    sha256 arm64_sequoia:     "50b2637125aea3be830c2e483be6aadc0b23d7fd8ef4a2d4cfe9157712cfc752"
-    sha256 arm64_linux:       "fbc899b114d7f9df9affe9c56c86051fb7fa95a9586e742a8a9340882279bb92"
-    sha256 x86_64_linux:      "765db6f948048d87d08f51641c929c7135319353cf681ac7a62bae3df400cc72"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/transmission-cli-4.1.4"
+    rebuild 1
+    sha256 sonoma: "3cf65c708cef128ade2d21a75f39728a1a211ff06659a8590871f7078da44fb2"
   end
 
   depends_on "cmake" => :build
