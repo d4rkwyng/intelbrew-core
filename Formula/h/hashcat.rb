@@ -75,6 +75,8 @@ class Hashcat < Formula
     # Metal on macOS 27 doesn't seem to work yet
     no_opencl = OS.mac? && Hardware::CPU.virtualized?
     no_metal = !OS.mac? || MacOS.version >= :golden_gate
+    # Intelbrew: an Intel macOS VM (the builder) has no Metal device either.
+    no_metal ||= Hardware::CPU.intel? && Hardware::CPU.virtualized?
 
     args = %w[
       --benchmark

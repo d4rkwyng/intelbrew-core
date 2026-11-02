@@ -40,6 +40,8 @@ class Nano < Formula
     depends_on "libmagic"
   end
 
+  deny_network_access!
+
   def install
     system "./autogen.sh" if build.head?
     system "./configure", "--enable-color",

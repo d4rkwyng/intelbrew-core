@@ -1,33 +1,28 @@
 class Vim < Formula
   desc "Vi 'workalike' with many additional features"
   homepage "https://www.vim.org/"
-  # vim should only be updated every 50 releases on multiples of 50
-  url "https://github.com/vim/vim/archive/refs/tags/v9.2.1250.tar.gz"
-  sha256 "2862e02dca705c440e10579fa10c81ede0cb6a35ba5aa05a4b22c2ce8f4c78a4"
+  # vim should only be updated once a day
+  url "https://github.com/vim/vim/archive/refs/tags/v9.2.1276.tar.gz"
+  sha256 "86526fd2cc08ef853442341d1f134b94fc765807a96b29f50ad906aac8b8d98c"
   license "Vim"
   compatibility_version 1
   head "https://github.com/vim/vim.git", branch: "master"
 
   # The Vim repository contains thousands of tags and the `Git` strategy isn't
   # ideal in this context. This is an exceptional situation, so this checks the
-  # first 50 tags using the GitHub API (to minimize data transfer).
+  # first 10 tags using the GitHub tags feed (to minimize data transfer).
   livecheck do
-    url "https://api.github.com/repos/vim/vim/tags?per_page=50"
+    url "https://github.com/vim/vim/tags.atom"
     regex(/^v?(\d+(?:\.\d+)+)$/i)
-    strategy :json do |json, regex|
-      json.map do |tag|
-        match = tag["name"]&.match(regex)
-        next if match.blank?
-
-        match[1]
-      end
+    strategy :xml do |xml, regex|
+      xml.get_elements("//title").map { |item| item.text[regex, 1] }
     end
-    throttle 50
+    throttle days: 1
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/vim-9.2.1250"
-    sha256 sonoma: "045961e5c0cb82cf784d6963d3d9895b3dc538f0442ba511b81431d2ec1cdc70"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/vim-9.2.1276"
+    sha256 sonoma: "61287cf06ffe280ab48e224d14d8e4e78052b2ab9a550989bd3a65ac45cc4917"
   end
 
   depends_on "gettext" => :build

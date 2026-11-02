@@ -1,16 +1,15 @@
 class Opentofu < Formula
   desc "Drop-in replacement for Terraform. Infrastructure as Code Tool"
   homepage "https://opentofu.org/"
-  url "https://github.com/opentofu/opentofu/archive/refs/tags/v1.13.2.tar.gz"
-  sha256 "ea26bb64b303701fee619b7f28422459be9ff04ee87c5491d046022e1c24f499"
+  url "https://github.com/opentofu/opentofu/archive/refs/tags/v1.13.5.tar.gz"
+  sha256 "14475a9be680579788273bc004a246e7b8b58aee2a83921687e0c2657033d38c"
   license "MPL-2.0"
   compatibility_version 1
   head "https://github.com/opentofu/opentofu.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/opentofu-1.13.2"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "e97dd6de3ab87d2e7e848f71e2144b7d2bb8f04b784a4fe80b3cfbb1ecf5177a"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/opentofu-1.13.5"
+    sha256 cellar: :any_skip_relocation, sonoma: "4a78604732f4a73d3595f2ea881461fecd284e866910a26a5de361f86cb3fe25"
   end
 
   depends_on "go" => :build

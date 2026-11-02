@@ -153,6 +153,14 @@ class Pytorch < Formula
     ENV["USE_SYSTEM_PYBIND11"] = "ON"
     ENV["USE_SYSTEM_SLEEF"] = "ON"
     ENV["USE_MPS"] = "ON" if OS.mac?
+    # Intelbrew: the Sonoma SDK has no MTLLanguageVersion3_2, which MPSDevice.mm static_asserts
+    # against; shim it next to PyTorch's own pre-macOS-26 MTLLanguageVersion4_0 shim.
+    inreplace "aten/src/ATen/native/mps/MPSGraphSequoiaOps.h",
+              "#endif // Building for target older than MacOS-26\n",
+              "#endif // Building for target older than MacOS-26\n" \
+              "#if !defined(__MAC_15_0)\n" \
+              "#define MTLLanguageVersion3_2 ((MTLLanguageVersion)((3 << 16) + 2))\n" \
+              "#endif\n"
     ENV["USE_KLEIDIAI"] = "OFF"
     # Linuxbrew GCC 12 cannot compile PyTorch's SVE+BF16 path; needs GCC 14+
     ENV["BUILD_IGNORE_SVE_UNAVAILABLE"] = "1" if OS.linux? && Hardware::CPU.arm64?

@@ -1,20 +1,20 @@
 class Cliproxyapi < Formula
   desc "Wrap Gemini CLI, Codex, Claude Code, Qwen Code as an API service"
   homepage "https://github.com/router-for-me/CLIProxyAPI"
-  url "https://github.com/router-for-me/CLIProxyAPI/archive/refs/tags/v8.0.45.tar.gz"
-  sha256 "f3cdda0e69e877f90705b3dfce1273fc010f644f40ca697ce8b904853dc95c1d"
+  url "https://github.com/router-for-me/CLIProxyAPI/archive/refs/tags/v8.0.50.tar.gz"
+  sha256 "213ff8a7ab86ab81fb3f173f5e108c5dea1ce3a2cb790b75d16dc296297b7813"
   license "MIT"
   head "https://github.com/router-for-me/CLIProxyAPI.git", branch: "main"
 
   livecheck do
     url :stable
     regex(/^v?(\d+(?:\.\d+)+)$/i)
-    throttle 5
+    throttle days: 1
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cliproxyapi-8.0.45"
-    sha256 sonoma: "1e5958b036dc96314fc310e41855ab5dc42df1f7bae88db54053160fa5373a69"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cliproxyapi-8.0.50"
+    sha256 sonoma: "a08b7400efc6d8eb39bc915be97877c9c4eaca65430708afb72798376f72e12a"
   end
 
   depends_on "go" => :build

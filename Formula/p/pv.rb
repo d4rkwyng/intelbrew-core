@@ -1,8 +1,8 @@
 class Pv < Formula
   desc "Monitor data's progress through a pipe"
   homepage "https://www.ivarch.com/programs/pv.shtml"
-  url "https://www.ivarch.com/programs/sources/pv-1.12.0.tar.gz"
-  sha256 "31fdbdb449c7143cd2968567bef7599e9f031950e6158ee7bb76e40aebf6ffb8"
+  url "https://www.ivarch.com/programs/sources/pv-1.12.7.tar.gz"
+  sha256 "5326ed7ee95ef18039390c0b17891ac28985ac7c7a4235070fab767c1fe37bd8"
   license "Artistic-2.0"
 
   livecheck do
@@ -11,9 +11,8 @@ class Pv < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pv-1.12.0"
-    rebuild 1
-    sha256 sonoma: "d40309ed717bb50755d2f41d95bfe56b3031bc21b6cc19263d0448a449b0a65e"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pv-1.12.7"
+    sha256 sonoma: "d5e1f84b68ef70057b4dfd6ea8194c2ad0083f074808fb73cfcead1ed459dc6f"
   end
 
   uses_from_macos "ncurses"
