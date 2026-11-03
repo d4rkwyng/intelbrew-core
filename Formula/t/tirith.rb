@@ -1,8 +1,8 @@
 class Tirith < Formula
   desc "Detect terminal injection, homograph, and pipe-to-shell attacks"
   homepage "https://tirith.sh/"
-  url "https://github.com/sheeki03/tirith/archive/refs/tags/v0.4.2.tar.gz"
-  sha256 "84e1fdc35e60d684ab932e73c342b71e27d575bc70defcec4989c36957153b0a"
+  url "https://github.com/sheeki03/tirith/archive/refs/tags/v0.5.0.tar.gz"
+  sha256 "bcde1306c0229dff305f9469ce1a47bc05f588342e77e901a6cfaa04e29a0ccb"
   license "AGPL-3.0-only"
   compatibility_version 1
   head "https://github.com/sheeki03/tirith.git", branch: "main"
@@ -13,9 +13,8 @@ class Tirith < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/tirith-0.4.2"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "e0fe1efe3f24cdd8bfe4d4810575f3f63dd9d38263e87041826b824c8e1a485a"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/tirith-0.5.0"
+    sha256 cellar: :any_skip_relocation, sonoma: "78122d21ba46c91a29555a4acf557c2b0181a4ee883875103965e5a7d31857ef"
   end
 
   depends_on "rust" => :build
