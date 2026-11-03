@@ -1,11 +1,10 @@
 class Yara < Formula
   desc "Malware identification and classification tool"
   homepage "https://virustotal.github.io/yara/"
-  url "https://github.com/VirusTotal/yara/archive/refs/tags/v4.5.8.tar.gz"
-  sha256 "c322414975ff6f701149856613afdcd92a7e6939c284c798ae3c85618197efaa"
+  url "https://github.com/VirusTotal/yara/archive/refs/tags/v4.6.0.tar.gz"
+  sha256 "61ab80084e3f83e1b73a95057058e2ae1db5f87f291e32654e191d410297f0e5"
   license "BSD-3-Clause"
-  revision 1
-  compatibility_version 1
+  compatibility_version 2
   head "https://github.com/VirusTotal/yara.git", branch: "master"
 
   # Upstream sometimes creates releases that use a stable tag (e.g., `v1.2.3`)
@@ -17,9 +16,8 @@ class Yara < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/yara-4.5.8_1"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "2583cf700f5e11dd8ac171167adf750ef7dbe9703311ffa0f7cfc8c91db3b7d7"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/yara-4.6.0"
+    sha256 cellar: :any, sonoma: "479aa8b770620ed1460d67715a0a64a08a48fa8cf81c4f2d42024d5cfda49543"
   end
 
   depends_on "autoconf" => :build

@@ -18,11 +18,9 @@ class Hashcat < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "38a531805276812b858abe2b15995e5a9c5141ed81a2abce41a2802878689333"
-    sha256 arm64_tahoe:       "f10544272c35b63688c259cb2a86da8c57dc42a13d6946888b05c1b64346ecbc"
-    sha256 arm64_sequoia:     "93fbe0438776d0d0763f103f86b74a6c4f5464f332ac1c002cad03125386e44c"
-    sha256 arm64_linux:       "276913be2c7c5043bab207c731df894147b8aed3e06f38306af7e5e6dd8332af"
-    sha256 x86_64_linux:      "95612765d78ff6b467a7812c3fd12a71e1b939bdce5aceef175d5d5c0208e18b"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/hashcat-8.0.0"
+    rebuild 1
+    sha256 sonoma: "65fedf5b15e9b3c6a7e554d4ac8eb363aa7a4d01b6b30caa355dd0e11d913df6"
   end
 
   depends_on "minizip"

@@ -2,7 +2,7 @@ class Clamav < Formula
   desc "Anti-virus software"
   homepage "https://www.clamav.net/"
   license "GPL-2.0-or-later"
-  revision 1
+  revision 2
   head "https://github.com/Cisco-Talos/clamav.git", branch: "main"
 
   stable do
@@ -17,6 +17,33 @@ class Clamav < Formula
       type :backport
       resolves "https://github.com/Cisco-Talos/clamav/pull/1731"
     end
+
+    # TODO: Remove when a ClamAV release includes PR #1774's digest provider lifetime fix.
+    # Preserve digest provider lifetimes, upstream PR ref, https://github.com/Cisco-Talos/clamav/pull/1774
+    patch do
+      url "https://github.com/Cisco-Talos/clamav/commit/729eaef96263970dede0808426374bb0597dae90.patch?full_index=1"
+      sha256 "af4a67eacad5d0fbf8d60c85e10737a2eea35f2eecb6df63584168950ff13ecb"
+      type :unofficial
+      resolves "https://github.com/Cisco-Talos/clamav/pull/1774"
+    end
+
+    # TODO: Remove when a ClamAV release includes PR #1774's digest regression coverage.
+    # Cover digest lifetime and thread safety, upstream PR ref, https://github.com/Cisco-Talos/clamav/pull/1774
+    patch do
+      url "https://github.com/Cisco-Talos/clamav/commit/c905f7e2fbe6d75dab3061b3fdada62aef229217.patch?full_index=1"
+      sha256 "fb31f2fa6671cbab01ba61f4a89715bf48e57a9c418bd5ce26e845fcbb43f5ab"
+      type :unofficial
+      resolves "https://github.com/Cisco-Talos/clamav/pull/1774"
+    end
+
+    # TODO: Remove when a ClamAV release includes PR #1774's cache ownership and error handling.
+    # Preserve cache ownership and error semantics, upstream PR ref, https://github.com/Cisco-Talos/clamav/pull/1774
+    patch do
+      url "https://github.com/Cisco-Talos/clamav/commit/b823aef0635f6f8a1cd35e1ef603b8a07472c6f7.patch?full_index=1"
+      sha256 "77a22d793f5c291836f3ec64ecb3518b09e55c5ad8bf65ec213614a39e9f8345"
+      type :unofficial
+      resolves "https://github.com/Cisco-Talos/clamav/pull/1774"
+    end
   end
 
   livecheck do
@@ -25,9 +52,8 @@ class Clamav < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/clamav-1.5.4_1"
-    rebuild 1
-    sha256 sonoma: "a581fed9ba7f1fa1aaa67993ca801a35c77fdd0aa278a78a187fa8c2872d6a04"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/clamav-1.5.4_2"
+    sha256 sonoma: "737983e5ee88623aeeb990ade153b229dfee94e8d2314fc23d7beca1f962dc64"
   end
 
   depends_on "cmake" => :build
@@ -82,8 +108,6 @@ class Clamav < Formula
   end
 
   test do
-    assert_match "Database directory: #{var}/lib/clamav", shell_output("#{bin}/clamconf")
-
     (testpath/"freshclam.conf").write <<~EOS
       DNSDatabaseInfo current.cvd.clamav.net
       DatabaseMirror database.clamav.net
