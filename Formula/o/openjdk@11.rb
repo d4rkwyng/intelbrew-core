@@ -1,8 +1,8 @@
 class OpenjdkAT11 < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.org/"
-  url "https://github.com/openjdk/jdk11u/archive/refs/tags/jdk-11.0.32.1-ga.tar.gz"
-  sha256 "918a42d31544c5e7f70182c6ee76c95b1f042f914c375b814b64144cc8611adb"
+  url "https://github.com/openjdk/jdk11u/archive/refs/tags/jdk-11.0.33-ga.tar.gz"
+  sha256 "9753c1af02b07c7ffd59ea306ee9fcda93f075af94afc8bf928636021f557dba"
   license "GPL-2.0-only"
   compatibility_version 1
 
@@ -12,13 +12,8 @@ class OpenjdkAT11 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "441b05a896721da1f55f0dc82df96e548b09e3b6f4453a69f108177d80dfe8af"
-    sha256 cellar: :any, arm64_tahoe:       "b5ba74af74273f4135ed3b5474ec929dd41c7e6d573bbdbe398ac3c8ae8e11dc"
-    sha256 cellar: :any, arm64_sequoia:     "f11b64f7d65c682021c685666177692bbd0f60c24aca99143e678d4c281ce0da"
-    sha256 cellar: :any, arm64_sonoma:      "14e45df7da45432b56bc0f89ac2c7447977389eb7999d1c2e5d2918cb8bedcc0"
-    sha256 cellar: :any, sonoma:            "f89945555fcb8bdce60f23b9a66a9f0ba1bbf9e85d051f4d4c652077ee92b58f"
-    sha256 cellar: :any, arm64_linux:       "a47fbdf47640b64dd1ca336706940ed5beb7d6adff241d369b246c9ff06c361c"
-    sha256 cellar: :any, x86_64_linux:      "871aea10e596355fe739f92b37076df6fc2f71e0a3bfb936f48fa608448872a3"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/openjdk@11-11.0.33"
+    sha256 cellar: :any, sonoma: "b4d0c4988e5138cba08d3899ff1a1bf0b27284df6f8ff2ae4fe09749a9a4852b"
   end
 
   keg_only :versioned_formula

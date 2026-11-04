@@ -1,15 +1,14 @@
 class DockerBuildx < Formula
   desc "Docker CLI plugin for extended build capabilities with BuildKit"
   homepage "https://docs.docker.com/buildx/working-with-buildx/"
-  url "https://github.com/docker/buildx/archive/refs/tags/v0.38.1.tar.gz"
-  sha256 "bfd908c66d13c88cb6dccbc6d0fbb68aab17446901ba24203b5019ebf9d32f67"
+  url "https://github.com/docker/buildx/archive/refs/tags/v0.38.2.tar.gz"
+  sha256 "1d20ca3cec6438b008eb6e0805c4842d4e27447690b4150df607790ca75629c0"
   license "Apache-2.0"
   head "https://github.com/docker/buildx.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/docker-buildx-0.38.1"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "cc798937a42ad013e3f7b25b542f78b85497ca0bf55e7f266fad4f0e121e592e"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/docker-buildx-0.38.2"
+    sha256 cellar: :any_skip_relocation, sonoma: "0d64ef286c1ca63e817b25d093986a6bc5e7acbb719ec471b479cd957622b03b"
   end
 
   depends_on "go" => :build

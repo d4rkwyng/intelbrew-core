@@ -1,13 +1,13 @@
 class StripeCli < Formula
   desc "Command-line tool for Stripe"
   homepage "https://docs.stripe.com/stripe-cli"
-  url "https://github.com/stripe/stripe-cli/archive/refs/tags/v1.55.6.tar.gz"
-  sha256 "5b27c4ebdca6aabb1185445560a5e4045da174a5651de644dff8087828a8bcac"
+  url "https://github.com/stripe/stripe-cli/archive/refs/tags/v1.55.8.tar.gz"
+  sha256 "5df08cf126dc789f0332978c8784ef421e297d8ba4aeccc60c3be5a588618146"
   license "Apache-2.0"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/stripe-cli-1.55.6"
-    sha256 cellar: :any_skip_relocation, sonoma: "7b90ef230197ba83125f41c655c4bf0972d794dd86463daf1c344fcd7f84216e"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/stripe-cli-1.55.8"
+    sha256 cellar: :any_skip_relocation, sonoma: "72bb8fbe8d5107e6fdee338e212d43fbaa736ee5e92c4b91feecbdd4f2e8f1d7"
   end
 
   depends_on "go" => :build

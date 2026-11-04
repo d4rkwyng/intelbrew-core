@@ -1,22 +1,21 @@
 class Caddy < Formula
   desc "Powerful, enterprise-ready, open source web server with automatic HTTPS"
   homepage "https://caddyserver.com/"
-  url "https://github.com/caddyserver/caddy/archive/refs/tags/v2.11.7.tar.gz"
-  sha256 "86e39de5fa0bc433a9cd574a00e7751059903401f3389c61f8937fd0ad0180f5"
+  url "https://github.com/caddyserver/caddy/archive/refs/tags/v2.11.8.tar.gz"
+  sha256 "50d4fe822eeb7fb779fa37fdc15d50c18472e1d6dffd941cd11d3d26cdc9072b"
   license "Apache-2.0"
   head "https://github.com/caddyserver/caddy.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/caddy-2.11.7"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "458be9419684506ff55723fc39755421a821ebbb5db77dada73cfb69b9943a3f"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/caddy-2.11.8"
+    sha256 cellar: :any_skip_relocation, sonoma: "ad6b290efbeb998da78119af57dc942151a5b241789f43f20fcc2ed2e7c0de38"
   end
 
   depends_on "go" => :build
 
   resource "xcaddy" do
-    url "https://github.com/caddyserver/xcaddy/archive/refs/tags/v0.4.5.tar.gz"
-    sha256 "53c6a9e29965aaf19210ac6470935537040e782101057a199098feb33c2674f8"
+    url "https://github.com/caddyserver/xcaddy/archive/refs/tags/v0.4.7.tar.gz"
+    sha256 "a8a092d076ea70a42198d4b35c0872da893c6d32c2d02c9df5b8935ee8ffb7ec"
 
     livecheck do
       url :url

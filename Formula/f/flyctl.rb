@@ -2,8 +2,8 @@ class Flyctl < Formula
   desc "Command-line tools for fly.io services"
   homepage "https://fly.io"
   url "https://github.com/superfly/flyctl.git",
-      tag:      "v0.5.2",
-      revision: "19ce5e22af40719bfbb5f395ecf5b63c989ddabd"
+      tag:      "v0.5.3",
+      revision: "97092e56f83202699f27dabc695a14d791e2f0c0"
   license "Apache-2.0"
   head "https://github.com/superfly/flyctl.git", branch: "master"
 
@@ -18,8 +18,8 @@ class Flyctl < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/flyctl-0.5.2"
-    sha256 cellar: :any_skip_relocation, sonoma: "45e36bc70f2048bc6e224422df80d9e2c3ee178955d03ef032eefc6d835ada0d"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/flyctl-0.5.3"
+    sha256 cellar: :any_skip_relocation, sonoma: "8e0af2cbba7e197bc50fb436bd323306ad408a3f5f20262e19280f2ca65a913e"
   end
 
   depends_on "go" => :build

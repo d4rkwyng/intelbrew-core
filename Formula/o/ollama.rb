@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.40.13",
-      revision: "04088e7c9d41cba5d33bafbf788d87a465c79d5b"
+      tag:      "v0.40.14",
+      revision: "9a3e8177767245acc62b735eba7d5d8a553606d0"
   license "MIT"
   compatibility_version 1
   head "https://github.com/ollama/ollama.git", branch: "main"
@@ -17,8 +17,8 @@ class Ollama < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ollama-0.40.13"
-    sha256 cellar: :any, sonoma: "10c96cf6e53e46aff89faf40d756844ca422f41587107c7021a465616ef728f5"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ollama-0.40.14"
+    sha256 cellar: :any, sonoma: "83d84f85115b76d7814840fa4ac5b7391c1e78712a8f6eaed7d4293eb315f77b"
   end
 
   depends_on "ccache" => :build

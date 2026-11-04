@@ -1,17 +1,16 @@
 class ApacheArrow < Formula
   desc "Columnar in-memory analytics layer designed to accelerate big data"
   homepage "https://arrow.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=arrow/arrow-26.0.0/apache-arrow-26.0.0.tar.gz"
-  mirror "https://archive.apache.org/dist/arrow/arrow-26.0.0/apache-arrow-26.0.0.tar.gz"
-  sha256 "b153ef472dd89ef4cb84867ca238f2a3a9347d8f4a78913d16ca2201606f0425"
+  url "https://www.apache.org/dyn/closer.lua?path=arrow/arrow-26.0.1/apache-arrow-26.0.1.tar.gz"
+  mirror "https://archive.apache.org/dist/arrow/arrow-26.0.1/apache-arrow-26.0.1.tar.gz"
+  sha256 "1dd1b6701d9de58a4ed82b107539682f46ef6b9e22747e18e03204125c05a987"
   license "Apache-2.0"
-  revision 3
   compatibility_version 4
   head "https://github.com/apache/arrow.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/apache-arrow-26.0.0_3"
-    sha256 cellar: :any, sonoma: "5e22f7e1b19cb0b32f309fa09156740961faabf058eccfa8e4d86d917e32f4ba"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/apache-arrow-26.0.1"
+    sha256 cellar: :any, sonoma: "5a70e459da2367abc352fe67ae41c5d2f7f5bdb3556fdffe6b1920526bce4c18"
   end
 
   depends_on "boost" => :build

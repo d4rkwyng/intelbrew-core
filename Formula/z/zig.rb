@@ -1,8 +1,8 @@
 class Zig < Formula
   desc "Programming language designed for robustness, optimality, and clarity"
   homepage "https://ziglang.org/"
-  url "https://ziglang.org/download/0.17.0/zig-0.17.0.tar.xz"
-  sha256 "b6c7f1728f043700d6529bac980800792f824256a9d2f1839b3d62beed0b8abd"
+  url "https://ziglang.org/download/0.17.1/zig-0.17.1.tar.xz"
+  sha256 "1e89bf06610b769a8c77676c6c8d54b093a0db60f4891f2f91014829012f0e24"
   license "MIT"
   compatibility_version 1
 
@@ -12,9 +12,8 @@ class Zig < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/zig-0.17.0"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "9fb18bc72b5baef74d1816bb7fb309b2a66348e08b7df51dd8dcfc2cc1344651"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/zig-0.17.1"
+    sha256 cellar: :any, sonoma: "995eb497955117cb5c69fd33fa033216ac14655e2fd11eb316a8e04c94f34346"
   end
 
   depends_on "cmake" => :build

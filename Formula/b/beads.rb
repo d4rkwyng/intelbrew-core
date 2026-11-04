@@ -1,16 +1,15 @@
 class Beads < Formula
   desc "Memory upgrade for your coding agent"
   homepage "https://github.com/gastownhall/beads"
-  url "https://github.com/gastownhall/beads/archive/refs/tags/v1.3.2.tar.gz"
-  sha256 "d2969ec18f4754dee4f08cb05a0d978dfcca750aa6db9a72b3f35ef3cd62dcc9"
+  url "https://github.com/gastownhall/beads/archive/refs/tags/v1.3.3.tar.gz"
+  sha256 "ff97bd5320cb09613cccd77532eeaec29bdb0dc26af7bbbf2275913e97dbaada"
   license "MIT"
-  revision 1
   compatibility_version 1
   head "https://github.com/gastownhall/beads.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/beads-1.3.2_1"
-    sha256 cellar: :any, sonoma: "260185e949f53036cb6cbd0203c264fc1bcc7502462faeb649c54cfbf0fe3500"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/beads-1.3.3"
+    sha256 cellar: :any, sonoma: "b1b6507c6c8dca53160825cd7c7a34c1a679c6a4443e8cb7ef0af92a656914f6"
   end
 
   depends_on "go" => :build

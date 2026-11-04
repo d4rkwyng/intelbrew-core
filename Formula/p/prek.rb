@@ -1,14 +1,14 @@
 class Prek < Formula
   desc "Fast Git hook manager written in Rust, drop-in alternative to pre-commit"
   homepage "https://prek.j178.dev/"
-  url "https://github.com/j178/prek/archive/refs/tags/v0.5.9.tar.gz"
-  sha256 "684be4a4f1229a147d3c62455072b7b8893263891a3a1fe18f06217e3ebd6fef"
+  url "https://github.com/j178/prek/archive/refs/tags/v0.5.10.tar.gz"
+  sha256 "596e702c00a25a19dc25d7734ba56922ed6857252fc474a787fe271d0d42d4ec"
   license "MIT"
   head "https://github.com/j178/prek.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/prek-0.5.9"
-    sha256 cellar: :any_skip_relocation, sonoma: "5ccd19b313f3921c2eb11560181216efcd9240a99bd6c141ee8abf0a5c25ca41"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/prek-0.5.10"
+    sha256 cellar: :any_skip_relocation, sonoma: "d2269f767a7ff2e835bdc7e769992f10bdbb89ca4506cf5146ee4fc6b37308b2"
   end
 
   depends_on "rust" => :build

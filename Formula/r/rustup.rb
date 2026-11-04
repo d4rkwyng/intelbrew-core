@@ -8,15 +8,14 @@ class Rustup < Formula
   stable do
     # TODO: Remove curl when release has following:
     # https://github.com/rust-lang/rustup/commit/747057342d4616d6cd2cda6b00826c0ebdd0e671
-    url "https://github.com/rust-lang/rustup/archive/refs/tags/1.29.2.tar.gz"
-    sha256 "ba43980f0651730631174635a0e7764831e810be08a06ae53f9c0620caef019d"
+    url "https://github.com/rust-lang/rustup/archive/refs/tags/1.29.3.tar.gz"
+    sha256 "e830fb32300e2bb69068321e701a328a5ebbfe86ec468dbda82f4fc3f6d3f276"
     uses_from_macos "curl"
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/rustup-1.29.2"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "c82724556c46742b6295147176190b6748570949ad522d0107b17ecce257d75b"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/rustup-1.29.3"
+    sha256 cellar: :any, sonoma: "3b101d0e8d0b627f659972b20fb4207e5e6344dd18ef0bd4cc588a7606babf6a"
   end
 
   keg_only "it conflicts with rust"

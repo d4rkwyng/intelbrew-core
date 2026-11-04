@@ -1,8 +1,8 @@
 class Sdl3 < Formula
   desc "Low-level access to audio, keyboard, mouse, joystick, and graphics"
   homepage "https://libsdl.org/"
-  url "https://github.com/libsdl-org/SDL/releases/download/release-3.4.18/SDL3-3.4.18.tar.gz"
-  sha256 "9c75cf16330322c217dedd2e0609f1124f1b54b8633e763467b4684d0f4334a3"
+  url "https://github.com/libsdl-org/SDL/releases/download/release-3.4.20/SDL3-3.4.20.tar.gz"
+  sha256 "f3bb06f55bed9557227a700af2ea62e49497ebdf58037732a731a5fb3ef8581f"
   license "Zlib"
   compatibility_version 1
   head "https://github.com/libsdl-org/SDL.git", branch: "main"
@@ -14,9 +14,8 @@ class Sdl3 < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/sdl3-3.4.18"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "d66c662eba6292d6042867112c6d448e1d1eae30cfb2773cdbb7afe5b2018273"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/sdl3-3.4.20"
+    sha256 cellar: :any, sonoma: "0aafca2b95f07e5f69a320512974b53a693792a4d53708d80b283947b09012d6"
   end
 
   depends_on "cmake" => :build
