@@ -1,8 +1,8 @@
 class StressNg < Formula
   desc "Stress test a computer system in various selectable ways"
-  homepage "https://wiki.ubuntu.com/Kernel/Reference/stress-ng"
-  url "https://github.com/ColinIanKing/stress-ng/archive/refs/tags/V0.22.01.tar.gz"
-  sha256 "67e75894da3f634b85992069b0a888893221a77a3db5e3293cdddd0b1c0d4705"
+  homepage "https://github.com/ColinIanKing/stress-ng"
+  url "https://github.com/ColinIanKing/stress-ng/archive/refs/tags/V0.22.02.tar.gz"
+  sha256 "860004ce7484311b3296fc52796fbbc34dfb7f644a769bbd4e03935b7a1b0ccb"
   license "GPL-2.0-or-later"
 
   livecheck do
@@ -11,15 +11,15 @@ class StressNg < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/stress-ng-0.22.01"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, sonoma: "04e4d7e5b9ddf7cabee4dbf94efda7e1e99209d806d27a1036a81740629acc81"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/stress-ng-0.22.02"
+    sha256 cellar: :any_skip_relocation, sonoma: "6bb638ca161193b2b9b7af98989dd255621526c68b3c183483efca04b068af60"
   end
 
   uses_from_macos "libxcrypt"
 
   on_linux do
     depends_on "acl"
+    depends_on "gmp"
     depends_on "zlib-ng-compat"
   end
 

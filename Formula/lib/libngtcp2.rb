@@ -1,18 +1,16 @@
 class Libngtcp2 < Formula
   desc "IETF QUIC protocol implementation"
   homepage "https://nghttp2.org/ngtcp2/"
-  url "https://github.com/ngtcp2/ngtcp2/releases/download/v1.25.0/ngtcp2-1.25.0.tar.xz"
-  mirror "http://fresh-center.net/linux/www/ngtcp2-1.25.0.tar.xz"
-  sha256 "2a34d2484ba17847a5d11965704e9dd0fac4c6d8efc75ffe1ec7de66d8c6b6fb"
+  url "https://github.com/ngtcp2/ngtcp2/releases/download/v1.26.0/ngtcp2-1.26.0.tar.xz"
+  mirror "http://fresh-center.net/linux/www/ngtcp2-1.26.0.tar.xz"
+  sha256 "7804aa0fa1c39942ba322a90805824c37231f7675b08d0c3cc4332858a7b085e"
   license "MIT"
-  revision 1
   compatibility_version 1
   head "https://github.com/ngtcp2/ngtcp2.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libngtcp2-1.25.0_1"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "8b68b6b8606ea3251e7bd043f700f96d534c0fa48652cbb3b22776d2d0247a3d"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libngtcp2-1.26.0"
+    sha256 cellar: :any, sonoma: "946e19cfba7ac6e5840ae07f66311bfea859a262a1355ccf82546d380bffed79"
   end
 
   depends_on "pkgconf" => :build

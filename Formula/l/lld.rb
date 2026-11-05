@@ -1,8 +1,8 @@
 class Lld < Formula
   desc "LLVM Project Linker"
   homepage "https://lld.llvm.org/"
-  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.4/llvm-project-23.1.4.src.tar.xz"
-  sha256 "819ecf7351f1a66f76b2d701d8942faaf5faeb324cb90c9d5b090de142434bb2"
+  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.5/llvm-project-23.1.5.src.tar.xz"
+  sha256 "fb50b1eac93ddeb3aa8dab4cfe324dff74f4a9c2bdee6160c9e36188f8d06a6e"
   license "Apache-2.0" => { with: "LLVM-exception" }
   compatibility_version 2
   head "https://github.com/llvm/llvm-project.git", branch: "main"
@@ -12,9 +12,8 @@ class Lld < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/lld-23.1.4"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "28fe83c92489c30f8f9dbef70a7cb95613155573d1ffb6bb993fd6fed7afc43a"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/lld-23.1.5"
+    sha256 cellar: :any, sonoma: "0bded3bb0128f3f052e68853f70265bb6f5406259b20bbb67faab9e18f653cd6"
   end
 
   depends_on "cmake" => :build

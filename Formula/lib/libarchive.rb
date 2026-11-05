@@ -13,7 +13,8 @@ class Libarchive < Formula
 
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libarchive-3.8.11"
-    sha256 cellar: :any, sonoma: "8b43deed1a8e07234657605284e43bec2adcbd9e2b78ad4054eeda6aac0947b1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "303e0d9f49e7da1b6c0c2c90310292ad1dd482dd4f193271a127689677d8e27b"
   end
 
   keg_only :provided_by_macos
@@ -27,8 +28,11 @@ class Libarchive < Formula
   uses_from_macos "expat"
 
   on_linux do
+    depends_on "acl"
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     args = [

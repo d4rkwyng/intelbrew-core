@@ -1,16 +1,15 @@
 class Libaec < Formula
   desc "Adaptive Entropy Coding implementing Golomb-Rice algorithm"
   homepage "https://github.com/Deutsches-Klimarechenzentrum/libaec"
-  url "https://github.com/Deutsches-Klimarechenzentrum/libaec/releases/download/v1.1.7/libaec-1.1.7.tar.gz"
-  sha256 "cc7b93be9002e25a88b45d6b8d5f6120756cb5e1000613f91d803ce0beba24d9"
+  url "https://github.com/Deutsches-Klimarechenzentrum/libaec/releases/download/v1.1.8/libaec-1.1.8.tar.gz"
+  sha256 "660dc7cef65e1749a773439e39b25a7a6cee8f4c6d9739409dea037fac8ff4c7"
   license "BSD-2-Clause"
   compatibility_version 1
   head "https://github.com/Deutsches-Klimarechenzentrum/libaec.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libaec-1.1.7"
-    rebuild 2
-    sha256 cellar: :any, sonoma: "c123a53cdd71ede06a87068dce420b6cd5a898c3229c2d686214b4187c90189b"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libaec-1.1.8"
+    sha256 cellar: :any, sonoma: "27f70c715e3c5aa063ccc61fdba9ef4ffaea17e2fc51118441bd19dd2f1960bd"
   end
 
   depends_on "cmake" => [:build, :test]

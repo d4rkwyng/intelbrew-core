@@ -6,8 +6,8 @@ class Llvm < Formula
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
   stable do
-    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.4/llvm-project-23.1.4.src.tar.xz"
-    sha256 "819ecf7351f1a66f76b2d701d8942faaf5faeb324cb90c9d5b090de142434bb2"
+    url "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.5/llvm-project-23.1.5.src.tar.xz"
+    sha256 "fb50b1eac93ddeb3aa8dab4cfe324dff74f4a9c2bdee6160c9e36188f8d06a6e"
 
     # Fix triple config loading for clang-cl
     patch do
@@ -23,8 +23,8 @@ class Llvm < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/llvm-23.1.4"
-    sha256 cellar: :any, sonoma: "3a5e8db396e7c58543cd0c8b36810c2afdbd4f79a6a9b01142e7eb06a59265a0"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/llvm-23.1.5"
+    sha256 cellar: :any, sonoma: "bea51d9a08b90eed4d1cdb14756148798b825002600ec8a305d85dfabce357f8"
   end
 
   keg_only :provided_by_macos

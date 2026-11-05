@@ -4,11 +4,12 @@ class Openexr < Formula
   url "https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.5.3.tar.gz"
   sha256 "ff1de95f4031c1c57c633e647dc97c15282d3aa3bc7fb90745f00f74de4a054f"
   license "BSD-3-Clause"
+  revision 1
   compatibility_version 2
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/openexr-3.5.3"
-    sha256 cellar: :any, sonoma: "c3d42a49f63efd4f80eed7bea74c280e4b0f35eee90d7e206e1b26bfd927e1df"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/openexr-3.5.3_1"
+    sha256 cellar: :any, sonoma: "6982655bb35c82b4f8745c35a1bc4b3ae8d68dc4ec5381f0b651e67d7c5d608e"
   end
 
   depends_on "cmake" => :build

@@ -1,9 +1,9 @@
 class Tor < Formula
   desc "Anonymizing overlay network for TCP"
   homepage "https://www.torproject.org/"
-  url "https://dist.torproject.org/tor-0.4.9.15.tar.gz"
-  mirror "https://fossies.org/linux/misc/tor-0.4.9.15.tar.gz"
-  sha256 "1911f5b216a6814ed143a08bbcff1c6dc96d2ca3b505df9a21876080a92963f3"
+  url "https://dist.torproject.org/tor-0.4.9.16.tar.gz"
+  mirror "https://fossies.org/linux/misc/tor-0.4.9.16.tar.gz"
+  sha256 "6180e193152f4525bdca5475168419b2a2035b963c3c60162a187f86e6160e48"
   # Complete list of licenses:
   # https://gitweb.torproject.org/tor.git/plain/LICENSE
   license all_of: [
@@ -20,8 +20,8 @@ class Tor < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/tor-0.4.9.15"
-    sha256 sonoma: "c264a3102c4749b839540dd750da3ca49338290afd314a590a840b183a7733e7"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/tor-0.4.9.16"
+    sha256 sonoma: "9462955f2235e1083f56250f1230894fc5e76ac9a1d476335439b8abc8969b6c"
   end
 
   depends_on "pkgconf" => :build

@@ -1,14 +1,14 @@
 class Act < Formula
   desc "Run your GitHub Actions locally"
   homepage "https://nektosact.com"
-  url "https://github.com/nektos/act/archive/refs/tags/v0.2.96.tar.gz"
-  sha256 "af2525e569e7d62cf164440d74c8467351b1791820909b17bcae8504097dd16c"
+  url "https://github.com/nektos/act/archive/refs/tags/v0.2.97.tar.gz"
+  sha256 "807e43becd597f65c76c7d5dd6dbe5ff94285629214f6005ad18ce618b70e49c"
   license "MIT"
   head "https://github.com/nektos/act.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/act-0.2.96"
-    sha256 cellar: :any_skip_relocation, sonoma: "ea46c92b1227beb7f677d4e04f2f9c0018da7bed1b95bd5bf98039bae8999501"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/act-0.2.97"
+    sha256 cellar: :any_skip_relocation, sonoma: "5603b0d18bc2a2e8e1b8647cf5345be1855839f58d6d0f7d7e56b0fcaa47e4bd"
   end
 
   depends_on "go" => :build

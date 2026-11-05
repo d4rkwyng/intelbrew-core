@@ -1,16 +1,15 @@
 class Jj < Formula
   desc "Git-compatible distributed version control system"
   homepage "https://github.com/jj-vcs/jj"
-  url "https://github.com/jj-vcs/jj/archive/refs/tags/v0.46.0.tar.gz"
-  sha256 "6489f79d59dc4f9c11230c51d309dc9c6ec392921772b738546966c494b6d72c"
+  url "https://github.com/jj-vcs/jj/archive/refs/tags/v0.47.1.tar.gz"
+  sha256 "838fb5ddbf474ccee6639ce68835cedf88c8285b5c812599c56688286fb0b7a6"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/jj-vcs/jj.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/jj-0.46.0"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "55069903d0110eb0a15b635c12f7d837197f8b7b48225b8cc33442022788d734"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/jj-0.47.1"
+    sha256 cellar: :any_skip_relocation, sonoma: "e0217a3c1a99bbcfee9bbc176c9fece424586abaf23df2f73ad36a5d4fdf8fc8"
   end
 
   depends_on "rust" => :build

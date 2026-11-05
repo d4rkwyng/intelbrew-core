@@ -23,8 +23,6 @@ class Libslirp < Formula
   depends_on "glib"
 
   def install
-    # Intelbrew: a declaration right after a case label is C23; Apple clang 16 rejects it under gnu99.
-    inreplace "src/tcp_subr.c", "    case EMU_REALAUDIO:\n", "    case EMU_REALAUDIO:;\n"
     system "meson", "setup", "build", "-Ddefault_library=both", *std_meson_args
     system "meson", "compile", "-C", "build", "--verbose"
     system "meson", "install", "-C", "build"

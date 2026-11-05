@@ -1,19 +1,14 @@
 class Fd < Formula
   desc "Simple, fast and user-friendly alternative to find"
   homepage "https://github.com/sharkdp/fd"
-  url "https://github.com/sharkdp/fd/archive/refs/tags/v10.5.0.tar.gz"
-  sha256 "e6d9e90730bf316101691e49d59cc02565278dc3779d33a77423801569484851"
+  url "https://github.com/sharkdp/fd/archive/refs/tags/v10.5.1.tar.gz"
+  sha256 "3ea70c258d3390a601b436b6f4c545e3a944ff3de44c8ee5542c05588e337032"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/sharkdp/fd.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "3bc544a1b6eaaddc82dd5d831a86d16427746e004601e516b8fac45a5f35a28a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f8ccfce40967859000e4512fd37b8f0ee178572f3f131d6d6fa37faac4205f16"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "72ac30ac960c40f8bf5746148d94a21f3a14dcb78374108fc5416f29a7a9b146"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:      "d08e1b33c3b39c4ad55a0213c65074ea2c75a7af4559ddfe26f50de361d3f0ac"
-    sha256 cellar: :any_skip_relocation, sonoma:            "c57f68964c5f724c61ab92d691e84d82123fe258e69d416bca3d58d403eeb73a"
-    sha256 cellar: :any,                 arm64_linux:       "fb686c0ddb7761d127084974ca01d9db3a6e14a2e8db50feb709434eebaf6f59"
-    sha256 cellar: :any,                 x86_64_linux:      "651c4799f3f39ff04634016107683fdc333332594a926bdd5623b853855901fd"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/fd-10.5.1"
+    sha256 cellar: :any_skip_relocation, sonoma: "5c7e1b08cdcd5bd46d8b7a8422e2a3cbc5ec657e5b2a5f2092d6acbe977a1c4e"
   end
 
   depends_on "rust" => :build

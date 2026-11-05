@@ -3,8 +3,8 @@ class Circleci < Formula
   homepage "https://cli.circleci.com"
   # Updates should be pushed no more frequently than once per week.
   url "https://github.com/CircleCI-Public/circleci-cli.git",
-      tag:      "v1.13.0",
-      revision: "89350eb20a876b21264afa980652cd811e6751be"
+      tag:      "v1.14.0",
+      revision: "81afef11190debc75248e2aa9ed4210f82bcd874"
   license "MIT"
   head "https://github.com/CircleCI-Public/circleci-cli.git", branch: "main"
 
@@ -14,8 +14,8 @@ class Circleci < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/circleci-1.13.0"
-    sha256 cellar: :any_skip_relocation, sonoma: "9a173048bec4c3292d10cefdcb0fb661b4930b32390c208af73263a6eb7e9539"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/circleci-1.14.0"
+    sha256 cellar: :any_skip_relocation, sonoma: "138f83b7c5bf00438494f746aa64bf46ce249549039500c94d6b6b26bf24153d"
   end
 
   depends_on "go" => :build
