@@ -4,6 +4,7 @@ class AwsCMqtt < Formula
   url "https://github.com/awslabs/aws-c-mqtt/archive/refs/tags/v1.1.2.tar.gz"
   sha256 "7ef8f2a031992cc42564bba4e3f937fec925247051da6e0c730aa964639d284f"
   license "Apache-2.0"
+  revision 1
   compatibility_version 4
 
   livecheck do
@@ -12,9 +13,8 @@ class AwsCMqtt < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aws-c-mqtt-1.1.2"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "532b604b364394162653c1480c9c86d4493f4741c8cac313afbfeca90a665057"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aws-c-mqtt-1.1.2_1"
+    sha256 cellar: :any, sonoma: "a5567e5821c4199694b1d463af0d40d2f453a51520cf2481fa3eba0fe2e9b39b"
   end
 
   depends_on "cmake" => :build

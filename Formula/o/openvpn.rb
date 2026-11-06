@@ -1,11 +1,10 @@
 class Openvpn < Formula
   desc "SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension"
   homepage "https://openvpn.net/community/"
-  url "https://swupdate.openvpn.net/community/releases/openvpn-2.7.8.tar.gz"
-  mirror "https://build.openvpn.net/downloads/releases/openvpn-2.7.8.tar.gz"
-  sha256 "c070d1d2440b5a6fca6c2c68645c98cd492116ac36ef4f0946177115532c8e36"
+  url "https://swupdate.openvpn.net/community/releases/openvpn-2.7.9.tar.gz"
+  mirror "https://build.openvpn.net/downloads/releases/openvpn-2.7.9.tar.gz"
+  sha256 "c42a6ed892ddfe2d6e3317a5040f19bec5827564affb2fe3f2b3904a94daacb1"
   license "GPL-2.0-only" => { with: "openvpn-openssl-exception" }
-  revision 1
   compatibility_version 1
 
   livecheck do
@@ -14,9 +13,8 @@ class Openvpn < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/openvpn-2.7.8_1"
-    rebuild 1
-    sha256 sonoma: "3d8aefbf35f290e5849ed246b93cf1d39186538eb747b4c2ac5b3dd3bfc0f635"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/openvpn-2.7.9"
+    sha256 sonoma: "e9c4cd1bb23db53e77e86f875a9ba211a4fcc965ee2181845590e11b5a5839ea"
   end
 
   depends_on "pkgconf" => :build

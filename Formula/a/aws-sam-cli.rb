@@ -6,11 +6,12 @@ class AwsSamCli < Formula
   url "https://files.pythonhosted.org/packages/6a/ca/ac3979dd6dd415a093ff947d74ec35cb584f473533537d72c85015fc3b46/aws_sam_cli-1.171.0.tar.gz"
   sha256 "a801db3778b87138ef6411832c4afc44e6763a223a16bf83067d018826fe88f9"
   license "Apache-2.0"
+  revision 1
   head "https://github.com/aws/aws-sam-cli.git", branch: "develop"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aws-sam-cli-1.171.0"
-    sha256 cellar: :any, sonoma: "d6772dd608ad59d0b06a4f7026deae893374c38d2256a8fe577143307aa4206b"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aws-sam-cli-1.171.0_1"
+    sha256 cellar: :any, sonoma: "4210d72eb4658a6312540bb66846e18bb230850f97e5c669941b8d6fb258df63"
   end
 
   depends_on "go" => :build

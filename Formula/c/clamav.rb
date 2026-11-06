@@ -53,14 +53,15 @@ class Clamav < Formula
 
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/clamav-1.5.4_2"
-    sha256 sonoma: "737983e5ee88623aeeb990ade153b229dfee94e8d2314fc23d7beca1f962dc64"
+    rebuild 1
+    sha256 sonoma: "ee1bb8504f77c85de2b7befb50afd1c21217bb4abd863b38f1d74bb1726336e2"
   end
 
   depends_on "cmake" => :build
   depends_on "pkgconf" => :build
   depends_on "rust" => :build
   depends_on "json-c"
-  depends_on "openssl@3" # Intelbrew: CVD signature check fails on openssl@4/Intel (state/formula_edits.json)
+  depends_on "openssl@4"
   depends_on "pcre2"
   depends_on "yara"
 

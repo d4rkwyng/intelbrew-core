@@ -1,12 +1,11 @@
 class Openssh < Formula
   desc "OpenBSD freely-licensed SSH connectivity tools"
   homepage "https://www.openssh.com/"
-  url "https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.6p1.tar.gz"
-  mirror "https://cloudflare.cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.6p1.tar.gz"
-  version "10.6p1"
-  sha256 "a9dc9565dffe8640f64d863cd29a32bc4a3dbdec0566a7fc44c5d6ee767d5f39"
+  url "https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.6p2.tar.gz"
+  mirror "https://cloudflare.cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.6p2.tar.gz"
+  version "10.6p2"
+  sha256 "9ae44872090cf2f06b3cf9ff147e7f16f309671340763ed2f99248398ae29d5b"
   license "SSH-OpenSSH"
-  revision 2
   compatibility_version 1
 
   livecheck do
@@ -15,8 +14,8 @@ class Openssh < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/openssh-10.6p1_2"
-    sha256 sonoma: "9888355aa441ddfc1c08ebf5f1b551bfeb89c3b0d65fd09e932445167513e224"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/openssh-10.6p2"
+    sha256 sonoma: "5665d9e8de5584563e34884d4e1055334629b80ae0c33db984788b75f4e6b72e"
   end
 
   # Please don't resubmit the keychain patch option. It will never be accepted.

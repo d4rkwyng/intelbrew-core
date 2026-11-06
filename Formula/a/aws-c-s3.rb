@@ -4,12 +4,12 @@ class AwsCS3 < Formula
   url "https://github.com/awslabs/aws-c-s3/archive/refs/tags/v1.5.2.tar.gz"
   sha256 "26bac413daa8b4146abd1fceb55a282a5d3869524c24aca64a00ec1a4e0449bd"
   license "Apache-2.0"
+  revision 1
   compatibility_version 8
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aws-c-s3-1.5.2"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "749a8bb91a3ff98bde46d9bd9a3bf793af977453e9d28a58a2d5787e0ee6b312"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aws-c-s3-1.5.2_1"
+    sha256 cellar: :any, sonoma: "8f3470e47d5d9aa4714797b279928299b0db939094866edae474a8e2eed439f8"
   end
 
   depends_on "cmake" => :build

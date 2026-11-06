@@ -4,11 +4,12 @@ class AwsCAuth < Formula
   url "https://github.com/awslabs/aws-c-auth/archive/refs/tags/v1.0.3.tar.gz"
   sha256 "c3accbe5df51610a320de103c18f16efa17fc7269e0bdbe5ef093b14671f9f6c"
   license "Apache-2.0"
+  revision 1
   compatibility_version 3
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aws-c-auth-1.0.3"
-    sha256 cellar: :any, sonoma: "b3cb3c160b9149b16f065f187fe33494a1464a8214b19b80a6d5af4abc31a51c"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aws-c-auth-1.0.3_1"
+    sha256 cellar: :any, sonoma: "7a0c9e15b2abb09dbab1bbd57510d3cc0f0d7c66cc2346e310ff9dc6cdb2ec24"
   end
 
   depends_on "cmake" => :build

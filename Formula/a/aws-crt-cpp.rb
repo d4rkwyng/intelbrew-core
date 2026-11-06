@@ -4,11 +4,12 @@ class AwsCrtCpp < Formula
   url "https://github.com/awslabs/aws-crt-cpp/archive/refs/tags/v0.44.3.tar.gz"
   sha256 "dbdeb941b24159e639a1e020a8d1e26b68a0bf9ee21f3a90971f42fe97d21086"
   license "Apache-2.0"
+  revision 1
   compatibility_version 1
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aws-crt-cpp-0.44.3"
-    sha256 cellar: :any, sonoma: "520b467fb1afcc004f45d58152dd77b5055b5502079f3c364260052d784d7625"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aws-crt-cpp-0.44.3_1"
+    sha256 cellar: :any, sonoma: "9e93d570127f2f27efe39821251860f82b8170fa462a52d69e50ad65389ecb72"
   end
 
   depends_on "cmake" => :build

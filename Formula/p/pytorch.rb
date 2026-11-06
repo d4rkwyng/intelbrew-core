@@ -3,10 +3,9 @@ class Pytorch < Formula
 
   desc "Tensors and dynamic neural networks"
   homepage "https://pytorch.org/"
-  url "https://github.com/pytorch/pytorch/releases/download/v2.14.1/pytorch-v2.14.1.tar.gz"
-  sha256 "d0ebad9ca4219959b29b7ad9ab6469fe49a3d668f8b5a62dd115f02f3a914447"
+  url "https://github.com/pytorch/pytorch/releases/download/v2.15.0/pytorch-v2.15.0.tar.gz"
+  sha256 "d0688c9feb1139c6304675c41f4c5fbb8e5b084f19a83d9f95ddcb10ced9e3e7"
   license "BSD-3-Clause"
-  revision 1
   compatibility_version 3
 
   livecheck do
@@ -15,9 +14,8 @@ class Pytorch < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pytorch-2.14.1_1"
-    rebuild 2
-    sha256 cellar: :any, sonoma: "8e0718faa17646decf002a11da878a5af7b071feba7d3cdd5da25d10a422235b"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pytorch-2.15.0"
+    sha256 cellar: :any, sonoma: "3910bf996ad3844f14c15e1eb3915ae9fa81e5b650c4a6a27d9f13c5d03fcc67"
   end
 
   depends_on "cmake" => :build
@@ -41,11 +39,14 @@ class Pytorch < Formula
 
   pypi_packages package_name:     "torch[opt-einsum]",
                 extra_packages:   %w[pyyaml packaging scikit-build-core six],
-                exclude_packages: %w[cuda-bindings numpy nvidia-cublas]
+                exclude_packages: %w[cuda-bindings cuda-toolkit numpy nvidia-cublas nvidia-cuda-cccl
+                                     nvidia-cuda-cupti nvidia-cuda-runtime nvidia-cudnn-cu13
+                                     nvidia-cufft nvidia-cufile nvidia-cusolver nvidia-cusparselt-cu13
+                                     nvidia-nccl-cu13 nvidia-nvshmem-cu13 nvidia-nvtx triton]
 
   resource "filelock" do
-    url "https://files.pythonhosted.org/packages/d8/9c/925c4f62920e4200d573d2bfe5cfd1b993134c3aee5f9bd3b7c55e20297e/filelock-4.0.11.tar.gz"
-    sha256 "9dc453a1edd25626a6fc97c2cb1bd9f7e46345843d40b3181c071761fb9a5f7a"
+    url "https://files.pythonhosted.org/packages/d8/28/3893324bcadf8f89b1616637468d766af3f625008c0735bf704fdfa86617/filelock-4.2.4.tar.gz"
+    sha256 "c6d8663535e1650ee430507b4ffbac7b464dd64b7647ea0112a9f406499d163d"
   end
 
   resource "fsspec" do
@@ -99,8 +100,8 @@ class Pytorch < Formula
   end
 
   resource "setuptools" do
-    url "https://files.pythonhosted.org/packages/6d/44/f5da03a8ef95d369145c5bb53050e7877c9f3d312e128605fd9504829143/setuptools-84.0.0.tar.gz"
-    sha256 "f4695c21257f0d9b537ec2692c941d02ee143b7cc1276941349a546573b2ef73"
+    url "https://files.pythonhosted.org/packages/70/b3/c19426f783614d625699a4b247faf628ea9ab1db228674491767b417f9e1/setuptools-84.2.1.tar.gz"
+    sha256 "3ff8b3b5492a0aa66960f4419365a86b84e013070d4313e4d4a6894f5d64d6bc"
   end
 
   resource "six" do
@@ -116,14 +117,6 @@ class Pytorch < Formula
   resource "typing-extensions" do
     url "https://files.pythonhosted.org/packages/f6/cc/6253133b5bb138fc3306cebfbda2c520f545d36b5be2c7255cc528bb45d6/typing_extensions-4.16.0.tar.gz"
     sha256 "dc983d19a509c94dba722ee6abd33940f7c05a89e243c47e907eb4db6f1a43e5"
-  end
-
-  # A Metal 4 toolchain with an older SDK trips the MPP include, which is only version-gated
-  patch do
-    url "https://github.com/pytorch/pytorch/commit/938bf9785f38e2b2b21879713ae94625aec4787e.patch?full_index=1"
-    sha256 "a89a1f1ac61776832e31865295fe388edf19bbf93be3dbff3a9910fe70cbdec3"
-    type :unofficial
-    resolves "https://github.com/pytorch/pytorch/pull/196104"
   end
 
   def install
@@ -153,14 +146,51 @@ class Pytorch < Formula
     ENV["USE_SYSTEM_PYBIND11"] = "ON"
     ENV["USE_SYSTEM_SLEEF"] = "ON"
     ENV["USE_MPS"] = "ON" if OS.mac?
-    # Intelbrew: the Sonoma SDK has no MTLLanguageVersion3_2, which MPSDevice.mm static_asserts
-    # against; shim it next to PyTorch's own pre-macOS-26 MTLLanguageVersion4_0 shim.
+    # Intelbrew: 2.15.0 dropped 2.14.1's pre-macOS-15 SDK shims from MPSGraphSequoiaOps.h but still
+    # uses those APIs, which the Sonoma SDK lacks; put 2.14.1's block back verbatim.
+    sequoia_shims = <<~'EOS'
+      #if !defined(__MAC_15_0) && (!defined(MAC_OS_X_VERSION_15_0) || (MAC_OS_X_VERSION_MIN_REQUIRED < MAC_OS_X_VERSION_15_0))
+
+      @interface MPSNDArrayIdentity : MPSNDArrayUnaryKernel
+      - (MPSNDArray* __nullable)reshapeWithCommandBuffer:(__nullable id<MTLCommandBuffer>)cmdBuf
+                                             sourceArray:(MPSNDArray* __nonnull)sourceArray
+                                                   shape:(MPSShape* __nonnull)shape
+                                        destinationArray:(MPSNDArray* __nullable)destinationArray;
+      @end
+
+      @interface MPSNDArrayDescriptor ()
+      @property(readwrite, nonatomic) BOOL preferPackedRows;
+      @end
+
+      @interface MPSNDArray ()
+      - (nonnull instancetype)initWithBuffer:(id<MTLBuffer> _Nonnull)buffer
+                                      offset:(NSUInteger)offset
+                                  descriptor:(MPSNDArrayDescriptor* _Nonnull)descriptor;
+      - (MPSNDArray* __nullable)arrayViewWithShape:(MPSShape* _Nullable)shape strides:(MPSShape* _Nonnull)strides;
+      @end
+
+      typedef NS_ENUM(NSInteger, MTLMathMode) {
+        MTLMathModeSafe = 0,
+        MTLMathModeRelaxed = 1,
+        MTLMathModeFast = 2,
+      };
+
+      typedef NS_ENUM(NSInteger, MTLMathFloatingPointFunctions) {
+        MTLMathFloatingPointFunctionsFast = 0,
+        MTLMathFloatingPointFunctionsPrecise = 1,
+      };
+
+      @interface MTLCompileOptions ()
+      @property(readwrite, nonatomic) MTLMathMode mathMode;
+      @property(readwrite, nonatomic) MTLMathFloatingPointFunctions mathFloatingPointFunctions;
+      @end
+
+      #define MTLLanguageVersion3_2 ((MTLLanguageVersion)((3 << 16) + 2))
+      #endif // Building for target older than MacOS-15
+    EOS
     inreplace "aten/src/ATen/native/mps/MPSGraphSequoiaOps.h",
               "#endif // Building for target older than MacOS-26\n",
-              "#endif // Building for target older than MacOS-26\n" \
-              "#if !defined(__MAC_15_0)\n" \
-              "#define MTLLanguageVersion3_2 ((MTLLanguageVersion)((3 << 16) + 2))\n" \
-              "#endif\n"
+              "#endif // Building for target older than MacOS-26\n\n#{sequoia_shims}"
     ENV["USE_KLEIDIAI"] = "OFF"
     # Linuxbrew GCC 12 cannot compile PyTorch's SVE+BF16 path; needs GCC 14+
     ENV["BUILD_IGNORE_SVE_UNAVAILABLE"] = "1" if OS.linux? && Hardware::CPU.arm64?

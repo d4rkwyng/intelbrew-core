@@ -1,8 +1,8 @@
 class ClangFormat < Formula
   desc "Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript"
   homepage "https://clang.llvm.org/docs/ClangFormat.html"
-  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.4/llvm-project-23.1.4.src.tar.xz"
-  sha256 "819ecf7351f1a66f76b2d701d8942faaf5faeb324cb90c9d5b090de142434bb2"
+  url "https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.5/llvm-project-23.1.5.src.tar.xz"
+  sha256 "fb50b1eac93ddeb3aa8dab4cfe324dff74f4a9c2bdee6160c9e36188f8d06a6e"
   # The LLVM Project is under the Apache License v2.0 with LLVM Exceptions
   license "Apache-2.0" => { with: "LLVM-exception" }
   version_scheme 1
@@ -15,9 +15,8 @@ class ClangFormat < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/clang-format-23.1.4"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "65a5697c21a7cbd6e85628b2fadc405e9d75c91a3f5acab135e0ae8ff3731be2"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/clang-format-23.1.5"
+    sha256 cellar: :any_skip_relocation, sonoma: "5c21bc13ccdcd6e7479a66490a43278b7e597d452477f62318f913407256eea3"
   end
 
   depends_on "cmake" => :build
