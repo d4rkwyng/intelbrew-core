@@ -16,6 +16,8 @@ class Libxrender < Formula
   depends_on "libx11"
   depends_on "xorgproto"
 
+  deny_network_access!
+
   def install
     args = %W[
       --sysconfdir=#{etc}
@@ -39,6 +41,5 @@ class Libxrender < Formula
       }
     C
     system ENV.cc, "test.c"
-    assert_equal 0, $CHILD_STATUS.exitstatus
   end
 end

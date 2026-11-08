@@ -12,11 +12,9 @@ class Gnuplot < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "2fd945496dc795654ebf62ecb365fcfb6fd7b37b5eed6561ccbc885e8dca2849"
-    sha256 arm64_tahoe:       "b4699393b6588be003f891e0fd87836a10024d11e10b3cff71cdb9aabd53ac1f"
-    sha256 arm64_sequoia:     "5359d6afc0ddef2ed2f1f283f9ca50b66d6acca3f72b8976ea6b8008e098d293"
-    sha256 arm64_linux:       "93d755518376d97d006c73a8fffe249d66eb7fcb19ab3fe13bad0e6f402dfc4d"
-    sha256 x86_64_linux:      "971767f481066ec6d1842eaf86cc2cdd99ce2f2ad3ba545942d8ad9522e9d07d"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/gnuplot-6.0.6"
+    rebuild 1
+    sha256 sonoma: "8660882ae420271483bb73de5def76b533670e2073df2d0262f95b08c2d24c3c"
   end
 
   head do

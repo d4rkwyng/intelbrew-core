@@ -14,8 +14,8 @@ class Freetype < Formula
 
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/freetype-2.15.0"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "56e42f4ec12ce15fd08e1bf7ecf558656badefdc2d4157bc4f99a70fc5d572a7"
+    rebuild 2
+    sha256 cellar: :any, sonoma: "fddc51cb549746ff438c7a005d5d362112cdebb87ded9c520cab11897405e31a"
   end
 
   depends_on "pkgconf" => :build
@@ -31,6 +31,9 @@ class Freetype < Formula
   deny_network_access!
 
   def install
+    # Avoid enabling macOS 15.4+ hvf feature for bottle compatibility
+    ENV["ac_cv_header_hvf_Scaler_h"] = "no" if OS.mac? && MacOS.version <= :sequoia
+
     # This file will be installed to bindir, so we want to avoid embedding the
     # absolute path to the pkg-config shim.
     inreplace "builds/unix/freetype-config.in", "%PKG_CONFIG%", "pkg-config"

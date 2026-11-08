@@ -1,8 +1,9 @@
 class Libsmi < Formula
   desc "Library to Access SMI MIB Information"
   homepage "https://www.ibr.cs.tu-bs.de/projects/libsmi/"
-  url "https://www.ibr.cs.tu-bs.de/projects/libsmi/download/libsmi-0.5.0.tar.gz"
-  mirror "https://www.mirrorservice.org/sites/distfiles.macports.org/libsmi/libsmi-0.5.0.tar.gz"
+  # Use mirror here as `https://www.ibr.cs.tu-bs.de/projects/libsmi/download/libsmi-0.5.0.tar.gz`
+  # does not have stable checksum (i.e. it changes every time we try to download it)
+  url "https://www.mirrorservice.org/sites/distfiles.macports.org/libsmi/libsmi-0.5.0.tar.gz"
   sha256 "f21accdadb1bb328ea3f8a13fc34d715baac6e2db66065898346322c725754d3"
   license all_of: ["TCL", "BSD-3-Clause", "Beerware"]
   compatibility_version 1
@@ -14,8 +15,8 @@ class Libsmi < Formula
 
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libsmi-0.5.0"
-    rebuild 3
-    sha256 sonoma: "feac4268d778dfcc84caad9cc94a432867b8566163e5a8377be7670fad95b85d"
+    rebuild 4
+    sha256 sonoma: "e93a5c405f2131af237b52e14e30da9e17295c2c46cb40f5019e8f7decc3c6b8"
   end
 
   # Regenerate `configure` to avoid `-flat_namespace` bug.
@@ -23,6 +24,8 @@ class Libsmi < Formula
   depends_on "autoconf" => :build
   depends_on "automake" => :build
   depends_on "libtool" => :build
+
+  deny_network_access!
 
   def install
     # Fix compile with newer Clang

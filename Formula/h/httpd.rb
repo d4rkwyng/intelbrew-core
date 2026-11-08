@@ -1,17 +1,15 @@
 class Httpd < Formula
   desc "Apache HTTP server"
   homepage "https://httpd.apache.org/"
-  url "https://www.apache.org/dyn/closer.lua?path=httpd/httpd-2.4.69.tar.bz2"
-  mirror "https://downloads.apache.org/httpd/httpd-2.4.69.tar.bz2"
-  sha256 "c5e6ebc66e349b87d7fc6916ae7cc2a808ed348003de134cf9e9d89d3e2cc73d"
+  url "https://www.apache.org/dyn/closer.lua?path=httpd/httpd-2.4.70.tar.bz2"
+  mirror "https://downloads.apache.org/httpd/httpd-2.4.70.tar.bz2"
+  sha256 "1eefd7dc95836c5872894ce8e6a37f773d5a6764f0766869d39b8bcf0b1bafc3"
   license "Apache-2.0"
-  revision 1
   compatibility_version 1
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/httpd-2.4.69_1"
-    rebuild 1
-    sha256 sonoma: "a10b408dfbd20711765cbe59a0c82cc48ef36f2512aaca16ccf002c036e6ee58"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/httpd-2.4.70"
+    sha256 sonoma: "a6931fa5ab167691ee173755a4a114c4658548a29e56382ed3a697ce83f502b3"
   end
 
   depends_on "apr"

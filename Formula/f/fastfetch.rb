@@ -1,8 +1,8 @@
 class Fastfetch < Formula
   desc "Like neofetch, but much faster because written mostly in C"
   homepage "https://github.com/fastfetch-cli/fastfetch"
-  url "https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.70.0.tar.gz"
-  sha256 "8aa01bd3faff2be1d94f231d76489ce6d9f781f51f6e93eafe82359d6d8669af"
+  url "https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.71.0.tar.gz"
+  sha256 "e71d93de41e8e4b2554c36d2ae51758112a21ecf3a8c98605a2c689251e62987"
   license "MIT"
   head "https://github.com/fastfetch-cli/fastfetch.git", branch: "dev"
 
@@ -12,9 +12,8 @@ class Fastfetch < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/fastfetch-2.70.0"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "efc21c9b2b14f9023ca38ebf08e45d72081e3a105ca712b58b163cefba28c87e"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/fastfetch-2.71.0"
+    sha256 cellar: :any, sonoma: "20eb3ca8162f5627e4ab35a2c3af6caa77e5ae31b46e527a6d9ff7cdcc7f0a39"
   end
 
   depends_on "chafa" => :build

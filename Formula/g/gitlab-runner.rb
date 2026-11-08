@@ -2,8 +2,8 @@ class GitlabRunner < Formula
   desc "Official GitLab CI runner"
   homepage "https://gitlab.com/gitlab-org/gitlab-runner"
   url "https://gitlab.com/gitlab-org/gitlab-runner.git",
-      tag:      "v19.5.2",
-      revision: "66ad5002d9249fc178e8f9edf3dd7d58223213ce"
+      tag:      "v19.5.3",
+      revision: "33227fd48c5b411d0b49a74e129d187728abcc3b"
   license "MIT"
   head "https://gitlab.com/gitlab-org/gitlab-runner.git", branch: "main"
 
@@ -13,8 +13,8 @@ class GitlabRunner < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/gitlab-runner-19.5.2"
-    sha256 cellar: :any_skip_relocation, sonoma: "2fe3230a2c9963ab3184af0f29b38c7f755f097e4b24683eaa32d5c28a83bd4d"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/gitlab-runner-19.5.3"
+    sha256 cellar: :any_skip_relocation, sonoma: "f33866b207952e539c766c0bf41234e28bef7f37f460c302e2a203825c88d57a"
   end
 
   depends_on "go" => :build

@@ -1,16 +1,15 @@
 class Lima < Formula
   desc "Linux virtual machines"
   homepage "https://lima-vm.io/"
-  url "https://github.com/lima-vm/lima/archive/refs/tags/v2.2.1.tar.gz"
-  sha256 "d551efb52115ba006c1052d5c929e4d3afac363c78c9cfca6975af1f85c1426a"
+  url "https://github.com/lima-vm/lima/archive/refs/tags/v2.3.0.tar.gz"
+  sha256 "436ace830cb3e8fa512e0157a220bd8d6f826aef789c3f26d2984f0ea1e3c2ea"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/lima-vm/lima.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/lima-2.2.1"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "5431a79f7e7d498330fa364d3a4c2be667d84f34c3b6e42a0997a7c316bf15fe"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/lima-2.3.0"
+    sha256 cellar: :any_skip_relocation, sonoma: "8b2e12a2728e660acb1f4f0ef2ec081596d2ff7f5c65d5195f02ea678e172ea0"
   end
 
   depends_on "go" => :build

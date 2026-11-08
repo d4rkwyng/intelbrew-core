@@ -1,13 +1,13 @@
 class FreshEditor < Formula
   desc "Text editor for your terminal: easy, powerful and fast"
   homepage "https://sinelaw.github.io/fresh/"
-  url "https://github.com/sinelaw/fresh/archive/refs/tags/v0.5.7.tar.gz"
-  sha256 "3ab409970e18e692ed7a046bc0c27f4a68119858928e4b4b499e992dc7a0a118"
+  url "https://github.com/sinelaw/fresh/archive/refs/tags/v0.5.8.tar.gz"
+  sha256 "b048bfa38b9b50a262f19ac49d254a1479926ddb74d496367649892ac8720495"
   license "GPL-3.0-or-later"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/fresh-editor-0.5.7"
-    sha256 cellar: :any_skip_relocation, sonoma: "58ea709a6167c844c3a0ec80edad5304620fd200385fdff10b47320d87a8ea52"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/fresh-editor-0.5.8"
+    sha256 cellar: :any_skip_relocation, sonoma: "fe0624640e7cb645fbf5c291e2d2ab5601834c91145b6599dbbf2ad31d2c6ac2"
   end
 
   depends_on "rust" => :build

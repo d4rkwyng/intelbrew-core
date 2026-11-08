@@ -1,16 +1,15 @@
 class Helmfile < Formula
   desc "Deploy Kubernetes Helm Charts"
   homepage "https://github.com/helmfile/helmfile"
-  url "https://github.com/helmfile/helmfile/archive/refs/tags/v1.8.2.tar.gz"
-  sha256 "641e9eec8ccd402bae60254ae29dfb144f02e16e089f5777b5465b04d12b241c"
+  url "https://github.com/helmfile/helmfile/archive/refs/tags/v1.8.3.tar.gz"
+  sha256 "fd3f37bc48ff8bb343e6b9869b0b070052e8d8fa3eafce0305de0b223c7bf63c"
   license "MIT"
   version_scheme 1
   head "https://github.com/helmfile/helmfile.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/helmfile-1.8.2"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "8111443e078400fd38b52f8b088c35c200f88c083cf7b40fb4d3e506c966aebd"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/helmfile-1.8.3"
+    sha256 cellar: :any_skip_relocation, sonoma: "ae467e4ba297ba192de1d7c25442e7169ff9b04eea62354f39dfc89e452ae4f0"
   end
 
   depends_on "go" => :build

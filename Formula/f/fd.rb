@@ -1,14 +1,14 @@
 class Fd < Formula
   desc "Simple, fast and user-friendly alternative to find"
   homepage "https://github.com/sharkdp/fd"
-  url "https://github.com/sharkdp/fd/archive/refs/tags/v10.5.1.tar.gz"
-  sha256 "3ea70c258d3390a601b436b6f4c545e3a944ff3de44c8ee5542c05588e337032"
+  url "https://github.com/sharkdp/fd/archive/refs/tags/v10.5.2.tar.gz"
+  sha256 "8991b6504cac33c00528050622dfe3f2a0db1be1a6faf99f69b46d1a8f737dc5"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/sharkdp/fd.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/fd-10.5.1"
-    sha256 cellar: :any_skip_relocation, sonoma: "5c7e1b08cdcd5bd46d8b7a8422e2a3cbc5ec657e5b2a5f2092d6acbe977a1c4e"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/fd-10.5.2"
+    sha256 cellar: :any_skip_relocation, sonoma: "f842b346c0eb4aa92acfe2d4928a564180deaf71b7edae294b5d1ca6aa90664c"
   end
 
   depends_on "rust" => :build

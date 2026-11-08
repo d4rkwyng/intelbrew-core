@@ -20,6 +20,8 @@ class Libunibreak < Formula
     sha256 cellar: :any, sonoma: "a6143d93b465d86529feee5c18306d434531c0aa869ebf90f3dd9e74e024b5e1"
   end
 
+  deny_network_access!
+
   def install
     system "./configure", *std_configure_args, "--disable-silent-rules"
     system "make", "install"

@@ -1,8 +1,8 @@
 class Opencode < Formula
   desc "AI coding agent, built for the terminal"
   homepage "https://opencode.ai"
-  url "https://github.com/anomalyco/opencode/archive/refs/tags/v2.2.5.tar.gz"
-  sha256 "04621edf6c47c2c7a36982ef39914d482c16977708fbd7b779f49f928bdc4fba"
+  url "https://github.com/anomalyco/opencode/archive/refs/tags/v2.2.6.tar.gz"
+  sha256 "937f351e1a1dc7bf48fdbe190e29c9cdb3ab24ad27619aa54411687b856a9871"
   license "MIT"
 
   livecheck do
@@ -12,9 +12,8 @@ class Opencode < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/opencode-2.2.5"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "815ddcde0497489ee460551952b420252dcd7a836477d5dbd269694d931ca3d6"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/opencode-2.2.6"
+    sha256 cellar: :any_skip_relocation, sonoma: "7cfee42d10c7b147eb3f62fb3ac17c59b4f4a5ed2edbda23f3b8daf8cde88e5e"
   end
 
   depends_on "bun" => :build

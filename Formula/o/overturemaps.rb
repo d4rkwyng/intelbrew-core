@@ -3,19 +3,17 @@ class Overturemaps < Formula
 
   desc "Python tools for interacting with Overture Maps data"
   homepage "https://overturemaps.org"
-  url "https://files.pythonhosted.org/packages/da/6b/d02503bba3a90fc333d6188b892554bcfccb30b6e3728086fa0fa4c2857f/overturemaps-1.0.2.tar.gz"
-  sha256 "e92355dcc2961da0ce95ab9837a59f2d15bcc357be51d0c415ceab3d812fc97d"
+  url "https://files.pythonhosted.org/packages/1f/c2/a360363af901739f18eec60315b5fa87fdce8ebfbfce3294f154a3ca3d27/overturemaps-2.1.0.tar.gz"
+  sha256 "41b3a1e324d3f0cfccf0212288b544f0965722c601261ee17b3f19124d7a23ad"
   license "MIT"
-  revision 1
   head "https://github.com/OvertureMaps/overturemaps-py.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any, arm64_golden_gate: "1197410527a2b02304f7b78e47741c22dc1297864c2650c3cbb980529c27c2cd"
-    sha256 cellar: :any, arm64_tahoe:       "b07dfd9ae243c02b7b35cc0174174613fdb581d35c0c94fc235eaeae53a6d786"
-    sha256 cellar: :any, arm64_sequoia:     "a046a37e5fee566701e977818989c0c22631ecf10519f85ae0e74db77891bf51"
-    sha256 cellar: :any, arm64_linux:       "382adcc11cbe87560c52dfdada6288fabaf06ad452db23dc68e48c7b5bcd0fa2"
-    sha256 cellar: :any, x86_64_linux:      "aba42503aa0ffcfe827f90f16c118a3b5ac3232233e8260301c25ae8562b8fa0"
+    sha256 cellar: :any, arm64_golden_gate: "22247f23d00f74ca67252325825c87ec4ca5d8bc7a330a3f721fbf4f95658ef6"
+    sha256 cellar: :any, arm64_tahoe:       "5aa4731d486c3106c1f4fbba49bed1da186f6d456908accae2ed074c3f57c548"
+    sha256 cellar: :any, arm64_sequoia:     "12f15d96b3624a5573eea7a274a0cd9a2c65f8ec4044d0eb887199e2608d26ba"
+    sha256 cellar: :any, arm64_linux:       "43e4a63b29b78f5081346b01b9c8842501f3654b0600246b1dac9f96f0ec59cf"
+    sha256 cellar: :any, x86_64_linux:      "bdf32c91fd009567d55253875f42666c30293b567b3433a299f416e39ecfaa2f"
   end
 
   depends_on "cmake" => :build  # for pyarrow
@@ -33,8 +31,8 @@ class Overturemaps < Formula
   pypi_packages exclude_packages: "numpy"
 
   resource "click" do
-    url "https://files.pythonhosted.org/packages/c7/0e/7fa0ef50764b67090eca4114772a2abf8b6148198475e54c660b97caeee6/click-8.5.0.tar.gz"
-    sha256 "ba0d2089de75ea0310e2dde03160e6ca10009947fb95a182f9b54021bb272e34"
+    url "https://files.pythonhosted.org/packages/45/37/edbf1b0707709013c0cf2e8317e03d97ed29bf4cac709fe328904ae92a38/click-8.5.1.tar.gz"
+    sha256 "9bbfada76703fd1d784b83eea012e3e8c6a001a876543ef104fa56aaaeb072b4"
   end
 
   resource "colorama" do
@@ -48,8 +46,8 @@ class Overturemaps < Formula
   end
 
   resource "pyarrow" do
-    url "https://files.pythonhosted.org/packages/ec/34/17c34cb38e5d940e38f0f0d9fdfa0e8a506676409ea9b85aff7e3079f831/pyarrow-26.0.0.tar.gz"
-    sha256 "0cccd36e00ea3afeb52ded61f2721ce71f604853d70c45365c58324eb773d6ae"
+    url "https://files.pythonhosted.org/packages/bc/5e/9cb2a56d5e293aab4e2fbecc5b0620d93227d66b8d5a63c554c31e1f80fe/pyarrow-26.0.1.tar.gz"
+    sha256 "93affcbd8a343e98dc19e9ec8fe17271ebf8fe98102d8b7454175074409f8b72"
   end
 
   resource "pyfiglet" do

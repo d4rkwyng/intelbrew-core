@@ -15,11 +15,9 @@ class Bottom < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "a1cb6e27476216833e1e8263d381f4b721125c838b3e1c6ca403fc3c515812b7"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c9e84aeea6b89def7fd3d56d00de7e8d4060d8777ef6d5af0af9c7f14a6534f5"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "23a62bc24a45b35fa1ece605c5f794a3c865feee54ec367cd329ac1653fc0d92"
-    sha256 cellar: :any,                 arm64_linux:       "86956acff4d762328b669d2057298ac229449d01d5c4fce21299a938459c63ce"
-    sha256 cellar: :any,                 x86_64_linux:      "091a1ce4bc50de72a4d5d15f52645b16db63ede897b94f66fb575ca027c0444c"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/bottom-0.15.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "1754e0ba45e09eccf78ea3dcaaf9045b98cf41b33fdbc8d8208d376f6986c514"
   end
 
   depends_on "rust" => :build

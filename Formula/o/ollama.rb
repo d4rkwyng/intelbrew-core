@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.40.14",
-      revision: "9a3e8177767245acc62b735eba7d5d8a553606d0"
+      tag:      "v0.40.15",
+      revision: "02480ca2a47153e1f9c31cbe1e05536da97ce1ba"
   license "MIT"
   compatibility_version 1
   head "https://github.com/ollama/ollama.git", branch: "main"
@@ -17,8 +17,8 @@ class Ollama < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ollama-0.40.14"
-    sha256 cellar: :any, sonoma: "83d84f85115b76d7814840fa4ac5b7391c1e78712a8f6eaed7d4293eb315f77b"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ollama-0.40.15"
+    sha256 cellar: :any, sonoma: "ffb197e8bcd2e2128ef6a8f20040b50d492c3e2bbb31d35c0a1a54029c7b1efd"
   end
 
   depends_on "ccache" => :build
@@ -33,6 +33,8 @@ class Ollama < Formula
       # https://github.com/ollama/ollama/commit/66ab8482e08035a3238dff04a5739c4371c61bfe
       # `mlx_fast_scaled_dot_product_attention` has no `window_size` in mlx-c 0.8.0, so apply the window as a mask:
       # https://github.com/ollama/ollama/blob/v0.40.12/mlx/compat/mlx-c/0001-mlx-c-sdpa-window-size.patch
+      # mlx-c 0.8.0 also lacks `mlx_cuda_get_arch_list`, only needed for CUDA builds:
+      # https://github.com/ollama/ollama/blob/v0.40.15/mlx/compat/mlx-c/0002-cuda-get-arch-list.patch
       patch :DATA
     end
   end
@@ -40,8 +42,8 @@ class Ollama < Formula
   # Pinned dependency required by llama-server
   resource "llama.cpp" do
     url "https://github.com/ggml-org/llama.cpp.git",
-        tag:      "b11963",
-        revision: "39febd2adb947b70da35e95f9351b3bf58ad170a"
+        tag:      "b12111",
+        revision: "52e53a76df0298d2c316ae7e704eeec03b0bf478"
 
     livecheck do
       url "https://raw.githubusercontent.com/ollama/ollama/refs/tags/v#{LATEST_VERSION}/LLAMA_CPP_VERSION"
@@ -197,6 +199,32 @@ class Ollama < Formula
 end
 
 __END__
+diff --git a/mlx/cuda.go b/mlx/cuda.go
+--- a/mlx/cuda.go
++++ b/mlx/cuda.go
+@@ -117,21 +117,7 @@
+ }
+ 
+ func cudaCompilationTargets() ([]string, error) {
+-	targets := mlxCheck(C.mlx_vector_string_new())
+-	defer freeVectorString(targets)
+-	if err := mlxError(C.mlx_cuda_get_arch_list(&targets)); err != nil {
+-		return nil, err
+-	}
+-
+-	result := make([]string, int(mlxCheck(C.mlx_vector_string_size(targets))))
+-	for i := range result {
+-		var value *C.char
+-		if err := mlxError(C.mlx_vector_string_get(&value, targets, C.size_t(i))); err != nil {
+-			return nil, err
+-		}
+-		result[i] = C.GoString(value)
+-	}
+-	return result, nil
++	return nil, fmt.Errorf("mlx_cuda_get_arch_list is not available in this mlx-c")
+ }
+ 
+ func deviceInfoString(info C.mlx_device_info, key string) (string, error) {
 diff --git a/mlx/fast.go b/mlx/fast.go
 index f9927ca..20012fa 100644
 --- a/mlx/fast.go

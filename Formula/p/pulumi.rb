@@ -2,16 +2,16 @@ class Pulumi < Formula
   desc "Cloud native development platform"
   homepage "https://www.pulumi.com/"
   url "https://github.com/pulumi/pulumi.git",
-      tag:      "v3.274.0",
-      revision: "e6e7c7a584bcb22fa0e35e7f90c2ed85ddd89bb9"
+      tag:      "v3.274.1",
+      revision: "8f735e662d805b7a5bda70931bd627c69fbf38b8"
   license "Apache-2.0"
   head "https://github.com/pulumi/pulumi.git", branch: "master"
 
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pulumi-3.274.0"
-    sha256 cellar: :any_skip_relocation, sonoma: "13e997b7f9347acb1c4eb236ddf813e6e82c9f61a40f5bdfa7200e347d8e24fd"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pulumi-3.274.1"
+    sha256 cellar: :any_skip_relocation, sonoma: "3c3c52479f288bce2dea66ce6d02d1d4c03ce18ce016da48fda448185d503704"
   end
 
   depends_on "go" => :build

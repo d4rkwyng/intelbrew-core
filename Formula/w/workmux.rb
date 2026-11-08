@@ -1,16 +1,16 @@
 class Workmux < Formula
   desc "Git worktrees + tmux windows for zero-friction parallel dev"
   homepage "https://workmux.raine.dev"
-  url "https://github.com/raine/workmux/archive/refs/tags/v0.1.278.tar.gz"
-  sha256 "6d5407f5e47021b91e4fd3bcc2dd5758a507ff2eecf2a6e53d8b4e8bb26d652b"
+  url "https://github.com/raine/workmux/archive/refs/tags/v0.1.280.tar.gz"
+  sha256 "6043f69f090fdf67cbc041ef21c1a583260f0813e462775a1c1b32f42e60d12e"
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "183404bf584813a3904498e381c08875be5951129b984247b310ac845c744bbf"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b8f92049440f230915959673893cad5e820f558f58b6322f3c92ba79deed9816"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "4cadf835212f88d85308d02cf901d412df74ab3ecec204603355d621a1749452"
-    sha256 cellar: :any,                 arm64_linux:       "9602a9531164d82fd0cf423e9d9ffbc974732975869c933bdacb2a4332ca6537"
-    sha256 cellar: :any,                 x86_64_linux:      "4ef89501a31424f42631f27e6ebfd37899a6403ebdc918e3c76b77da83558df5"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1ca786ea51031513a746dab0f41803a32dc744ceb7f53fb5b4a565ce9f1bf5fd"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "8d5698e681a15dd2e3c8b87093ce72f1ad0a00e0d146c8fe6f17851521da555d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "52c20f75948940f0f37f30efee87aff9d3171c2fa3b9e52820673fb445be1680"
+    sha256 cellar: :any,                 arm64_linux:       "6b57b0e3e8182faa44bb33b31d6bc2a725b59dcde17ed6ff2eff0075692f4ee2"
+    sha256 cellar: :any,                 x86_64_linux:      "b1b8cf6ea2398418973b8ff8af2ecb1966fb56fa99f64f20be9cc438f7960613"
   end
 
   depends_on "rust" => :build
