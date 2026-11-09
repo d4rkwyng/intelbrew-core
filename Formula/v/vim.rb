@@ -2,8 +2,8 @@ class Vim < Formula
   desc "Vi 'workalike' with many additional features"
   homepage "https://www.vim.org/"
   # vim should only be updated once a day
-  url "https://github.com/vim/vim/archive/refs/tags/v9.2.1302.tar.gz"
-  sha256 "a9d2a2f57d5d3149cff8342b8a0b063d410df5d5a4b46d898610059648b6a17e"
+  url "https://github.com/vim/vim/archive/refs/tags/v9.2.1308.tar.gz"
+  sha256 "ae5e0a12b2b56a58866fdaeba397645b7075f4d836a35cd2bdeb8218ed08522d"
   license "Vim"
   compatibility_version 1
   head "https://github.com/vim/vim.git", branch: "master"
@@ -21,9 +21,8 @@ class Vim < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/vim-9.2.1302"
-    rebuild 1
-    sha256 sonoma: "adc51826dc26e064cf013b26dd891b0b61c9a650345955b842c33df8553c0a6a"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/vim-9.2.1308"
+    sha256 sonoma: "bb80f59e5cfe6f77ea88c64b83db4cdb6183b4b2593251c18ec5ffee76a0e66e"
   end
 
   depends_on "gettext" => :build
