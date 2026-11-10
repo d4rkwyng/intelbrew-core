@@ -1,16 +1,15 @@
 class Ccache < Formula
   desc "Object-file caching compiler wrapper"
   homepage "https://ccache.dev/"
-  url "https://github.com/ccache/ccache/releases/download/v4.14.2/ccache-4.14.2.tar.xz"
-  sha256 "0feb2707d9cb48885abb950e5d629e85f57fa79a2439cbbdfa681d6c3dc5f0dc"
+  url "https://github.com/ccache/ccache/releases/download/v4.14.3/ccache-4.14.3.tar.xz"
+  sha256 "e1999132cf7dbce48de7d946b767f3e26ea09adcb5daa4a7103a8fa09ee0637d"
   license "GPL-3.0-or-later"
   compatibility_version 1
   head "https://github.com/ccache/ccache.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ccache-4.14.2"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "2e0346f2e09538d96b9fb11bfd44c866ea0a78228a7ce1f79e7b3921402f1783"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ccache-4.14.3"
+    sha256 cellar: :any, sonoma: "2f012b76d8d12d4b0b626b8993fdecc46ac2b1b8d438d3c1bc8b9c2f09e0f7a6"
   end
 
   depends_on "asciidoctor" => :build

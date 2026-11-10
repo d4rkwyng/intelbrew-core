@@ -2,14 +2,14 @@ class RustAnalyzer < Formula
   desc "Experimental Rust compiler front-end for IDEs"
   homepage "https://rust-analyzer.github.io/"
   url "https://github.com/rust-lang/rust-analyzer.git",
-      tag:      "2026-11-02",
-      revision: "b98172d80f0da12bbde3d6733c274e17cb6417aa"
+      tag:      "2026-11-09",
+      revision: "e5e7830640558e323e89c831488a3172b58dc66d"
   license any_of: ["Apache-2.0", "MIT"]
   compatibility_version 1
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/rust-analyzer-2026-11-02"
-    sha256 cellar: :any_skip_relocation, sonoma: "5ec379e816fc3b73e3aca98fc6e6ec4504303fe53f7ea5ff946ba6e7fb5aa3f6"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/rust-analyzer-2026-11-09"
+    sha256 cellar: :any_skip_relocation, sonoma: "79dabb6f04ac6a0a5744a18d05794223915858fe2fc50429baf08caac3338b1b"
   end
 
   depends_on "rust" => :build
