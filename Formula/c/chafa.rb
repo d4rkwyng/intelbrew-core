@@ -4,6 +4,7 @@ class Chafa < Formula
   url "https://hpjansson.org/chafa/releases/chafa-1.18.3.tar.xz"
   sha256 "fb995ef21dce6c73dd0dd454ba3e0f7fac08e053ea16060a2e5ce69a3746ee27"
   license "LGPL-3.0-or-later"
+  revision 1
   compatibility_version 1
 
   livecheck do
@@ -12,9 +13,8 @@ class Chafa < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/chafa-1.18.3"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "ad8e4bf42e49a6900b7080d79b6a0287e9bbeb99ffca65991447a10e09fd6e3a"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/chafa-1.18.3_1"
+    sha256 cellar: :any, sonoma: "93e9545e4b8acf2132ad7c495cdde609f5e4382616b470a8de6812ea3d6b41c3"
   end
 
   head do

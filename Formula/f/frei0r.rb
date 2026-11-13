@@ -1,14 +1,17 @@
 class Frei0r < Formula
   desc "Minimalistic plugin API for video effects"
   homepage "https://frei0r.dyne.org/"
-  url "https://github.com/dyne/frei0r/archive/refs/tags/v3.7.0.tar.gz"
-  sha256 "352e1e583865a0bb0a7404302a14cdfb30e26c2cf1e8724605bd29067d089159"
+  url "https://github.com/dyne/frei0r/archive/refs/tags/v3.7.1.tar.gz"
+  sha256 "5543917de48d2e8cc2fa02794240a3613447d00458bc2cf606aef20f4b8da515"
   license "GPL-2.0-or-later"
   compatibility_version 1
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/frei0r-3.7.0"
-    sha256 cellar: :any_skip_relocation, sonoma: "ed4c3a5842e1d0e2a04490472b05c336378f085b38d6d30088b19e1a6df1d9ba"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "05cb8f77b9460ebb1c33eb25fd6940fb62f923b5edbf2a3a4da3697f9b3327f5"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "77deddc2b5735ffaf736ce6c08ded0e7c35dd08089a1b34b344ea3c1ac19d401"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "a52ae8e900b7ad897f674979afbd097894820d669ab27df5c3db7a179bc20561"
+    sha256 cellar: :any,                 arm64_linux:       "5fc70b71dcce4f3944db6751ff095bfa239b9059194c0ec15e7b65eff6268caa"
+    sha256 cellar: :any,                 x86_64_linux:      "afc6c673251dd32ae65587c380958beebaf794a7fabc86786defeb15cbed3671"
   end
 
   depends_on "cmake" => :build

@@ -1,8 +1,8 @@
 class Unciv < Formula
   desc "Open-source Android/Desktop remake of Civ V"
   homepage "https://github.com/yairm210/Unciv"
-  url "https://github.com/yairm210/Unciv/releases/download/4.22.18/Unciv.jar"
-  sha256 "dfc4b61ca086c28438ca3fcd03002a1f32ee74d0810bb3326bd39055a55e9dce"
+  url "https://github.com/yairm210/Unciv/releases/download/5.0.0/Unciv.jar"
+  sha256 "142f1517ea39cffbc4a26a8601ac5625806bfe78bd437337bbd13e7b7bc1b0e4"
   license "MPL-2.0"
 
   livecheck do
@@ -13,7 +13,7 @@ class Unciv < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, all: "9900568a68bfa9626dd679243c8fb3b175f3f33cb469a1d5307d431de1a922ac"
+    sha256 cellar: :any_skip_relocation, all: "1e9caa9b3043569207e0a2ade7bfd808201e5800bc2e371a79ace181ee4a8b10"
   end
 
   depends_on "openjdk"

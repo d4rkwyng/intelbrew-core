@@ -1,10 +1,10 @@
 class LittleCms2 < Formula
   desc "Color management engine supporting ICC profiles"
   homepage "https://www.littlecms.com/"
-  # Ensure release is announced at https://www.littlecms.com/categories/releases/
-  # (or https://www.littlecms.com/blog/)
-  url "https://downloads.sourceforge.net/project/lcms/lcms/2.19.1/lcms2-2.19.1.tar.gz"
-  sha256 "bfc54f7bab59fbc921012014a8032e4cba4abd46db47d46b76416a8c0b2815c8"
+  # Ensure release is announced at https://sourceforge.net/p/lcms/mailman/lcms-user/
+  # Ref: https://github.com/mm2/Little-CMS/issues/569#issuecomment-4414911319
+  url "https://downloads.sourceforge.net/project/lcms/lcms/2.20/lcms2-2.20.tar.gz"
+  sha256 "18ff5504fa9cc8a2b1f3591180d90ead16c8a2ea78e530523b46eab70e1ca6b9"
   license "MIT"
   version_scheme 1
   compatibility_version 1
@@ -19,9 +19,8 @@ class LittleCms2 < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/little-cms2-2.19.1"
-    rebuild 2
-    sha256 cellar: :any, sonoma: "c5c5038e223a18f5ee9e5879b46037a892a19089d05861c187631da04ac2da62"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/little-cms2-2.20"
+    sha256 cellar: :any, sonoma: "8ffa7fbbad15529aedba91484946f993bbdb71e199247ff37fa98db14fda7bf8"
   end
 
   depends_on "jpeg-turbo"

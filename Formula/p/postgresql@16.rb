@@ -1,10 +1,9 @@
 class PostgresqlAT16 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v16.15/postgresql-16.15.tar.bz2"
-  sha256 "c1575341fa7bd40f5274ea465b34390f4dc64cdd0770af327005caaeb9f6b7ed"
+  url "https://ftp.postgresql.org/pub/source/v16.16/postgresql-16.16.tar.bz2"
+  sha256 "9d5cd8633043b75740d5d59749c6b7365e6aeb53c47098b1a5e80bb18f87881a"
   license "PostgreSQL"
-  revision 1
 
   livecheck do
     url "https://ftp.postgresql.org/pub/source/"
@@ -12,9 +11,11 @@ class PostgresqlAT16 < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/postgresql@16-16.15_1"
-    rebuild 2
-    sha256 sonoma: "1a32816105e10de876eaf22c88620a7c53e4f89429e42c4a26c945d51218fdf1"
+    sha256 arm64_golden_gate: "d8d1d22d2e6cdadb2d69591d2e663973d5c002b32e7dffddf316a42a4db29c70"
+    sha256 arm64_tahoe:       "1469c2766827955cb66e3a47d6fb9f6972ce9c27eb424703add4c2bb1fbd17c0"
+    sha256 arm64_sequoia:     "cc87fabe57f308daed5b522821fdb031a02ca36dcd85ffe8d9996fdea1bcc2aa"
+    sha256 arm64_linux:       "68ff5bae83c2478eb80c5dcb58d7f80a3566820731a484c43733c964eedfbbd9"
+    sha256 x86_64_linux:      "6bae6f42b12363e14ee9ff6b6b4b391daf54c9f2f749909326526b6f19f7b738"
   end
 
   keg_only :versioned_formula

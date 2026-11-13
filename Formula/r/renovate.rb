@@ -1,8 +1,8 @@
 class Renovate < Formula
   desc "Automated dependency updates. Flexible so you don't need to be"
   homepage "https://github.com/renovatebot/renovate"
-  url "https://registry.npmjs.org/renovate/-/renovate-44.222.4.tgz"
-  sha256 "b38c81434d24cb93d58057e753ca05996c38e8dccb0454ed99648fc325d0bb32"
+  url "https://registry.npmjs.org/renovate/-/renovate-44.229.0.tgz"
+  sha256 "2c9d08fd2cce6be4908d61a35b10ea5f6bcf46e20154609c560b8ad60e9f491c"
   license "AGPL-3.0-only"
 
   livecheck do
@@ -10,11 +10,11 @@ class Renovate < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "705dc6c99c6f4141ec23ab3dbc18c5d82327cc80294e754373b13a3434d4e247"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "705dc6c99c6f4141ec23ab3dbc18c5d82327cc80294e754373b13a3434d4e247"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "705dc6c99c6f4141ec23ab3dbc18c5d82327cc80294e754373b13a3434d4e247"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "96d3a79ccf6135df2d71f166e2d0201a316f32b2e4e8e11f8f3a06d6db01b1a7"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "96d3a79ccf6135df2d71f166e2d0201a316f32b2e4e8e11f8f3a06d6db01b1a7"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f73fe4cc14a73d2a16e6a0d79834d0d81f15445947036c2c16d0e3779adeae16"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f73fe4cc14a73d2a16e6a0d79834d0d81f15445947036c2c16d0e3779adeae16"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f73fe4cc14a73d2a16e6a0d79834d0d81f15445947036c2c16d0e3779adeae16"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "ba8311e0063801c4158c84096a5c5082695e1d1cadfc197611289bad17c5d054"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:      "ba8311e0063801c4158c84096a5c5082695e1d1cadfc197611289bad17c5d054"
   end
 
   depends_on "node@24"

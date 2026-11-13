@@ -1,15 +1,14 @@
 class Openexr < Formula
   desc "High dynamic-range image file format"
   homepage "https://www.openexr.com/"
-  url "https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.5.3.tar.gz"
-  sha256 "ff1de95f4031c1c57c633e647dc97c15282d3aa3bc7fb90745f00f74de4a054f"
+  url "https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.5.4.tar.gz"
+  sha256 "cedafe3171176d20baea4e887ceacc74cbe3a5a06fbb30d9f0a394a4416e5f7b"
   license "BSD-3-Clause"
-  revision 1
   compatibility_version 2
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/openexr-3.5.3_1"
-    sha256 cellar: :any, sonoma: "6982655bb35c82b4f8745c35a1bc4b3ae8d68dc4ec5381f0b651e67d7c5d608e"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/openexr-3.5.4"
+    sha256 cellar: :any, sonoma: "d6e233e89564f14915a86033b055197bafa732426bd942be4778ca1de578c53e"
   end
 
   depends_on "cmake" => :build
@@ -35,6 +34,8 @@ class Openexr < Formula
     url "https://github.com/AcademySoftwareFoundation/openexr-images/raw/f17e353fbfcde3406fe02675f4d92aeae422a560/TestImages/AllHalfValues.exr"
     sha256 "eede573a0b59b79f21de15ee9d3b7649d58d8f2a8e7787ea34f192db3b3c84a4"
   end
+
+  deny_network_access!
 
   def install
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args

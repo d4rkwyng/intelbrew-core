@@ -2,8 +2,8 @@ class Grpc < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
   url "https://github.com/grpc/grpc.git",
-      tag:      "v1.85.1",
-      revision: "558b7e3b09e42e2160018732acbbf56c9094c84d"
+      tag:      "v1.85.2",
+      revision: "5a9ca1fb6bf364dfb1f9396cc020219ca7d117b2"
   license "Apache-2.0"
   compatibility_version 7
   head "https://github.com/grpc/grpc.git", branch: "master"
@@ -20,8 +20,11 @@ class Grpc < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/grpc-1.85.1"
-    sha256 cellar: :any, sonoma: "4403101442ada47463557c13595bc0fb2a221b3c39dea44c0f53940fe11362a7"
+    sha256 cellar: :any, arm64_golden_gate: "ed5655676254ac2f5858560008c17dea89e05cd54e6344ed57f638c04116b58e"
+    sha256 cellar: :any, arm64_tahoe:       "8d5eddb2b812ecda14f652794da36470f80fc393ef78f48e71fb9d35a640ec38"
+    sha256 cellar: :any, arm64_sequoia:     "95e53214b1947d95d035317d2f41d6fd2396c4b2ae44de733ba58a3ca2f13b71"
+    sha256               arm64_linux:       "ba82377ccaf2efa93aa6704146229ec7f2624ce08b74307e8cbdfdc170a8edb2"
+    sha256               x86_64_linux:      "e5bf5b1cb50253283f3c5b6dcc210c2db35ca5700bbc88224b9eecaeca63becf"
   end
 
   depends_on "cmake" => :build

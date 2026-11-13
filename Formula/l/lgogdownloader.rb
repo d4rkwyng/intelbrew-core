@@ -1,8 +1,8 @@
 class Lgogdownloader < Formula
   desc "Unofficial downloader for GOG.com games"
   homepage "https://sites.google.com/site/gogdownloader/"
-  url "https://github.com/Sude-/lgogdownloader/releases/download/v3.19/lgogdownloader-3.19.tar.gz"
-  sha256 "0fd3622f1cee4627048aafbbebd17dc38fd3ddb220c979e4a118eeab2cc665d4"
+  url "https://github.com/Sude-/lgogdownloader/releases/download/v3.20/lgogdownloader-3.20.tar.gz"
+  sha256 "14dbbaf7d6764143444dbb5be8a53d8fdea6d8647204e05ed81f8dd5e80a4fde"
   license "WTFPL"
   head "https://github.com/Sude-/lgogdownloader.git", branch: "master"
 
@@ -12,9 +12,8 @@ class Lgogdownloader < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/lgogdownloader-3.19"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "f64f8a600190f3ddf2cb3f545cbc4c1a1a4e271ce62458faabab74936263af0f"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/lgogdownloader-3.20"
+    sha256 cellar: :any, sonoma: "0edf5b685886c129d6194826976d5dde18507b8715808e7dcc81012791734bab"
   end
 
   depends_on "cmake" => :build

@@ -1,26 +1,22 @@
 class PostgresqlAT14 < Formula
   desc "Object-relational database system"
   homepage "https://www.postgresql.org/"
-  url "https://ftp.postgresql.org/pub/source/v14.24/postgresql-14.24.tar.bz2"
-  sha256 "a7fa7ed3d558172355f51406097a7bd4f6b473be80f311ef7cda96bf383d8897"
+  url "https://ftp.postgresql.org/pub/source/v14.25/postgresql-14.25.tar.bz2"
+  sha256 "09af980eb3a5d0a8ad7a34b95031b1988bbcd430c87700a62d6234c0ed97ae4c"
   license "PostgreSQL"
-  revision 1
-
-  livecheck do
-    url "https://ftp.postgresql.org/pub/source/"
-    regex(%r{href=["']?v?(14(?:\.\d+)+)/?["' >]}i)
-  end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/postgresql@14-14.24_1"
-    rebuild 2
-    sha256 sonoma: "354c97b0046f24c01c58427335e88420d7d2f9481152e4669a00808c0df39fbf"
+    sha256 arm64_golden_gate: "cf94f2f017c73452d344292999128c43999d2f5bb2fd0fe6d08a9730fa7ddf4d"
+    sha256 arm64_tahoe:       "f7f90fe2dbed89be87146f68256044ac35e2baffc10eed12322d5e6f971d537a"
+    sha256 arm64_sequoia:     "712ac08614d28e980d7869afc39475958c9f434143212520b77594b8c51aff7b"
+    sha256 arm64_linux:       "d88a122cc49cc38bb50f7d1d3ccc39752c92d9f60982266e875f70b786f5a10b"
+    sha256 x86_64_linux:      "22ed6d4e38be470b69026d7a7b168b462ded51b601dd2fc542c35dee3b2850c4"
   end
 
   # deprecating one year before the last release,
   # see: https://www.postgresql.org/support/versioning/
   deprecate! date: "2025-11-12", because: :unsupported
-  disable! date: "2026-11-12", because: :unsupported
+  disable! date: "2026-11-30", because: :unsupported
 
   depends_on "pkgconf" => :build
   depends_on "icu4c@79"

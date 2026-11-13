@@ -2,6 +2,7 @@ class Llvm < Formula
   desc "Next-gen compiler infrastructure"
   homepage "https://llvm.org/"
   license "Apache-2.0" => { with: "LLVM-exception" }
+  revision 1
   compatibility_version 2
   head "https://github.com/llvm/llvm-project.git", branch: "main"
 
@@ -23,8 +24,8 @@ class Llvm < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/llvm-23.1.5"
-    sha256 cellar: :any, sonoma: "bea51d9a08b90eed4d1cdb14756148798b825002600ec8a305d85dfabce357f8"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/llvm-23.1.5_1"
+    sha256 cellar: :any, sonoma: "e7e22ca4923ec198db6fe17ba8696142bc2e4a28029fe6fb63a599549d21dd7f"
   end
 
   keg_only :provided_by_macos

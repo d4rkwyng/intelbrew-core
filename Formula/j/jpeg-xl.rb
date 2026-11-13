@@ -1,11 +1,10 @@
 class JpegXl < Formula
   desc "New file format for still image compression"
   homepage "https://jpeg.org/jpegxl/index.html"
-  url "https://github.com/libjxl/libjxl/archive/refs/tags/v0.12.0.tar.gz"
-  sha256 "03e9be69a30be4011f559da75328b6d7cea8ad921fabfbd551ce10bf45cdc992"
+  url "https://github.com/libjxl/libjxl/archive/refs/tags/v0.13.0.tar.gz"
+  sha256 "24d18c9af2d1f5a17730b3f8d3f70a5c16e5ac303f5d9d5fe9dc00cf7ca82af2"
   license "BSD-3-Clause"
-  revision 1
-  compatibility_version 2
+  compatibility_version 3
 
   livecheck do
     url :stable
@@ -13,9 +12,8 @@ class JpegXl < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/jpeg-xl-0.12.0_1"
-    rebuild 2
-    sha256 cellar: :any, sonoma: "62d80db9f1983a6fffafb8c028c2dd8fffb95a7c105d67872f876c1e4e1b24c4"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/jpeg-xl-0.13.0"
+    sha256 cellar: :any, sonoma: "685c2f17dd51b2d8e8a697aee8c24c71e16c9cc8652afd915794dc097a3a4591"
   end
 
   depends_on "asciidoc" => :build
@@ -39,15 +37,17 @@ class JpegXl < Formula
   # These resources are versioned according to the script supplied with jpeg-xl to download the dependencies:
   # https://github.com/libjxl/libjxl/tree/v#{version}/third_party
   resource "sjpeg" do
-    url "https://github.com/webmproject/sjpeg/archive/94e0df6d0f8b44228de5be0ff35efb9f946a13c9.tar.gz"
-    version "94e0df6d0f8b44228de5be0ff35efb9f946a13c9"
-    sha256 "ac94917fe745a674eabf1e044f23ec55cd5a548c9869c06ec4b19da14ee0227d"
+    url "https://github.com/webmproject/sjpeg/archive/dd4d9857c58a25713711a46d37385ad23ca2177e.tar.gz"
+    version "dd4d9857c58a25713711a46d37385ad23ca2177e"
+    sha256 "94ee1d632b32ed9a1487afde078705fdf5772e8f1f54d80e7cb283b8f0ef8a95"
 
     livecheck do
       url "https://raw.githubusercontent.com/libjxl/libjxl/refs/tags/v#{LATEST_VERSION}/deps.sh"
       regex(/THIRD_PARTY_SJPEG="(\h+)"/i)
     end
   end
+
+  deny_network_access!
 
   def install
     ENV.append_path "XML_CATALOG_FILES", etc/"xml/catalog"

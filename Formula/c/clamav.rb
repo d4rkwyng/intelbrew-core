@@ -76,6 +76,8 @@ class Clamav < Formula
 
   skip_clean "share/clamav"
 
+  allow_network_access! :test
+
   def install
     args = %W[
       -DAPP_CONFIG_DIRECTORY=#{pkgetc}
