@@ -15,11 +15,9 @@ class JfrogCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "84ecbe608a095ee3a80071b0ed7216ef337eb916bf668e24131eabd50e38c69c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "84ecbe608a095ee3a80071b0ed7216ef337eb916bf668e24131eabd50e38c69c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "84ecbe608a095ee3a80071b0ed7216ef337eb916bf668e24131eabd50e38c69c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "2322126dfde0963ddf47bbb51f1f9c8e341b4a6a8ce5fdc3c7ec87c7afd4fb51"
-    sha256 cellar: :any,                 x86_64_linux:      "b30a667c0e161d166a5a569543a9bc65a3fd0d87515b3ec63aceea6ca613a8eb"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/jfrog-cli-2.132.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "5cbc4b8ddb07a41fcdd2e679e89c7eff18562e27e872299428c9e3e023da06cc"
   end
 
   depends_on "go" => :build

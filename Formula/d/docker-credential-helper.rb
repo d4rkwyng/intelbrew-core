@@ -7,11 +7,9 @@ class DockerCredentialHelper < Formula
   head "https://github.com/docker/docker-credential-helpers.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e10dba403edee43b5d503060f486bac64e025eaa5818a934f629ffc702becade"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "27219ec92bc2ee7f9e34e22da3bb7a9efe58b6169fa5102bfd2fc10f7f0912ef"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9316607c2830d78d0cc905d2b6790399e72c6e3b2093418b14bdc6bafabdbf94"
-    sha256 cellar: :any,                 arm64_linux:       "d31607278819b9009ecd289d41084332b0e536eb52de069450be8d03101ab688"
-    sha256 cellar: :any,                 x86_64_linux:      "55dafb1f5c682ba930452b94b1de4b617fcdd93394675c911ed39a3f71c42325"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/docker-credential-helper-0.9.13"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "6fe09f6c8b5a9f688f963c9e2bf83660a4cb3c3f7b97d0bc1c3a3e0946c48774"
   end
 
   depends_on "go" => :build

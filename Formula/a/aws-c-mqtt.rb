@@ -1,10 +1,9 @@
 class AwsCMqtt < Formula
   desc "C99 implementation of the MQTT 3.1.1 specification"
   homepage "https://github.com/awslabs/aws-c-mqtt"
-  url "https://github.com/awslabs/aws-c-mqtt/archive/refs/tags/v1.1.2.tar.gz"
-  sha256 "7ef8f2a031992cc42564bba4e3f937fec925247051da6e0c730aa964639d284f"
+  url "https://github.com/awslabs/aws-c-mqtt/archive/refs/tags/v1.1.3.tar.gz"
+  sha256 "44378f1896274227fdb720a39a49f83978301dfe95107b842733fe6e8d56e085"
   license "Apache-2.0"
-  revision 1
   compatibility_version 4
 
   livecheck do
@@ -13,8 +12,8 @@ class AwsCMqtt < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aws-c-mqtt-1.1.2_1"
-    sha256 cellar: :any, sonoma: "a5567e5821c4199694b1d463af0d40d2f453a51520cf2481fa3eba0fe2e9b39b"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/aws-c-mqtt-1.1.3"
+    sha256 cellar: :any, sonoma: "b4e903db63b4c10462cdfee6b78a77e2a5a1189c696247fc93ae65bcaa814360"
   end
 
   depends_on "cmake" => :build

@@ -6,11 +6,9 @@ class Vale < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f6d61669794291915d614c586f37f880d66c6b6bb08aa57b69c7fe95082c30d0"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f6d61669794291915d614c586f37f880d66c6b6bb08aa57b69c7fe95082c30d0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f6d61669794291915d614c586f37f880d66c6b6bb08aa57b69c7fe95082c30d0"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "2ec521a24142b42036a97b88ce344c6a9c878e5dd880ced12d713e00d209e855"
-    sha256 cellar: :any,                 x86_64_linux:      "faf377fd731603c8b341178805cddf78345fee8d5d65f6d849cd83e17145b763"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/vale-3.27.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "0a9833b22c5616ca14bae6e90a1ec12d15672fb732cfb4ee4a6077255124f949"
   end
 
   depends_on "go" => :build

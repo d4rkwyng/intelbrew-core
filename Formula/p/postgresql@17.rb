@@ -11,11 +11,9 @@ class PostgresqlAT17 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "11db98ebfada77d52ed6bf142e0646f5bcbc05f599e698ce22b3582cf6e79dd1"
-    sha256 arm64_tahoe:       "3397650718a1162408707c4687228f3305f785e9af8c53e9872b155e8ee6a23c"
-    sha256 arm64_sequoia:     "f17b6e907936d9e02b6b860e876feb66c5da3cc89906c1b80e52d5b849d56138"
-    sha256 arm64_linux:       "0f391f91780d377f4900a88582ad446cfdaa9dfa91a2a2cd3ae5879bd267ae73"
-    sha256 x86_64_linux:      "d088cb1b43322c41b8600ecb57fcb93278c1354d2928132e949b149ffee410a0"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/postgresql@17-17.12"
+    rebuild 1
+    sha256 sonoma: "f1ed24ba3daa44d85fe7064c1c5a51bbb3c1c97f20b3b56cb203d18c885c7de0"
   end
 
   keg_only :versioned_formula

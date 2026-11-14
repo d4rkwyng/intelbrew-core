@@ -11,11 +11,9 @@ class PostgresqlAT15 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "50f9d3526b91adc9adc45ad0c4ad896c37d78431e7c99598d4000de7a5639055"
-    sha256 arm64_tahoe:       "f7178d45418e85ecc8eca0f39597bc59541e7c5977afaa5b226a344098ee48eb"
-    sha256 arm64_sequoia:     "58fee85fb50d9c4c6eb997619977ab63a73a61c4d090e6f3e088cb65756dfae8"
-    sha256 arm64_linux:       "bd60977174e42ab65f212059850997a4c49e41ffaffbdea4da625372f8be43cd"
-    sha256 x86_64_linux:      "62ed4b034d6e877d28e39c6acd868cc3e537c915caa4969f376762c0b9e98ff2"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/postgresql@15-15.20"
+    rebuild 1
+    sha256 sonoma: "a1e822ee277ededda40c189391cdc2783445cf43a02601fb2adcbd094a1f6a05"
   end
 
   keg_only :versioned_formula

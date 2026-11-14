@@ -14,11 +14,9 @@ class Terragrunt < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "f2c31ea4d7a1bf863c2ccacd759b84050619fb3f92f30e1c33b2b9975512a587"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "f2c31ea4d7a1bf863c2ccacd759b84050619fb3f92f30e1c33b2b9975512a587"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "f2c31ea4d7a1bf863c2ccacd759b84050619fb3f92f30e1c33b2b9975512a587"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "b31be6b69e24589d27f631fa2fcb5332718cb7b450391f75b01e4f28d0dada69"
-    sha256 cellar: :any,                 x86_64_linux:      "c5fccb9f8c546c5cc7e8e4335b37ab761c9c8f66404e8c6579d1ab5750a727c2"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/terragrunt-1.2.2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "23a542824b410628cfc1d932f6d4be9a05e780076bbad80d5e214944ae2362e3"
   end
 
   depends_on "go" => :build

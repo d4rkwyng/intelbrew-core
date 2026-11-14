@@ -21,11 +21,9 @@ class GoAT126 < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c6aef8d7399b4f83f90615a14e37ab0d9d77254f751a4f4af8becccf45a24ea9"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "c6aef8d7399b4f83f90615a14e37ab0d9d77254f751a4f4af8becccf45a24ea9"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "c6aef8d7399b4f83f90615a14e37ab0d9d77254f751a4f4af8becccf45a24ea9"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "609bf2a1bfeff56d1742bf5851c36014d688ef0c2a360b7d67c56151122f28fe"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a7953b8c19e0c8575a651fcfae700d0c131c5457e340b1fc13c5aa9ec1a319f2"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/go@1.26-1.26.11"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "598c4d17b2a6e3ad27f435327f63898d8f267ed7086e98a3cc7e236380374b4b"
   end
 
   keg_only :versioned_formula

@@ -6,12 +6,9 @@ class Libredwg < Formula
   license "GPL-3.0-or-later"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "52af574f09f32d0b027b86ae788c63bc7abbbd9c4fa60782db4e80a7cc9258b3"
-    sha256 cellar: :any, arm64_tahoe:       "2e5efe7bb02a7067cd67e028da20b90a56d45fb126352d7d963de8ff8c6a2298"
-    sha256 cellar: :any, arm64_sequoia:     "88669a054da909cb7af46735a28230457a623f24fe729e9ba638d49ae883850c"
-    sha256 cellar: :any, arm64_sonoma:      "74a6c08fd39ff26029d8e5b784f878a8081602f7d5f3bb77f7df95849c5c89cd"
-    sha256 cellar: :any, arm64_linux:       "278b4958a068dc54174990420d5ed0f496368f143559551e74332bb395182f65"
-    sha256 cellar: :any, x86_64_linux:      "699b040982d5ba32013f54f09f13883b026c9c9c3bed42e56a8ef0a6193991fd"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libredwg-0.14"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "4e56d80347a62fbba71e0991213a93025d8e9fcc6132edeadb2cb53c80f5359a"
   end
 
   depends_on "autoconf" => :build

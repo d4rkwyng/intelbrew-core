@@ -11,11 +11,9 @@ class TyposCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "c422cb13a1c26e9165c8384c05753ae13d750a2548e5df1412ca3acd0f373a1a"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ee7f5d3f42def66886298d5e4f4a75c042a13500053d7b48d22aba38fe7b4f3a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "fb9c3481b64390f0ef3c90271d1f24a4785cf036956b73c7727a172a4e2ce316"
-    sha256 cellar: :any,                 arm64_linux:       "ce57ce7327358856fdcd527d8a61abba2c292454a0a4ff26a7c684a218e24c58"
-    sha256 cellar: :any,                 x86_64_linux:      "d3ac5e19433cdaaa357f260b7f80371cfde08717225a0cc65077d606ff68765c"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/typos-cli-1.52.2"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "f45e07861ffd9fa5e1193aaf1e80fbb395bc1b34309fffb2c0e28d8e25eb4e19"
   end
 
   depends_on "rust" => :build

@@ -8,11 +8,9 @@ class Httpd < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_golden_gate: "1960622bcc500aa4c7e8cc10d1ad12b3c9092aa1ae9a742b2a971fa60c513ed0"
-    sha256 arm64_tahoe:       "25332dee39649e12296e23467ab7c1397e5b967e32afe41e367ebbb9e482f395"
-    sha256 arm64_sequoia:     "70473f73fa318bc75e30fe319306b8790ee31404f844fd4947a0dbd9bb2d6e13"
-    sha256 arm64_linux:       "44d76557509648a8e81a08b3f81d719452fcd75607ba7782a04ee84b930c4bbc"
-    sha256 x86_64_linux:      "05f7da1afe4e495e34834fef6d046e7f1bbc0ae10222661af15d7216a964cb39"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/httpd-2.4.71"
+    rebuild 1
+    sha256 sonoma: "e69aff33d98be8567cd59b91a5e7cc62e5fca1b35077555000ef224df6cc8502"
   end
 
   depends_on "apr"

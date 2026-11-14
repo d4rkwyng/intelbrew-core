@@ -11,11 +11,9 @@ class Glab < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "829bc24a819b48e3e9a3bf541f79c61f8ee4db1f91d40cdf268bc2c494a9da9f"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "829bc24a819b48e3e9a3bf541f79c61f8ee4db1f91d40cdf268bc2c494a9da9f"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "829bc24a819b48e3e9a3bf541f79c61f8ee4db1f91d40cdf268bc2c494a9da9f"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "dd24dcc2d49ccee24beee51fc213cfa434be2edcdcf83a08ebb407f61b42544f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "a80599122f8596bde1ba46d905f2fa66408648af4e63cf4be9b371e35fc74945"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/glab-1.130.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "cae75617944d74a39c394b6f4d21748e7a4c35d06caa298c7c24e1bbb789af9b"
   end
 
   depends_on "go" => :build

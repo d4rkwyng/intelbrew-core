@@ -11,11 +11,9 @@ class PostgresqlAT16 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "d8d1d22d2e6cdadb2d69591d2e663973d5c002b32e7dffddf316a42a4db29c70"
-    sha256 arm64_tahoe:       "1469c2766827955cb66e3a47d6fb9f6972ce9c27eb424703add4c2bb1fbd17c0"
-    sha256 arm64_sequoia:     "cc87fabe57f308daed5b522821fdb031a02ca36dcd85ffe8d9996fdea1bcc2aa"
-    sha256 arm64_linux:       "68ff5bae83c2478eb80c5dcb58d7f80a3566820731a484c43733c964eedfbbd9"
-    sha256 x86_64_linux:      "6bae6f42b12363e14ee9ff6b6b4b391daf54c9f2f749909326526b6f19f7b738"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/postgresql@16-16.16"
+    rebuild 1
+    sha256 sonoma: "247e53274898529388db796bcde7163f2857d079951c00c725e5ad0e68cbded5"
   end
 
   keg_only :versioned_formula

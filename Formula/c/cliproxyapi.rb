@@ -1,8 +1,8 @@
 class Cliproxyapi < Formula
   desc "Wrap Gemini CLI, Codex, Claude Code, Qwen Code as an API service"
   homepage "https://github.com/router-for-me/CLIProxyAPI"
-  url "https://github.com/router-for-me/CLIProxyAPI/archive/refs/tags/v8.0.67.tar.gz"
-  sha256 "a7ef01a93bd2486d7d3158a47e045d211f9cdd8cd39a6172e59ce64e0e952d32"
+  url "https://github.com/router-for-me/CLIProxyAPI/archive/refs/tags/v8.0.69.tar.gz"
+  sha256 "4a08df3fed4976837e826a83acc47c2347b5136247e27398d61e08b035b7c97e"
   license "MIT"
   head "https://github.com/router-for-me/CLIProxyAPI.git", branch: "main"
 
@@ -13,11 +13,8 @@ class Cliproxyapi < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "aa2bbe4868fce5be95aa61c022480196358b6052c59ccbec469d245a1af967f5"
-    sha256 arm64_tahoe:       "1c67782cd911e571be0bc7324537087c1c5bfbfa1385426bbcf1b434a1c3839d"
-    sha256 arm64_sequoia:     "d4be40889e6982e37839f4fd9cc491ecff85b3addd15c84b6a7985cdcaa8fd06"
-    sha256 arm64_linux:       "067b0d3eb5b7dd4556e501f8adc202f3a46c695b9981249a722e5f6363a792bd"
-    sha256 x86_64_linux:      "2b064f771dcfe781248f725cc036cac946738f403409267ecffb818cf3032c4f"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cliproxyapi-8.0.69"
+    sha256 sonoma: "4b7a28160be9b92c3a9801b4959863bd821dcede3c65d9e2f0919996a17fb791"
   end
 
   depends_on "go" => :build

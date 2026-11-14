@@ -7,11 +7,9 @@ class DockerBuildx < Formula
   head "https://github.com/docker/buildx.git", branch: "master"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "66f42af9f283b0e42b20a0ae8add21686e3eb77e3edd217b0fc6bfd034f85fe8"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "66f42af9f283b0e42b20a0ae8add21686e3eb77e3edd217b0fc6bfd034f85fe8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "66f42af9f283b0e42b20a0ae8add21686e3eb77e3edd217b0fc6bfd034f85fe8"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "8529ce60dd09ac3354935b821d27baf9794ab35aecf22ec1842ca53370d23382"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "38b776e4b9786485d1c690fae56a6c2d3cf9e5dcb27118931849d9115b9f4aea"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/docker-buildx-0.39.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "b6d271185eefc19f93cc8abd3d8d341b97310f876059a509ec88a06af92ca308"
   end
 
   depends_on "go" => :build

@@ -6,11 +6,9 @@ class TerraformDocs < Formula
   license "MIT"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "2f22ebc0bd29b30330fbe74d5f0cbbe617d8b3726e501a5e69e9cb0866a8ba05"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "2f18874bb6ad48953697c9dd2349b7b8a5524661f89be8f06cc831b864167b36"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e2e5e4b323ef69183982d9f2630e9e2aa45d180f7eca8a41d97b36246a23b314"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "4ec6b75d9c2a561929a098f38c3e7ef70946960c54ff72f2dbe5006baa7e6f0e"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "0e8f8c17e12cbf7cc6b2dab9b578f036ae48ef0f098569fdc9d600185774856e"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/terraform-docs-0.25.1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "bb458ca0ff581fd7b3ce020a4b0672b7d90861586a34e8270085a48122ce66a5"
   end
 
   depends_on "go" => :build

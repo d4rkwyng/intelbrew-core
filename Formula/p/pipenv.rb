@@ -9,11 +9,9 @@ class Pipenv < Formula
   head "https://github.com/pypa/pipenv.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9de4bf9dde687732653652d58c10805d28e389da012f399e9682a975f2b44ea4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9de4bf9dde687732653652d58c10805d28e389da012f399e9682a975f2b44ea4"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9de4bf9dde687732653652d58c10805d28e389da012f399e9682a975f2b44ea4"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "5c245061b541e06aa212645a108203d919ab320a37dac4cb653da19dba329cb6"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "5c245061b541e06aa212645a108203d919ab320a37dac4cb653da19dba329cb6"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pipenv-2026.11.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "a2ffbc80210d4ebe4a32923c40a049eb7d6d6fd1b6580a838177e01baa4d47d8"
   end
 
   depends_on "certifi" => :no_linkage

@@ -1,15 +1,14 @@
 class Cloc < Formula
   desc "Statistics utility to count lines of code"
   homepage "https://github.com/AlDanial/cloc/"
-  url "https://github.com/AlDanial/cloc/archive/refs/tags/v2.10.tar.gz"
-  sha256 "a8fac35f4cf42728765580ba11afc2568ad205509a22204663f526169548436d"
+  url "https://github.com/AlDanial/cloc/archive/refs/tags/v2.12.tar.gz"
+  sha256 "e49b2ccad4c9c80e0c3f2a5c662c4097c73faf9867607a892f8e4c6dd1c7d861"
   license "GPL-2.0-or-later"
   head "https://github.com/AlDanial/cloc.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cloc-2.10"
-    rebuild 2
-    sha256 cellar: :any_skip_relocation, sonoma: "a0d4c85e7c17a2ca192b9399940c6136fb3fc8ecfee89ff2552070cd97984f3d"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cloc-2.12"
+    sha256 cellar: :any_skip_relocation, sonoma: "266e0f1a1a0ff8e198d48cf5a528fc6fc0ca8a0e027c5ec22235664ce8a1ffa6"
   end
 
   uses_from_macos "perl"

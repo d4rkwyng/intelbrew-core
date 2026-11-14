@@ -12,11 +12,9 @@ class NodeAT24 < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "44232f22848c7edfacf7be990bcc396cc78da5083cb2987a67756a63d75a4f1d"
-    sha256 arm64_tahoe:       "481f3a308565ad1a7d7a00ba96c1ca3e502fea85149255593c23768321769bfc"
-    sha256 arm64_sequoia:     "ca2eb119b5a091c3cd6d8a1f6da6cb110f2c9fd749b276715db454075b89c045"
-    sha256 arm64_linux:       "2d277d545727a5c827a50495535d02d61e957c8f28bc041aa286b28242b7a564"
-    sha256 x86_64_linux:      "f2378669fc8343dd56003f3888cb30a18d7e5984349d703144eb66c390523010"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/node@24-24.22.3"
+    rebuild 1
+    sha256 sonoma: "ea043fb6258064fe1921c141c1558d1411ae28c16065fc898a8ac4509af45830"
   end
 
   keg_only :versioned_formula

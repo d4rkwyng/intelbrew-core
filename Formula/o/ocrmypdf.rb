@@ -8,11 +8,9 @@ class Ocrmypdf < Formula
   license "MPL-2.0"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "4ebe62a34fde5d4ee9eb5ba058da9f25237859e017415d152dca75203897a691"
-    sha256 cellar: :any, arm64_tahoe:       "288c92ad1232dffaddeeb6c63843cf13841ecbd262eb22e57879716c529568d8"
-    sha256 cellar: :any, arm64_sequoia:     "15bac0ff5ec94a1e2bc5390653fdd57a327b643b462557dd203428ebb4ccf7b9"
-    sha256 cellar: :any, arm64_linux:       "4ce789dad5c71c532ae9d33b51131e75f58a29e125c183bddd743f5d5b2d489f"
-    sha256 cellar: :any, x86_64_linux:      "005f48a7506c5e5f5c0a2ef561b6b910d2bfef417b0f731319f8f5ecd2cda594"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ocrmypdf-17.14.1"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "9229ce85f312674311ada4e5aa7f3a13edbce96cd20f5556e7cdb9ef56590d70"
   end
 
   depends_on "cmake" => :build # for pikepdf

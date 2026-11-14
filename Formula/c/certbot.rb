@@ -9,11 +9,9 @@ class Certbot < Formula
   head "https://github.com/certbot/certbot.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "31f847afd66bf3f9e491a23f768d21d5c72f80bc4a6c238a7f6a570fb65e1f1c"
-    sha256 cellar: :any, arm64_tahoe:       "0e4b3472d7aa0c3e19fd73ab5e6b00b5e849510a33101dfc42363a5a4f72d025"
-    sha256 cellar: :any, arm64_sequoia:     "bab021a95242b7a2db3b9ef19c08e00ca01fa5cff4ae5cfcab696562dd7ef1fb"
-    sha256 cellar: :any, arm64_linux:       "0df96a12f480bc4c5ec9c23a6aed23c012d201ff51ff51ac3b9b2399ed86df1a"
-    sha256 cellar: :any, x86_64_linux:      "613ccbac26efd1cc9e1af9872e2bc40ab2396ab4166f8e5ea7a490f8c5621b67"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/certbot-5.10.0"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "f5a62c563922a12a87f60c33bb15c36d98b27d5e88eebc4def137ad8825dcbf1"
   end
 
   depends_on "augeas"

@@ -7,11 +7,9 @@ class OsvScanner < Formula
   head "https://github.com/google/osv-scanner.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "16c47f14fb532822191c9d5bee870101928273fbab88e190340c96b340ab355e"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "6d0d61874effbde485f5b4bda0481e1707237ec788a80e431314a843b0e358e0"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "95d9a9295755a8d067a0bf0d2cf164e54ba8f08b40bdefa0169da150e641e94b"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "bb55208b8bdf7b9f7d4ea00cb79e7a708b67e404b657bc2900aba8b8600188ec"
-    sha256 cellar: :any,                 x86_64_linux:      "5d22c06e81022d2adf7450ec7931a410e4697a70765bb5c7323228782192d3a2"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/osv-scanner-2.7.1"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "c6bac9043b0dc697c23a3acd38b5e204566b2e6f22d418c41ba1c65f60e0f7af"
   end
 
   depends_on "go" => :build

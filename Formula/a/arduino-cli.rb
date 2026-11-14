@@ -12,11 +12,9 @@ class ArduinoCli < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "7414060afe50509dffdd50f3f83f8020983fa335170a2e8f740cadbc8f43b551"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1a39ed700252fd746ae57aacc6ebbd51abf4f2493483f169e5995dc50425ccb8"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9d344cca1ac9b903b1a6e7ebb0d5dc0b0eb11f8fb4c39dc0149d9dbe6b12136c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "cfeda7b7926fa21ccca6b27c4937944db876ed6023e36ea504eb84ceb0221c98"
-    sha256 cellar: :any,                 x86_64_linux:      "856e2730f80a3d04790ff9b98c8b7d4d5994924c310600f86039223dbcad8b28"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/arduino-cli-1.6.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "cb9039624c6abaea89af37bf2f559b2c006faddb30af2c959050f6d1cfcaaa02"
   end
 
   depends_on "go" => :build

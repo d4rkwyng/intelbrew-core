@@ -17,11 +17,9 @@ class Ollama < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1d34b7e0e53c93746f8c1ae7b821228c2f3018a4db32943e4385c08fb92b8619"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "148aa2dbbea7198381fb4b641bb9655c02d567426049b6281fda5c19895015b1"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e5e7ebbfd10902b16f1aae18313d48a5cf4c009cfe9da187ada97292f9ea042e"
-    sha256 cellar: :any,                 arm64_linux:       "3e3acf32a8a6f58b9830aab14c0fbdcbd01ac36e33a42926225ebed8eb1ddf24"
-    sha256 cellar: :any,                 x86_64_linux:      "0468cd180e9e74c6cdbd96f00667782f91194acc39f3b166bef0be22fd6c842d"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ollama-0.40.16"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "c692e7aa84b769d2a57b7cb58a63447fc63e232e09ea3326a50cd2a26b73fe38"
   end
 
   depends_on "ccache" => :build

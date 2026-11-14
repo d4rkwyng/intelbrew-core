@@ -15,11 +15,9 @@ class Dbus < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "9f8972653845f2bfa57068ec941f0b036587e5d2f1d8415909899759fada1dae"
-    sha256 arm64_tahoe:       "3d1593d9f05133c8e58571cc3270a5a1ede8c6d977c1bc3fe10516514a021acd"
-    sha256 arm64_sequoia:     "cb4cb9ffcc60f6dbc1631df589c4d37c9d8db68c6def04d547963e8979d8aefc"
-    sha256 arm64_linux:       "2461579d34d6fc487215889602d3f14a1466e1f84b1c6a8a2f78424173d5c23e"
-    sha256 x86_64_linux:      "e41521843753f3185efa28311acf0bac57ee06341cb3bb51fbc22bcfee739404"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/dbus-1.16.4"
+    rebuild 1
+    sha256 sonoma: "a76157d260f67d75fe18bcd8c8ece1e7e38097c1245146525217974983e2d9ee"
   end
 
   depends_on "docbook" => :build

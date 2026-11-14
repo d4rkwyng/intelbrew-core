@@ -14,11 +14,9 @@ class ImagemagickFull < Formula
   end
 
   bottle do
-    sha256 arm64_golden_gate: "4aec755bf08bb164ac093d8afcf935bc5526c478f152d92a4db1e7269bd31357"
-    sha256 arm64_tahoe:       "69805e36b1b224c683e0b92c28b1068e4c629aa0230469a71450861329c00955"
-    sha256 arm64_sequoia:     "a020be67666057f580b84da18b0446715c311edc7bd834ed879575639e7d9c63"
-    sha256 arm64_linux:       "6c9500a5912ad2e4f533528416787f7ca94e0c111c7f5d3003a263fda61f448a"
-    sha256 x86_64_linux:      "21800a11d045afd52c4e81f8b57077c9ef248d8be83f328ef192a57a0dc8b487"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/imagemagick-full-7.1.2-35_1"
+    rebuild 1
+    sha256 sonoma: "4379e10a5a2a754ea946c5203a20ab6cbb7dddf57fd6d056a4fcb456f3711f77"
   end
 
   keg_only :versioned_formula

@@ -7,11 +7,9 @@ class CloudSqlProxy < Formula
   head "https://github.com/GoogleCloudPlatform/cloud-sql-proxy.git", branch: "main"
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "099f16643d83ed0f07e962549d2b297fff2323737481c8e48fa71bd3351445a1"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9017cbb29dcd8378b8202a7b16c4326a31be6ca1368fe7c2aceae85cfe320421"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e919a099a87554420ad4f3391dbd6b10c5a1f334e0d1fe4245d8cc4c95a20eed"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "cb3bc483e9b0c2cf7cc8385e870705d4b1571d7b13f1945a927efe8d4f37a60a"
-    sha256 cellar: :any,                 x86_64_linux:      "a368d2391db504faa012f99c48c4218ed1633d26c26698810a70699c0b97b3a0"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cloud-sql-proxy-2.28.0"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "816a402cd300ad5c187e2c449087e708512cada2451ab34d561c01d6af2385b6"
   end
 
   # TODO: unpin go@1.26 when Go 1.27's ML-DSA ClientHello no longer gets reset by TLS middleboxes
