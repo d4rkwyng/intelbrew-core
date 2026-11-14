@@ -14,14 +14,22 @@ class Fish < Formula
 
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/fish-4.9.3"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "afb46312a8ebf5b63d5848a318e334ac342987dde2e97bc5a88ecf3945ffb4ca"
+    rebuild 2
+    sha256 cellar: :any, sonoma: "53dc12b44212add74a02b75570512c24e2969450800678c70daebef0d051b139"
   end
 
   depends_on "cmake" => :build
   depends_on "rust" => :build
   depends_on "sphinx-doc" => :build
   depends_on "pcre2"
+
+  # Fix inline install code parsing with CMake 4.5.
+  patch do
+    url "https://github.com/chenrui333/fish-shell/commit/33502c2cc0c38ccfea820dbe364858273ef70fa8.patch?full_index=1"
+    sha256 "63f6db1de990fec0d60dcb8b1365c96fa09dd39e40fd649e33358373ec3474f6"
+    type :unofficial
+    resolves "https://github.com/fish-shell/fish-shell/pull/13097"
+  end
 
   deny_network_access!
 

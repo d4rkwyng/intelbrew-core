@@ -1,8 +1,8 @@
 class Depot < Formula
   desc "Build your Docker images in the cloud"
   homepage "https://depot.dev/"
-  url "https://github.com/depot/cli/archive/refs/tags/v2.103.13.tar.gz"
-  sha256 "2c29159dd0415b365d9fe99717ea6d07971087d97964afe5804db7e7af8bcf7b"
+  url "https://github.com/depot/cli/archive/refs/tags/v2.103.17.tar.gz"
+  sha256 "ab2ba78017ec1dd82fd2eff2982b1ececec5e3e9aa6a5704186c26af8558d2a4"
   license "MIT"
   head "https://github.com/depot/cli.git", branch: "main"
 
@@ -14,11 +14,11 @@ class Depot < Formula
   end
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "1fdbc18d89caf37fc6319e3e41d2cf215940103a33cba42232782fee9c7cda64"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "1fdbc18d89caf37fc6319e3e41d2cf215940103a33cba42232782fee9c7cda64"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "1fdbc18d89caf37fc6319e3e41d2cf215940103a33cba42232782fee9c7cda64"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "c62126c2a883358b5ccffb8314df4e8387d272103d41a9e93043d0381698d1ca"
-    sha256 cellar: :any,                 x86_64_linux:      "6f3a366566cf5f1d7c354d7caa5dee2409e51712cc4b5256c224ec859c3cbfce"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9359c27faa5c8f2dfa7e03d66e387a6de6c3e77b223d0fad6721f06f97171f1d"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9359c27faa5c8f2dfa7e03d66e387a6de6c3e77b223d0fad6721f06f97171f1d"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9359c27faa5c8f2dfa7e03d66e387a6de6c3e77b223d0fad6721f06f97171f1d"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "27ca504da73bfb02109ed8276c6e3cf88931986509267cbb3832f908db23fe81"
+    sha256 cellar: :any,                 x86_64_linux:      "0609687cb61254a69a4e49c0d022a5d1432fef7baa6190844d0b4bc01c797625"
   end
 
   depends_on "go" => :build

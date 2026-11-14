@@ -1,14 +1,14 @@
 class Freerdp < Formula
   desc "X11 implementation of the Remote Desktop Protocol (RDP)"
   homepage "https://www.freerdp.com/"
-  url "https://github.com/FreeRDP/FreeRDP/archive/refs/tags/3.33.0.tar.gz"
-  sha256 "3b5e7733e667ad66f54e0db51d952268c9d08b2e71a4fade44c716ab29dd5657"
+  url "https://github.com/FreeRDP/FreeRDP/archive/refs/tags/3.33.1.tar.gz"
+  sha256 "6b6da1e7217f924b033da6896e70eb4c4a447c3900d03c0d10179062f0a7d495"
   license "Apache-2.0"
   head "https://github.com/FreeRDP/FreeRDP.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/freerdp-3.33.0"
-    sha256 sonoma: "f8c6a7af083bdbebb4b21d511e3adae7a6fd9f0607723a76db747b08f35f3af3"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/freerdp-3.33.1"
+    sha256 sonoma: "a473c156737981000e07f0b4b8977ffd64af22604aae0c7abe6ce2ab82215267"
   end
 
   depends_on "cmake" => :build
@@ -63,8 +63,6 @@ class Freerdp < Formula
       -DCHANNEL_RDPEWA=ON
     ]
 
-    # Intelbrew: a declaration right after a label is C23; Apple clang 16 rejects it under C11 (upstream e835c5ac10).
-    inreplace "client/X11/xf_rail.c", "fail:\n\tconst UINT32 surfaceId", "fail:;\n\tconst UINT32 surfaceId"
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

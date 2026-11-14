@@ -1,8 +1,8 @@
 class S2n < Formula
   desc "Implementation of the TLS/SSL protocols"
   homepage "https://aws.github.io/s2n-tls/usage-guide/"
-  url "https://github.com/aws/s2n-tls/archive/refs/tags/v1.7.13.tar.gz"
-  sha256 "bf60fe631eebb79ed9a0b9b553460a4017dd2547269292ce3e9e2ac61c97dea2"
+  url "https://github.com/aws/s2n-tls/archive/refs/tags/v1.7.14.tar.gz"
+  sha256 "8a8b87b890de23c980aa31925241b52ee3fa49167f7c72bd6762e5d43d5fa892"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/aws/s2n-tls.git", branch: "main"
@@ -13,8 +13,8 @@ class S2n < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/s2n-1.7.13"
-    sha256 cellar: :any, sonoma: "4ef2cc383ca677bc3045c00b4d0c3cc906a1458b6249e6d672b1ef7b30b7ca11"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/s2n-1.7.14"
+    sha256 cellar: :any, sonoma: "82a7bbd04f6ae56ec3b8100fe72acb43a02b23f17ea379ff7b10161ad0e7da26"
   end
 
   depends_on "cmake" => :build

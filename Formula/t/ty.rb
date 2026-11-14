@@ -1,15 +1,14 @@
 class Ty < Formula
   desc "Extremely fast Python type checker, written in Rust"
   homepage "https://docs.astral.sh/ty/"
-  url "https://files.pythonhosted.org/packages/34/6c/22c0680e71f529e084ee2e308a51f04317298248ee699f4914c02129c351/ty-0.0.101.tar.gz"
-  sha256 "dbb43374b49fe30ea49e244da63aa90098dff1257a49ae4351b44881ccef724f"
+  url "https://files.pythonhosted.org/packages/8a/06/fce7ef8edb9af069cbd17accbc81804e9638f70f4ebf674d0b7847a2023e/ty-0.0.103.tar.gz"
+  sha256 "bf4dc5160a482d24b16e3b5057d638a02b06406d54faecb600a2c109cb023c45"
   license "MIT"
   head "https://github.com/astral-sh/ty.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ty-0.0.101"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "5d0b4631a8e688883237e2d90ff3701d23d0a833cffd1ca4f457d720679e947f"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ty-0.0.103"
+    sha256 cellar: :any_skip_relocation, sonoma: "5ea13f85a7af1ccbfa53d6c350f307bad56181429a41c58cae670277090ff741"
   end
 
   depends_on "rust" => :build
@@ -37,7 +36,12 @@ class Ty < Formula
           return x
     PYTHON
 
-    output = shell_output("#{bin}/ty check #{testpath} 2>&1", 1)
-    assert_match "error[invalid-return-type]: Return type does not match returned value", output
+    shell_output("#{bin}/ty check #{testpath} 2>&1", 1)
+
+    (testpath/"good.py").write <<~PYTHON
+      def f(x: int) -> str:
+          return str(x)
+    PYTHON
+    system bin/"ty", "check", testpath/"good.py"
   end
 end

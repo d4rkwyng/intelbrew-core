@@ -10,7 +10,8 @@ class Watchman < Formula
 
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/watchman-2026.10.26.00"
-    sha256 cellar: :any, sonoma: "356afde336d9f45d8f5b1956d0e731fb98cc1d6b1b1af9681f74bf68ab58e6b6"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "5b2840f6cb601cea7c650b38409eca75e702ca23dd0fec9a639869d048e1da86"
   end
 
   depends_on "cmake" => :build
@@ -47,6 +48,11 @@ class Watchman < Formula
   end
 
   def install
+    # Match the F14 ABI in bottled Folly instead of compiling for the host CPU.
+    if OS.linux? && Hardware::CPU.intel? && Tab.for_formula(Formula["folly"]).built_as_bottle
+      ENV["HOMEBREW_OPTFLAGS"] = "-march=#{Hardware.oldest_cpu}"
+    end
+
     # Drop the `GlobPath` C++ type as its GPL-2.0 header is not mirrored to this repository
     # https://github.com/facebook/watchman/issues/1355
     inreplace "eden/fs/service/eden.thrift" do |s|
