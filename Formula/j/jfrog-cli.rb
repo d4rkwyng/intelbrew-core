@@ -1,8 +1,8 @@
 class JfrogCli < Formula
   desc "Command-line interface for JFrog products"
   homepage "https://docs.jfrog.com/integrations/docs/jfrog-cli"
-  url "https://github.com/jfrog/jfrog-cli/archive/refs/tags/v2.132.0.tar.gz"
-  sha256 "779f6bd797435769b6536c366a8eb85b7acbd62cc3ecba7be020e9743134d3aa"
+  url "https://github.com/jfrog/jfrog-cli/archive/refs/tags/v2.133.0.tar.gz"
+  sha256 "09e6021bb64b95eb9d8d5b30560b295ddd1e2da52b5d82c39e804d7b1ff3d963"
   license "Apache-2.0"
   head "https://github.com/jfrog/jfrog-cli.git", branch: "master"
 
@@ -15,9 +15,8 @@ class JfrogCli < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/jfrog-cli-2.132.0"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "5cbc4b8ddb07a41fcdd2e679e89c7eff18562e27e872299428c9e3e023da06cc"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/jfrog-cli-2.133.0"
+    sha256 cellar: :any_skip_relocation, sonoma: "d874b8c03ccf6a586cbc407395cdb6e0d0266bd932344a741c80bd0381ba8947"
   end
 
   depends_on "go" => :build

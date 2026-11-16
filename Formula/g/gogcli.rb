@@ -1,14 +1,14 @@
 class Gogcli < Formula
   desc "Google Suite CLI"
   homepage "https://gogcli.sh"
-  url "https://github.com/openclaw/gogcli/archive/refs/tags/v0.48.0.tar.gz"
-  sha256 "b35008c91e52da485c031f93b87a960896de668618dbd003ef13f288feff8be9"
+  url "https://github.com/openclaw/gogcli/archive/refs/tags/v0.48.1.tar.gz"
+  sha256 "faec62b748b7d4d12109eb9ed28e79a592f4a8da06449fe23965a92e48562247"
   license "MIT"
   head "https://github.com/openclaw/gogcli.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/gogcli-0.48.0"
-    sha256 cellar: :any_skip_relocation, sonoma: "d12486006247a113573ad16ec4aec2c40a64c449884de3a728de92c9ba80f6f2"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/gogcli-0.48.1"
+    sha256 cellar: :any_skip_relocation, sonoma: "33867dbceae314cee8a71a9a89bd75aa7ef29fa3d3f8de0f4e5e4d249dc33859"
   end
 
   depends_on "go" => :build

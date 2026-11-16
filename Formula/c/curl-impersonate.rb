@@ -18,11 +18,9 @@ class CurlImpersonate < Formula
   compatibility_version 1
 
   bottle do
-    sha256 arm64_golden_gate: "5f474d82fffe482f77670bd20c35e59a5f952a5f0b0a2555fe1fa9d0733fd229"
-    sha256 arm64_tahoe:       "75b4b7479d54341f51ded9a64ca0496d762700c964f8dcdd6b14a9d71154da3c"
-    sha256 arm64_sequoia:     "df1ee235b951383a376db272081c1b181e177ff81fb9b145c28677cdbdfaa4bf"
-    sha256 arm64_linux:       "8dd1da087f977884e42124f368cfc5b154d78b3467d4fccac7a826685d30017c"
-    sha256 x86_64_linux:      "7ada8493ff09ae6864f826e11b780132b5a821143095a28bbf62a8cd9d1336f0"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/curl-impersonate-2.3.2"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "b873d855271d57d8f4e20bfecc564b649e985e2143fcb41ff4647c1faa5b5473"
   end
 
   depends_on "cmake" => :build
@@ -162,6 +160,9 @@ class CurlImpersonate < Formula
     args << "-DCURL_IMPERSONATE_VERSION=#{version}" if build.stable?
 
     system "make", "prepare-libidn2" if OS.linux?
+    # Intelbrew: evex512 is LLVM 18+ (Apple clang 17); Apple clang 16 ignores target("avx512f,evex512") whole.
+    inreplace "patches/curl.patch", "defined(__apple_build_version__) && __clang_major__ >= 16)",
+              "defined(__apple_build_version__) && __clang_major__ >= 17)"
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"

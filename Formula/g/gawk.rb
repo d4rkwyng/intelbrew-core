@@ -1,21 +1,16 @@
 class Gawk < Formula
   desc "GNU awk utility"
   homepage "https://www.gnu.org/software/gawk/"
-  url "https://ftpmirror.gnu.org/gawk/gawk-5.4.1.tar.xz"
-  mirror "https://ftp.gnu.org/gnu/gawk/gawk-5.4.1.tar.xz"
-  sha256 "07f6f7342b7febe4313fc2c2542ad93d64fe20ad8717200109f105a826f5fd37"
+  url "https://ftpmirror.gnu.org/gawk/gawk-5.4.2.tar.xz"
+  mirror "https://ftp.gnu.org/gnu/gawk/gawk-5.4.2.tar.xz"
+  sha256 "b95e4909533b5f988c6b5e5539b3b3ddf76e7d7df02ca2e5b5b7d6f62db78e6a"
   license "GPL-3.0-or-later"
   compatibility_version 1
   head "https://git.savannah.gnu.org/git/gawk.git", branch: "master"
 
   bottle do
-    sha256 arm64_golden_gate: "e410dfb2a130f577574b004e929249fdf0c0f9cf3ec0d59b6eb3bddfe69c3e4e"
-    sha256 arm64_tahoe:       "73633c61674c5ab754b70403f14eb57d21d750fe8629eecc8023d5e4228f26fe"
-    sha256 arm64_sequoia:     "299e407ee59def8e8cc48b0885c6d5ea453d3f886cc6edd2e6af781357f8d761"
-    sha256 arm64_sonoma:      "b398c17f49d3e23c59d8b0d92a3603e15a1e1a2eef5418390ed2c07d888877a5"
-    sha256 sonoma:            "17192ebb78bf9dea945724c11258b02ccdabf0f8833902d179f88ebab4491a4d"
-    sha256 arm64_linux:       "ab274a83c365a24dc2f037bca65befc4c1aa1697d3b6bcc2f1bbd857d040db47"
-    sha256 x86_64_linux:      "372c078e81e51049d9f5f15f4aad39b6f0a0c7b3c68d8c5fdbc7d6d81674358a"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/gawk-5.4.2"
+    sha256 sonoma: "8bfc63ebc90a931671e8035f79dd92a76d91fa2353c0d48245ba9814b595c7f6"
   end
 
   depends_on "gmp"

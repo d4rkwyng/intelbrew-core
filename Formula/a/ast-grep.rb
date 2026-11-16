@@ -1,15 +1,14 @@
 class AstGrep < Formula
   desc "Code searching, linting, rewriting"
   homepage "https://ast-grep.github.io/"
-  url "https://github.com/ast-grep/ast-grep/archive/refs/tags/0.51.2.tar.gz"
-  sha256 "757f89f99b2559af7314b460c8397fda0221ad6b958cf6439358b83ef0364ada"
+  url "https://github.com/ast-grep/ast-grep/archive/refs/tags/0.51.3.tar.gz"
+  sha256 "2a40a15fe439f24e24a88d2dd0bd3433a47bbd5032d43f6a4aa2522e397e8def"
   license "MIT"
   head "https://github.com/ast-grep/ast-grep.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ast-grep-0.51.2"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "58274e282c951818a53931b0de07678bebee729f944978de372df7eacba4976c"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ast-grep-0.51.3"
+    sha256 cellar: :any_skip_relocation, sonoma: "78def1ddd770ad1efc789bda05097971f0c96ab08c43c6e3fd0ce5836b4fb441"
   end
 
   depends_on "rust" => :build

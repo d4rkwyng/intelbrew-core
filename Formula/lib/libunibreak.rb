@@ -1,8 +1,8 @@
 class Libunibreak < Formula
   desc "Implementation of the Unicode line- and word-breaking algorithms"
   homepage "https://github.com/adah1972/libunibreak"
-  url "https://github.com/adah1972/libunibreak/releases/download/libunibreak_8_0/libunibreak-8.0.tar.gz"
-  sha256 "9c4fad6e517338a098373acc9f35579ae2c325e6446666fb9ac2666ba15ceba4"
+  url "https://github.com/adah1972/libunibreak/releases/download/libunibreak_8_0_1/libunibreak-8.0.1.tar.gz"
+  sha256 "ac0dcc96c395bc86ff7f86f6b91d8b45bc8c39db775f3f1e73f947a11520737b"
   license "Zlib"
   compatibility_version 3
 
@@ -15,9 +15,8 @@ class Libunibreak < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libunibreak-8.0"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "a6143d93b465d86529feee5c18306d434531c0aa869ebf90f3dd9e74e024b5e1"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libunibreak-8.0.1"
+    sha256 cellar: :any, sonoma: "550b30eeeb55fdc934f8a96f7252688be184c33ccfe735489da41c0aed7d9244"
   end
 
   deny_network_access!
