@@ -1,14 +1,14 @@
 class Libcbor < Formula
   desc "CBOR protocol implementation for C and others"
   homepage "https://github.com/PJK/libcbor"
-  url "https://github.com/PJK/libcbor/archive/refs/tags/v0.14.1.tar.gz"
-  sha256 "a8f3aa5c75a4e1e2c639a4928036a3a53fd1682037033db0964935965bd5f5da"
+  url "https://github.com/PJK/libcbor/archive/refs/tags/v0.15.0.tar.gz"
+  sha256 "c94145d3c22e67cff9a3325dc036b4545a49a42231553995be4947d52cf2ef57"
   license "MIT"
-  compatibility_version 2
+  compatibility_version 3
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libcbor-0.14.1"
-    sha256 cellar: :any, sonoma: "89e53731fee59b4b3ccb76cdd48e893c159ac83388a0ed1a77783fdd08a7e0a4"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libcbor-0.15.0"
+    sha256 cellar: :any, sonoma: "d933782f6e641103a13c0237715efc8c284a249a635fd4711a9ab21578b15edf"
   end
 
   depends_on "cmake" => :build

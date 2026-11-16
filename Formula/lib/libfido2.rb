@@ -4,13 +4,12 @@ class Libfido2 < Formula
   url "https://github.com/Yubico/libfido2/archive/refs/tags/1.17.0.tar.gz"
   sha256 "ace062d14a482ff9325410ff63d06c8b5fe87e79ebc18dda07add2bc0188c77f"
   license "BSD-2-Clause"
-  revision 1
+  revision 2
   compatibility_version 1
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libfido2-1.17.0_1"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "9085f630a3aac46a1b505deac84d1cb46a3d769bddecbb3e38c7d97005e33a47"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libfido2-1.17.0_2"
+    sha256 cellar: :any, sonoma: "7540023dd330908f8d544aa58e72eb570aa3b52498e353643def5d615a9e512a"
   end
 
   depends_on "cmake" => :build

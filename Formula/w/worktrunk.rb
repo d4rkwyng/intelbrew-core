@@ -6,6 +6,11 @@ class Worktrunk < Formula
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/max-sixty/worktrunk.git", branch: "main"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/worktrunk-0.82.0"
     sha256 cellar: :any_skip_relocation, sonoma: "0151dd800e10fac2d4e8f52f03ef391fb2064906698ac4399014a220c28ac4ed"
