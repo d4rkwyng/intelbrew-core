@@ -1,14 +1,14 @@
 class Tuios < Formula
   desc "Terminal UI OS (Terminal Multiplexer)"
   homepage "https://tuios.dev/"
-  url "https://github.com/Gaurav-Gosain/tuios/archive/refs/tags/v0.13.2.tar.gz"
-  sha256 "60c7fb5221750f6f736e66709f9deb7249fa4b29e83122782cd80a2a1a17a60f"
+  url "https://github.com/Gaurav-Gosain/tuios/archive/refs/tags/v0.13.3.tar.gz"
+  sha256 "26ffb34240cc273eb7d0f3b6ee5a9a124c7c4a947f39fb22877ca2f93a539d73"
   license "MIT"
   head "https://github.com/Gaurav-Gosain/tuios.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/tuios-0.13.2"
-    sha256 cellar: :any_skip_relocation, sonoma: "750a71bb7cfabe055e41a48e12d53e1da230534f30576a296af7f8946b586823"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/tuios-0.13.3"
+    sha256 cellar: :any_skip_relocation, sonoma: "86a8d00365ffd6fd58764dbdf233127873f2edbb5d249915c7e388a7bc63b70e"
   end
 
   depends_on "go" => :build

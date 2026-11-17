@@ -1,12 +1,12 @@
 class Pkgconf < Formula
   desc "Package compiler and linker metadata toolkit"
   homepage "https://github.com/pkgconf/pkgconf"
-  url "https://distfiles.ariadne.space/pkgconf/pkgconf-3.0.10.tar.xz"
-  mirror "https://github.com/pkgconf/pkgconf/releases/download/pkgconf-3.0.10/pkgconf-3.0.10.tar.xz"
-  mirror "http://fresh-center.net/linux/misc/pkgconf-3.0.10.tar.xz"
-  sha256 "9371b2f6372da574d4c6dc96fe9b1463037bcf6afcb6671c1555afde7b17e2de"
+  url "https://distfiles.ariadne.space/pkgconf/pkgconf-3.0.11.tar.xz"
+  mirror "https://github.com/pkgconf/pkgconf/releases/download/pkgconf-3.0.11/pkgconf-3.0.11.tar.xz"
+  mirror "http://fresh-center.net/linux/misc/pkgconf-3.0.11.tar.xz"
+  sha256 "d0cd841bc8e55b9da888106c00dc256d05b7d1d8e5a46f4be4eb4c5125bd2dc4"
   license "ISC"
-  compatibility_version 2
+  compatibility_version 3
 
   livecheck do
     url "https://distfiles.ariadne.space/pkgconf/"
@@ -14,8 +14,8 @@ class Pkgconf < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pkgconf-3.0.10"
-    sha256 sonoma: "d5790669625241a230e650a9308c6f48f7ce8dfbba38b8c7235d644c4154d952"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pkgconf-3.0.11"
+    sha256 sonoma: "a3e89d730a6da1273703b5ef84a19e6eb1a2f4efd4591844da0c266a55d4c904"
   end
 
   head do
@@ -23,16 +23,15 @@ class Pkgconf < Formula
 
     # Using a resource to avoiding dependency tree from brew `meson` or `muon`.
     # The version should align to available HTTP mirror rather than latest.
-    # TODO: check on mirrors in future if better alternatives are available.
     resource "muon" do
-      url "https://muon.build/releases/v0.6.0/muon-v0.6.0.tar.gz"
-      mirror "https://pkg.freebsd.org/ports-distfiles/muon/0.6.0/muon-v0.6.0.tar.gz"
-      mirror "http://pkg.freebsd.org/ports-distfiles/muon/0.6.0/muon-v0.6.0.tar.gz"
-      sha256 "90a8428bc2178c59b9f7ddd1cb1cc6355f4df0c3ac023f7eefd159ae4f054024"
+      url "https://dl.muon.build/v0.7.1/muon-v0.7.1.tar.gz"
+      mirror "https://distfiles.alpinelinux.org/distfiles/edge/muon-v0.7.1.tar.gz"
+      mirror "http://distfiles.alpinelinux.org/distfiles/edge/muon-v0.7.1.tar.gz"
+      sha256 "956b5a74f7852ec4c57a11825dac79052da878da78f507bee1a0ef955053fbbb"
 
       livecheck do
-        url "https://raw.githubusercontent.com/freebsd/freebsd-ports/refs/heads/main/devel/muon/distinfo"
-        regex(/muon[._-]v?(\d+(?:\.\d+)+)\.t/i)
+        url "https://gitlab.alpinelinux.org/alpine/aports/-/raw/master/main/muon/APKBUILD"
+        regex(/^pkgver=v?(\d+(?:\.\d+)+)$/i)
       end
     end
   end

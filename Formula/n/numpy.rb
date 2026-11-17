@@ -1,8 +1,8 @@
 class Numpy < Formula
   desc "Package for scientific computing with Python"
   homepage "https://www.numpy.org/"
-  url "https://files.pythonhosted.org/packages/95/b0/c7453d0b6e2073c3264468b106ee1563750cecc910965e67357e3698c83e/numpy-2.5.4.tar.gz"
-  sha256 "9a94cf751c9ad8ebaa835bcd3d40dacf8534ad086b88c38029b65123c7999d2a"
+  url "https://files.pythonhosted.org/packages/4e/3a/8770c288c47f0b5c2a786d3c20e79f66fd245f2d42cd232d7cd5e00e83e5/numpy-2.5.5.tar.gz"
+  sha256 "5cddc243c75114ba845f01b1f87aca1572dbf7b6c2d88636ed3e1d2bccd7f1bf"
   # TODO: Remove Zlib from license when release includes
   # https://github.com/numpy/numpy/commit/3d065710eee404a34788deb8f05f977a88879b20
   license all_of: ["BSD-3-Clause", "0BSD", "MIT", "Zlib", "CC0-1.0"]
@@ -10,9 +10,8 @@ class Numpy < Formula
   head "https://github.com/numpy/numpy.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/numpy-2.5.4"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "7140790c4e7b4b165b2a77b13cc524e1e5feb1d48d85f9fac422a40eac0b0dfe"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/numpy-2.5.5"
+    sha256 cellar: :any, sonoma: "2f9c67f6f323352254d03ad3c55d3de4d2d257c39ffd131a63707eab2bb2dcd8"
   end
 
   depends_on "gcc" => :build # for gfortran

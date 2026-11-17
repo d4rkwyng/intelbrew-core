@@ -1,10 +1,9 @@
 class ImagemagickFull < Formula
   desc "Tools and libraries to manipulate images in many formats"
   homepage "https://imagemagick.org"
-  url "https://github.com/ImageMagick/ImageMagick/releases/download/7.1.2-35/ImageMagick-7.1.2-35.7z"
-  sha256 "1d95f7d0ed11e91a3ee9e3042a8e248cb88c666dd9256ab14cc871b1f73138fd"
+  url "https://github.com/ImageMagick/ImageMagick/releases/download/7.1.2-36/ImageMagick-7.1.2-36.7z"
+  sha256 "a954685c1272e629cae8c546338309430851fee0878a7c3d7b9eaa5f6efb495c"
   license "ImageMagick"
-  revision 1
   head "https://github.com/ImageMagick/ImageMagick.git", branch: "main"
 
   livecheck do
@@ -14,9 +13,8 @@ class ImagemagickFull < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/imagemagick-full-7.1.2-35_1"
-    rebuild 1
-    sha256 sonoma: "4379e10a5a2a754ea946c5203a20ab6cbb7dddf57fd6d056a4fcb456f3711f77"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/imagemagick-full-7.1.2-36"
+    sha256 sonoma: "ea44101eaab7ad6d13b3c97ad967b89f5e5ad78c544f2484ae6bfcdd2ca6860b"
   end
 
   keg_only :versioned_formula

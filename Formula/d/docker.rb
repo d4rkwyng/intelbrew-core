@@ -2,8 +2,8 @@ class Docker < Formula
   desc "Pack, ship and run any application as a lightweight container"
   homepage "https://www.docker.com/"
   url "https://github.com/docker/cli.git",
-      tag:      "v29.9.3",
-      revision: "5457199aa57c45e990c59c89cab5f02b817238d7"
+      tag:      "v29.10.0",
+      revision: "fdd4b8e5da335e1d0d83d29af5045f57280cd694"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/docker/cli.git", branch: "master"
@@ -14,8 +14,8 @@ class Docker < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/docker-29.9.3"
-    sha256 cellar: :any_skip_relocation, sonoma: "c7761fde34cc2eb7af37857897aecd4f3815181c5da47fc436cf220748b31514"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/docker-29.10.0"
+    sha256 cellar: :any_skip_relocation, sonoma: "8bd49437f5fbc9f220a21acd8d8d5f9e256376515a872302df404acecf2ad79c"
   end
 
   depends_on "go" => :build
