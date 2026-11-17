@@ -13,11 +13,9 @@ class DotnetAT8 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "eafe7b4ecd0f185126c02050154f75128bd5b899c259c007855feb9fd5ce4bb2"
-    sha256 cellar: :any, arm64_tahoe:       "4dc185daf6825c66bc20ff95c0a118ccb0cadbffe8e4b4e28235ebd96cfb1fb5"
-    sha256 cellar: :any, arm64_sequoia:     "87b3757fcb76592bd0af6ed5cd4bdbeaa9773661a30328acef9c10a1a67d05ad"
-    sha256 cellar: :any, arm64_linux:       "52f2a2440c2f134ecab30f848426847f7ae598ad9ed386d3f83c051f8ee3209d"
-    sha256 cellar: :any, x86_64_linux:      "1041a351a67ad207b586e75c9d333353aaa91c980deb74f19a591aa31b301ff1"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/dotnet@8-8.0.134"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "6128d44bfeec8b6dbe0c8bbbf329d076dfa088e732c7c9d4fb58feb3ad6f76bf"
   end
 
   keg_only :versioned_formula
@@ -35,6 +33,7 @@ class DotnetAT8 < Formula
   uses_from_macos "krb5"
 
   on_macos do
+    depends_on "gnu-tar" => :build # Intelbrew: Sonoma bsdtar 3.5 lacks --owner (bootstrap repack)
     depends_on "grep" => :build # grep: invalid option -- P
     depends_on "llvm@20" => :build if DevelopmentTools.clang_build_version >= 2100
   end
@@ -90,6 +89,8 @@ class DotnetAT8 < Formula
     if OS.mac?
       # Need GNU grep (Perl regexp support) to use release manifest rather than git repo
       ENV.prepend_path "PATH", formula_opt_libexec("grep")/"gnubin"
+      # Intelbrew: GNU tar for the bootstrap repack's --owner/--group (Sonoma bsdtar 3.5 lacks them)
+      ENV.prepend_path "PATH", formula_opt_libexec("gnu-tar")/"gnubin"
 
       # Avoid mixing CLT and Xcode.app when building CoreCLR component which can
       # cause undefined symbols, e.g. __swift_FORCE_LOAD_$_swift_Builtin_float
