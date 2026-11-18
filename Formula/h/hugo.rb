@@ -1,8 +1,8 @@
 class Hugo < Formula
   desc "Configurable static site generator"
   homepage "https://gohugo.io/"
-  url "https://github.com/gohugoio/hugo/archive/refs/tags/v0.170.0.tar.gz"
-  sha256 "dac429f01212d06979a1e939307f5bffdbfd3f75a63eba0fe3c817383d0525fe"
+  url "https://github.com/gohugoio/hugo/archive/refs/tags/v0.170.1.tar.gz"
+  sha256 "bfbac02de9f08914545490ef17501cb0d89e63cc95e05e51d5bd9907da20505b"
   license "Apache-2.0"
   head "https://github.com/gohugoio/hugo.git", branch: "master"
 
@@ -12,8 +12,8 @@ class Hugo < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/hugo-0.170.0"
-    sha256 cellar: :any_skip_relocation, sonoma: "2b3ca7fbfd3d13939aaab03db9767a32c85705905f1092e3ed79066e47dffd84"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/hugo-0.170.1"
+    sha256 cellar: :any_skip_relocation, sonoma: "6dfbbda8028786c918224ca8ae6234cf42416645fb2e4fe25e6fe74a82c93bc6"
   end
 
   depends_on "go" => :build

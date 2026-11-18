@@ -1,8 +1,8 @@
 class OpenjdkAT11 < Formula
   desc "Development kit for the Java programming language"
   homepage "https://openjdk.org/"
-  url "https://github.com/openjdk/jdk11u/archive/refs/tags/jdk-11.0.33-ga.tar.gz"
-  sha256 "9753c1af02b07c7ffd59ea306ee9fcda93f075af94afc8bf928636021f557dba"
+  url "https://github.com/openjdk/jdk11u/archive/refs/tags/jdk-11.0.33.1-ga.tar.gz"
+  sha256 "292f87dac41b2e9b717cb567ea9bb8c50596ee928c9fe31f95752c3d7daf7018"
   license "GPL-2.0-only"
   compatibility_version 1
 
@@ -12,8 +12,8 @@ class OpenjdkAT11 < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/openjdk@11-11.0.33"
-    sha256 cellar: :any, sonoma: "b4d0c4988e5138cba08d3899ff1a1bf0b27284df6f8ff2ae4fe09749a9a4852b"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/openjdk@11-11.0.33.1"
+    sha256 cellar: :any, sonoma: "9aba9f1c5b2bb2d766bcf8e6140123ff14866bb584afe0d1a48109c374e47ff8"
   end
 
   keg_only :versioned_formula

@@ -1,8 +1,8 @@
 class Oras < Formula
   desc "OCI Registry As Storage"
   homepage "https://oras.land"
-  url "https://github.com/oras-project/oras/archive/refs/tags/v1.3.6.tar.gz"
-  sha256 "9a67269f475019a07384bd73004ca308c221674aea0d0dc48e059c61b09bcd54"
+  url "https://github.com/oras-project/oras/archive/refs/tags/v1.4.0.tar.gz"
+  sha256 "453bda1279b166eb6c2bd84b5995b952403c388ad8eb2f77a9f269011f69788b"
   license "Apache-2.0"
   head "https://github.com/oras-project/oras.git", branch: "main"
 
@@ -12,8 +12,8 @@ class Oras < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/oras-1.3.6"
-    sha256 cellar: :any_skip_relocation, sonoma: "bcf58f645fda641dd9cfd37995f4ea86a720a65267c44b012552bc34a9619091"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/oras-1.4.0"
+    sha256 cellar: :any_skip_relocation, sonoma: "b2e8e5958dc61983f0fe0ca6551eb888cb73b5c4c842130c10f3c36db8e5713e"
   end
 
   depends_on "go" => :build

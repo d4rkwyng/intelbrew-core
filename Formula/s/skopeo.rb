@@ -1,14 +1,13 @@
 class Skopeo < Formula
   desc "Work with remote images registries"
   homepage "https://github.com/podman-container-tools/skopeo"
-  url "https://github.com/podman-container-tools/skopeo/archive/refs/tags/v1.25.1.tar.gz"
-  sha256 "8e889df322ec3d9457a2e3b61ba9fa77759dd81dac857514333fb3b837e98b65"
+  url "https://github.com/podman-container-tools/skopeo/archive/refs/tags/v1.25.2.tar.gz"
+  sha256 "d2ebe154195934908e2dd8d992bfda5dc554e1f5d8586c49b6a931fd69563d24"
   license "Apache-2.0"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/skopeo-1.25.1"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "1f1c38c7110699d31508b13afd143b2b8e5430668a8f3fcdb8e409607ef68dfa"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/skopeo-1.25.2"
+    sha256 cellar: :any, sonoma: "32a256e1232dcb31b3a7347c2deaf4a428bff960eca9abc1b3d1c62fc886dd28"
   end
 
   depends_on "go" => :build

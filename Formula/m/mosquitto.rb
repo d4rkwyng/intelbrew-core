@@ -1,13 +1,12 @@
 class Mosquitto < Formula
   desc "Message broker implementing the MQTT protocol"
   homepage "https://mosquitto.org/"
-  url "https://mosquitto.org/files/source/mosquitto-2.1.2.tar.gz"
-  sha256 "fd905380691ac65ea5a93779e8214941829e3d6e038d5edff9eac5fd74cbed02"
+  url "https://mosquitto.org/files/source/mosquitto-2.1.4.tar.gz"
+  sha256 "ca30b26ccd3041c0e11fc407fe4f2e62bc445e8d8dea94a083cc60c09bd5ea30"
   # # dual-licensed under EPL-1.0 and EDL-1.0 (Eclipse Distribution License v1.0),
   # EDL-1.0 is pretty the same as BSD-3-Clause,
   # see discussions in https://github.com/spdx/license-list-XML/issues/1149
   license any_of: ["EPL-1.0", "BSD-3-Clause"]
-  revision 3
 
   livecheck do
     url "https://mosquitto.org/download/"
@@ -15,8 +14,8 @@ class Mosquitto < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mosquitto-2.1.2_3"
-    sha256 cellar: :any, sonoma: "0485847a3cbfea2ed22eea62e07407cb0e25520de8f2233f5aa29c198359eb68"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mosquitto-2.1.4"
+    sha256 cellar: :any, sonoma: "c18dab4b1cb5ff4c1c4e956531ecdd4d1291fb6f8703b867e2d5e419d57c23fa"
   end
 
   depends_on "cmake" => :build
