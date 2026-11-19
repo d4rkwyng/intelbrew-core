@@ -11,8 +11,8 @@ class PreCommit < Formula
 
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pre-commit-4.7.0_2"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "fb45c352941b9982d660ca28ef9f1a6fae2bc42f4a84a427669281dc3f424b17"
+    rebuild 2
+    sha256 cellar: :any, sonoma: "5147288e0c5a451b25c0a8022a0c799df4315ccc44c4b645ba9784e8332d25ec"
   end
 
   depends_on "libyaml"
@@ -39,8 +39,8 @@ class PreCommit < Formula
   end
 
   resource "nodeenv" do
-    url "https://files.pythonhosted.org/packages/9a/8e/105de02c1322cfada6d9710d9146ef8026419d433c9d08359a2d35805811/nodeenv-1.11.0.tar.gz"
-    sha256 "3ce8fe5b71d16e8af7039ca65257354100bc772965d6bc549070649e53b1b146"
+    url "https://files.pythonhosted.org/packages/e6/99/d27cfc9518f49e4cbc25c683ec7cf8704a9d31311341c291c0e78ddf791b/nodeenv-1.12.0.tar.gz"
+    sha256 "4ea7f88339310afebc3253f2c7a91b94bacf97d73a36a5c108962abdfaca501e"
   end
 
   resource "packaging" do

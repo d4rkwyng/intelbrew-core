@@ -1,14 +1,14 @@
 class Flex < Formula
   desc "Fast Lexical Analyzer, generates Scanners (tokenizers)"
   homepage "https://github.com/westes/flex"
-  url "https://github.com/westes/flex/releases/download/v2.6.16/flex-2.6.16.tar.gz"
-  sha256 "c778edc11a53b86aa33203f51d179cc294e5a5d07f84285eaa34c76c3f902bab"
+  url "https://github.com/westes/flex/releases/download/v2.7.1/flex-2.7.1.tar.gz"
+  sha256 "336715b27262c7eefab99ba46b06f05e54a1a39d7bc36c79b826a51bbe4fcb81"
   license "BSD-2-Clause"
   compatibility_version 1
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/flex-2.6.16"
-    sha256 cellar: :any, sonoma: "29d64a3cd0985fdf186c98402877ecb9851d20ca24e8b59e0edff39de5475e7a"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/flex-2.7.1"
+    sha256 cellar: :any, sonoma: "015139155e008e6328952911acd063b27e7590fa5ef8b4ecd914a984c3cb9ba8"
   end
 
   head do
