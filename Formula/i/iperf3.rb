@@ -1,8 +1,8 @@
 class Iperf3 < Formula
   desc "Update of iperf: measures TCP, UDP, and SCTP bandwidth"
   homepage "https://github.com/esnet/iperf"
-  url "https://downloads.es.net/pub/iperf/iperf-3.22.tar.gz"
-  sha256 "1c0d0fb02c52626111d6e132db80edfbf27bbaff8bd9245df2a371dcb0b35a92"
+  url "https://downloads.es.net/pub/iperf/iperf-3.22.1.tar.gz"
+  sha256 "de018b5252e2a7068c89fac8b35a295d83334f2b7814aa9532a2a8107b04a4a9"
   license "BSD-3-Clause"
 
   livecheck do
@@ -11,9 +11,8 @@ class Iperf3 < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/iperf3-3.22"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "c9bbb5a56c4fe64130e36dd723a63e66c029a4ce33a885037f87a48e46e25221"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/iperf3-3.22.1"
+    sha256 cellar: :any, sonoma: "430b8c5c7adc630ed3f4ce3d4bb4d5b7e053ad3411b485fa7ef94e069b59939a"
   end
 
   head do

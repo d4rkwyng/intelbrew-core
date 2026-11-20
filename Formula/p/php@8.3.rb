@@ -2,9 +2,9 @@ class PhpAT83 < Formula
   desc "General-purpose scripting language"
   homepage "https://www.php.net/"
   # Should only be updated if the new version is announced on the homepage, https://www.php.net/
-  url "https://www.php.net/distributions/php-8.3.36.tar.xz"
-  mirror "https://fossies.org/linux/www/php-8.3.36.tar.xz"
-  sha256 "dd54693aa334c5c4d72e9aee96b082c2473750a18a6c1d105789c93a3b1692fd"
+  url "https://www.php.net/distributions/php-8.3.37.tar.xz"
+  mirror "https://fossies.org/linux/www/php-8.3.37.tar.xz"
+  sha256 "0237af84478b7a7649d3964153f1b8653d622550b846f56d63062de683fb86bb"
   license all_of: [
     "PHP-3.01",
 
@@ -28,7 +28,6 @@ class PhpAT83 < Formula
     "TCL",                   # 7
     "Zlib",                  # 8
   ]
-  revision 1
 
   livecheck do
     url "https://www.php.net/downloads?source=Y"
@@ -36,8 +35,8 @@ class PhpAT83 < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/php@8.3-8.3.36_1"
-    sha256 sonoma: "f48d2bdc2a1026e2a0c5b6f805e44d836fc5305c9311cbfb6733aeec929326e2"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/php@8.3-8.3.37"
+    sha256 sonoma: "273cfcc0cb840b296bc23315e6f4ada8126f85a3280206962b26107e849f91aa"
   end
 
   keg_only :versioned_formula

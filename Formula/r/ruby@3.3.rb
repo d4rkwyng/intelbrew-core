@@ -1,8 +1,8 @@
 class RubyAT33 < Formula
   desc "Powerful, clean, object-oriented scripting language"
   homepage "https://www.ruby-lang.org/"
-  url "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.13.tar.gz"
-  sha256 "4cae72e971bd1cdb20ca87d299111182417c5276c162de8ead0ab0531426cd61"
+  url "https://cache.ruby-lang.org/pub/ruby/3.3/ruby-3.3.14.tar.gz"
+  sha256 "d0438ee291b0cacaf97c7a71df4c939d7f3265c8c2d1b8ffe27311f71fc680b0"
   license "Ruby"
 
   livecheck do
@@ -11,9 +11,8 @@ class RubyAT33 < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ruby@3.3-3.3.13"
-    rebuild 1
-    sha256 sonoma: "7a3fa6d04b58d4dfce5079177f15df07a4ef1de49a95cbaec0418636a81022b8"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ruby@3.3-3.3.14"
+    sha256 sonoma: "ba540751c580b295f6ba8d09daf32cac8566ee4e06baac7ca9aeec077f2bc5fe"
   end
 
   keg_only :versioned_formula
@@ -36,8 +35,8 @@ class RubyAT33 < Formula
   # The exception is Rubygem security fixes, which mandate updating this
   # formula & the versioned equivalents and bumping the revisions.
   resource "rubygems" do
-    url "https://rubygems.org/rubygems/rubygems-4.0.23.tgz"
-    sha256 "843f89b1c9c35c28f7ccaf4580cde1e7b00dbd1907b46bcfdcdbc6afa7345e56"
+    url "https://rubygems.org/rubygems/rubygems-4.1.0.tgz"
+    sha256 "d0483e63c81c1f9c9c236ed4ec1bb0efd196e9aae858cdf4d309a0da51a82a2b"
 
     livecheck do
       url "https://rubygems.org/pages/download"

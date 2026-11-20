@@ -1,8 +1,8 @@
 class Libksba < Formula
   desc "X.509 and CMS library"
   homepage "https://www.gnupg.org/related_software/libksba/"
-  url "https://gnupg.org/ftp/gcrypt/libksba/libksba-1.9.0.tar.bz2"
-  sha256 "b070f3da9113df3804379f55e10cd00f0bc4993d5392157fecb5fd174a5d58ce"
+  url "https://gnupg.org/ftp/gcrypt/libksba/libksba-1.9.1.tar.bz2"
+  sha256 "9afdd398b4a076735e1e7fd29c7f6e7670b6c382aee2d3a55aa937b283f43e5b"
   license any_of: ["LGPL-3.0-or-later", "GPL-2.0-or-later"]
   compatibility_version 1
 
@@ -12,8 +12,8 @@ class Libksba < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libksba-1.9.0"
-    sha256 cellar: :any, sonoma: "0215aa5db09c2cc2ffa591c1debdac892593286452c791ccfbdde05aad00e4f9"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libksba-1.9.1"
+    sha256 cellar: :any, sonoma: "618b2df1dce3fb008d9dd14bff18d5dcd90979852ebe398fa46c2d9f2aed5d85"
   end
 
   depends_on "libgpg-error"
