@@ -2,16 +2,14 @@ class Duckdb < Formula
   desc "Embeddable SQL OLAP Database Management System"
   homepage "https://www.duckdb.org"
   url "https://github.com/duckdb/duckdb.git",
-      tag:      "v2.0.0",
-      revision: "d54cbbe3df17e8e5ce68312f483b4155836112aa"
+      tag:      "v2.0.1",
+      revision: "8d78114e90a53823803660bf821f6073ac87da8c"
   license "MIT"
-  revision 1
   compatibility_version 1
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/duckdb-2.0.0_1"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "4235458ddc09ee13783c12bc2ebebf72bdb7f904f9d981e31481151af17637e0"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/duckdb-2.0.1"
+    sha256 cellar: :any, sonoma: "75a60ad9b4b095d14f5e7e7bcebc05da57acd12485f64f0ac10c2d2ab17d3461"
   end
 
   depends_on "cmake" => [:build, :test]

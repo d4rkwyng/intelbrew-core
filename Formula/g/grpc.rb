@@ -2,8 +2,8 @@ class Grpc < Formula
   desc "Next generation open source RPC library and framework"
   homepage "https://grpc.io/"
   url "https://github.com/grpc/grpc.git",
-      tag:      "v1.85.2",
-      revision: "5a9ca1fb6bf364dfb1f9396cc020219ca7d117b2"
+      tag:      "v1.85.4",
+      revision: "ee6c934222c4ad96bbec18845c4d8e8762983189"
   license "Apache-2.0"
   compatibility_version 7
   head "https://github.com/grpc/grpc.git", branch: "master"
@@ -20,9 +20,8 @@ class Grpc < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/grpc-1.85.2"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "03b9dae5945673e77b10c3c3fcc96361d7ff01619cfa6099c54a925ce59f8e56"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/grpc-1.85.4"
+    sha256 cellar: :any, sonoma: "f364d40900ec9f5566c86b4c89161ba5d2dadfdc014ae6cc9ddfb66c6bf173d3"
   end
 
   depends_on "cmake" => :build

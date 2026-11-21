@@ -2,8 +2,8 @@ class Goreleaser < Formula
   desc "Deliver Go binaries as fast and easily as possible"
   homepage "https://goreleaser.com/"
   url "https://github.com/goreleaser/goreleaser.git",
-      tag:      "v2.20.2",
-      revision: "1bf59683fabedd7b446d089ec31b1e343b472ce6"
+      tag:      "v2.20.3",
+      revision: "a6edafaafe0fd15a4725e917beac26305ba67738"
   license "MIT"
   head "https://github.com/goreleaser/goreleaser.git", branch: "main"
 
@@ -13,9 +13,8 @@ class Goreleaser < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/goreleaser-2.20.2"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "7c18ca9822b556539846d3166c087e02374fa11d1204b9bb70b97d8b08917b8a"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/goreleaser-2.20.3"
+    sha256 cellar: :any_skip_relocation, sonoma: "0f4195957f9ebd965514193c293aabfed6ad61124b74f47936729ce9d6064412"
   end
 
   depends_on "go" => :build

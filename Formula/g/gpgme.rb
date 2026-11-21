@@ -1,8 +1,8 @@
 class Gpgme < Formula
   desc "Library access to GnuPG"
   homepage "https://www.gnupg.org/related_software/gpgme/"
-  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-2.2.0.tar.bz2"
-  sha256 "7160e80e84dafd00d956c84891c533bb7ab16a6a54fbe1574b2f3acf0496977b"
+  url "https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-2.3.1.tar.bz2"
+  sha256 "2bf94e0e677e5a8fc31f79dd323f91c5416b36fb851058bc1e8bce39f2642434"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
@@ -12,9 +12,8 @@ class Gpgme < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/gpgme-2.2.0"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "4049e5594a943d1323291ab864e8ef96471e3efe3af5b798066f25927cf5f402"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/gpgme-2.3.1"
+    sha256 cellar: :any, sonoma: "9487a8b24bb09d50d1f61a284e0d7a92225616441a13f754a1e8de755ee765c5"
   end
 
   depends_on "gnupg"
