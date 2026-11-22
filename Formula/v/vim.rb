@@ -2,8 +2,8 @@ class Vim < Formula
   desc "Vi 'workalike' with many additional features"
   homepage "https://www.vim.org/"
   # vim should only be updated once a day
-  url "https://github.com/vim/vim/archive/refs/tags/v9.2.1373.tar.gz"
-  sha256 "1530e7f53811c5c1000410b6f9831d15a3f1e258d6dc4fbd7ab3dca344fb541f"
+  url "https://github.com/vim/vim/archive/refs/tags/v9.2.1380.tar.gz"
+  sha256 "b0ed9b4c3c9384eb5f77f924bd5382ab995b54c9bcc69bb66ab38f83f3cc5b5b"
   license "Vim"
   compatibility_version 1
   head "https://github.com/vim/vim.git", branch: "master"
@@ -21,8 +21,8 @@ class Vim < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/vim-9.2.1373"
-    sha256 sonoma: "4ac954adaaab74ee95a33ed1227165ad66a2f27e3adc330131888cff1ac3e6d0"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/vim-9.2.1380"
+    sha256 sonoma: "899e8b83cfabf86056f403178dd701c0848b003bd4e3f7061cd5c1779b86e28e"
   end
 
   depends_on "gettext" => :build
@@ -64,6 +64,7 @@ class Vim < Formula
     # the right place (HOMEBREW_PREFIX/share/vim/{vimrc,vimfiles}) for
     # system vimscript files. We specify the normal installation prefix
     # when calling "make install".
+    perl_linkage = "=dynamic" unless OS.mac?
     system "./configure", "--prefix=#{HOMEBREW_PREFIX}",
                           "--mandir=#{man}",
                           "--enable-multibyte",
@@ -71,7 +72,7 @@ class Vim < Formula
                           "--with-compiledby=Homebrew",
                           "--enable-cscope",
                           "--enable-terminal",
-                          "--enable-perlinterp#{"=dynamic" unless OS.mac?}",
+                          "--enable-perlinterp#{perl_linkage}",
                           "--enable-python3interp=dynamic",
                           "--enable-rubyinterp=dynamic",
                           "--disable-gui",
@@ -87,7 +88,8 @@ class Vim < Formula
   end
 
   def caveats
-    "Additional features can be enabled by installing: #{extra_deps.map(&:name).join(", ")}"
+    dependency_names = extra_deps.map(&:name).join(", ")
+    "Additional features can be enabled by installing: #{dependency_names}"
   end
 
   test do

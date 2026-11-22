@@ -1,8 +1,8 @@
 class Hunk < Formula
   desc "Review-first terminal diff viewer for agent-authored changesets"
   homepage "https://hunk.dev/"
-  url "https://github.com/modem-dev/hunk/archive/refs/tags/v0.24.1.tar.gz"
-  sha256 "258776d0c45cb2e5b74439cfc23c97d870b010ba6aebd7e0971e2d06a1b8aa4b"
+  url "https://github.com/modem-dev/hunk/archive/refs/tags/v0.25.0.tar.gz"
+  sha256 "aca55758bc63aacbbb201aaeec618718aea70c10d65d97f5ec540bf3cb2c90a1"
   license "MIT"
   head "https://github.com/modem-dev/hunk.git", branch: "main"
 
@@ -12,9 +12,8 @@ class Hunk < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/hunk-0.24.1"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "264dfabf7afa8427a17c317014efe83b66dac9222cc2c03b9bc4ffb6909946d7"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/hunk-0.25.0"
+    sha256 cellar: :any_skip_relocation, sonoma: "a33763abf8a1f7a1ef9317b47a2d7fd14696564133755e011404171e2b0fe47a"
   end
 
   depends_on "bun" => :build

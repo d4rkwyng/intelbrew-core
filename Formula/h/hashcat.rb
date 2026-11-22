@@ -19,8 +19,8 @@ class Hashcat < Formula
 
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/hashcat-8.0.0"
-    rebuild 1
-    sha256 sonoma: "65fedf5b15e9b3c6a7e554d4ac8eb363aa7a4d01b6b30caa355dd0e11d913df6"
+    rebuild 2
+    sha256 sonoma: "3d7dba61ec642dd0f0dc6b813b78c18657003740e70c3919c22913c0320186be"
   end
 
   uses_from_macos "python"

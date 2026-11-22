@@ -1,8 +1,8 @@
 class Worktrunk < Formula
   desc "CLI for Git worktree management, designed for parallel AI agent workflows"
   homepage "https://worktrunk.dev"
-  url "https://github.com/max-sixty/worktrunk/archive/refs/tags/v0.82.0.tar.gz"
-  sha256 "c4ecdcbd05236bc5455c203813c73ab4598e231e6deecbd00961d3c9b04a1dc5"
+  url "https://github.com/max-sixty/worktrunk/archive/refs/tags/v0.83.0.tar.gz"
+  sha256 "66d22decd0484defc701c4df2ac141f8b000fb17bbc9e8b2d9f12d00f456ec20"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/max-sixty/worktrunk.git", branch: "main"
 
@@ -12,8 +12,8 @@ class Worktrunk < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/worktrunk-0.82.0"
-    sha256 cellar: :any_skip_relocation, sonoma: "0151dd800e10fac2d4e8f52f03ef391fb2064906698ac4399014a220c28ac4ed"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/worktrunk-0.83.0"
+    sha256 cellar: :any_skip_relocation, sonoma: "4735906e2e85f6453cf3d213c852e9db87e35ab3b88a73dd401f32c1412c9df9"
   end
 
   depends_on "rust" => :build

@@ -1,9 +1,9 @@
 class Wireshark < Formula
   desc "Network analyzer and capture tool - without graphical user interface"
   homepage "https://www.wireshark.org"
-  url "https://www.wireshark.org/download/src/all-versions/wireshark-4.6.9.tar.xz"
-  mirror "https://1.eu.dl.wireshark.org/src/all-versions/wireshark-4.6.9.tar.xz"
-  sha256 "d062d416a1ab3a49975aafe3a671c882dde0562ccd71b078808ceb59d465fc0f"
+  url "https://www.wireshark.org/download/src/all-versions/wireshark-4.6.10.tar.xz"
+  mirror "https://1.eu.dl.wireshark.org/src/all-versions/wireshark-4.6.10.tar.xz"
+  sha256 "268f41bdf8acee561b670217cf6ea74cf9e779477543e59f92f1cd00294a03dd"
   license "GPL-2.0-or-later"
   compatibility_version 1
   head "https://gitlab.com/wireshark/wireshark.git", branch: "master"
@@ -16,9 +16,8 @@ class Wireshark < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/wireshark-4.6.9"
-    rebuild 2
-    sha256 sonoma: "6f98747f8be2a7f7b0ce4cf05b6b93f1384daaad588e6199187afe9183255811"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/wireshark-4.6.10"
+    sha256 sonoma: "0befa23735edda89ecad714a3bf220e2e57081d7fc12237b7803a1aa088ad47f"
   end
 
   depends_on "cmake" => :build
@@ -55,11 +54,13 @@ class Wireshark < Formula
   def install
     lua = Formula["lua"]
     plugindir = lib/"wireshark/plugins/#{version.major}-#{version.minor}"
+    extcap_rpath = rpath(source: libexec/"wireshark/extcap")
+    codecs_rpath = rpath(source: plugindir/"codecs")
     args = %W[
       -DENABLE_BROTLI=OFF
       -DENABLE_SNAPPY=OFF
       -DLUA_INCLUDE_DIR=#{lua.opt_include}/lua
-      -DLUA_LIBRARY=#{lua.opt_lib/shared_library("liblua")}
+      -DLUA_LIBRARY=#{lua.opt_lib}/#{shared_library("liblua")}
       -DCARES_INCLUDE_DIR=#{formula_opt_include("c-ares")}
       -DGCRYPT_INCLUDE_DIR=#{formula_opt_include("libgcrypt")}
       -DGNUTLS_INCLUDE_DIR=#{formula_opt_include("gnutls")}
@@ -67,8 +68,8 @@ class Wireshark < Formula
       -DBUILD_wireshark=OFF
       -DBUILD_logray=OFF
       -DENABLE_APPLICATION_BUNDLE=OFF
-      -DCMAKE_INSTALL_RPATH=#{rpath};#{rpath(source: libexec/"wireshark/extcap")}
-      -DCMAKE_MODULE_LINKER_FLAGS=-Wl,-rpath,#{rpath(source: plugindir/"codecs")}
+      -DCMAKE_INSTALL_RPATH=#{rpath};#{extcap_rpath}
+      -DCMAKE_MODULE_LINKER_FLAGS=-Wl,-rpath,#{codecs_rpath}
     ]
 
     system "cmake", "-S", ".", "-B", "build", *args, *std_cmake_args

@@ -1,8 +1,8 @@
 class Graphviz < Formula
   desc "Graph visualization software from AT&T and Bell Labs"
   homepage "https://graphviz.org/"
-  url "https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/16.1.1/graphviz-16.1.1.tar.xz"
-  sha256 "52e7fb9a57b52b5c67f41dba6504ba3231e118258779421cb8f4f99104de71f6"
+  url "https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/16.1.2/graphviz-16.1.2.tar.xz"
+  sha256 "9780938f03659e2effbbfbbaec94940108e794199b73196fa339ca911890e8c9"
   license "EPL-1.0"
   version_scheme 1
   compatibility_version 2
@@ -13,8 +13,8 @@ class Graphviz < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/graphviz-16.1.1"
-    sha256 sonoma: "05e21de94248961b8994b5d459f3bd5f46793c8c5b0fd7aabdcc1072f74c9e9c"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/graphviz-16.1.2"
+    sha256 sonoma: "cfcdd9a0cc861bc4a80c8cbe6e4e9588aa4b0a562c09c9667d81dc9036ab4b2f"
   end
 
   head do

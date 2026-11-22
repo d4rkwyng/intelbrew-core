@@ -1,8 +1,8 @@
 class TreeSitter < Formula
   desc "Incremental parsing library"
   homepage "https://tree-sitter.github.io/"
-  url "https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.27.1.tar.gz"
-  sha256 "982cd3d4d9eb7be18c243240a622423fd2e4ecb4bec2cd98832c2f3fa1f0f333"
+  url "https://github.com/tree-sitter/tree-sitter/archive/refs/tags/v0.27.2.tar.gz"
+  sha256 "356528363bf7fbad12a2cfeb5a2678c0118ef886a4d69ad9a379db5fdef0735f"
   license "MIT"
   compatibility_version 2
   head "https://github.com/tree-sitter/tree-sitter.git", branch: "master"
@@ -13,9 +13,8 @@ class TreeSitter < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/tree-sitter-0.27.1"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "83485ecf3a9445ac19a36effe8287e29cdcf91a5b6aa43b6000ed4a9b2af69f8"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/tree-sitter-0.27.2"
+    sha256 cellar: :any, sonoma: "b9f4c2e23cbfbd5fc360dd588d44241ee73fed57c1c09e85f2f8787fe13fc74c"
   end
 
   deny_network_access!

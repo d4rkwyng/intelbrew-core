@@ -1,22 +1,22 @@
 class Folly < Formula
   desc "Collection of reusable C++ library artifacts developed at Facebook"
-  homepage "https://github.com/facebook/folly"
-  url "https://github.com/facebook/folly/archive/refs/tags/v2026.10.26.00.tar.gz"
+  homepage "https://github.com/meta/folly"
+  url "https://github.com/meta/folly/archive/refs/tags/v2026.10.26.00.tar.gz"
   sha256 "b47fe04b804adfb51c65cda6b171505e67b9d1d69621106e54697821d1bf7ebc"
   license "Apache-2.0"
   compatibility_version 1
-  head "https://github.com/facebook/folly.git", branch: "main"
+  head "https://github.com/meta/folly.git", branch: "main"
 
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/folly-2026.10.26.00"
-    sha256 cellar: :any, sonoma: "b090d587d68b664dbf4e8da67300f21baa8dbb3b8e1cedb1dcff6b8c0ba02c46"
+    rebuild 1
+    sha256 cellar: :any, sonoma: "c1981de73f156b1fff9b2f45334f6cbaf68c0a95b28a7d36fc6d9b6b13730874"
   end
 
   depends_on "cmake" => :build
   depends_on "fast_float" => :build
   depends_on "pkgconf" => :build
   depends_on "boost"
-  depends_on "double-conversion"
   depends_on "fmt"
   depends_on "gflags"
   depends_on "glog"
@@ -33,6 +33,8 @@ class Folly < Formula
   on_linux do
     depends_on "zlib-ng-compat"
   end
+
+  deny_network_access!
 
   def install
     args = %w[
