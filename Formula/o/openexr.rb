@@ -1,14 +1,14 @@
 class Openexr < Formula
   desc "High dynamic-range image file format"
   homepage "https://www.openexr.com/"
-  url "https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.5.4.tar.gz"
-  sha256 "cedafe3171176d20baea4e887ceacc74cbe3a5a06fbb30d9f0a394a4416e5f7b"
+  url "https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v3.5.5.tar.gz"
+  sha256 "c31d62f76cec06f738d4521f4062b51977e3cf6fb2644a1d505de3d291d78e2d"
   license "BSD-3-Clause"
   compatibility_version 2
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/openexr-3.5.4"
-    sha256 cellar: :any, sonoma: "d6e233e89564f14915a86033b055197bafa732426bd942be4778ca1de578c53e"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/openexr-3.5.5"
+    sha256 cellar: :any, sonoma: "40baa1b707fc45ca5c57abf6ff92cb7807e99660b1c993dc9b72641f1d56d623"
   end
 
   depends_on "cmake" => :build

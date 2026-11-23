@@ -15,8 +15,8 @@ class NetSnmp < Formula
 
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/net-snmp-5.9.5.2_2"
-    rebuild 1
-    sha256 sonoma: "05d7cb0b81ef02e842ef74af253b5a9c56c0d9231baafb04b6d522f92db91294"
+    rebuild 2
+    sha256 sonoma: "d436e99fad88d9603d24b128c56c74d0467a8a6d2533b88327c7d3f74ec268fd"
   end
 
   keg_only :provided_by_macos
@@ -42,6 +42,15 @@ class NetSnmp < Formula
       type :unofficial
       resolves "https://github.com/net-snmp/net-snmp/issues/434"
     end
+  end
+
+  # Fix reusing a session after it was closed, e.g. a PHP `SNMP` object
+  # failing every request after the first with "Can't assign requested address"
+  patch do
+    url "https://github.com/net-snmp/net-snmp/commit/6a16c2df17e9479de822b42a30dca345c9e746f5.patch?full_index=1"
+    sha256 "aa729ad0a91cf2d8ba00c437d88b0179b70fa5ab42f8855735ba1e73c84c099c"
+    type :backport
+    resolves "https://github.com/net-snmp/net-snmp/issues/1055"
   end
 
   deny_network_access!

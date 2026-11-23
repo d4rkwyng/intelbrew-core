@@ -15,7 +15,8 @@ class Imagemagick < Formula
 
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/imagemagick-7.1.2-36"
-    sha256 sonoma: "ab6467dd6b835645d1c02783561f03e54d3caf5e60280f930386aaf391ff66e1"
+    rebuild 1
+    sha256 sonoma: "df8ec4c771cde839ad336308295c46565d7b7d500c36ffce327b3675de06aa55"
   end
 
   depends_on "pkgconf" => :build
@@ -70,8 +71,8 @@ class Imagemagick < Formula
       "--without-wmf",
       "--without-jxl",
       "--without-openexr",
+      "--without-x",
     ]
-    args << "--without-x" if OS.mac?
 
     system "./configure", *args, *std_configure_args
     system "make", "install"

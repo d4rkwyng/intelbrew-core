@@ -10,14 +10,15 @@ class Pipx < Formula
 
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pipx-1.18.19"
-    sha256 cellar: :any_skip_relocation, sonoma: "d7e16fd2c7825d3560babf1e7d014413a77666de6f22f6811f477f2be683a661"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "ba4a1ab8a45b955b0d5cc963d7d56462c6df9152d0d897f5a677e1973b064d59"
   end
 
   depends_on "python@3.15"
 
   resource "argcomplete" do
-    url "https://files.pythonhosted.org/packages/87/6f/5a73f04007ca950701765949209f068da628bd11f9c2da287278ce91e0ee/argcomplete-3.7.2.tar.gz"
-    sha256 "aad8b69a0b9969edb62db0d1752354c0d50717b10e0cbb00e2a958381b9fc6b9"
+    url "https://files.pythonhosted.org/packages/19/0d/ca63f1b8b706c70590d0a4acc9c3c94ea8ed4dd9c83b4f7af195868abe76/argcomplete-3.8.0.tar.gz"
+    sha256 "0114d634013e11ac92cc329b3a7d886c3506e98ddc7bb23c99b1782aacc8b8bd"
   end
 
   resource "click" do
@@ -53,14 +54,10 @@ class Pipx < Formula
     inreplace "src/pipx/interpreter.py", "return str(Path(sys.executable).resolve())",
                                          "return '#{python3}'"
 
-    venv = virtualenv_install_with_resources
+    virtualenv_install_with_resources
 
     generate_completions_from_executable(libexec/"bin/register-python-argcomplete", "pipx",
                                          shell_parameter_format: :arg)
-
-    # Build an `:all` bottle by replacing comments
-    file = venv.site_packages.glob("argcomplete-*.dist-info/METADATA")
-    inreplace file, "/opt/homebrew/bin/bash", "$HOMEBREW_PREFIX/bin/bash"
   end
 
   test do

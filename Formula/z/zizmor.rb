@@ -1,14 +1,14 @@
 class Zizmor < Formula
   desc "Find security issues in GitHub Actions setups"
   homepage "https://docs.zizmor.sh/"
-  url "https://github.com/zizmorcore/zizmor/archive/refs/tags/v1.32.0.tar.gz"
-  sha256 "8f4ebf26fef5920c0d133925a162dd4e772c088bdbb7a4971bbd589ebf572c47"
+  url "https://github.com/zizmorcore/zizmor/archive/refs/tags/v1.33.1.tar.gz"
+  sha256 "a31b5fe6252d58fac123731de4690bad14740ef61fc98689c4e9c91ce87b5a2c"
   license "MIT"
   head "https://github.com/zizmorcore/zizmor.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/zizmor-1.32.0"
-    sha256 cellar: :any_skip_relocation, sonoma: "8d9d68086317482372df7569a5940010e1627242edc2295fa27379d7eb9aed27"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/zizmor-1.33.1"
+    sha256 cellar: :any_skip_relocation, sonoma: "c157ed08ea1e1c2a5b0e2caf995acda57cfa039f9a9ac36b6f889dab61e2aaf1"
   end
 
   depends_on "pkgconf" => :build

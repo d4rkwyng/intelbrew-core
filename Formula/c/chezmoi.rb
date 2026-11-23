@@ -1,8 +1,8 @@
 class Chezmoi < Formula
   desc "Manage your dotfiles across multiple diverse machines, securely"
   homepage "https://chezmoi.io/"
-  url "https://github.com/twpayne/chezmoi/releases/download/v2.74.1/chezmoi-2.74.1.tar.gz"
-  sha256 "4cfb8f635ea24b6e26f4a99ba8e84539c992df5b1b22adb1badc14fdbba5d0df"
+  url "https://github.com/twpayne/chezmoi/releases/download/v2.74.2/chezmoi-2.74.2.tar.gz"
+  sha256 "93aecfec5f1d55081ed4507f531db7de5a18738d6cb368b8cce827a37af18256"
   license "MIT"
   head "https://github.com/twpayne/chezmoi.git", branch: "master"
 
@@ -14,9 +14,8 @@ class Chezmoi < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/chezmoi-2.74.1"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "ce7ce15d7174b18d2cccae61fdb1979d6901ace7fcdde39598d2c3b23f95ccb7"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/chezmoi-2.74.2"
+    sha256 cellar: :any_skip_relocation, sonoma: "85ed4fb9f6ccc3555cef8117a46371c36378a801f6f5fe036bf0f5f40a31a6b5"
   end
 
   depends_on "go" => :build
