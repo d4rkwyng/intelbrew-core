@@ -4,7 +4,7 @@ class NodeAT24 < Formula
   url "https://nodejs.org/dist/v24.22.3/node-v24.22.3.tar.xz"
   sha256 "48ca3aa8a9b02133356922ef4fc80200e00598c80a4ef446f7c39a459222593d"
   license "MIT"
-  revision 1
+  revision 2
   compatibility_version 1
 
   livecheck do
@@ -13,8 +13,8 @@ class NodeAT24 < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/node@24-24.22.3_1"
-    sha256 sonoma: "86aeeb58f01829bf713db4e15fa80c8b98983b339fde8d9a80084bfac6fdefbd"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/node@24-24.22.3_2"
+    sha256 sonoma: "2135a560e6f155ee2114368981614f5d7e3ed8dd93e238a2c8d4b66ab3ce38d2"
   end
 
   keg_only :versioned_formula
@@ -83,6 +83,7 @@ class NodeAT24 < Formula
       rm_r buildpath/"deps"/dep
     end
 
+    openssl = dep("openssl")
     args = %W[
       --prefix=#{prefix}
       --with-intl=system-icu
@@ -114,8 +115,8 @@ class NodeAT24 < Formula
       --shared-nghttp3-libpath=#{formula_opt_lib("libnghttp3")}
       --shared-ngtcp2-includes=#{formula_opt_include("libngtcp2")}
       --shared-ngtcp2-libpath=#{formula_opt_lib("libngtcp2")}
-      --shared-openssl-includes=#{formula_opt_include("openssl@4")}
-      --shared-openssl-libpath=#{formula_opt_lib("openssl@4")}
+      --shared-openssl-includes=#{openssl.opt_include}
+      --shared-openssl-libpath=#{openssl.opt_lib}
       --shared-simdjson-includes=#{formula_opt_include("simdjson")}
       --shared-simdjson-libpath=#{formula_opt_lib("simdjson")}
       --shared-sqlite-includes=#{formula_opt_include("sqlite")}

@@ -25,13 +25,8 @@ class RpdsPy < Formula
     system "cargo", "fetch", "--locked"
   end
 
-  def pythons
-    deps.select { |d| d.name.match? Version.formula_optionally_versioned_regex(:python) }
-        .map { |d| formula_opt_libexec(d.name)/"bin/python" }
-  end
-
   def install
-    pythons.each do |python3|
+    python3_interpreters.each do |python3|
       system python3, "-m", "pip", "install", *std_pip_args, "."
     end
   end
@@ -53,7 +48,7 @@ class RpdsPy < Formula
       assert L.rest == List([3, 5])
     PYTHON
 
-    pythons.each do |python3|
+    python3_interpreters.each do |python3|
       system python3, "test.py"
     end
   end

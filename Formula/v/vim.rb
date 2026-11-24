@@ -2,8 +2,8 @@ class Vim < Formula
   desc "Vi 'workalike' with many additional features"
   homepage "https://www.vim.org/"
   # vim should only be updated once a day
-  url "https://github.com/vim/vim/archive/refs/tags/v9.2.1393.tar.gz"
-  sha256 "dc2528afe7bc3f3b6b5702aabbdc27980dab6fcef7d2e764000d86a8c2f53af1"
+  url "https://github.com/vim/vim/archive/refs/tags/v9.2.1397.tar.gz"
+  sha256 "dd864361b60258aebe032e6ea3948783ddef7faf189382270068cc5ffa26c5fd"
   license "Vim"
   compatibility_version 1
   head "https://github.com/vim/vim.git", branch: "master"
@@ -21,8 +21,8 @@ class Vim < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/vim-9.2.1393"
-    sha256 sonoma: "64f42ef514fbd5083535f7f0d0ac8375a61af6f5b396571cda7158c5e58e0293"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/vim-9.2.1397"
+    sha256 sonoma: "b13a8b0c9cff81aad9ca734ee0674398fdf9d797cb3861ef9319b983d81964c2"
   end
 
   depends_on "gettext" => :build
@@ -46,7 +46,7 @@ class Vim < Formula
   conflicts_with "macvim", because: "vim and macvim both install vi* binaries"
   conflicts_with "vim-classic", because: "vim and vim-classic both install vi* binaries"
 
-  def extra_deps = deps.select { |dep| dep.build? && dep.test? }
+  def extra_deps = deps.build.select(&:test?)
 
   deny_network_access!
 
@@ -55,7 +55,7 @@ class Vim < Formula
 
     # Allow dynamically loading formulae libraries when not linked
     extra_deps.each do |dep|
-      extra_rpath = dep.to_formula.opt_lib
+      extra_rpath = dep.opt_lib
       extra_rpath = rpath(target: extra_rpath) if OS.mac? # cannot use $ORIGIN
       ENV.append "LDFLAGS", "-Wl,-rpath,#{extra_rpath}"
     end

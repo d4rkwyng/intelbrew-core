@@ -1,15 +1,15 @@
 class GitDelta < Formula
   desc "Syntax-highlighting pager for git and diff output"
   homepage "https://dandavison.github.io/delta/"
-  url "https://github.com/dandavison/delta/archive/refs/tags/0.21.2.tar.gz"
-  sha256 "d8b5b3c3a5a354b5fddd6e7156f62c8a5db2a33aad9d49debd536777facb66b7"
+  url "https://github.com/dandavison/delta/archive/refs/tags/0.22.0.tar.gz"
+  sha256 "71fb0ba85058a8f206f11ea227d2f940f6051c9c81dcb238935e10b0dc82c09c"
   license "MIT"
   compatibility_version 1
   head "https://github.com/dandavison/delta.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/git-delta-0.21.2"
-    sha256 cellar: :any, sonoma: "db72ab1f0fb0956fb5a63e880dd2541e0f18f23f800beafe083c08d881e95eb0"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/git-delta-0.22.0"
+    sha256 cellar: :any, sonoma: "2be6f0b1157f3cd26b9034c708ca4b40e24dbb5148ec02a2671b89147b4b20bd"
   end
 
   depends_on "pkgconf" => :build

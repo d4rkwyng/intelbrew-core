@@ -1,8 +1,8 @@
 class Mise < Formula
   desc "Polyglot runtime manager (asdf rust clone)"
   homepage "https://mise.jdx.dev/"
-  url "https://github.com/jdx/mise/archive/refs/tags/v2026.11.12.tar.gz"
-  sha256 "5b20b1175cb3b8396c08fa216abdeb2f3b447794be6750d99fd0badec0a24c75"
+  url "https://github.com/jdx/mise/archive/refs/tags/v2026.11.13.tar.gz"
+  sha256 "56e0897889c59edd79dfc7b3237e9b16b5cd09cc33ba22ce247e0dcc3e1eaa31"
   license "MIT"
   head "https://github.com/jdx/mise.git", branch: "main"
 
@@ -12,8 +12,8 @@ class Mise < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mise-2026.11.12"
-    sha256 cellar: :any_skip_relocation, sonoma: "03c767b7eb2cb5936e87d2a8da70f95c34c51c4c373a2b297cf24ea6c3f2e91c"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mise-2026.11.13"
+    sha256 cellar: :any_skip_relocation, sonoma: "9f8c37bccd5f80d7649cf5065db70eb794903edc06f661b273f40c8a328064b3"
   end
 
   depends_on "cmake" => :build
@@ -32,7 +32,7 @@ class Mise < Formula
 
   def install
     # Ensure that the `openssl` crate picks up the intended library.
-    ENV["OPENSSL_DIR"] = formula_opt_prefix("openssl@4") if OS.linux?
+    ENV["OPENSSL_DIR"] = dep("openssl").opt_prefix if OS.linux?
 
     system "cargo", "install", *std_cargo_args
     man1.install "man/man1/mise.1"

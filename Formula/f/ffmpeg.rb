@@ -1,13 +1,12 @@
 class Ffmpeg < Formula
   desc "Play, record, convert, and stream select audio and video codecs"
   homepage "https://ffmpeg.org/"
-  url "https://ffmpeg.org/releases/ffmpeg-9.0.2.tar.xz"
-  sha256 "8c3850283eb25fa026482078a04051e0be17347b09ef81a0849bec15a96e002e"
+  url "https://ffmpeg.org/releases/ffmpeg-9.1.tar.xz"
+  sha256 "1a4d394ae63d190a526cd052eb4415c156b5c5e2df37efab41a7de0b8fde2433"
   # None of these parts are used by default, you have to explicitly pass `--enable-gpl`
   # to configure to activate them. In this case, FFmpeg's license changes to GPL v2+.
   # Passing `--enable-version3` changes the license to GPL v3+.
   license "GPL-3.0-or-later"
-  revision 1
   compatibility_version 3
   head "https://github.com/FFmpeg/FFmpeg.git", branch: "master"
 
@@ -17,9 +16,8 @@ class Ffmpeg < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ffmpeg-9.0.2_1"
-    rebuild 1
-    sha256 sonoma: "0c3c088163b9f5ba8ce9f4eb640ac4082b13b43de49cdc1ce17c984590783450"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ffmpeg-9.1"
+    sha256 sonoma: "784ffab13b4e8667cd17596b439815474b7679226afc7b93f27b61123eae115d"
   end
 
   depends_on "pkgconf" => :build
@@ -46,7 +44,10 @@ class Ffmpeg < Formula
 
   on_linux do
     depends_on "alsa-lib"
+    depends_on "libx11"
     depends_on "libxcb"
+    depends_on "libxext"
+    depends_on "libxv"
     depends_on "zlib-ng-compat"
   end
 
@@ -82,8 +83,12 @@ class Ffmpeg < Formula
       --enable-openssl
     ]
 
-    # Needs corefoundation, coremedia, corevideo
-    args += %w[--enable-videotoolbox --enable-audiotoolbox] if OS.mac?
+    if OS.mac?
+      # Needs corefoundation, coremedia, corevideo
+      args += %w[--enable-videotoolbox --enable-audiotoolbox]
+      # Avoid opportunistic linkage to X11 libraries installed for other formulae
+      args += %w[--disable-libxcb --disable-xlib]
+    end
     args << "--enable-neon" if Hardware::CPU.arm?
 
     system "./configure", *args

@@ -5,13 +5,13 @@ class ApacheArrow < Formula
   mirror "https://archive.apache.org/dist/arrow/arrow-26.0.1/apache-arrow-26.0.1.tar.gz"
   sha256 "1dd1b6701d9de58a4ed82b107539682f46ef6b9e22747e18e03204125c05a987"
   license "Apache-2.0"
-  revision 1
+  revision 2
   compatibility_version 4
   head "https://github.com/apache/arrow.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/apache-arrow-26.0.1_1"
-    sha256 cellar: :any, sonoma: "0f94c092a40cd251dd8aefea99d0f0d0f299f0165b864224fc5a1af039492871"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/apache-arrow-26.0.1_2"
+    sha256 cellar: :any, sonoma: "6870dc4a886920a0971cd32216567e53fdd240d48329812ab79041965c30e730"
   end
 
   depends_on "boost" => :build
@@ -48,8 +48,23 @@ class ApacheArrow < Formula
     cause "fails handling PROTOBUF_FUTURE_ADD_EARLY_WARN_UNUSED"
   end
 
+  resource "mimalloc" do
+    url "https://github.com/microsoft/mimalloc/archive/refs/tags/v3.4.1.tar.gz"
+    sha256 "37107a52c16baa80c5f74861dddda7b27bb9949e41a6637691867a94c88ca446"
+
+    livecheck do
+      url "https://raw.githubusercontent.com/apache/arrow/refs/tags/apache-arrow-#{LATEST_VERSION}/cpp/thirdparty/versions.txt"
+      regex(/^ARROW_MIMALLOC_BUILD_VERSION=v?(\d+(?:\.\d+)+)$/i)
+    end
+  end
+
+  deny_network_access!
+
   def install
     ENV.runtime_cpu_detection
+
+    resource("mimalloc").stage("mimalloc")
+    ENV["ARROW_MIMALLOC_URL"] = buildpath/"mimalloc"
 
     args = %W[
       -DCMAKE_INSTALL_RPATH=#{rpath}

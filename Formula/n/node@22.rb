@@ -4,7 +4,7 @@ class NodeAT22 < Formula
   url "https://nodejs.org/dist/v22.23.5/node-v22.23.5.tar.xz"
   sha256 "6cce7c58bf058700c643944903d60a325e8c9ceede1f5c2c088b435f2ada091a"
   license "MIT"
-  revision 1
+  revision 2
   compatibility_version 1
 
   livecheck do
@@ -13,8 +13,8 @@ class NodeAT22 < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/node@22-22.23.5_1"
-    sha256 cellar: :any, sonoma: "40964140e73f5d83c0aa0ba49db70f6358bdffe448364ab128757c70ac04ab90"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/node@22-22.23.5_2"
+    sha256 cellar: :any, sonoma: "cd78bed9bdbc7b407f4bf398af17754369fa61c718c62eb593dd9397941260af"
   end
 
   keg_only :versioned_formula
@@ -50,6 +50,7 @@ class NodeAT22 < Formula
     # simdjson 5 `key_selector` uses `throw` in consteval, which clang <= 20 rejects with -fno-exceptions
     ENV.append "CXXFLAGS", "-DSIMDJSON_CONCEPT_DISABLED"
 
+    openssl = dep("openssl")
     args = %W[
       --prefix=#{prefix}
       --with-intl=system-icu
@@ -75,8 +76,8 @@ class NodeAT22 < Formula
       --shared-nghttp2-libpath=#{formula_opt_lib("libnghttp2")}
       --shared-nghttp3-includes=#{formula_opt_include("libnghttp3")}
       --shared-nghttp3-libpath=#{formula_opt_lib("libnghttp3")}
-      --shared-openssl-includes=#{formula_opt_include("openssl@3")}
-      --shared-openssl-libpath=#{formula_opt_lib("openssl@3")}
+      --shared-openssl-includes=#{openssl.opt_include}
+      --shared-openssl-libpath=#{openssl.opt_lib}
       --shared-simdjson-includes=#{formula_opt_include("simdjson")}
       --shared-simdjson-libpath=#{formula_opt_lib("simdjson")}
       --shared-sqlite-includes=#{formula_opt_include("sqlite")}
