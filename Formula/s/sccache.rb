@@ -1,8 +1,8 @@
 class Sccache < Formula
   desc "Used as a compiler wrapper and avoids compilation when possible"
   homepage "https://github.com/mozilla/sccache"
-  url "https://github.com/mozilla/sccache/archive/refs/tags/v0.20.0.tar.gz"
-  sha256 "1957c3ec03866cb0196a4dd038faf11f8f6f14d131d9b4c93c9787762360d23a"
+  url "https://github.com/mozilla/sccache/archive/refs/tags/v0.20.1.tar.gz"
+  sha256 "1568b19b3e9bcf911986670dbf92264100974319ddde0b1ccaeecfa82b953632"
   license "Apache-2.0"
   head "https://github.com/mozilla/sccache.git", branch: "main"
 
@@ -12,8 +12,8 @@ class Sccache < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/sccache-0.20.0"
-    sha256 cellar: :any_skip_relocation, sonoma: "50d047e95827c0d96fa0f6b8b37e618f1219063a3aed1589bf044459d8ef7cbc"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/sccache-0.20.1"
+    sha256 cellar: :any_skip_relocation, sonoma: "33b3943e2ffcc90b96c3732362b8ec275b6c0f1f621440789f873142e6394373"
   end
 
   depends_on "pkgconf" => :build

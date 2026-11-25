@@ -1,9 +1,9 @@
 class MysqlClient < Formula
   desc "Open source relational database management system"
   homepage "https://github.com/mysql/mysql-server"
-  url "https://cdn.mysql.com/Downloads/MySQL-26.10/mysql-26.10.0.tar.gz"
-  mirror "https://repo.mysql.com/apt/ubuntu/pool/mysql-innovation/m/mysql-community/mysql-community_26.10.0.orig.tar.gz"
-  sha256 "984507622ddfa4d84ad23fc56ec5b5f18f4fda328af5a23e5f5b1a062301ea2c"
+  url "https://cdn.mysql.com/Downloads/MySQL-26.10/mysql-26.10.0.1.tar.gz"
+  mirror "https://repo.mysql.com/apt/ubuntu/pool/mysql-innovation/m/mysql-community/mysql-community_26.10.0.1.orig.tar.gz"
+  sha256 "3d91f6b127ffd2fbd04794c1a11a364a4c73f89c8c44d1e2a07f5661a1b7a46a"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
   compatibility_version 1
 
@@ -12,9 +12,8 @@ class MysqlClient < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mysql-client-26.10.0"
-    rebuild 1
-    sha256 sonoma: "171c5d25d54178094e3d9d012f965e31837d01355ca878bf301012676cb4e81f"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mysql-client-26.10.0.1"
+    sha256 sonoma: "55118a20c0ad81da3da818b50fdc98099ca4e55f2d80519d7dbcace536320912"
   end
 
   keg_only "it conflicts with mysql (which contains client libraries)"

@@ -20,22 +20,21 @@ class SuiteSparse < Formula
 
   bottle do
     root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/suite-sparse-7.14.1"
-    rebuild 1
-    sha256 sonoma: "d613b01b4e4b86597484a149c5bbf7ad700356c04d483844b9d28c7122273834"
+    rebuild 2
+    sha256 sonoma: "880b5a9e8e486ca222f25b5bc0e406f6885a8682f0326da0fb72cd726331a51c"
   end
 
   depends_on "cmake" => :build
   depends_on "gcc" # for gfortran
   depends_on "gmp"
   depends_on "mpfr"
+  depends_on "openblas"
 
   on_macos do
     depends_on "libomp"
   end
 
-  on_linux do
-    depends_on "openblas"
-  end
+  deny_network_access!
 
   def install
     # CMake FortranCInterface_VERIFY fails with LTO on Linux due to different GCC and GFortran versions

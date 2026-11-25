@@ -3,10 +3,9 @@ class MysqlAT84 < Formula
   # FIXME: Actual homepage fails audit due to Homebrew's user-agent
   # homepage "https://dev.mysql.com/doc/refman/8.4/en/"
   homepage "https://github.com/mysql/mysql-server"
-  url "https://cdn.mysql.com/Downloads/MySQL-8.4/mysql-8.4.13.tar.gz"
-  sha256 "f6ddc7f7fb6462bab8b533b13c06af3fff57fa9ca12259b81ab13cd9930b9d58"
+  url "https://cdn.mysql.com/Downloads/MySQL-8.4/mysql-8.4.13.1.tar.gz"
+  sha256 "e4b78afe83375e672f674662725049e17db17db2fb18060c64933e54e1ec6502"
   license "GPL-2.0-only" => { with: "Universal-FOSS-exception-1.0" }
-  revision 1
 
   livecheck do
     url "https://dev.mysql.com/downloads/mysql/8.4.html?tpl=files&os=src&version=8.4",
@@ -15,9 +14,8 @@ class MysqlAT84 < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mysql@8.4-8.4.13_1"
-    rebuild 1
-    sha256 sonoma: "da211dca46c67dd21cb851b4f4186fb8c39b751d32166b498bdd5ee0705d4c44"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/mysql@8.4-8.4.13.1"
+    sha256 sonoma: "ac7bf6d97bf7ac77e14e770a19d0c7f581d791cff7088e9ed834061cd1ae3cfc"
   end
 
   keg_only :versioned_formula

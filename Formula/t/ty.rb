@@ -1,14 +1,14 @@
 class Ty < Formula
   desc "Extremely fast Python type checker, written in Rust"
   homepage "https://docs.astral.sh/ty/"
-  url "https://files.pythonhosted.org/packages/25/e3/2d5ad8406ba1f8e7e404a70bf19bfd1af68f6548b03d2b48243acef5a4ab/ty-0.0.108.tar.gz"
-  sha256 "890f214ca1e2f3b14da23d0f519132d466ba09fdb820677df73ae208a6683784"
+  url "https://files.pythonhosted.org/packages/b5/c0/6c5be0cf55104032c67166b6cb6f32b8226123ccb86377f93933cf9e65f7/ty-0.0.109.tar.gz"
+  sha256 "8de0ee28bca7b7e25164a52e2b3e914d0f4380cb440c24a0cf5a9fc9c4d0085b"
   license "MIT"
   head "https://github.com/astral-sh/ty.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ty-0.0.108"
-    sha256 cellar: :any_skip_relocation, sonoma: "1f83c2c8f5a1b4dfa5d11258e22ed4fb0e4ba76d531a137e4caa21f0daecb8d2"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ty-0.0.109"
+    sha256 cellar: :any_skip_relocation, sonoma: "dbc5db8c0e197dcb27c3d51b61579e77ff48c8fcf06f90bdc91fd07b4815f4e3"
   end
 
   depends_on "rust" => :build

@@ -1,8 +1,8 @@
 class Geos < Formula
   desc "Geometry Engine"
   homepage "https://libgeos.org/"
-  url "https://download.osgeo.org/geos/geos-3.15.0.tar.bz2"
-  sha256 "d5e5192a686d065eaed082de14dd26244c5c8e02bff16b2c6cce3265f648e00e"
+  url "https://download.osgeo.org/geos/geos-3.15.1.tar.bz2"
+  sha256 "8eb6dc2ea78b00c2f5109c6b0dba9e028c60bad42d7b1b0cc9952b12dc71f571"
   license "LGPL-2.1-or-later"
   compatibility_version 1
 
@@ -12,9 +12,8 @@ class Geos < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/geos-3.15.0"
-    rebuild 1
-    sha256 cellar: :any, sonoma: "98f2bb4b459a467577ff462cbe55d5667ffc3bead4c8d6bd5ab3b9e9bf9c2e96"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/geos-3.15.1"
+    sha256 cellar: :any, sonoma: "ea9454848aaeaadf857c6a084d43a62a568585aa9a2d05a4e8696b39129b8e45"
   end
 
   depends_on "cmake" => :build

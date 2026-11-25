@@ -1,8 +1,8 @@
 class Biome < Formula
   desc "Toolchain of the web"
   homepage "https://biomejs.dev/"
-  url "https://github.com/biomejs/biome/archive/refs/tags/@biomejs/biome@2.6.8.tar.gz"
-  sha256 "14e8a90df2b74e24bcee56065fc076c672deacc26b31767983f3df0860abcc1e"
+  url "https://github.com/biomejs/biome/archive/refs/tags/@biomejs/biome@2.6.9.tar.gz"
+  sha256 "eb1dc14f5c3a4c824dbd80d07458a5f891a22b7042379f2d999d867b947a943d"
   license any_of: ["Apache-2.0", "MIT"]
   head "https://github.com/biomejs/biome.git", branch: "main"
 
@@ -12,8 +12,8 @@ class Biome < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/biome-2.6.8"
-    sha256 cellar: :any_skip_relocation, sonoma: "7d8aa617d6af39997a3255b67e5b1fff1e3f4f118b7eb0b4024f6cb6b4d5954e"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/biome-2.6.9"
+    sha256 cellar: :any_skip_relocation, sonoma: "90d92e3665c4047f065ee855cfd53d14086fa2dc572965ee57a7b23a91251719"
   end
 
   depends_on "rust" => :build
