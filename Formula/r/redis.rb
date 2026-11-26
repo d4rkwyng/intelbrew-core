@@ -48,6 +48,9 @@ class Redis < Formula
   def install
     # VectorSimilarity selects its SIMD kernels at runtime via cpu_features.
     ENV.runtime_cpu_detection
+    # Intelbrew: CMAKE_CXX_STANDARD is set function-local; Apple clang 16 then compiles C++ as C++98.
+    inreplace "modules/redisearch/src/CMakeLists.txt",
+              "set(CMAKE_CXX_STANDARD 20)\n", "set(CMAKE_CXX_STANDARD 20 PARENT_SCOPE)\n"
     # FIXME: redisbloom's vendored readies has no `OSX_MIN_SDK_VER` past tahoe, leaving `-mmacosx-version-min=` empty
     ENV["OSX_MIN_SDK_VER"] = MacOS.version.to_s if OS.mac?
     # RediSearch looks for Homebrew's `openssl@3` before anything else on macOS

@@ -1,8 +1,8 @@
 class Hdf5 < Formula
   desc "File format designed to store large amounts of data"
   homepage "https://www.hdfgroup.org/solutions/hdf5/"
-  url "https://github.com/HDFGroup/hdf5/releases/download/2.2.0/hdf5-2.2.0.tar.gz"
-  sha256 "1a1ab8209b35586fbc1aa279ba76d102130b95badcb20ca329587219112d8c16"
+  url "https://github.com/HDFGroup/hdf5/releases/download/2.3.0/hdf5-2.3.0.tar.gz"
+  sha256 "cd462ef0578927ae75f9e010a806b0dd28f19152db2abf6919cb94f9d5b9b8b0"
   license "BSD-3-Clause"
   version_scheme 1
   compatibility_version 1
@@ -16,13 +16,8 @@ class Hdf5 < Formula
   end
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "e7175185f06cbaafd1951d254bfc233a18c5f555eafe4b713a7e02a9a1dd1efb"
-    sha256 cellar: :any, arm64_tahoe:       "e483a85cc085f9088d8cda575d7587b290c46c5c7bc43aaededd735bb08bd11d"
-    sha256 cellar: :any, arm64_sequoia:     "a541ddabf7d4838f985c42964d96b6fad284bf5356f8953efda5741f1329001a"
-    sha256 cellar: :any, arm64_sonoma:      "7228364d0740e864a1e4027730ea3193e6a18d33fc0986a4a2f8b408d6b9f5b7"
-    sha256 cellar: :any, sonoma:            "e5156eec696744c98eacd34b8eb68e3e95062498c4c2976016473c106bf355e1"
-    sha256 cellar: :any, arm64_linux:       "ac5a7628024f6a4d628f963e4bc421ab4153ddb32141efc6d817870559ba59cf"
-    sha256 cellar: :any, x86_64_linux:      "ca771bc9625c46c17d21db1603e394bd21b9bb32d6d0193b9e0020a5a7af412f"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/hdf5-2.3.0"
+    sha256 cellar: :any, sonoma: "6256d5d04323c66984412d9ecb11d48830ded84544c0a7f2cf522a84526ac626"
   end
 
   depends_on "cmake" => :build
@@ -44,7 +39,7 @@ class Hdf5 < Formula
     ]
     inreplace inreplace_c_files do |s|
       s.gsub! "@CMAKE_C_COMPILER@", ENV.cc
-      s.gsub! "@CMAKE_CXX_COMPILER@", ENV.cxx
+      s.gsub! "@H5_CPP_COMPILER@", ENV.cxx
     end
 
     # CMake FortranCInterface_VERIFY fails with LTO on Linux due to different GCC and GFortran versions

@@ -2,14 +2,14 @@ class Cosign < Formula
   desc "Container Signing"
   homepage "https://github.com/sigstore/cosign"
   url "https://github.com/sigstore/cosign.git",
-      tag:      "v3.1.5",
-      revision: "e5a0818ca5729481095773409e9c1b60cc278e8d"
+      tag:      "v3.1.6",
+      revision: "252f10a80ba871152a12e5ee324ad1e02c85d079"
   license "Apache-2.0"
   head "https://github.com/sigstore/cosign.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cosign-3.1.5"
-    sha256 cellar: :any_skip_relocation, sonoma: "a6935a4d27002741e22cdd3a8d2e8406403347011c08c53c4577294107b7fd5d"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/cosign-3.1.6"
+    sha256 cellar: :any_skip_relocation, sonoma: "c412fcc8ab2888af2648e47abeb8b436cc82a07d611df7a5ec3e7e4b3821ca99"
   end
 
   depends_on "go" => :build

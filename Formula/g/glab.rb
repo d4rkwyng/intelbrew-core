@@ -2,8 +2,8 @@ class Glab < Formula
   desc "Open-source GitLab command-line tool"
   homepage "https://gitlab.com/gitlab-org/cli"
   url "https://gitlab.com/gitlab-org/cli.git",
-    tag:      "v1.132.0",
-    revision: "00f5b8fe102e1a07471aadd5a2e44f6ff1befeeb"
+    tag:      "v1.133.0",
+    revision: "093bdd1b82d84dd066eefc9fac91d382e3128899"
   license "MIT"
   compatibility_version 1
   head "https://gitlab.com/gitlab-org/cli.git", branch: "main"
@@ -11,8 +11,8 @@ class Glab < Formula
   no_autobump! because: :bumped_by_upstream
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/glab-1.132.0"
-    sha256 cellar: :any_skip_relocation, sonoma: "c6aac15c3d72664a26b3bae7290aae8d66baa14c8b913c705ab3e9d173d5ec5d"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/glab-1.133.0"
+    sha256 cellar: :any_skip_relocation, sonoma: "7e399bfbad9d5dea70ba5a3ac902e1959fcf23487c96948af2fe4e6559b95443"
   end
 
   depends_on "go" => :build

@@ -1,8 +1,8 @@
 class Pixi < Formula
   desc "Package management made easy"
   homepage "https://pixi.sh"
-  url "https://github.com/prefix-dev/pixi/archive/refs/tags/v0.84.2.tar.gz"
-  sha256 "45bb2eb57c8b499962c2ed9a1683b3f120624318bcda4c4511fbd07a887a6ee6"
+  url "https://github.com/prefix-dev/pixi/archive/refs/tags/v0.85.0.tar.gz"
+  sha256 "e721f21c5e3c5cf6c608392a55b2d65c7d625052d77d233b67452deb35799bf2"
   license "BSD-3-Clause"
   head "https://github.com/prefix-dev/pixi.git", branch: "main"
 
@@ -15,9 +15,8 @@ class Pixi < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pixi-0.84.2"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "54f14c9eda13544c8664c481719eea110bd6f5dc423fb415c020f91fba373934"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/pixi-0.85.0"
+    sha256 cellar: :any_skip_relocation, sonoma: "5e11781a22d2f83ad79b8a3ab25c9ef2779c1809d60b23d0e598064bec55a99f"
   end
 
   depends_on "cmake" => :build

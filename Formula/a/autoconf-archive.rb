@@ -8,11 +8,9 @@ class AutoconfArchive < Formula
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "e6624b5bf9ac866d076970f7c651e696e8b10759261f8d8517d00ac6cdcbc16c"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "e6624b5bf9ac866d076970f7c651e696e8b10759261f8d8517d00ac6cdcbc16c"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "e6624b5bf9ac866d076970f7c651e696e8b10759261f8d8517d00ac6cdcbc16c"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "2f05757b108159913c23ede7c6878675cad8c3bb5933b6ab5bdcdd54556be9da"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:      "2f05757b108159913c23ede7c6878675cad8c3bb5933b6ab5bdcdd54556be9da"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/autoconf-archive-2026.11.11"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, sonoma: "bcdc197b4090a63f8f792720bbdb356b0a5f2f64aa8dbd650d09932d616d0fd6"
   end
 
   # autoconf-archive is useless without autoconf

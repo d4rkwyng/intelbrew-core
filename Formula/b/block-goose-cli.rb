@@ -1,8 +1,8 @@
 class BlockGooseCli < Formula
   desc "Open source, extensible AI agent that goes beyond code suggestions"
   homepage "https://goose-docs.ai/"
-  url "https://github.com/aaif-goose/goose/archive/refs/tags/v1.60.2.tar.gz"
-  sha256 "49827f1da3eaf8dd8cc8db00803f88eff0780683158c9c4611a4d5ba4c42c906"
+  url "https://github.com/aaif-goose/goose/archive/refs/tags/v1.61.0.tar.gz"
+  sha256 "c7a7866d27c611ebe2957c6c3423444318bd4e17ca7b20f247468000366ddbe8"
   license "Apache-2.0"
   head "https://github.com/aaif-goose/goose.git", branch: "main"
 
@@ -12,8 +12,8 @@ class BlockGooseCli < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/block-goose-cli-1.60.2"
-    sha256 cellar: :any_skip_relocation, sonoma: "a4dd9bc10a278c10a38e090e0cc59df3e282fbec1d727c7dd15c2d0f75b057d9"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/block-goose-cli-1.61.0"
+    sha256 cellar: :any_skip_relocation, sonoma: "baff705873d273a3d3231e70c728b3c8c647768c035a9c62df4dd253ca90f2fb"
   end
 
   depends_on "cmake" => :build
