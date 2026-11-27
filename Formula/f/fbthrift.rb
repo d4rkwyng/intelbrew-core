@@ -1,22 +1,21 @@
 class Fbthrift < Formula
   desc "Facebook's branch of Apache Thrift, including a new C++ server"
-  homepage "https://github.com/facebook/fbthrift"
-  url "https://github.com/facebook/fbthrift/archive/refs/tags/v2026.10.26.00.tar.gz"
-  sha256 "6ad18cfc24297120a536a0ef9c5a84f409c9aa4376057328e8dca9d45587d5a1"
+  homepage "https://github.com/meta/fbthrift"
+  url "https://github.com/meta/fbthrift/archive/refs/tags/v2026.11.23.00.tar.gz"
+  sha256 "83255fcddbab9165590d272685695dd3c07a3cefcc3ac4bf69142eaa1e089063"
   license "Apache-2.0"
   compatibility_version 1
-  head "https://github.com/facebook/fbthrift.git", branch: "main"
+  head "https://github.com/meta/fbthrift.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/fbthrift-2026.10.26.00"
-    sha256 cellar: :any, sonoma: "9b412e5d23effd27e108af64048acb38761aac5236d0e605d664503494e38c6b"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/fbthrift-2026.11.23.00"
+    sha256 cellar: :any, sonoma: "ac5000b64cd50f31fd798406a62f25cfe81ba06b96e8958fbffef00249aea46e"
   end
 
-  depends_on "bison" => :build # Needs Bison 3.1+
+  depends_on "boost" => :build
   depends_on "cmake" => [:build, :test]
   depends_on "mvfst" => [:build, :test]
   depends_on "zstd" => :build
-  depends_on "double-conversion"
   depends_on "fizz"
   depends_on "fmt"
   depends_on "folly"
@@ -26,26 +25,24 @@ class Fbthrift < Formula
   depends_on "wangle"
   depends_on "xxhash"
 
-  uses_from_macos "flex" => :build
   uses_from_macos "python" => :build
 
   on_linux do
-    depends_on "boost"
     depends_on "zlib-ng-compat"
   end
 
   conflicts_with "thrift", because: "both install `thrift` binaries"
 
+  deny_network_access!
+
   def install
-    # Work around build failure with Xcode 16
-    # Issue ref: https://github.com/facebook/fbthrift/issues/618
-    # Issue ref: https://github.com/facebook/fbthrift/issues/607
+    # Intelbrew: homebrew-core#327087 dropped these. Apple clang 16 still needs the vtables flag:
+    # the in-tree thrift compiler aborts in annotation codegen (meta/fbthrift#618, #607).
     ENV.append "CXXFLAGS", "-fno-assume-unique-vtables" if DevelopmentTools.clang_build_version >= 1600
     # Restore `<fmt/core.h>` pulling in `<fmt/format.h>` (dropped in fmt 12.2); #702 doesn't apply to this tag.
-    # PR ref: https://github.com/facebook/fbthrift/pull/702
     ENV.append "CXXFLAGS", "-DFMT_DEPRECATED_HEAVY_CORE"
 
-    ENV["OPENSSL_ROOT_DIR"] = formula_opt_prefix("openssl@4")
+    ENV["OPENSSL_ROOT_DIR"] = dep("openssl").opt_prefix
 
     # The static libraries are a bit annoying to build. If modifying this formula
     # to include them, make sure `bin/thrift1` links with the dynamic libraries
@@ -56,17 +53,15 @@ class Fbthrift < Formula
       shared_args << "-DCMAKE_EXE_LINKER_FLAGS=-Wl,-dead_strip_dylibs"
     end
 
-    # We build in-source to avoid an error from thrift/lib/cpp2/test:
-    # Output path .../build/shared/thrift/lib/cpp2/test/../../../conformance/if is unusable or not a directory
-    system "cmake", "-S", ".", "-B", ".", *shared_args, *std_cmake_args
-    system "cmake", "--build", "."
-    system "cmake", "--install", "."
+    system "cmake", "-S", ".", "-B", "build", *shared_args, *std_cmake_args
+    system "cmake", "--build", "build"
+    system "cmake", "--install", "build"
 
     elisp.install "thrift/contrib/thrift.el"
     (share/"vim/vimfiles/syntax").install "thrift/contrib/thrift.vim"
 
     # Save a copy of FindxxHash.cmake to test with as it is used in FBThriftConfig.cmake
-    (libexec/"cmake").install "build/fbcode_builder/CMake/FindXxhash.cmake"
+    (libexec/"cmake").install "tool/fbcode_builder/CMake/FindXxhash.cmake"
   end
 
   test do
@@ -100,7 +95,7 @@ class Fbthrift < Formula
       target_link_libraries(test FBThrift::transport)
     CMAKE
 
-    ENV.append_path "CMAKE_PREFIX_PATH", formula_opt_prefix("openssl@4")
+    ENV.append_path "CMAKE_PREFIX_PATH", dep("openssl").opt_prefix
     system "cmake", "-S", ".", "-B", "build", *std_cmake_args
     system "cmake", "--build", "build"
   end

@@ -1,15 +1,14 @@
 class Bazelisk < Formula
   desc "User-friendly launcher for Bazel"
   homepage "https://github.com/bazelbuild/bazelisk/"
-  url "https://github.com/bazelbuild/bazelisk/archive/refs/tags/v1.30.0.tar.gz"
-  sha256 "938c875176d6895d1f9cce21d71a76f56f82e88d819f22ed587f124f795aad33"
+  url "https://github.com/bazelbuild/bazelisk/archive/refs/tags/v1.31.0.tar.gz"
+  sha256 "7aff92f74b73f1560bd1425ca853e6b5f78babef11f4ab10582165fa82a63ad4"
   license "Apache-2.0"
   head "https://github.com/bazelbuild/bazelisk.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/bazelisk-1.30.0"
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, sonoma: "f23c78ae62e4adcfc371b970aee9e06b82ecc79d1f8868deb147bf4872fbe8c6"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/bazelisk-1.31.0"
+    sha256 cellar: :any_skip_relocation, sonoma: "018a18681e91de350e767ce2dff073b22927bdd0a1139e8a0bdba31c90c81e16"
   end
 
   depends_on "go" => :build

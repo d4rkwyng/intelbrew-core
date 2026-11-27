@@ -9,12 +9,9 @@ class Ykman < Formula
   head "https://github.com/Yubico/yubikey-manager.git", branch: "main"
 
   bottle do
-    rebuild 1
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "bae7e956f8ae1c060e11b616737b2943e94511609c2ff015fb788b5766efa7a4"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "ad9c315604e0ab84fa167f2adfe41923bb8e6d3366342b272e8ba81faff6e13a"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "690d4f00a86a91d8a0e92de42549ee6541c076bb6841bf553eac750650084857"
-    sha256 cellar: :any,                 arm64_linux:       "214e79d72f3595e3bf1970f17688e88c4b42651e4bfb53c28c4c96434ef9e0b5"
-    sha256 cellar: :any,                 x86_64_linux:      "7934311f1fa7e5bf93b36ae598a163836fe567c5fabdcf22ddeabed748b55a64"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ykman-5.9.2"
+    rebuild 2
+    sha256 cellar: :any_skip_relocation, sonoma: "b11c0d7e8819828ea5fdf8e9bee90c57c0404a74696a34042b76d9f947e068de"
   end
 
   depends_on "cmake" => :build # for more-itertools

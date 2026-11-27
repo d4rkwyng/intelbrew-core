@@ -1,15 +1,15 @@
 class Fb303 < Formula
   desc "Thrift functions for querying information from a service"
-  homepage "https://github.com/facebook/fb303"
-  url "https://github.com/facebook/fb303/archive/refs/tags/v2026.10.26.00.tar.gz"
-  sha256 "1cd7202240e7cca34db5c57d20d8a3fffc13c99452b475fbf1d72bf5274dbaf9"
+  homepage "https://github.com/meta/fb303"
+  url "https://github.com/meta/fb303/archive/refs/tags/v2026.11.23.00.tar.gz"
+  sha256 "d32ca0e03d09475f8dbc068ea94b115299b9d87004343565e34cf0b07c052906"
   license "Apache-2.0"
   compatibility_version 1
-  head "https://github.com/facebook/fb303.git", branch: "main"
+  head "https://github.com/meta/fb303.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/fb303-2026.10.26.00"
-    sha256 cellar: :any, sonoma: "cfe77fca3dbb0ced077d12a7b9a6c6da6ff95f6e17b0f3117f3bb2d98491b303"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/fb303-2026.11.23.00"
+    sha256 cellar: :any, sonoma: "ebd1e44c92e2d5d7b2682b0ce7362f6152acf0e6b624e861d1dffb2365526830"
   end
 
   depends_on "cmake" => [:build, :test]
@@ -20,6 +20,8 @@ class Fb303 < Formula
   depends_on "folly"
   depends_on "gflags"
   depends_on "glog"
+
+  deny_network_access!
 
   def install
     shared_args = ["-DBUILD_SHARED_LIBS=ON", "-DCMAKE_INSTALL_RPATH=#{rpath}"]
@@ -63,8 +65,7 @@ class Fb303 < Formula
       ENV.append_to_cflags "-march=#{Hardware.oldest_cpu}" if Hardware::CPU.intel?
     end
 
-    openssl = folly.deps.find { |dep| dep.name.start_with?("openssl@") }
-    ENV.append_path "CMAKE_PREFIX_PATH", formula_opt_prefix(openssl.name)
+    ENV.append_path "CMAKE_PREFIX_PATH", folly.dep("openssl").opt_prefix
 
     args = OS.mac? ? [] : ["-DCMAKE_BUILD_RPATH=#{lib};#{HOMEBREW_PREFIX}/lib"]
     system "cmake", "-S", ".", "-B", ".", *args, *std_cmake_args

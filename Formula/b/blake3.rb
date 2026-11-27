@@ -1,19 +1,14 @@
 class Blake3 < Formula
   desc "C implementation of the BLAKE3 cryptographic hash function"
   homepage "https://github.com/BLAKE3-team/BLAKE3"
-  url "https://github.com/BLAKE3-team/BLAKE3/archive/refs/tags/1.8.7.tar.gz"
-  sha256 "c6782a28842b1c0478524ac06a4f2ede784038ee298d6e2162c0b089c4306a3c"
+  url "https://github.com/BLAKE3-team/BLAKE3/archive/refs/tags/1.8.8.tar.gz"
+  sha256 "a5b927e875e16ebe76bacc1961107d2135637aab39ef227006fea27634e94cfe"
   license any_of: ["CC0-1.0", "Apache-2.0"]
   compatibility_version 1
 
   bottle do
-    sha256 cellar: :any, arm64_golden_gate: "12bd2a0bace675c7bc0d680da15f491b6c4ca0de2aed04ee6d6394390f804667"
-    sha256 cellar: :any, arm64_tahoe:       "58e8c92c82c52ff4290097cd31c6b6cfc61f9095b8ece8ab4157338f9ebd22f9"
-    sha256 cellar: :any, arm64_sequoia:     "dcb28e5b04890bd9c788e9ed948ace5c4e1ad7782faec3061e40e20300271204"
-    sha256 cellar: :any, arm64_sonoma:      "a3fec96703f5afaa29e78be7a8d00c811d506a6e134d3875349b93e99a3453d7"
-    sha256 cellar: :any, sonoma:            "c7611f7cd8e93ecbcf1b9e325e6dfdf2a7b5e2d451321b5e97d9028d17d6b854"
-    sha256 cellar: :any, arm64_linux:       "3c09c17aaa702ec0e77d643fb6624042cb852f60a819e300c53bae50b3780968"
-    sha256 cellar: :any, x86_64_linux:      "b9de15ad16931c25be34da4f9ede237100aeea4613a4cb8eb415f92c270c9874"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/blake3-1.8.8"
+    sha256 cellar: :any, sonoma: "6013b3d611e713c3deb905496941822fa5c39188bb69a245a1e15a972e4b0a40"
   end
 
   depends_on "cmake" => :build

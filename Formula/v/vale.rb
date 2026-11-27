@@ -1,13 +1,13 @@
 class Vale < Formula
   desc "Syntax-aware linter for prose"
   homepage "https://vale.sh/"
-  url "https://github.com/vale-cli/vale/archive/refs/tags/v3.28.1.tar.gz"
-  sha256 "8ccc68482a36a9123c078267ccbaca6e0be678ef2a1991ef935191cbe9bed8cd"
+  url "https://github.com/vale-cli/vale/archive/refs/tags/v3.29.0.tar.gz"
+  sha256 "68bbb94af847e32bc14725e61cf0b5319521960cce6f70c2a21872e9a903e9aa"
   license "MIT"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/vale-3.28.1"
-    sha256 cellar: :any_skip_relocation, sonoma: "0aac3f7b2723e7664e2d25cc17c664902964b0ad7bc3818892b68f5f24ce0074"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/vale-3.29.0"
+    sha256 cellar: :any_skip_relocation, sonoma: "c94de2bbbd126b72fd6b7abd5cd9c0351fa9188ed6580bab5cbd4cc10c1921c2"
   end
 
   depends_on "go" => :build

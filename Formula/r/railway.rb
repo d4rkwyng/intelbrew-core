@@ -1,14 +1,14 @@
 class Railway < Formula
   desc "Develop and deploy code with zero configuration"
   homepage "https://railway.com/"
-  url "https://github.com/railwayapp/cli/archive/refs/tags/v5.75.0.tar.gz"
-  sha256 "7a9775338cfc6965a770ee9af18f3309b92d7591e6744c8d0f3e766c5d68a8d9"
+  url "https://github.com/railwayapp/cli/archive/refs/tags/v5.76.0.tar.gz"
+  sha256 "ad0e0e01a3e166f8aaddfdced1fd2c681de5adb9c722866893a6ead588c98430"
   license "MIT"
   head "https://github.com/railwayapp/cli.git", branch: "master"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/railway-5.75.0"
-    sha256 cellar: :any_skip_relocation, sonoma: "3b19f11d6b8e1acbbf501febada22a7bf2f3e7ea85758dd30cf813eda8a96a5b"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/railway-5.76.0"
+    sha256 cellar: :any_skip_relocation, sonoma: "e0f6f52b4b1a70a75eacd11f3696a6fe809c105b9c4ffc851cfbb1171f529aaa"
   end
 
   depends_on "rust" => :build
