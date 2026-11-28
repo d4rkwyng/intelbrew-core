@@ -2,8 +2,8 @@ class Ollama < Formula
   desc "Create, run, and share large language models (LLMs)"
   homepage "https://ollama.com/"
   url "https://github.com/ollama/ollama.git",
-      tag:      "v0.40.18",
-      revision: "924cc286cc592f49c481fa84e15fa60dbc75989e"
+      tag:      "v0.40.19",
+      revision: "8ae8acb81afba9c3c67adf08190964eb7d1207ef"
   license "MIT"
   compatibility_version 1
   head "https://github.com/ollama/ollama.git", branch: "main"
@@ -17,8 +17,8 @@ class Ollama < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ollama-0.40.18"
-    sha256 cellar: :any, sonoma: "34d5989c147d5ceb5ecd6638932c0cfd098ac7a081449c008459fecd22fa4695"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/ollama-0.40.19"
+    sha256 cellar: :any, sonoma: "276c37e18b38489b9dfed91ec4c7e94d409ea6363b08c4f5abfb2150fb40d961"
   end
 
   depends_on "ccache" => :build
@@ -42,8 +42,8 @@ class Ollama < Formula
   # Pinned dependency required by llama-server
   resource "llama.cpp" do
     url "https://github.com/ggml-org/llama.cpp.git",
-        tag:      "b12651",
-        revision: "f5e6915c28f10330885fcb9243a93ae98d3115ab"
+        tag:      "b12734",
+        revision: "52f6e0247a5a7b0aecaa8e70ac128f6942899c4c"
 
     livecheck do
       url "https://raw.githubusercontent.com/ollama/ollama/refs/tags/v#{LATEST_VERSION}/LLAMA_CPP_VERSION"

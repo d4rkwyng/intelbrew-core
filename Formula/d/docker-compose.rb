@@ -1,8 +1,8 @@
 class DockerCompose < Formula
   desc "Isolated development environments using Docker"
   homepage "https://docs.docker.com/compose/"
-  url "https://github.com/docker/compose/archive/refs/tags/v5.8.0.tar.gz"
-  sha256 "1836019594ad054f8459cea7efc1d52eae7d05c64217c4efffe02d0d2930c44b"
+  url "https://github.com/docker/compose/archive/refs/tags/v5.8.1.tar.gz"
+  sha256 "5ed75d95a0aface6495a2aefc0a46c1fb56d0889abdf0840dc02c372a2ae7430"
   license "Apache-2.0"
   head "https://github.com/docker/compose.git", branch: "main"
 
@@ -15,8 +15,8 @@ class DockerCompose < Formula
   end
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/docker-compose-5.8.0"
-    sha256 cellar: :any_skip_relocation, sonoma: "edc35ad404c3802f73f7b6125484b9ad01ff3ebe9cfc56a2a4ccc8f0f416901e"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/docker-compose-5.8.1"
+    sha256 cellar: :any_skip_relocation, sonoma: "7a2172b1d6f203ce395a75802b56ab0fa14e2163bd605e3410f02958a3736ab1"
   end
 
   depends_on "go" => :build

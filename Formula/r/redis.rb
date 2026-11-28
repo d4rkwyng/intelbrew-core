@@ -41,9 +41,17 @@ class Redis < Formula
 
   on_macos do
     depends_on "make" => :build # RediSearch needs Make 4.0+
+    # Intelbrew: RediSearch's SVS headers need C++20 std::atomic_ref (libc++ 19+, Apple clang 17+).
+    depends_on "llvm" => :build if DevelopmentTools.clang_build_version <= 1699
   end
 
   conflicts_with "valkey", because: "both install `redis-*` binaries"
+
+  # Intelbrew: build with brew llvm on Apple clang 16; see the llvm build dep above.
+  fails_with :clang do
+    build 1699
+    cause "RediSearch's ScalableVectorSearch uses C++20 std::atomic_ref (libc++ 19+)"
+  end
 
   def install
     # VectorSimilarity selects its SIMD kernels at runtime via cpu_features.

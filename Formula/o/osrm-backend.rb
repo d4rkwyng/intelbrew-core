@@ -12,6 +12,7 @@ class OsrmBackend < Formula
   end
 
   bottle do
+    manifest_sha256 "347cf0c697656110fa2eb78b6d6a5098645f0481fae74b88139654914f53710d"
     sha256 cellar: :any, arm64_golden_gate: "72996859df84d1d93356de2792bf1c773a3c9d7c5da8a339606edc97440975dd"
     sha256 cellar: :any, arm64_tahoe:       "40105351ada732b8ee2441b5be853d66e33b9b183185e4b3204aa389db644099"
     sha256 cellar: :any, arm64_sequoia:     "bc3a080fe2faa416ab6ef2fa87dc751889d2b30f2b82cd2036f197da3cc0976d"
@@ -60,7 +61,13 @@ class OsrmBackend < Formula
 
   resource "gauche" do
     url "https://github.com/Project-OSRM/gauche-rs/archive/b1c3af3029975ddbe573bad874c4520db77321d0.tar.gz"
+    version "b1c3af3029975ddbe573bad874c4520db77321d0"
     sha256 "8b0e810d1b54285bb78a81050e0954ff70f4d6f8a67f84f4c9771c713f80ac08"
+
+    livecheck do
+      url "https://raw.githubusercontent.com/Project-OSRM/osrm-backend/v#{LATEST_VERSION}/vcpkg-overlay-ports/gauche/portfile.cmake"
+      regex(/^\s*REF\s+(\h{40})$/i)
+    end
   end
 
   def install

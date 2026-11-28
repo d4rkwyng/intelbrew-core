@@ -1,18 +1,18 @@
 class McpPublisher < Formula
   desc "Publisher CLI tool for the Official Model Context Protocol (MCP) Registry"
   homepage "https://github.com/modelcontextprotocol/registry"
-  url "https://github.com/modelcontextprotocol/registry/archive/refs/tags/v1.8.16.tar.gz"
-  sha256 "745fb7ed8b0a654dde0984995116c2bd7aeaecb1ee3595e9137ac336f58ecb53"
+  url "https://github.com/modelcontextprotocol/registry/archive/refs/tags/v1.8.18.tar.gz"
+  sha256 "608e8b0009670aadde696b1e5f7233c7668b6e0d5283cefa1fac89a7c0ed72ee"
   license "MIT"
   head "https://github.com/modelcontextprotocol/registry.git", branch: "main"
 
   bottle do
-    manifest_sha256 "1e92da141bf9a71ac2016897de83201bd5542d0f8fafa6c4a0933cce70d3ffeb"
-    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "9c3b61d9b36eb053205875337652779426ddb14ae58aa84be08600cff5a25e72"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "9c3b61d9b36eb053205875337652779426ddb14ae58aa84be08600cff5a25e72"
-    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "9c3b61d9b36eb053205875337652779426ddb14ae58aa84be08600cff5a25e72"
-    sha256 cellar: :any_skip_relocation, arm64_linux:       "de89c47eef6bbdbd3b5976ff419ac1d96276330ded3f3b33378268e69b080967"
-    sha256 cellar: :any,                 x86_64_linux:      "c14042e09d234345426e6ca549e074d976fae86e44f3448c4f35f0ba0d9df54a"
+    manifest_sha256 "565038fb2c5dbddffd52f29fada12fd6f93567257fbc3f822298ce51efd6f7d4"
+    sha256 cellar: :any_skip_relocation, arm64_golden_gate: "b6d23f75ffa6c2919c1d0d5d706b886fe4ddeb752791c3d83aa8bf1d5b3de002"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe:       "b6d23f75ffa6c2919c1d0d5d706b886fe4ddeb752791c3d83aa8bf1d5b3de002"
+    sha256 cellar: :any_skip_relocation, arm64_sequoia:     "b6d23f75ffa6c2919c1d0d5d706b886fe4ddeb752791c3d83aa8bf1d5b3de002"
+    sha256 cellar: :any_skip_relocation, arm64_linux:       "4a89d9900b8d63e1ac3a731333eb4a941b77d80e25ad11940cef181406e8890b"
+    sha256 cellar: :any,                 x86_64_linux:      "ee8b51483701cd6c65d1b22a56b34e90df844282888cd9b58ddb2f7fb70b3522"
   end
 
   depends_on "go" => :build

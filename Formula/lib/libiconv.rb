@@ -8,11 +8,9 @@ class Libiconv < Formula
   compatibility_version 1
 
   bottle do
-    rebuild 1
-    manifest_sha256 "03e2f30bf0e0f68fe962262e772b570ed52044127a857f400f62d613b81da9d2"
-    sha256 cellar: :any, arm64_golden_gate: "f84633ee2d2e32efe68d3c829d413eb47a3910649a4c3c5eeba0afeb17988254"
-    sha256 cellar: :any, arm64_tahoe:       "dd971e307d7f56270bc990789d492a6a76223c89850a52f1ffebe4f53ce803f7"
-    sha256 cellar: :any, arm64_sequoia:     "5ca919781f43941f0f3c625abd01f858a0e7e381c0f369a60f564391083d5aa2"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/libiconv-1.19.1"
+    rebuild 2
+    sha256 cellar: :any, sonoma: "7cde33ae42d50c7a0131f960fda2821b4766f65098771c4673a6e9ba461a7a71"
   end
 
   keg_only :provided_by_macos

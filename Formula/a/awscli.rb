@@ -3,15 +3,15 @@ class Awscli < Formula
 
   desc "Official Amazon AWS command-line interface"
   homepage "https://aws.amazon.com/cli/"
-  url "https://github.com/aws/aws-cli/archive/refs/tags/2.42.4.tar.gz"
-  sha256 "407eba81d93d737d0c0776f663e7b29c2c10f4f4b230e28d6ecaad0da8a35bd3"
+  url "https://github.com/aws/aws-cli/archive/refs/tags/2.42.5.tar.gz"
+  sha256 "4e14c6d14c00dd58a96f22a4ab9e9ce33838f3e5ef35828f5017452e9283950b"
   license "Apache-2.0"
   compatibility_version 1
   head "https://github.com/aws/aws-cli.git", branch: "v2"
 
   bottle do
-    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/awscli-2.42.4"
-    sha256 cellar: :any, sonoma: "dd0aef0c5876056255b6913d0b624bd3e7e0396eca4c1f8efce1acb46d5f72df"
+    root_url "https://github.com/d4rkwyng/intelbrew-core/releases/download/awscli-2.42.5"
+    sha256 cellar: :any, sonoma: "77a013551b5e91d3b73da04b835c717a27fb7ae0a33d4333c7e27ed6a4047934"
   end
 
   depends_on "aws-c-auth"

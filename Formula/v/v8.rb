@@ -24,6 +24,7 @@ class V8 < Formula
   end
 
   bottle do
+    manifest_sha256 "ede870770c3bcbe006c60aa706da7eb20a8ec7d39c1686bbe9e2163eb43de11d"
     sha256 cellar: :any, arm64_golden_gate: "ded29c3fdf48d005563bc9d2cc643196c8f233d8bad83719a22635eaca6678ad"
     sha256 cellar: :any, arm64_tahoe:       "3bfb929bb656a747a7d3471a9fdf49367f215610e3819d289d09d1bf2e247cf9"
     sha256 cellar: :any, arm64_sequoia:     "b12f56e52ba59b36bfb718c1c281806336f7fb4ab0d6790bc61d97ece9d1a253"
@@ -63,7 +64,7 @@ class V8 < Formula
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
-      regex(/["']gn_version["']:\s*["']git_revision:([0-9a-f]+)["']/i)
+      regex(/["']gn_version["']:\s*["']git_revision:(\h+)["']/i)
     end
   end
 
@@ -74,7 +75,7 @@ class V8 < Formula
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
-      regex(%r{["']/chromium/src/build\.git["']\s*\+\s*["']@["']\s*\+\s*["']([0-9a-f]+)["']}i)
+      regex(%r{["']/chromium/src/build\.git["']\s*\+\s*["']@["']\s*\+\s*["'](\h+)["']}i)
     end
   end
 
@@ -85,7 +86,7 @@ class V8 < Formula
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
-      regex(%r{["']/chromium/src/buildtools\.git["']\s*\+\s*["']@["']\s*\+\s*["']([0-9a-f]+)["']}i)
+      regex(%r{["']/chromium/src/buildtools\.git["']\s*\+\s*["']@["']\s*\+\s*["'](\h+)["']}i)
     end
   end
 
@@ -96,7 +97,7 @@ class V8 < Formula
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
-      regex(%r{["']/chromium/src/third_party/abseil-cpp\.git["']\s*\+\s*["']@["']\s*\+\s*["']([0-9a-f]+)["']}i)
+      regex(%r{["']/chromium/src/third_party/abseil-cpp\.git["']\s*\+\s*["']@["']\s*\+\s*["'](\h+)["']}i)
     end
   end
 
@@ -107,7 +108,7 @@ class V8 < Formula
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
-      regex(%r{["']/boringssl\.git["']\s*\+\s*["']@["']\s*\+\s*["']([0-9a-f]+)["']}i)
+      regex(%r{["']/boringssl\.git["']\s*\+\s*["']@["']\s*\+\s*["'](\h+)["']}i)
     end
   end
 
@@ -118,7 +119,7 @@ class V8 < Formula
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
-      regex(%r{["']/external/github\.com/jk-jeon/dragonbox\.git["']\s*\+\s*["']@["']\s*\+\s*["']([0-9a-f]+)["']}i)
+      regex(%r{["']/external/github\.com/jk-jeon/dragonbox\.git["']\s*\+\s*["']@["']\s*\+\s*["'](\h+)["']}i)
     end
   end
 
@@ -129,7 +130,7 @@ class V8 < Formula
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
-      regex(%r{["']/external/github.com/fastfloat/fast_float\.git["']\s*\+\s*["']@["']\s*\+\s*["']([0-9a-f]+)["']}i)
+      regex(%r{["']/external/github.com/fastfloat/fast_float\.git["']\s*\+\s*["']@["']\s*\+\s*["'](\h+)["']}i)
     end
   end
 
@@ -140,7 +141,7 @@ class V8 < Formula
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
-      regex(%r{["']/external/github.com/Maratyszcza/FP16\.git["']\s*\+\s*["']@["']\s*\+\s*["']([0-9a-f]+)["']}i)
+      regex(%r{["']/external/github.com/Maratyszcza/FP16\.git["']\s*\+\s*["']@["']\s*\+\s*["'](\h+)["']}i)
     end
   end
 
@@ -151,7 +152,7 @@ class V8 < Formula
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
-      regex(%r{["']/external/github.com/google/googletest\.git["']\s*\+\s*["']@["']\s*\+\s*["']([0-9a-f]+)["']}i)
+      regex(%r{["']/external/github.com/google/googletest\.git["']\s*\+\s*["']@["']\s*\+\s*["'](\h+)["']}i)
     end
   end
 
@@ -162,7 +163,7 @@ class V8 < Formula
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
-      regex(%r{["']/external/github.com/google/highway\.git["']\s*\+\s*["']@["']\s*\+\s*["']([0-9a-f]+)["']}i)
+      regex(%r{["']/external/github.com/google/highway\.git["']\s*\+\s*["']@["']\s*\+\s*["'](\h+)["']}i)
     end
   end
 
@@ -173,7 +174,7 @@ class V8 < Formula
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
-      regex(%r{["']/chromium/deps/icu\.git["']\s*\+\s*["']@["']\s*\+\s*["']([0-9a-f]+)["']}i)
+      regex(%r{["']/chromium/deps/icu\.git["']\s*\+\s*["']@["']\s*\+\s*["'](\h+)["']}i)
     end
   end
 
@@ -184,7 +185,7 @@ class V8 < Formula
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
-      regex(%r{["']/chromium/src/third_party/jinja2\.git["']\s*\+\s*["']@["']\s*\+\s*["']([0-9a-f]+)["']}i)
+      regex(%r{["']/chromium/src/third_party/jinja2\.git["']\s*\+\s*["']@["']\s*\+\s*["'](\h+)["']}i)
     end
   end
 
@@ -195,7 +196,7 @@ class V8 < Formula
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
-      regex(%r{["']/external/github.com/llvm/llvm-project/libc\.git["']\s*\+\s*["']@["']\s*\+\s*["']([0-9a-f]+)["']}i)
+      regex(%r{["']/external/github.com/llvm/llvm-project/libc\.git["']\s*\+\s*["']@["']\s*\+\s*["'](\h+)["']}i)
     end
   end
 
@@ -206,7 +207,7 @@ class V8 < Formula
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
-      regex(%r{["']/chromium/src/third_party/markupsafe\.git["']\s*\+\s*["']@["']\s*\+\s*["']([0-9a-f]+)["']}i)
+      regex(%r{["']/chromium/src/third_party/markupsafe\.git["']\s*\+\s*["']@["']\s*\+\s*["'](\h+)["']}i)
     end
   end
 
@@ -217,7 +218,7 @@ class V8 < Formula
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
-      regex(/["']partition_alloc_version["']:\s*["']([0-9a-f]+)["']/i)
+      regex(/["']partition_alloc_version["']:\s*["'](\h+)["']/i)
     end
   end
 
@@ -228,7 +229,7 @@ class V8 < Formula
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
-      regex(%r{["']/chromium/src/third_party/simdutf["']\s*\+\s*["']@["']\s*\+\s*["']([0-9a-f]+)["']}i)
+      regex(%r{["']/chromium/src/third_party/simdutf["']\s*\+\s*["']@["']\s*\+\s*["'](\h+)["']}i)
     end
   end
 
@@ -239,7 +240,7 @@ class V8 < Formula
 
     livecheck do
       url "https://raw.githubusercontent.com/v8/v8/refs/tags/#{LATEST_VERSION}/DEPS"
-      regex(%r{["']/chromium/src/third_party/zlib\.git["']\s*\+\s*["']@["']\s*\+\s*["']([0-9a-f]+)["']}i)
+      regex(%r{["']/chromium/src/third_party/zlib\.git["']\s*\+\s*["']@["']\s*\+\s*["'](\h+)["']}i)
     end
   end
 
